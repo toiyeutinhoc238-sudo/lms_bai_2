@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drive Lưu Trữ Bài Nộp - Học Liệu 4 (Tin học 6 - Bài 2)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #0284c7;
+      --primary-dark: #0369a1;
+      --primary-light: #f0f9ff;
+      --accent: #6366f1;
+      --text: #0f172a;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --success: #10b981;
+      --warning: #f59e0b;
+      --danger: #ef4444;
+      --radius: 14px;
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.06), 0 2px 4px -2px rgba(0, 0, 0, 0.04);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      padding: 20px;
+      min-height: 100vh;
+    }
+
+    .drive-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Drive Navbar */
+    .drive-navbar {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 14px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 14px;
+      box-shadow: var(--shadow);
+      margin-bottom: 20px;
+    }
+
+    .brand-box {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-icon {
+      width: 44px;
+      height: 44px;
+      background: linear-gradient(135deg, #0284c7, #38bdf8);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      color: white;
+      box-shadow: 0 4px 10px rgba(2, 132, 199, 0.3);
+    }
+
+    .brand-text h1 {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #0f172a;
+    }
+
+    .brand-text p {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .nav-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 8px 16px;
+      border-radius: 10px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      text-decoration: none;
+      transition: all 0.2s;
+      border: 1px solid transparent;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-1px);
+    }
+
+    .btn-outline {
+      background: white;
+      border-color: var(--border);
+      color: #334155;
+    }
+
+    .btn-outline:hover {
+      background: #f1f5f9;
+      border-color: #cbd5e1;
+    }
+
+    .btn-danger {
+      background: #fee2e2;
+      color: #b91c1c;
+      border-color: #fecaca;
+    }
+
+    .btn-danger:hover {
+      background: #fca5a5;
+    }
+
+    /* Stats Ribbon */
+    .stats-ribbon {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+
+    .stat-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      box-shadow: var(--shadow);
+    }
+
+    .stat-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+    }
+
+    .icon-blue { background: #e0f2fe; color: #0284c7; }
+    .icon-green { background: #dcfce7; color: #166534; }
+    .icon-yellow { background: #fef3c7; color: #b45309; }
+    .icon-purple { background: #ede9fe; color: #6d28d9; }
+
+    .stat-value {
+      font-size: 1.4rem;
+      font-weight: 900;
+      color: #0f172a;
+      line-height: 1.2;
+    }
+
+    .stat-label {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    /* Drive Main Workspace */
+    .drive-workspace {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+      box-shadow: var(--shadow);
+    }
+
+    /* Search & Filter Bar */
+    .filter-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 20px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 16px;
+    }
+
+    .search-box {
+      flex-grow: 1;
+      max-width: 450px;
+      position: relative;
+    }
+
+    .search-box input {
+      width: 100%;
+      padding: 10px 14px 10px 38px;
+      border-radius: 10px;
+      border: 1.5px solid var(--border);
+      font-size: 0.88rem;
+      outline: none;
+      transition: all 0.2s;
+    }
+
+    .search-box input:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15);
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #94a3b8;
+      font-size: 0.95rem;
+    }
+
+    .filter-tools {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .filter-select {
+      padding: 8px 12px;
+      border-radius: 8px;
+      border: 1.5px solid var(--border);
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #334155;
+      background: white;
+      outline: none;
+      cursor: pointer;
+    }
+
+    .view-toggle {
+      display: flex;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .toggle-btn {
+      background: white;
+      border: none;
+      padding: 8px 12px;
+      cursor: pointer;
+      font-size: 0.95rem;
+      color: #64748b;
+    }
+
+    .toggle-btn.active {
+      background: #f1f5f9;
+      color: var(--primary);
+      font-weight: 800;
+    }
+
+    /* Grid View */
+    .files-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 18px;
+    }
+
+    .file-card {
+      border: 1.5px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      background: white;
+      transition: all 0.2s;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .file-card:hover {
+      border-color: #38bdf8;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.06);
+      transform: translateY(-3px);
+    }
+
+    .file-thumb-container {
+      height: 160px;
+      background: #f8fafc;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+      border-bottom: 1px solid var(--border);
+      cursor: pointer;
+    }
+
+    .file-thumb-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s;
+    }
+
+    .file-thumb-container:hover img {
+      transform: scale(1.05);
+    }
+
+    .file-badge-score {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(4px);
+      color: white;
+      font-size: 0.75rem;
+      font-weight: 800;
+      padding: 3px 8px;
+      border-radius: 6px;
+    }
+
+    .file-badge-score.graded {
+      background: #059669;
+    }
+
+    .file-badge-score.pending {
+      background: #d97706;
+    }
+
+    .file-details {
+      padding: 12px 14px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .file-title {
+      font-size: 0.92rem;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 4px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .file-student {
+      font-size: 0.82rem;
+      color: var(--primary);
+      font-weight: 700;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .file-meta-sub {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      display: flex;
+      justify-content: space-between;
+      margin-top: 6px;
+      padding-top: 6px;
+      border-top: 1px dashed var(--border);
+    }
+
+    .file-card-actions {
+      display: flex;
+      gap: 6px;
+      padding: 8px 14px 12px 14px;
+    }
+
+    .btn-file-action {
+      flex: 1;
+      padding: 6px 10px;
+      border-radius: 6px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      cursor: pointer;
+      border: 1px solid var(--border);
+      background: #f8fafc;
+      color: #334155;
+      text-align: center;
+      transition: all 0.2s;
+    }
+
+    .btn-file-action:hover {
+      background: var(--primary-light);
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    /* Table View */
+    .files-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.86rem;
+      display: none;
+    }
+
+    .files-table th, .files-table td {
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--border);
+      text-align: left;
+    }
+
+    .files-table th {
+      background: #f8fafc;
+      font-weight: 800;
+      color: #475569;
+    }
+
+    .files-table tr:hover td {
+      background: #f0f9ff;
+    }
+
+    /* Empty State */
+    .empty-state {
+      text-align: center;
+      padding: 60px 20px;
+      color: var(--text-muted);
+    }
+
+    .empty-icon {
+      font-size: 3.5rem;
+      margin-bottom: 12px;
+      color: #cbd5e1;
+    }
+
+    /* Modal Preview & Rubric */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(15, 23, 42, 0.7);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .modal-card {
+      background: white;
+      border-radius: 16px;
+      width: 100%;
+      max-width: 950px;
+      max-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    }
+
+    .modal-header {
+      padding: 16px 24px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #f8fafc;
+    }
+
+    .modal-title {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #0f172a;
+    }
+
+    .btn-close {
+      background: none;
+      border: none;
+      font-size: 1.3rem;
+      cursor: pointer;
+      color: #64748b;
+    }
+
+    .modal-body {
+      padding: 24px;
+      overflow-y: auto;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 20px;
+    }
+
+    .preview-image-box {
+      background: #0f172a;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      max-height: 500px;
+    }
+
+    .preview-image-box img {
+      max-width: 100%;
+      max-height: 500px;
+      object-fit: contain;
+    }
+
+    .rubric-grading-panel {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .grading-crit-item {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 10px 14px;
+    }
+
+    .grading-crit-title {
+      font-size: 0.85rem;
+      font-weight: 800;
+      color: #1e293b;
+      margin-bottom: 6px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .radio-scores {
+      display: flex;
+      gap: 8px;
+    }
+
+    .score-btn {
+      flex: 1;
+      padding: 6px 8px;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      background: white;
+      font-size: 0.78rem;
+      font-weight: 700;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .score-btn.selected {
+      background: #0284c7;
+      color: white;
+      border-color: #0284c7;
+    }
+
+    .modal-footer {
+      padding: 14px 24px;
+      border-top: 1px solid var(--border);
+      background: #f8fafc;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  </style>
+</head>
+<body>
+
+<div class="drive-container">
+
+  <!-- Navbar -->
+  <header class="drive-navbar">
+    <div class="brand-box">
+      <div class="brand-icon">📁</div>
+      <div class="brand-text">
+        <h1>Google Drive Bài Nộp: Luyện Tập Viết Prompt AI</h1>
+        <p>Học liệu 4 - Môn Tin học 6 | Lưu trữ minh chứng ảnh tương tác SchoolAI & Chấm Rubric trực tiếp</p>
+      </div>
+    </div>
+    <div class="nav-actions">
+      <button class="btn btn-primary" onclick="triggerManualUpload()">
+        <span>📤</span> Thêm bài nộp mới
+      </button>
+      <button class="btn btn-outline" onclick="exportToCSV()">
+        <span>📊</span> Xuất Sổ Điểm CSV
+      </button>
+      <a href="hoc_lieu_4_nop_bai_assignment_rubric.html" class="btn btn-outline">
+        <span>←</span> Cổng Nộp Bài
+      </a>
+      <a href="index.html" class="btn btn-outline">
+        <span>🏠</span> Cổng Học Liệu
+      </a>
+      <input type="file" id="manualFileInput" accept="image/*" style="display: none;" onchange="handleManualFile(event)">
+    </div>
+  </header>
+
+  <!-- Stats Ribbon -->
+  <div class="stats-ribbon">
+    <div class="stat-card">
+      <div class="stat-icon icon-blue">📂</div>
+      <div>
+        <div class="stat-value" id="totalFilesCount">0</div>
+        <div class="stat-label">Tổng bài nộp trong Drive</div>
+      </div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-icon icon-yellow">⏳</div>
+      <div>
+        <div class="stat-value" id="pendingGradingCount">0</div>
+        <div class="stat-label">Bài nộp đang chờ chấm</div>
+      </div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-icon icon-green">✅</div>
+      <div>
+        <div class="stat-value" id="completedGradingCount">0</div>
+        <div class="stat-label">Đã chấm đạt Rubric 10đ</div>
+      </div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-icon icon-purple">🌟</div>
+      <div>
+        <div class="stat-value" id="avgScoreVal">--</div>
+        <div class="stat-label">Điểm trung bình lớp</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Workspace -->
+  <main class="drive-workspace">
+    <!-- Filter and Search -->
+    <div class="filter-bar">
+      <div class="search-box">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="searchInput" placeholder="Tìm kiếm theo họ tên học sinh, lớp hoặc tên tệp..." oninput="renderDrive()">
+      </div>
+
+      <div class="filter-tools">
+        <select id="classFilter" class="filter-select" onchange="renderDrive()">
+          <option value="all">Tất cả các lớp</option>
+          <option value="6A">Lớp 6A</option>
+          <option value="6B">Lớp 6B</option>
+          <option value="6C">Lớp 6C</option>
+        </select>
+
+        <select id="statusFilter" class="filter-select" onchange="renderDrive()">
+          <option value="all">Tất cả trạng thái</option>
+          <option value="pending">Chờ chấm điểm</option>
+          <option value="graded">Đã chấm điểm</option>
+        </select>
+
+        <div class="view-toggle">
+          <button class="toggle-btn active" id="btnGridView" onclick="switchView('grid')" title="Dạng lưới thẻ">⊞</button>
+          <button class="toggle-btn" id="btnTableView" onclick="switchView('table')" title="Dạng danh sách">☰</button>
+        </div>
+
+        <button class="btn btn-danger" style="padding: 7px 12px; font-size: 0.8rem;" onclick="clearAllSubmissions()">
+          <span>🗑️</span> Xóa dữ liệu mẫu
+        </button>
+      </div>
+    </div>
+
+    <!-- Grid View -->
+    <div class="files-grid" id="filesGrid"></div>
+
+    <!-- Table View -->
+    <table class="files-table" id="filesTable">
+      <thead>
+        <tr>
+          <th style="width: 60px;">Ảnh</th>
+          <th>Tên học sinh</th>
+          <th>Lớp</th>
+          <th>Tên tệp minh chứng</th>
+          <th>Thời gian nộp</th>
+          <th>Điểm Rubric</th>
+          <th style="text-align: right;">Thao tác</th>
+        </tr>
+      </thead>
+      <tbody id="filesTableBody"></tbody>
+    </table>
+
+    <!-- Empty State -->
+    <div class="empty-state" id="emptyState" style="display: none;">
+      <div class="empty-icon">📂</div>
+      <h3 style="font-size: 1.15rem; margin-bottom: 6px; color: #1e293b;">Chưa có tệp bài nộp nào trong Drive</h3>
+      <p style="font-size: 0.88rem;">Học sinh sau khi tải ảnh lên ở <strong>Học liệu 4</strong> sẽ tự động lưu trữ tại đây!</p>
+    </div>
+  </main>
+</div>
+
+<!-- Modal Xem ảnh & Chấm Rubric -->
+<div class="modal-overlay" id="previewModal">
+  <div class="modal-card">
+    <div class="modal-header">
+      <div class="modal-title" id="modalStudentTitle">Chi tiết bài làm học sinh</div>
+      <button class="btn-close" onclick="closeModal()">✕</button>
+    </div>
+    <div class="modal-body">
+      <!-- Cột trái: Ảnh chụp minh chứng -->
+      <div class="preview-image-box">
+        <img id="modalPreviewImg" src="" alt="Minh chứng bài làm">
+      </div>
+
+      <!-- Cột phải: Bảng chấm Rubric nhanh -->
+      <div class="rubric-grading-panel">
+        <h4 style="font-size: 0.95rem; font-weight: 800; color: #0284c7;">
+          📊 Chấm điểm theo Rubric Hoạt động 3 (10đ)
+        </h4>
+
+        <!-- Tiêu chí 1 -->
+        <div class="grading-crit-item">
+          <div class="grading-crit-title">
+            <span>1. Cấu trúc câu lệnh (Role + Task + Context)</span>
+            <strong id="modalC1Score">-- / 5đ</strong>
+          </div>
+          <div class="radio-scores">
+            <button class="score-btn" onclick="setModalScore(1, 5)">Tốt (5đ)</button>
+            <button class="score-btn" onclick="setModalScore(1, 3)">Đạt (3đ)</button>
+            <button class="score-btn" onclick="setModalScore(1, 1)">Cố gắng (1đ)</button>
+          </div>
+        </div>
+
+        <!-- Tiêu chí 2 -->
+        <div class="grading-crit-item">
+          <div class="grading-crit-title">
+            <span>2. Nội dung & Ngôn từ văn minh</span>
+            <strong id="modalC2Score">-- / 3đ</strong>
+          </div>
+          <div class="radio-scores">
+            <button class="score-btn" onclick="setModalScore(2, 3)">Tốt (3đ)</button>
+            <button class="score-btn" onclick="setModalScore(2, 2)">Đạt (2đ)</button>
+            <button class="score-btn" onclick="setModalScore(2, 0)">Cố gắng (0đ)</button>
+          </div>
+        </div>
+
+        <!-- Tiêu chí 3 -->
+        <div class="grading-crit-item">
+          <div class="grading-crit-title">
+            <span>3. Hình thức ảnh chụp minh chứng</span>
+            <strong id="modalC3Score">-- / 2đ</strong>
+          </div>
+          <div class="radio-scores">
+            <button class="score-btn" onclick="setModalScore(3, 2)">Tốt (2đ)</button>
+            <button class="score-btn" onclick="setModalScore(3, 1)">Đạt (1đ)</button>
+            <button class="score-btn" onclick="setModalScore(3, 0)">Cố gắng (0đ)</button>
+          </div>
+        </div>
+
+        <!-- Lời nhận xét -->
+        <div>
+          <label style="font-size: 0.82rem; font-weight: 700; color: #334155; display: block; margin-bottom: 4px;">
+            Nhận xét của thầy/cô:
+          </label>
+          <textarea id="modalFeedbackInput" rows="2" style="width: 100%; border: 1.5px solid var(--border); border-radius: 8px; padding: 8px; font-size: 0.85rem; outline: none;" placeholder="Nhập lời khuyên sư phạm cho học sinh..."></textarea>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <div>
+        <span style="font-size: 0.85rem; color: #64748b;">Tổng điểm tính toán: </span>
+        <strong style="font-size: 1.2rem; color: #0284c7;" id="modalTotalScore">-- / 10</strong>
+      </div>
+      <div>
+        <a id="modalDownloadBtn" href="#" download class="btn btn-outline" style="margin-right: 8px;">
+          <span>📥</span> Tải ảnh gốc
+        </a>
+        <button class="btn btn-primary" onclick="saveGradingFromModal()">
+          <span>💾</span> Lưu kết quả chấm
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const STORAGE_KEY = 'TINHOC6_ASSIGNMENT_SUBMISSIONS';
+  let currentView = 'grid';
+  let activeGradingId = null;
+  let tempScores = { c1: null, c2: null, c3: null };
+
+  // Sample data to make drive active immediately
+  const SAMPLE_DATA = [
+    {
+      id: 'sub_sample_1',
+      studentName: 'Nguyễn Văn An',
+      className: '6A',
+      fileName: 'minh_chung_chat_schoolai_an.png',
+      fileSize: '142 KB',
+      submittedAt: '01/11/2026, 09:15',
+      fileData: 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400" viewBox="0 0 600 400"><rect width="600" height="400" fill="%230f172a"/><rect x="20" y="20" width="560" height="360" rx="10" fill="%231e293b"/><text x="40" y="60" fill="%2338bdf8" font-family="sans-serif" font-size="16" font-weight="bold">SchoolAI Space: Bạn đồng hành lớp 6</text><rect x="40" y="90" width="520" height="80" rx="8" fill="%230284c7"/><text x="55" y="115" fill="white" font-family="sans-serif" font-size="13">Nguyễn Văn An (6A):</text><text x="55" y="140" fill="white" font-family="sans-serif" font-size="13">"Đóng vai nhà sử học, kể cho em ý nghĩa trận Bạch Đằng năm 938</text><text x="55" y="158" fill="white" font-family="sans-serif" font-size="13">trong 3 câu dễ hiểu cho học sinh lớp 6."</text><rect x="40" y="190" width="520" height="150" rx="8" fill="%23334155"/><text x="55" y="215" fill="%23a7f3d0" font-family="sans-serif" font-size="13">Trợ lý Dot (SchoolAI):</text><text x="55" y="240" fill="white" font-family="sans-serif" font-size="12">1. Chiến thắng Bạch Đằng năm 938 do Ngô Quyền lãnh đạo đã đập tan</text><text x="55" y="260" fill="white" font-family="sans-serif" font-size="12">hoàn toàn quân xâm lược Nam Hán nhờ mưu kế cắm cọc gỗ độc đáo.</text><text x="55" y="280" fill="white" font-family="sans-serif" font-size="12">2. Thắng lợi lịch sử này đã chấm dứt hơn 1.000 năm Bắc thuộc tối tăm.</text><text x="55" y="300" fill="white" font-family="sans-serif" font-size="12">3. Mở ra kỷ nguyên độc lập, tự chủ lâu dài cho non sông đất nước ta!</text></svg>',
+      score: 10,
+      c1: 5, c2: 3, c3: 2,
+      feedback: 'Câu lệnh cấu trúc chuẩn 3 thành phần, lời văn trong sáng lịch sự!'
+    },
+    {
+      id: 'sub_sample_2',
+      studentName: 'Trần Thị Mai',
+      className: '6B',
+      fileName: 'anh_prompt_khoa_hoc_mai.png',
+      fileSize: '168 KB',
+      submittedAt: '01/11/2026, 09:22',
+      fileData: 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400" viewBox="0 0 600 400"><rect width="600" height="400" fill="%230f172a"/><rect x="20" y="20" width="560" height="360" rx="10" fill="%231e293b"/><text x="40" y="60" fill="%2338bdf8" font-family="sans-serif" font-size="16" font-weight="bold">SchoolAI Space: Khám phá KHTN 6</text><rect x="40" y="90" width="520" height="70" rx="8" fill="%230284c7"/><text x="55" y="115" fill="white" font-family="sans-serif" font-size="13">Trần Thị Mai (6B):</text><text x="55" y="140" fill="white" font-family="sans-serif" font-size="13">"Đóng vai nhà thiên văn học, giải thích vì sao Mặt Trăng lúc tròn lúc khuyết trong 3 câu."</text><rect x="40" y="180" width="520" height="150" rx="8" fill="%23334155"/><text x="55" y="205" fill="%23a7f3d0" font-family="sans-serif" font-size="13">Trợ lý Dot (SchoolAI):</text><text x="55" y="230" fill="white" font-family="sans-serif" font-size="12">Mặt Trăng không tự phát sáng mà phản chiếu ánh sáng từ Mặt Trời.</text><text x="55" y="250" fill="white" font-family="sans-serif" font-size="12">Khi Mặt Trăng quay quanh Trái Đất, góc nhìn phần được chiếu sáng thay đổi.</text><text x="55" y="270" fill="white" font-family="sans-serif" font-size="12">Đó là lý do chúng ta thấy trăng tròn, khuyết theo từng ngày trong tháng!</text></svg>',
+      score: null,
+      c1: null, c2: null, c3: null,
+      feedback: ''
+    },
+    {
+      id: 'sub_sample_3',
+      studentName: 'Lê Minh Tuấn',
+      className: '6A',
+      fileName: 'bai_tap_prompt_tuan.jpg',
+      fileSize: '135 KB',
+      submittedAt: '01/11/2026, 09:40',
+      fileData: 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400" viewBox="0 0 600 400"><rect width="600" height="400" fill="%230f172a"/><rect x="20" y="20" width="560" height="360" rx="10" fill="%231e293b"/><text x="40" y="60" fill="%2338bdf8" font-family="sans-serif" font-size="16" font-weight="bold">SchoolAI Space: Địa lí 6</text><rect x="40" y="90" width="520" height="60" rx="8" fill="%230284c7"/><text x="55" y="115" fill="white" font-family="sans-serif" font-size="13">Lê Minh Tuấn (6A):</text><text x="55" y="135" fill="white" font-family="sans-serif" font-size="13">"Hiện tượng ngày đêm luân phiên xảy ra thế nào?"</text><rect x="40" y="170" width="520" height="150" rx="8" fill="%23334155"/><text x="55" y="195" fill="%23a7f3d0" font-family="sans-serif" font-size="13">Trợ lý Dot (SchoolAI):</text><text x="55" y="220" fill="white" font-family="sans-serif" font-size="12">Do Trái Đất có hình cầu và tự quay quanh trục từ Tây sang Đông</text><text x="55" y="240" fill="white" font-family="sans-serif" font-size="12">nên một nửa được chiếu sáng là ngày, nửa kia là đêm liên tục thay phiên nhau!</text></svg>',
+      score: 7,
+      c1: 3, c2: 2, c3: 2,
+      feedback: 'Câu hỏi còn thiếu thành phần Đóng vai và Bối cảnh giới hạn câu, cần bổ sung thêm nhé!'
+    }
+  ];
+
+  function getSubmissions() {
+    try {
+      const data = localStorage.getItem(STORAGE_KEY);
+      if (!data) {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(SAMPLE_DATA));
+        return SAMPLE_DATA;
+      }
+      return JSON.parse(data);
+    } catch(e) {
+      return SAMPLE_DATA;
+    }
+  }
+
+  function saveSubmissions(list) {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(list));
+  }
+
+  function renderDrive() {
+    const list = getSubmissions();
+    const query = document.getElementById('searchInput').value.trim().toLowerCase();
+    const classFilter = document.getElementById('classFilter').value;
+    const statusFilter = document.getElementById('statusFilter').value;
+
+    const filtered = list.filter(item => {
+      const matchQuery = (item.studentName && item.studentName.toLowerCase().includes(query)) ||
+                         (item.className && item.className.toLowerCase().includes(query)) ||
+                         (item.fileName && item.fileName.toLowerCase().includes(query));
+      
+      const matchClass = classFilter === 'all' || item.className === classFilter;
+      const isGraded = item.score !== null && item.score !== undefined;
+      const matchStatus = statusFilter === 'all' || 
+                          (statusFilter === 'graded' && isGraded) || 
+                          (statusFilter === 'pending' && !isGraded);
+
+      return matchQuery && matchClass && matchStatus;
+    });
+
+    // Update Stats
+    const total = list.length;
+    const gradedList = list.filter(i => i.score !== null && i.score !== undefined);
+    const completed = gradedList.length;
+    const pending = total - completed;
+    const avg = completed > 0 ? (gradedList.reduce((acc, cur) => acc + cur.score, 0) / completed).toFixed(1) : '--';
+
+    document.getElementById('totalFilesCount').innerText = total;
+    document.getElementById('pendingGradingCount').innerText = pending;
+    document.getElementById('completedGradingCount').innerText = completed;
+    document.getElementById('avgScoreVal').innerText = avg !== '--' ? avg + '/10' : '--';
+
+    const empty = document.getElementById('emptyState');
+    const grid = document.getElementById('filesGrid');
+    const table = document.getElementById('filesTable');
+    const tbody = document.getElementById('filesTableBody');
+
+    if (filtered.length === 0) {
+      empty.style.display = 'block';
+      grid.style.display = 'none';
+      table.style.display = 'none';
+      return;
+    }
+
+    empty.style.display = 'none';
+
+    if (currentView === 'grid') {
+      grid.style.display = 'grid';
+      table.style.display = 'none';
+      grid.innerHTML = '';
+
+      filtered.forEach(item => {
+        const card = document.createElement('div');
+        card.className = 'file-card';
+        const isGraded = item.score !== null && item.score !== undefined;
+
+        card.innerHTML = `
+          <div class="file-thumb-container" onclick="openPreviewModal('${item.id}')">
+            <img src="${item.fileData}" alt="${item.fileName}">
+            <div class="file-badge-score ${isGraded ? 'graded' : 'pending'}">
+              ${isGraded ? '⭐ ' + item.score + '/10đ' : '⏳ Chờ chấm'}
+            </div>
+          </div>
+          <div class="file-details">
+            <div>
+              <div class="file-title" title="${item.fileName}">📄 ${escapeHTML(item.fileName)}</div>
+              <div class="file-student">👤 ${escapeHTML(item.studentName)} (${escapeHTML(item.className || '6A')})</div>
+            </div>
+            <div class="file-meta-sub">
+              <span>⏱️ ${item.submittedAt || 'Hôm nay'}</span>
+              <span>💾 ${item.fileSize || 'Ảnh PNG'}</span>
+            </div>
+          </div>
+          <div class="file-card-actions">
+            <button class="btn-file-action" onclick="openPreviewModal('${item.id}')">
+              <span>🔍</span> Xem & Chấm
+            </button>
+            <button class="btn-file-action" style="color: #b91c1c;" onclick="deleteSubmission('${item.id}')" title="Xóa tệp">
+              <span>🗑️</span>
+            </button>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+    } else {
+      grid.style.display = 'none';
+      table.style.display = 'table';
+      tbody.innerHTML = '';
+
+      filtered.forEach(item => {
+        const isGraded = item.score !== null && item.score !== undefined;
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td>
+            <img src="${item.fileData}" style="width: 44px; height: 36px; object-fit: cover; border-radius: 6px; cursor: pointer;" onclick="openPreviewModal('${item.id}')">
+          </td>
+          <td><strong>${escapeHTML(item.studentName)}</strong></td>
+          <td><span style="background: #e0f2fe; color: #0284c7; padding: 2px 8px; border-radius: 6px; font-weight: 700;">${escapeHTML(item.className || '6A')}</span></td>
+          <td>${escapeHTML(item.fileName)}</td>
+          <td style="color: #64748b; font-size: 0.8rem;">${item.submittedAt || 'Hôm nay'}</td>
+          <td>
+            <span style="font-weight: 800; color: ${isGraded ? '#059669' : '#d97706'};">
+              ${isGraded ? item.score + ' / 10đ' : '⏳ Chờ chấm'}
+            </span>
+          </td>
+          <td style="text-align: right;">
+            <button class="btn-file-action" style="display: inline-block; width: auto;" onclick="openPreviewModal('${item.id}')">Xem</button>
+            <button class="btn-file-action" style="display: inline-block; width: auto; color: #b91c1c;" onclick="deleteSubmission('${item.id}')">Xóa</button>
+          </td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+  }
+
+  function switchView(mode) {
+    currentView = mode;
+    document.getElementById('btnGridView').classList.toggle('active', mode === 'grid');
+    document.getElementById('btnTableView').classList.toggle('active', mode === 'table');
+    renderDrive();
+  }
+
+  function openPreviewModal(id) {
+    const list = getSubmissions();
+    const item = list.find(i => i.id === id);
+    if (!item) return;
+
+    activeGradingId = id;
+    tempScores = {
+      c1: item.c1 !== undefined ? item.c1 : null,
+      c2: item.c2 !== undefined ? item.c2 : null,
+      c3: item.c3 !== undefined ? item.c3 : null
+    };
+
+    document.getElementById('modalStudentTitle').innerText = `Bài làm của: ${item.studentName} (${item.className || '6A'})`;
+    document.getElementById('modalPreviewImg').src = item.fileData;
+    document.getElementById('modalDownloadBtn').href = item.fileData;
+    document.getElementById('modalDownloadBtn').download = item.fileName || 'bai_lam_hoc_sinh.png';
+    document.getElementById('modalFeedbackInput').value = item.feedback || '';
+
+    updateModalGradingUI();
+    document.getElementById('previewModal').style.display = 'flex';
+  }
+
+  function closeModal() {
+    document.getElementById('previewModal').style.display = 'none';
+  }
+
+  function setModalScore(crit, pts) {
+    if (crit === 1) tempScores.c1 = pts;
+    if (crit === 2) tempScores.c2 = pts;
+    if (crit === 3) tempScores.c3 = pts;
+    updateModalGradingUI();
+  }
+
+  function updateModalGradingUI() {
+    document.getElementById('modalC1Score').innerText = tempScores.c1 !== null ? `${tempScores.c1} / 5đ` : '-- / 5đ';
+    document.getElementById('modalC2Score').innerText = tempScores.c2 !== null ? `${tempScores.c2} / 3đ` : '-- / 3đ';
+    document.getElementById('modalC3Score').innerText = tempScores.c3 !== null ? `${tempScores.c3} / 2đ` : '-- / 2đ';
+
+    if (tempScores.c1 !== null && tempScores.c2 !== null && tempScores.c3 !== null) {
+      const sum = tempScores.c1 + tempScores.c2 + tempScores.c3;
+      document.getElementById('modalTotalScore').innerText = `${sum} / 10đ`;
+    } else {
+      document.getElementById('modalTotalScore').innerText = '-- / 10';
+    }
+  }
+
+  function saveGradingFromModal() {
+    if (!activeGradingId) return;
+    const list = getSubmissions();
+    const item = list.find(i => i.id === activeGradingId);
+    if (!item) return;
+
+    if (tempScores.c1 === null || tempScores.c2 === null || tempScores.c3 === null) {
+      alert("Thầy/cô vui lòng chọn đủ 3 tiêu chí của Rubric trước khi lưu nhé!");
+      return;
+    }
+
+    item.c1 = tempScores.c1;
+    item.c2 = tempScores.c2;
+    item.c3 = tempScores.c3;
+    item.score = tempScores.c1 + tempScores.c2 + tempScores.c3;
+    item.feedback = document.getElementById('modalFeedbackInput').value.trim();
+
+    saveSubmissions(list);
+    closeModal();
+    renderDrive();
+    alert("✅ Đã lưu kết quả chấm điểm Rubric thành công!");
+  }
+
+  function deleteSubmission(id) {
+    if (!confirm("Thầy/cô có chắc muốn xóa tệp bài nộp này khỏi Drive?")) return;
+    let list = getSubmissions();
+    list = list.filter(i => i.id !== id);
+    saveSubmissions(list);
+    renderDrive();
+  }
+
+  function clearAllSubmissions() {
+    if (!confirm("⚠️ Bạn có chắc muốn khôi phục/xóa sạch toàn bộ bài nộp trong kho Drive này?")) return;
+    localStorage.removeItem(STORAGE_KEY);
+    renderDrive();
+  }
+
+  function triggerManualUpload() {
+    document.getElementById('manualFileInput').click();
+  }
+
+  function handleManualFile(e) {
+    const file = e.target.files[0];
+    if (!file) return;
+
+    const name = prompt("Nhập họ tên học sinh:", "Học sinh mới");
+    if (!name) return;
+    const lop = prompt("Nhập lớp (ví dụ: 6A, 6B):", "6A") || "6A";
+
+    const reader = new FileReader();
+    reader.onload = function(evt) {
+      const newSub = {
+        id: 'sub_' + Date.now(),
+        studentName: name,
+        className: lop,
+        fileName: file.name,
+        fileSize: (file.size / 1024).toFixed(0) + ' KB',
+        submittedAt: new Date().toLocaleString('vi-VN'),
+        fileData: evt.target.result,
+        score: null,
+        c1: null, c2: null, c3: null,
+        feedback: ''
+      };
+      const list = getSubmissions();
+      list.unshift(newSub);
+      saveSubmissions(list);
+      renderDrive();
+      alert("✅ Đã thêm tệp bài nộp vào Drive thành công!");
+    };
+    reader.readAsDataURL(file);
+  }
+
+  function exportToCSV() {
+    const list = getSubmissions();
+    let csv = "\uFEFFSTT,Họ và tên,Lớp,Tên tệp,Thời gian nộp,Điểm C1 (Cấu trúc),Điểm C2 (Ngôn từ),Điểm C3 (Ảnh),Tổng điểm,Nhận xét của GV\n";
+    list.forEach((item, idx) => {
+      csv += `"${idx + 1}","${item.studentName || ''}","${item.className || ''}","${item.fileName || ''}","${item.submittedAt || ''}","${item.c1 ?? ''}","${item.c2 ?? ''}","${item.c3 ?? ''}","${item.score ?? ''}","${(item.feedback || '').replace(/"/g, '""')}"\n`;
+    });
+    const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+    const link = document.createElement("a");
+    link.href = URL.createObjectURL(blob);
+    link.download = `So_Diem_LMS_Bai2_HocLieu4_${new Date().toISOString().slice(0,10)}.csv`;
+    link.click();
+  }
+
+  function escapeHTML(str) {
+    if (!str) return '';
+    return str.replace(/[&<>'"]/g, 
+      tag => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[tag] || tag)
+    );
+  }
+
+  // Initial Load
+  document.addEventListener('DOMContentLoaded', () => {
+    renderDrive();
+  });
+</script>
+
+</body>
+</html>

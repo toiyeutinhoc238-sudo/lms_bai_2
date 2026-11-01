@@ -388,9 +388,14 @@
 <div class="container">
   <!-- Top Bar -->
   <div class="top-bar">
-    <a href="index.html" class="btn-back">
-      <span>←</span> Về Cổng Trọn Bộ Học Liệu
-    </a>
+    <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+      <a href="index.html" class="btn-back">
+        <span>←</span> Cổng Học Liệu
+      </a>
+      <a href="kho_luu_tru_bai_nop_hoc_lieu_4.html" target="_blank" class="btn-back" style="color: #0284c7; border-color: #38bdf8; background: #f0f9ff;">
+        <span>📁</span> Mở Kho Drive Bài Nộp
+      </a>
+    </div>
     <div class="submission-status" id="subStatus">
       <span>⏳</span> Chưa nộp bài
     </div>
@@ -425,6 +430,17 @@
       <div class="step-box">
         <div class="step-num">Bước 4</div>
         <p>Tải file ảnh (<code>.png, .jpg</code>) của chính em lên hệ thống để nộp bài.</p>
+      </div>
+    </div>
+
+    <!-- Student Info Input -->
+    <div style="background: #f8fafc; border: 1.5px solid var(--border); border-radius: 12px; padding: 14px 18px; margin: 16px 0;">
+      <div style="font-weight: 800; font-size: 0.92rem; color: #1e293b; margin-bottom: 8px;">
+        👤 Thông tin học sinh nộp bài:
+      </div>
+      <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+        <input type="text" id="studentNameInput" placeholder="Họ và tên của em (Ví dụ: Nguyễn Văn An)" style="flex: 2; min-width: 200px; padding: 10px 14px; border: 1.5px solid var(--border); border-radius: 8px; font-size: 0.92rem; outline: none;">
+        <input type="text" id="studentClassInput" placeholder="Lớp (Ví dụ: 6A)" style="flex: 1; min-width: 100px; padding: 10px 14px; border: 1.5px solid var(--border); border-radius: 8px; font-size: 0.92rem; outline: none;">
       </div>
     </div>
 
@@ -629,16 +645,43 @@
       return;
     }
 
+    const sName = document.getElementById('studentNameInput').value.trim() || 'Học sinh lớp 6';
+    const sClass = document.getElementById('studentClassInput').value.trim() || '6A';
+    const previewSrc = document.getElementById('previewImg').src;
+
+    // Save to Drive localStorage
+    try {
+      const STORAGE_KEY = 'TINHOC6_ASSIGNMENT_SUBMISSIONS';
+      const stored = localStorage.getItem(STORAGE_KEY);
+      let list = stored ? JSON.parse(stored) : [];
+      const newSub = {
+        id: 'sub_' + Date.now(),
+        studentName: sName,
+        className: sClass,
+        fileName: selectedFile.name || 'minh_chung_chat_prompt.png',
+        fileSize: (selectedFile.size ? (selectedFile.size / 1024).toFixed(0) : '150') + ' KB',
+        submittedAt: new Date().toLocaleString('vi-VN'),
+        fileData: previewSrc,
+        score: null,
+        c1: null, c2: null, c3: null,
+        feedback: ''
+      };
+      list.unshift(newSub);
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(list));
+    } catch(err) {
+      console.warn("Storage quota or error:", err);
+    }
+
     playBeep(true);
     const badge = document.getElementById('subStatus');
     badge.className = "submission-status done";
-    badge.innerHTML = "<span>✅</span> Đã nộp bài thành công";
+    badge.innerHTML = "<span>✅</span> Đã lưu vào Kho Drive Bài Nộp";
     
     if (window.parent && window.parent !== window) {
       window.parent.postMessage({ source: 'LMS_ASSIGNMENT_ACTIVITY_4', status: 'submitted', timestamp: new Date().toISOString() }, '*');
     }
     
-    alert("🎉 Em đã nộp bài tập thành công lên hệ thống LMS! Thầy cô sẽ căn cứ vào Rubric để đánh giá sản phẩm của em.");
+    alert(`🎉 Chúc mừng ${sName}! Bài làm đã được tải lên Kho Drive Lưu Trữ Bài Nộp của lớp thành công! Thầy cô có thể xem và chấm điểm Rubric ngay trên Drive.`);
   }
 
   function selectRubric(criterionIndex, levelIndex, points) {

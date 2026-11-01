@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drive Nhật Ký Học Tập - Học Liệu 5 (Tin học 6 - Bài 2)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #059669;
+      --primary-dark: #047857;
+      --primary-light: #ecfdf5;
+      --accent: #10b981;
+      --text: #0f172a;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --success: #10b981;
+      --warning: #f59e0b;
+      --danger: #ef4444;
+      --radius: 14px;
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.06), 0 2px 4px -2px rgba(0, 0, 0, 0.04);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      padding: 20px;
+      min-height: 100vh;
+    }
+
+    .drive-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Drive Navbar */
+    .drive-navbar {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 14px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 14px;
+      box-shadow: var(--shadow);
+      margin-bottom: 20px;
+    }
+
+    .brand-box {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-icon {
+      width: 44px;
+      height: 44px;
+      background: linear-gradient(135deg, #059669, #34d399);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      color: white;
+      box-shadow: 0 4px 10px rgba(5, 150, 105, 0.3);
+    }
+
+    .brand-text h1 {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #0f172a;
+    }
+
+    .brand-text p {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .nav-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 8px 16px;
+      border-radius: 10px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      text-decoration: none;
+      transition: all 0.2s;
+      border: 1px solid transparent;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-1px);
+    }
+
+    .btn-outline {
+      background: white;
+      border-color: var(--border);
+      color: #334155;
+    }
+
+    .btn-outline:hover {
+      background: #f1f5f9;
+      border-color: #cbd5e1;
+    }
+
+    .btn-danger {
+      background: #fee2e2;
+      color: #b91c1c;
+      border-color: #fecaca;
+    }
+
+    .btn-danger:hover {
+      background: #fca5a5;
+    }
+
+    /* Stats Ribbon */
+    .stats-ribbon {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+
+    .stat-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      box-shadow: var(--shadow);
+    }
+
+    .stat-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+    }
+
+    .icon-green { background: #dcfce7; color: #166534; }
+    .icon-blue { background: #e0f2fe; color: #0284c7; }
+    .icon-yellow { background: #fef3c7; color: #b45309; }
+    .icon-purple { background: #ede9fe; color: #6d28d9; }
+
+    .stat-value {
+      font-size: 1.4rem;
+      font-weight: 900;
+      color: #0f172a;
+      line-height: 1.2;
+    }
+
+    .stat-label {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    /* Drive Main Workspace */
+    .drive-workspace {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+      box-shadow: var(--shadow);
+    }
+
+    /* Search & Filter Bar */
+    .filter-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 20px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 16px;
+    }
+
+    .search-box {
+      flex-grow: 1;
+      max-width: 450px;
+      position: relative;
+    }
+
+    .search-box input {
+      width: 100%;
+      padding: 10px 14px 10px 38px;
+      border-radius: 10px;
+      border: 1.5px solid var(--border);
+      font-size: 0.88rem;
+      outline: none;
+      transition: all 0.2s;
+    }
+
+    .search-box input:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.15);
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #94a3b8;
+      font-size: 0.95rem;
+    }
+
+    .filter-tools {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .filter-select {
+      padding: 8px 12px;
+      border-radius: 8px;
+      border: 1.5px solid var(--border);
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #334155;
+      background: white;
+      outline: none;
+      cursor: pointer;
+    }
+
+    .view-toggle {
+      display: flex;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .toggle-btn {
+      background: white;
+      border: none;
+      padding: 8px 12px;
+      cursor: pointer;
+      font-size: 0.95rem;
+      color: #64748b;
+    }
+
+    .toggle-btn.active {
+      background: #f1f5f9;
+      color: var(--primary);
+      font-weight: 800;
+    }
+
+    /* Grid View */
+    .articles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 18px;
+    }
+
+    .article-doc-card {
+      border: 1.5px solid var(--border);
+      border-radius: 12px;
+      padding: 18px;
+      background: white;
+      transition: all 0.2s;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+    }
+
+    .article-doc-card:hover {
+      border-color: #10b981;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.06);
+      transform: translateY(-3px);
+    }
+
+    .doc-badge-status {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      font-size: 0.72rem;
+      font-weight: 800;
+      padding: 3px 8px;
+      border-radius: 6px;
+    }
+
+    .doc-badge-status.graded {
+      background: #dcfce7;
+      color: #166534;
+      border: 1px solid #bbf7d0;
+    }
+
+    .doc-badge-status.pending {
+      background: #fef3c7;
+      color: #92400e;
+      border: 1px solid #fde68a;
+    }
+
+    .article-header {
+      margin-bottom: 12px;
+      padding-right: 70px;
+    }
+
+    .article-title-text {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: #064e3b;
+      margin-bottom: 6px;
+      line-height: 1.4;
+    }
+
+    .article-author-info {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      display: flex;
+      gap: 6px;
+      align-items: center;
+    }
+
+    .article-snippet {
+      font-size: 0.88rem;
+      color: #334155;
+      line-height: 1.5;
+      background: #f8fafc;
+      border-radius: 8px;
+      padding: 12px;
+      border-left: 3px solid #10b981;
+      margin-bottom: 14px;
+      display: -webkit-box;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .article-stats-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      border-top: 1px dashed var(--border);
+      padding-top: 10px;
+      margin-bottom: 12px;
+    }
+
+    .article-card-actions {
+      display: flex;
+      gap: 6px;
+    }
+
+    .btn-card-act {
+      flex: 1;
+      padding: 6px 10px;
+      border-radius: 6px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      cursor: pointer;
+      border: 1px solid var(--border);
+      background: #f8fafc;
+      color: #334155;
+      text-align: center;
+      transition: all 0.2s;
+    }
+
+    .btn-card-act:hover {
+      background: var(--primary-light);
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    /* Table View */
+    .articles-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.86rem;
+      display: none;
+    }
+
+    .articles-table th, .articles-table td {
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--border);
+      text-align: left;
+    }
+
+    .articles-table th {
+      background: #f8fafc;
+      font-weight: 800;
+      color: #475569;
+    }
+
+    .articles-table tr:hover td {
+      background: #f0fdf4;
+    }
+
+    /* Empty State */
+    .empty-state {
+      text-align: center;
+      padding: 60px 20px;
+      color: var(--text-muted);
+    }
+
+    .empty-icon {
+      font-size: 3.5rem;
+      margin-bottom: 12px;
+      color: #cbd5e1;
+    }
+
+    /* Modal */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(15, 23, 42, 0.7);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .modal-card {
+      background: white;
+      border-radius: 16px;
+      width: 100%;
+      max-width: 900px;
+      max-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    }
+
+    .modal-header {
+      padding: 16px 24px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #f8fafc;
+    }
+
+    .modal-title {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #064e3b;
+    }
+
+    .btn-close {
+      background: none;
+      border: none;
+      font-size: 1.3rem;
+      cursor: pointer;
+      color: #64748b;
+    }
+
+    .modal-body {
+      padding: 24px;
+      overflow-y: auto;
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      gap: 20px;
+    }
+
+    .article-full-view {
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      border-radius: 10px;
+      padding: 18px;
+    }
+
+    .article-full-title {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: #065f46;
+      margin-bottom: 8px;
+    }
+
+    .article-full-meta {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #bbf7d0;
+    }
+
+    .article-full-content {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: #1e293b;
+      white-space: pre-wrap;
+    }
+
+    .rubric-grading-panel {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .grading-crit-item {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 10px 14px;
+    }
+
+    .grading-crit-title {
+      font-size: 0.85rem;
+      font-weight: 800;
+      color: #1e293b;
+      margin-bottom: 6px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .radio-scores {
+      display: flex;
+      gap: 8px;
+    }
+
+    .score-btn {
+      flex: 1;
+      padding: 6px 8px;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      background: white;
+      font-size: 0.78rem;
+      font-weight: 700;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .score-btn.selected {
+      background: #059669;
+      color: white;
+      border-color: #059669;
+    }
+
+    .modal-footer {
+      padding: 14px 24px;
+      border-top: 1px solid var(--border);
+      background: #f8fafc;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  </style>
+</head>
+<body>
+
+<div class="drive-container">
+
+  <!-- Navbar -->
+  <header class="drive-navbar">
+    <div class="brand-box">
+      <div class="brand-icon">📚</div>
+      <div class="brand-text">
+        <h1>Google Drive Nhật Ký Học Tập: Nhà Báo Nhí</h1>
+        <p>Học liệu 5 - Môn Tin học 6 | Lưu trữ bài viết tóm tắt của học sinh & Chấm Rubric Tự Chủ</p>
+      </div>
+    </div>
+    <div class="nav-actions">
+      <button class="btn btn-outline" onclick="exportToCSV()">
+        <span>📊</span> Xuất Sổ Điểm CSV
+      </button>
+      <a href="hoc_lieu_5_blog_nhat_ky_glossary_rubric.html" class="btn btn-outline">
+        <span>←</span> Trang Viết Bài
+      </a>
+      <a href="index.html" class="btn btn-outline">
+        <span>🏠</span> Cổng Học Liệu
+      </a>
+    </div>
+  </header>
+
+  <!-- Stats Ribbon -->
+  <div class="stats-ribbon">
+    <div class="stat-card">
+      <div class="stat-icon icon-green">📰</div>
+      <div>
+        <div class="stat-value" id="totalArticlesCount">0</div>
+        <div class="stat-label">Tổng bài viết trong Drive</div>
+      </div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-icon icon-yellow">⏳</div>
+      <div>
+        <div class="stat-value" id="pendingGradingCount">0</div>
+        <div class="stat-label">Bài viết chờ chấm điểm</div>
+      </div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-icon icon-blue">🛡️</div>
+      <div>
+        <div class="stat-value" id="autonomyRate">100%</div>
+        <div class="stat-label">Tỷ lệ tự chủ (Không sao chép)</div>
+      </div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-icon icon-purple">🌟</div>
+      <div>
+        <div class="stat-value" id="avgScoreVal">--</div>
+        <div class="stat-label">Điểm Rubric trung bình</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Workspace -->
+  <main class="drive-workspace">
+    <!-- Filter and Search -->
+    <div class="filter-bar">
+      <div class="search-box">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="searchInput" placeholder="Tìm theo tên học sinh, tiêu đề hoặc từ khóa bài viết..." oninput="renderDrive()">
+      </div>
+
+      <div class="filter-tools">
+        <select id="classFilter" class="filter-select" onchange="renderDrive()">
+          <option value="all">Tất cả các lớp</option>
+          <option value="6A">Lớp 6A</option>
+          <option value="6B">Lớp 6B</option>
+          <option value="6C">Lớp 6C</option>
+        </select>
+
+        <select id="statusFilter" class="filter-select" onchange="renderDrive()">
+          <option value="all">Tất cả trạng thái</option>
+          <option value="pending">Chờ chấm điểm</option>
+          <option value="graded">Đã chấm điểm</option>
+        </select>
+
+        <div class="view-toggle">
+          <button class="toggle-btn active" id="btnGridView" onclick="switchView('grid')" title="Dạng lưới thẻ">⊞</button>
+          <button class="toggle-btn" id="btnTableView" onclick="switchView('table')" title="Dạng danh sách">☰</button>
+        </div>
+
+        <button class="btn btn-danger" style="padding: 7px 12px; font-size: 0.8rem;" onclick="clearAllArticles()">
+          <span>🗑️</span> Xóa dữ liệu mẫu
+        </button>
+      </div>
+    </div>
+
+    <!-- Grid View -->
+    <div class="articles-grid" id="articlesGrid"></div>
+
+    <!-- Table View -->
+    <table class="articles-table" id="articlesTable">
+      <thead>
+        <tr>
+          <th>Tác giả (Học sinh)</th>
+          <th>Lớp</th>
+          <th>Tiêu đề bài báo</th>
+          <th>Số câu / Số từ</th>
+          <th>Thời gian nộp</th>
+          <th>Điểm Rubric 2</th>
+          <th style="text-align: right;">Thao tác</th>
+        </tr>
+      </thead>
+      <tbody id="articlesTableBody"></tbody>
+    </table>
+
+    <!-- Empty State -->
+    <div class="empty-state" id="emptyState" style="display: none;">
+      <div class="empty-icon">📖</div>
+      <h3 style="font-size: 1.15rem; margin-bottom: 6px; color: #1e293b;">Chưa có bài viết nào trong Drive</h3>
+      <p style="font-size: 0.88rem;">Học sinh sau khi xuất bản ở <strong>Học liệu 5</strong> sẽ tự động lưu trữ tại đây!</p>
+    </div>
+  </main>
+</div>
+
+<!-- Modal Xem Chi Tiết Bài Viết & Chấm Rubric 2 -->
+<div class="modal-overlay" id="articleModal">
+  <div class="modal-card">
+    <div class="modal-header">
+      <div class="modal-title" id="modalStudentTitle">Bài báo nhí của học sinh</div>
+      <button class="btn-close" onclick="closeModal()">✕</button>
+    </div>
+    <div class="modal-body">
+      <!-- Cột trái: Nội dung bài viết -->
+      <div class="article-full-view">
+        <div class="article-full-title" id="modalArtTitle"></div>
+        <div class="article-full-meta" id="modalArtMeta"></div>
+        <div class="article-full-content" id="modalArtContent"></div>
+      </div>
+
+      <!-- Cột phải: Bảng chấm Rubric 2 nhanh -->
+      <div class="rubric-grading-panel">
+        <h4 style="font-size: 0.95rem; font-weight: 800; color: #059669;">
+          📊 Chấm điểm theo Rubric Hoạt động 4 (10đ)
+        </h4>
+
+        <!-- Tiêu chí 1 -->
+        <div class="grading-crit-item">
+          <div class="grading-crit-title">
+            <span>1. Tính tự chủ (Không sao chép AI)</span>
+            <strong id="modalC1Score">-- / 5đ</strong>
+          </div>
+          <div class="radio-scores">
+            <button class="score-btn" onclick="setModalScore(1, 5)">Tốt (5đ)</button>
+            <button class="score-btn" onclick="setModalScore(1, 3)">Đạt (3đ)</button>
+            <button class="score-btn" onclick="setModalScore(1, 0)">Cố gắng (0đ)</button>
+          </div>
+        </div>
+
+        <!-- Tiêu chí 2 -->
+        <div class="grading-crit-item">
+          <div class="grading-crit-title">
+            <span>2. Dung lượng (3-5 câu) & Tính chính xác</span>
+            <strong id="modalC2Score">-- / 3đ</strong>
+          </div>
+          <div class="radio-scores">
+            <button class="score-btn" onclick="setModalScore(2, 3)">Tốt (3đ)</button>
+            <button class="score-btn" onclick="setModalScore(2, 2)">Đạt (2đ)</button>
+            <button class="score-btn" onclick="setModalScore(2, 1)">Cố gắng (1đ)</button>
+          </div>
+        </div>
+
+        <!-- Tiêu chí 3 -->
+        <div class="grading-crit-item">
+          <div class="grading-crit-title">
+            <span>3. Trình bày sạch đẹp & Đúng chính tả</span>
+            <strong id="modalC3Score">-- / 2đ</strong>
+          </div>
+          <div class="radio-scores">
+            <button class="score-btn" onclick="setModalScore(3, 2)">Tốt (2đ)</button>
+            <button class="score-btn" onclick="setModalScore(3, 1)">Đạt (1đ)</button>
+            <button class="score-btn" onclick="setModalScore(3, 0)">Cố gắng (0đ)</button>
+          </div>
+        </div>
+
+        <!-- Lời nhận xét -->
+        <div>
+          <label style="font-size: 0.82rem; font-weight: 700; color: #334155; display: block; margin-bottom: 4px;">
+            Nhận xét sư phạm của thầy/cô:
+          </label>
+          <textarea id="modalFeedbackInput" rows="2" style="width: 100%; border: 1.5px solid var(--border); border-radius: 8px; padding: 8px; font-size: 0.85rem; outline: none;" placeholder="Ghi nhận sự tiến bộ và lời khuyên cho học sinh..."></textarea>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <div>
+        <span style="font-size: 0.85rem; color: #64748b;">Tổng điểm tính toán: </span>
+        <strong style="font-size: 1.2rem; color: #059669;" id="modalTotalScore">-- / 10</strong>
+      </div>
+      <div>
+        <button class="btn btn-primary" onclick="saveGradingFromModal()">
+          <span>💾</span> Lưu kết quả chấm Rubric
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const STORAGE_KEY = 'TINHOC6_BLOG_ARTICLES';
+  let currentView = 'grid';
+  let activeGradingId = null;
+  let tempScores = { c1: null, c2: null, c3: null };
+
+  // Sample data to make drive active immediately
+  const SAMPLE_ARTICLES = [
+    {
+      id: 'art_sample_1',
+      author: 'Nguyễn Văn An - Lớp 6A',
+      title: 'Điều em tâm đắc về mưu kế cọc gỗ Bạch Đằng năm 938',
+      content: 'Sau khi trò chuyện với trợ lý AI, em đã hiểu rõ hơn về mưu kế cắm cọc gỗ trên sông Bạch Đằng năm 938 của Ngô Quyền. Nhờ biết tính con nước thủy triều lên xuống, quân ta đã nhử thuyền chiến của giặc Nam Hán vào bãi cọc và giành thắng lợi vang dội. Chiến thắng lịch sử này đã chấm dứt hơn 1.000 năm Bắc thuộc và mở ra thời kỳ độc lập lâu dài cho dân tộc ta. Em rất tự hào về trí tuệ của cha ông mình!',
+      time: '01/11/2026, 09:30',
+      score: 10,
+      c1: 5, c2: 3, c3: 2,
+      feedback: 'Bài viết tuyệt vời! Giọng văn tự nhiên, đúng 4 câu, không sao chép máy móc.'
+    },
+    {
+      id: 'art_sample_2',
+      author: 'Trần Thị Mai - Lớp 6B',
+      title: 'Khám phá bí mật về Mặt Trăng tròn khuyết',
+      content: 'Qua cuộc trò chuyện cùng AI, em biết được rằng Mặt Trăng không tự phát ra ánh sáng mà nó phản chiếu lại ánh sáng của Mặt Trời. Vì Mặt Trăng chuyển động quanh Trái Đất nên phần bề mặt được chiếu sáng hướng về phía chúng ta thay đổi theo từng ngày. Do đó, vào ban đêm em nhìn lên bầu trời lúc thấy trăng khuyết hình lưỡi liềm, lúc lại thấy trăng tròn vành vạnh. Khoa học tự nhiên thật là kỳ diệu!',
+      time: '01/11/2026, 09:42',
+      score: null,
+      c1: null, c2: null, c3: null,
+      feedback: ''
+    },
+    {
+      id: 'art_sample_3',
+      author: 'Lê Minh Tuấn - Lớp 6A',
+      title: 'Trái Đất quay và hiện tượng ngày đêm',
+      content: 'Trái Đất của chúng ta có hình khối cầu và liên tục tự quay quanh trục từ Tây sang Đông. Vì vậy, Mặt Trời chỉ có thể chiếu sáng được một nửa bề mặt Trái Đất, nơi được chiếu sáng là ban ngày, còn nửa đối diện chìm trong bóng tối là ban đêm. Khi Trái Đất tiếp tục quay, ngày và đêm cứ thế luân phiên nhau liên tục mà không bao giờ ngừng lại.',
+      time: '01/11/2026, 09:55',
+      score: 9,
+      c1: 5, c2: 2, c3: 2,
+      feedback: 'Tóm tắt rất mạch lạc, đúng trọng tâm kiến thức Địa lí lớp 6!'
+    }
+  ];
+
+  function getArticles() {
+    try {
+      const data = localStorage.getItem(STORAGE_KEY);
+      if (!data) {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(SAMPLE_ARTICLES));
+        return SAMPLE_ARTICLES;
+      }
+      return JSON.parse(data);
+    } catch(e) {
+      return SAMPLE_ARTICLES;
+    }
+  }
+
+  function saveArticles(list) {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(list));
+  }
+
+  function countWordsAndSentences(text) {
+    const words = text ? text.trim().split(/\s+/).length : 0;
+    const sentences = text ? (text.match(/[^.!?]+[.!?]+(\s|$)/g) || []).length : 0;
+    return { words, sentences };
+  }
+
+  function renderDrive() {
+    const list = getArticles();
+    const query = document.getElementById('searchInput').value.trim().toLowerCase();
+    const classFilter = document.getElementById('classFilter').value;
+    const statusFilter = document.getElementById('statusFilter').value;
+
+    const filtered = list.filter(item => {
+      const matchQuery = (item.author && item.author.toLowerCase().includes(query)) ||
+                         (item.title && item.title.toLowerCase().includes(query)) ||
+                         (item.content && item.content.toLowerCase().includes(query));
+      
+      const matchClass = classFilter === 'all' || (item.author && item.author.includes(classFilter));
+      const isGraded = item.score !== null && item.score !== undefined;
+      const matchStatus = statusFilter === 'all' || 
+                          (statusFilter === 'graded' && isGraded) || 
+                          (statusFilter === 'pending' && !isGraded);
+
+      return matchQuery && matchClass && matchStatus;
+    });
+
+    // Update Stats
+    const total = list.length;
+    const gradedList = list.filter(i => i.score !== null && i.score !== undefined);
+    const completed = gradedList.length;
+    const pending = total - completed;
+    const avg = completed > 0 ? (gradedList.reduce((acc, cur) => acc + cur.score, 0) / completed).toFixed(1) : '--';
+
+    document.getElementById('totalArticlesCount').innerText = total;
+    document.getElementById('pendingGradingCount').innerText = pending;
+    document.getElementById('avgScoreVal').innerText = avg !== '--' ? avg + '/10' : '--';
+
+    const empty = document.getElementById('emptyState');
+    const grid = document.getElementById('articlesGrid');
+    const table = document.getElementById('articlesTable');
+    const tbody = document.getElementById('articlesTableBody');
+
+    if (filtered.length === 0) {
+      empty.style.display = 'block';
+      grid.style.display = 'none';
+      table.style.display = 'none';
+      return;
+    }
+
+    empty.style.display = 'none';
+
+    if (currentView === 'grid') {
+      grid.style.display = 'grid';
+      table.style.display = 'none';
+      grid.innerHTML = '';
+
+      filtered.forEach(item => {
+        const card = document.createElement('div');
+        card.className = 'article-doc-card';
+        const isGraded = item.score !== null && item.score !== undefined;
+        const counts = countWordsAndSentences(item.content);
+
+        card.innerHTML = `
+          <div class="doc-badge-status ${isGraded ? 'graded' : 'pending'}">
+            ${isGraded ? '⭐ ' + item.score + '/10đ' : '⏳ Chờ chấm'}
+          </div>
+          <div>
+            <div class="article-header">
+              <div class="article-title-text">${escapeHTML(item.title)}</div>
+              <div class="article-author-info">
+                <span>👤</span> <strong>${escapeHTML(item.author)}</strong>
+              </div>
+            </div>
+            <div class="article-snippet">
+              "${escapeHTML(item.content)}"
+            </div>
+          </div>
+          <div>
+            <div class="article-stats-bar">
+              <span>✍️ ${counts.sentences} câu (${counts.words} từ)</span>
+              <span>⏱️ ${item.time || 'Hôm nay'}</span>
+            </div>
+            <div class="article-card-actions">
+              <button class="btn-card-act" onclick="openArticleModal('${item.id}')">
+                <span>📖</span> Xem & Chấm Rubric
+              </button>
+              <button class="btn-card-act" style="color: #b91c1c;" onclick="deleteArticle('${item.id}')" title="Xóa bài">
+                <span>🗑️</span>
+              </button>
+            </div>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+    } else {
+      grid.style.display = 'none';
+      table.style.display = 'table';
+      tbody.innerHTML = '';
+
+      filtered.forEach(item => {
+        const isGraded = item.score !== null && item.score !== undefined;
+        const counts = countWordsAndSentences(item.content);
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td><strong>${escapeHTML(item.author)}</strong></td>
+          <td><span style="background: #dcfce7; color: #15803d; padding: 2px 8px; border-radius: 6px; font-weight: 700;">6A/6B</span></td>
+          <td><strong>${escapeHTML(item.title)}</strong></td>
+          <td>${counts.sentences} câu (${counts.words} từ)</td>
+          <td style="color: #64748b; font-size: 0.8rem;">${item.time || 'Hôm nay'}</td>
+          <td>
+            <span style="font-weight: 800; color: ${isGraded ? '#059669' : '#d97706'};">
+              ${isGraded ? item.score + ' / 10đ' : '⏳ Chờ chấm'}
+            </span>
+          </td>
+          <td style="text-align: right;">
+            <button class="btn-card-act" style="display: inline-block; width: auto;" onclick="openArticleModal('${item.id}')">Xem</button>
+            <button class="btn-card-act" style="display: inline-block; width: auto; color: #b91c1c;" onclick="deleteArticle('${item.id}')">Xóa</button>
+          </td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+  }
+
+  function switchView(mode) {
+    currentView = mode;
+    document.getElementById('btnGridView').classList.toggle('active', mode === 'grid');
+    document.getElementById('btnTableView').classList.toggle('active', mode === 'table');
+    renderDrive();
+  }
+
+  function openArticleModal(id) {
+    const list = getArticles();
+    const item = list.find(i => i.id === id);
+    if (!item) return;
+
+    activeGradingId = id;
+    tempScores = {
+      c1: item.c1 !== undefined ? item.c1 : null,
+      c2: item.c2 !== undefined ? item.c2 : null,
+      c3: item.c3 !== undefined ? item.c3 : null
+    };
+
+    const counts = countWordsAndSentences(item.content);
+    document.getElementById('modalStudentTitle').innerText = `Bài làm của: ${item.author}`;
+    document.getElementById('modalArtTitle').innerText = item.title;
+    document.getElementById('modalArtMeta').innerText = `Tác giả: ${item.author} • Thời gian nộp: ${item.time || 'Hôm nay'} • Dung lượng: ${counts.sentences} câu (${counts.words} từ)`;
+    document.getElementById('modalArtContent').innerText = item.content;
+    document.getElementById('modalFeedbackInput').value = item.feedback || '';
+
+    updateModalGradingUI();
+    document.getElementById('articleModal').style.display = 'flex';
+  }
+
+  function closeModal() {
+    document.getElementById('articleModal').style.display = 'none';
+  }
+
+  function setModalScore(crit, pts) {
+    if (crit === 1) tempScores.c1 = pts;
+    if (crit === 2) tempScores.c2 = pts;
+    if (crit === 3) tempScores.c3 = pts;
+    updateModalGradingUI();
+  }
+
+  function updateModalGradingUI() {
+    document.getElementById('modalC1Score').innerText = tempScores.c1 !== null ? `${tempScores.c1} / 5đ` : '-- / 5đ';
+    document.getElementById('modalC2Score').innerText = tempScores.c2 !== null ? `${tempScores.c2} / 3đ` : '-- / 3đ';
+    document.getElementById('modalC3Score').innerText = tempScores.c3 !== null ? `${tempScores.c3} / 2đ` : '-- / 2đ';
+
+    if (tempScores.c1 !== null && tempScores.c2 !== null && tempScores.c3 !== null) {
+      const sum = tempScores.c1 + tempScores.c2 + tempScores.c3;
+      document.getElementById('modalTotalScore').innerText = `${sum} / 10đ`;
+    } else {
+      document.getElementById('modalTotalScore').innerText = '-- / 10';
+    }
+  }
+
+  function saveGradingFromModal() {
+    if (!activeGradingId) return;
+    const list = getArticles();
+    const item = list.find(i => i.id === activeGradingId);
+    if (!item) return;
+
+    if (tempScores.c1 === null || tempScores.c2 === null || tempScores.c3 === null) {
+      alert("Thầy/cô vui lòng chọn đủ 3 tiêu chí của Rubric trước khi lưu nhé!");
+      return;
+    }
+
+    item.c1 = tempScores.c1;
+    item.c2 = tempScores.c2;
+    item.c3 = tempScores.c3;
+    item.score = tempScores.c1 + tempScores.c2 + tempScores.c3;
+    item.feedback = document.getElementById('modalFeedbackInput').value.trim();
+
+    saveArticles(list);
+    closeModal();
+    renderDrive();
+    alert("✅ Đã lưu kết quả chấm Rubric 2 thành công!");
+  }
+
+  function deleteArticle(id) {
+    if (!confirm("Thầy/cô có chắc muốn xóa bài viết này khỏi Drive?")) return;
+    let list = getArticles();
+    list = list.filter(i => i.id !== id);
+    saveArticles(list);
+    renderDrive();
+  }
+
+  function clearAllArticles() {
+    if (!confirm("⚠️ Bạn có chắc muốn khôi phục/xóa sạch toàn bộ bài viết trong kho Drive này?")) return;
+    localStorage.removeItem(STORAGE_KEY);
+    renderDrive();
+  }
+
+  function exportToCSV() {
+    const list = getArticles();
+    let csv = "\uFEFFSTT,Học sinh,Tiêu đề bài viết,Nội dung tóm tắt,Số câu,Số từ,Thời gian nộp,Điểm C1 (Tự chủ),Điểm C2 (Dung lượng),Điểm C3 (Chính tả),Tổng điểm,Nhận xét\n";
+    list.forEach((item, idx) => {
+      const counts = countWordsAndSentences(item.content);
+      csv += `"${idx + 1}","${item.author || ''}","${(item.title || '').replace(/"/g, '""')}","${(item.content || '').replace(/"/g, '""')}","${counts.sentences}","${counts.words}","${item.time || ''}","${item.c1 ?? ''}","${item.c2 ?? ''}","${item.c3 ?? ''}","${item.score ?? ''}","${(item.feedback || '').replace(/"/g, '""')}"\n`;
+    });
+    const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+    const link = document.createElement("a");
+    link.href = URL.createObjectURL(blob);
+    link.download = `So_Diem_LMS_Bai2_HocLieu5_${new Date().toISOString().slice(0,10)}.csv`;
+    link.click();
+  }
+
+  function escapeHTML(str) {
+    if (!str) return '';
+    return str.replace(/[&<>'"]/g, 
+      tag => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[tag] || tag)
+    );
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    renderDrive();
+  });
+</script>
+
+</body>
+</html>

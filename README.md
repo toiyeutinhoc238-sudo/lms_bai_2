@@ -43,6 +43,8 @@
 
 ## 🚀 CỔNG ĐIỀU PHỐI TRUNG TÂM & HỒ SƠ GIÁO VIÊN
 * **Cổng trung tâm:** `index.html` (Trang Portal điều hướng và cung cấp mã nhúng Iframe cho giáo viên).
+* **Kho Drive Bài Nộp (Học liệu 4):** `kho_luu_tru_bai_nop_hoc_lieu_4.html` (Lưu trữ ảnh minh chứng prompt của học sinh, bảng chấm Rubric và xuất CSV).
+* **Kho Drive Nhật Ký Học Tập (Học liệu 5):** `kho_luu_tru_nhat_ky_hoc_lieu_5.html` (Lưu trữ bài viết tóm tắt của học sinh, chấm Rubric Tự chủ và xuất CSV).
 * **Hồ sơ Rubric & In PDF A4:** `phieu_rubric_va_danh_gia.html` (Trọn bộ 3 phiếu: Rubric 1, Rubric 2 và Bảng tổng hợp năng lực số; hỗ trợ in khổ A4 và xuất PDF một chạm).
 * **Gói SCORM 1.2:** `SCORM_KyThuatVietPrompt_TinHoc6.zip` (Sẵn sàng tải lên Moodle / Canvas / K12Online).
 * **Tài liệu học liệu chi tiết:** `Bo_Hoc_Lieu_LMS_TinHoc6_Bai2.md` & `Bo_Hoc_Lieu_LMS_TinHoc6_Bai2.html`.

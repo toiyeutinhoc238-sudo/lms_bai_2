@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Học liệu 3: Trạm Trải Nghiệm GenAI An Toàn - Tin học 6 Bài 2</title>
+  <title>Học liệu 3: Trạm Trải Nghiệm GenAI An Toàn (SchoolAI) - Tin học 6 Bài 2</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -88,6 +88,7 @@
       border-radius: 20px;
       font-size: 0.85rem;
       font-weight: 700;
+      border: 1px solid #a7f3d0;
     }
 
     /* Header */
@@ -159,7 +160,7 @@
       font-size: 1.25rem;
     }
 
-    /* SchoolAI Spotlight Card (Duy nhất cho học sinh 11 tuổi) */
+    /* SchoolAI Spotlight Card */
     .schoolai-spotlight {
       background: linear-gradient(145deg, #ffffff, #f0f9ff);
       border: 2px solid #38bdf8;
@@ -193,8 +194,8 @@
     }
 
     .spotlight-name {
-      font-size: 1.4rem;
-      font-weight: 800;
+      font-size: 1.45rem;
+      font-weight: 900;
       color: #0369a1;
       margin-bottom: 6px;
     }
@@ -202,52 +203,6 @@
     .spotlight-tagline {
       font-size: 0.92rem;
       color: var(--text-muted);
-    }
-
-    .spotlight-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .btn-primary-action {
-      display: inline-flex;
-      align-items: gap;
-      gap: 8px;
-      background: #0284c7;
-      color: white;
-      text-decoration: none;
-      padding: 10px 18px;
-      border-radius: 10px;
-      font-weight: 700;
-      font-size: 0.92rem;
-      transition: all 0.2s;
-      box-shadow: 0 4px 12px rgba(2, 132, 199, 0.25);
-    }
-
-    .btn-primary-action:hover {
-      background: #0369a1;
-      transform: translateY(-2px);
-    }
-
-    .btn-secondary-action {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: white;
-      color: #0284c7;
-      border: 1.5px solid #0284c7;
-      text-decoration: none;
-      padding: 10px 18px;
-      border-radius: 10px;
-      font-weight: 700;
-      font-size: 0.92rem;
-      transition: all 0.2s;
-    }
-
-    .btn-secondary-action:hover {
-      background: #f0f9ff;
-      transform: translateY(-2px);
     }
 
     .policy-grid {
@@ -274,7 +229,7 @@
     }
 
     .policy-icon {
-      font-size: 1.5rem;
+      font-size: 1.6rem;
       flex-shrink: 0;
       line-height: 1;
     }
@@ -287,7 +242,7 @@
     }
 
     .policy-info p {
-      font-size: 0.84rem;
+      font-size: 0.85rem;
       color: #475569;
       line-height: 1.45;
     }
@@ -323,145 +278,193 @@
       margin: 0;
     }
 
-    /* Safe Chat Simulator Box */
-    .chat-simulator {
-      border: 2px solid #bae6fd;
-      border-radius: 14px;
-      overflow: hidden;
-      background: white;
-      box-shadow: var(--shadow);
+    /* Section 2: Join SchoolAI Box */
+    .join-portal-box {
+      background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+      color: white;
+      border-radius: 16px;
+      padding: 28px;
+      box-shadow: 0 10px 25px rgba(2, 132, 199, 0.25);
+      margin-bottom: 24px;
+      text-align: center;
     }
 
-    .chat-header {
+    .join-portal-box h3 {
+      font-size: 1.4rem;
+      font-weight: 900;
+      margin-bottom: 8px;
+    }
+
+    .join-portal-box p {
+      font-size: 0.92rem;
+      opacity: 0.92;
+      max-width: 650px;
+      margin: 0 auto 20px auto;
+    }
+
+    .code-input-group {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      max-width: 550px;
+      margin: 0 auto 16px auto;
+    }
+
+    .room-code-input {
+      padding: 14px 20px;
+      border-radius: 12px;
+      border: 2px solid #bae6fd;
+      font-size: 1.25rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      text-align: center;
+      width: 240px;
+      outline: none;
+      background: white;
+      color: #0f172a;
+      transition: all 0.2s;
+    }
+
+    .room-code-input:focus {
+      border-color: #38bdf8;
+      box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.35);
+    }
+
+    .btn-join-room {
+      background: #10b981;
+      color: white;
+      border: none;
+      padding: 14px 24px;
+      border-radius: 12px;
+      font-size: 1.05rem;
+      font-weight: 800;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s;
+      box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4);
+    }
+
+    .btn-join-room:hover {
+      background: #059669;
+      transform: translateY(-2px);
+    }
+
+    .quick-links-row {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      font-size: 0.88rem;
+    }
+
+    .quick-link-btn {
+      color: white;
+      text-decoration: underline;
+      opacity: 0.9;
+      font-weight: 600;
+      transition: opacity 0.2s;
+      cursor: pointer;
+    }
+
+    .quick-link-btn:hover {
+      opacity: 1;
+    }
+
+    /* 4 Steps Guide */
+    .steps-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 14px;
+      margin: 20px 0;
+    }
+
+    .step-item {
+      background: #f8fafc;
+      border: 1.5px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 18px 16px;
+      position: relative;
+    }
+
+    .step-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
       background: #0284c7;
       color: white;
-      padding: 14px 18px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      font-weight: 800;
+      font-size: 0.85rem;
+      border-radius: 50%;
+      margin-bottom: 10px;
     }
 
-    .chat-title {
-      font-weight: 700;
-      font-size: 1rem;
+    .step-item h4 {
+      font-size: 0.98rem;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 6px;
+    }
+
+    .step-item p {
+      font-size: 0.86rem;
+      color: #475569;
+      line-height: 1.45;
+    }
+
+    /* Prompt formula reminder */
+    .prompt-formula-box {
+      background: #eff6ff;
+      border: 1.5px dashed #93c5fd;
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 16px 0;
+    }
+
+    .prompt-formula-box h4 {
+      font-size: 0.95rem;
+      color: #1e40af;
+      font-weight: 800;
+      margin-bottom: 8px;
       display: flex;
       align-items: center;
       gap: 8px;
     }
 
-    .chat-body {
-      height: 380px;
-      overflow-y: auto;
-      padding: 18px;
-      background: #f8fafc;
+    .formula-tags {
       display: flex;
-      flex-direction: column;
-      gap: 14px;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 10px;
     }
 
-    .chat-msg {
-      display: flex;
-      gap: 10px;
-      max-width: 85%;
-      animation: fadeIn 0.3s ease;
+    .formula-tag {
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-weight: 800;
+      font-size: 0.82rem;
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(6px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .chat-msg.bot {
-      align-self: flex-start;
-    }
-
-    .chat-msg.user {
-      align-self: flex-end;
-      flex-direction: row-reverse;
-    }
-
-    .msg-avatar {
-      width: 34px;
-      height: 34px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1rem;
-      flex-shrink: 0;
-    }
-
-    .msg-avatar.bot { background: #e0f2fe; color: #0284c7; }
-    .msg-avatar.user { background: #dcfce7; color: #166534; }
-
-    .msg-bubble {
-      padding: 12px 16px;
-      border-radius: 14px;
-      font-size: 0.92rem;
-      line-height: 1.55;
-    }
-
-    .msg-bubble.bot {
-      background: white;
-      border: 1px solid var(--border);
-      color: #334155;
-      border-top-left-radius: 2px;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-    }
-
-    .msg-bubble.user {
-      background: #0284c7;
-      color: white;
-      border-top-right-radius: 2px;
-    }
-
-    .chat-input-row {
-      display: flex;
-      padding: 14px 16px;
-      background: white;
-      border-top: 1px solid var(--border);
-      gap: 10px;
-    }
-
-    .chat-input {
-      flex-grow: 1;
-      padding: 12px 14px;
-      border: 1.5px solid var(--border);
-      border-radius: 10px;
-      font-size: 0.92rem;
-      outline: none;
-    }
-
-    .chat-input:focus {
-      border-color: var(--primary);
-    }
-
-    .btn-send {
-      background: #0284c7;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 10px;
-      font-weight: 700;
-      cursor: pointer;
-      font-size: 0.9rem;
-      transition: background 0.2s;
-    }
-
-    .btn-send:hover {
-      background: #0369a1;
-    }
+    .tag-role { background: #ede9fe; color: #6d28d9; border: 1px solid #ddd6fe; }
+    .tag-task { background: #dcfce7; color: #15803d; border: 1px solid #bbf7d0; }
+    .tag-ctx { background: #e0f2fe; color: #0369a1; border: 1px solid #bae6fd; }
 
     /* Safety banner */
     .safety-banner {
       background: #fffbeb;
       border: 1.5px solid #fde68a;
       border-radius: 12px;
-      padding: 18px;
-      margin-top: 16px;
+      padding: 20px;
+      margin-top: 20px;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 14px;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 16px;
     }
 
     .safety-rule strong {
@@ -474,11 +477,12 @@
     .safety-rule p {
       font-size: 0.85rem;
       color: #475569;
+      line-height: 1.45;
     }
 
     footer {
       text-align: center;
-      padding: 20px 0;
+      padding: 24px 0 10px;
       font-size: 0.85rem;
       color: var(--text-muted);
     }
@@ -493,42 +497,34 @@
       <span>←</span> Về Cổng Trọn Bộ Học Liệu
     </a>
     <div class="status-badge">
-      <span>🛡️</span> Bộ lọc An toàn K-12: Đang kích hoạt
+      <span>🛡️</span> Bộ lọc An toàn K-12: SchoolAI Official
     </div>
   </div>
 
   <!-- Header Card -->
   <header class="header-card">
     <span class="tag-bubble">HỌC LIỆU 3 • LUYỆN TẬP THỰC HÀNH (15 PHÚT)</span>
-    <h1>Trạm Trải Nghiệm GenAI An Toàn Cho Học Đường</h1>
-    <p>Chuyên đề Trí tuệ Nhân tạo - Môn Tin học 6 | Khám phá các công cụ AI phù hợp lứa tuổi và thực hành viết câu lệnh Prompt</p>
+    <h1>Trạm Trải Nghiệm GenAI An Toàn: SchoolAI</h1>
+    <p>Chuyên đề Trí tuệ Nhân tạo - Môn Tin học 6 | Thực hành tương tác an toàn với trợ lý AI lớp học qua mã phòng Room Code</p>
   </header>
 
-  <!-- Phần 1: Công cụ an toàn duy nhất -->
+  <!-- Phần 1: Tại sao SchoolAI là lựa chọn duy nhất cho học sinh 11 tuổi -->
   <section class="section-card">
     <div class="section-title">
       <span class="icon">🛡️</span>
-      <h2>1. Công cụ GenAI an toàn duy nhất được lựa chọn: SchoolAI</h2>
+      <h2>1. Vì sao SchoolAI là công cụ GenAI duy nhất cho học sinh lớp 6?</h2>
     </div>
     <p>
-      Căn cứ theo <strong>Khuyến nghị của UNESCO (2023)</strong> về Trí tuệ nhân tạo trong giáo dục và các chính sách bảo vệ dữ liệu trẻ em quốc tế (<strong>COPPA, FERPA</strong>), học sinh lớp 6 (11 tuổi) <strong>chỉ được phép sử dụng duy nhất nền tảng SchoolAI</strong> được thiết kế chuyên biệt và khép kín cho nhà trường K-12:
+      Căn cứ theo <strong>Khuyến nghị của UNESCO (2023)</strong> về Trí tuệ nhân tạo trong giáo dục và các chính sách bảo vệ dữ liệu trẻ em quốc tế (<strong>COPPA, FERPA</strong>) cùng <strong>Nghị định 13/2023/NĐ-CP</strong> của Việt Nam, học sinh 11 tuổi <strong>chỉ được sử dụng duy nhất nền tảng SchoolAI</strong> được kiểm duyệt và bảo vệ khép kín trong nhà trường:
     </p>
 
     <!-- SchoolAI Spotlight Card -->
     <div class="schoolai-spotlight">
       <div class="spotlight-header">
         <div class="spotlight-title-group">
-          <div class="spotlight-badge">LỰA CHỌN DUY NHẤT CHO HỌC SINH 11 TUỔI</div>
-          <h3 class="spotlight-name">SchoolAI (Spaces) - Trợ lý AI Giáo dục An toàn</h3>
-          <p class="spotlight-tagline">Nền tảng trí tuệ nhân tạo học đường tuân thủ tuyệt đối luật bảo vệ trẻ em COPPA, FERPA và Nghị định 13/2023/NĐ-CP</p>
-        </div>
-        <div class="spotlight-actions">
-          <a href="https://schoolai.com" target="_blank" class="btn-primary-action">
-            <span>🌐</span> Mở SchoolAI.com
-          </a>
-          <a href="https://schoolai.com/join" target="_blank" class="btn-secondary-action">
-            <span>🔑</span> Vào phòng học (Join Code)
-          </a>
+          <div class="spotlight-badge">CÔNG CỤ DUY NHẤT ĐƯỢC CHỌN CHO HỌC SINH 11 TUỔI</div>
+          <h3 class="spotlight-name">SchoolAI (Spaces) - Trợ Lý Học Đường An Toàn</h3>
+          <p class="spotlight-tagline">Nền tảng AI chuẩn quốc tế cho K-12: Không cần tài khoản cá nhân, giáo viên làm chủ không gian và nội dung học tập 100%.</p>
         </div>
       </div>
 
@@ -554,7 +550,7 @@
           <div class="policy-icon">👨‍🏫</div>
           <div class="policy-info">
             <h4>3. Thầy cô giám sát 100% thời gian thực</h4>
-            <p>Mọi câu hỏi và câu trả lời trong tiết học đều hiển thị trên <strong>Teacher Dashboard</strong> của giáo viên. Hệ thống tự động gắn cờ đỏ nếu học sinh nhắc đến từ ngữ tiêu cực hoặc độc hại.</p>
+            <p>Mọi câu hỏi và câu trả lời trong tiết học đều hiển thị trên <strong>Teacher Live Dashboard</strong> của giáo viên. Hệ thống tự động gắn cờ đỏ nếu học sinh nhắc đến từ ngữ tiêu cực hoặc độc hại.</p>
           </div>
         </div>
 
@@ -578,189 +574,129 @@
     </div>
   </section>
 
-  <!-- Phần 2: Sandbox mô phỏng trực tiếp SchoolAI -->
+  <!-- Phần 2: Cổng Tham Gia Phòng Học SchoolAI Của Lớp -->
   <section class="section-card">
     <div class="section-title">
-      <span class="icon">🤖</span>
-      <h2>2. Khung thực hành câu lệnh (SchoolAI Space Simulator)</h2>
+      <span class="icon">🚀</span>
+      <h2>2. Tham gia không gian thực hành SchoolAI của lớp</h2>
     </div>
-    <p style="margin-bottom: 16px;">
-      Em hãy tự suy nghĩ và nhập câu lệnh (Prompt) của mình vào không gian học tập mô phỏng <strong>SchoolAI Space</strong> dưới đây theo công thức đã học: 
-      <strong>[Đóng vai] + [Nhiệm vụ] + [Bối cảnh / Điều kiện]</strong>. 
-      Sau khi AI phản hồi, em hãy chụp ảnh màn hình để chuẩn bị nộp bài ở <strong>Học liệu 4</strong> nhé!
-    </p>
 
-    <div class="chat-simulator" id="chatSimulator">
-      <div class="chat-header">
-        <div class="chat-title">
-          <span>🤖</span> <strong>SchoolAI Space Simulator</strong> (Trợ lý AI Tin học 6)
-        </div>
-        <span style="font-size: 0.8rem; background: rgba(255,255,255,0.25); padding: 2px 10px; border-radius: 10px;">Chế độ an toàn K-12: BẬT</span>
+    <!-- Khung nhập mã phòng trực tiếp -->
+    <div class="join-portal-box">
+      <h3>🔑 CỔNG VÀO PHÒNG HỌC SCHOOLAI</h3>
+      <p>Nhập mã phòng học (Room Code) do Thầy/Cô cung cấp để vào không gian tương tác trực tiếp với trợ lý AI lớp học:</p>
+      
+      <div class="code-input-group">
+        <input type="text" id="roomCodeInput" class="room-code-input" placeholder="MÃ PHÒNG" maxlength="10" autocomplete="off" onkeydown="handleCodeKey(event)">
+        <button class="btn-join-room" onclick="joinSchoolAI()">
+          <span>🚀</span> Vào phòng học ngay
+        </button>
       </div>
 
-      <!-- Chat Body -->
-      <div class="chat-body" id="chatBody">
-        <div class="chat-msg bot">
-          <div class="msg-avatar bot">🤖</div>
-          <div class="msg-bubble bot">
-            Xin chào em! Thầy là <strong>SchoolAI - Trợ lý học tập môn Tin học 6</strong>.<br>
-            Em hãy tự soạn một câu lệnh (Prompt) theo công thức 3 thành phần: 
-            <strong>[Đóng vai] + [Nhiệm vụ] + [Bối cảnh]</strong> để hỏi về một chủ đề môn học em muốn tìm hiểu nhé!
-          </div>
-        </div>
+      <div class="quick-links-row">
+        <span class="quick-link-btn" onclick="openDirectSchoolAI()">🌐 Hoặc mở trực tiếp trang SchoolAI.com/join</span>
+        <span>•</span>
+        <span class="quick-link-btn" onclick="openHomeSchoolAI()">Trang chủ SchoolAI.com</span>
+      </div>
+    </div>
+
+    <!-- 4 Bước thực hành của học sinh -->
+    <h3 style="font-size: 1.15rem; color: #0369a1; margin-bottom: 12px;">
+      📋 4 Bước thực hành trải nghiệm dành cho học sinh:
+    </h3>
+
+    <div class="steps-container">
+      <div class="step-item">
+        <div class="step-number">1</div>
+        <h4>Nhận mã phòng</h4>
+        <p>Thầy/Cô khởi chạy Space và cấp <strong>Mã Code (Join Code)</strong> gồm 4-5 chữ cái cho cả lớp.</p>
       </div>
 
-      <!-- Input row (No pre-filled cheat buttons) -->
-      <div class="chat-input-row">
-        <input type="text" id="userInput" class="chat-input" placeholder="Tự nhập câu lệnh Prompt của em vào đây..." onkeydown="handleInputKey(event)">
-        <button class="btn-send" onclick="sendPrompt()">Gửi câu lệnh ➔</button>
+      <div class="step-item">
+        <div class="step-number">2</div>
+        <h4>Điền họ tên</h4>
+        <p>Mở link phòng học, gõ họ tên của em (ví dụ: <code>Nguyễn Văn An - 6A</code>). Không cần tạo tài khoản hay mật khẩu.</p>
       </div>
+
+      <div class="step-item">
+        <div class="step-number">3</div>
+        <h4>Tương tác với AI</h4>
+        <p>Gõ câu lệnh Prompt chuẩn 3 thành phần để hỏi về một chủ đề môn học lớp 6 mà em quan tâm.</p>
+      </div>
+
+      <div class="step-item">
+        <div class="step-number">4</div>
+        <h4>Chụp màn hình</h4>
+        <p>Chụp ảnh màn hình đoạn chat (thấy rõ cả câu hỏi của em và câu trả lời của AI) để nộp bài sang <strong>Học liệu 4</strong>.</p>
+      </div>
+    </div>
+
+    <!-- Nhắc lại công thức Prompt -->
+    <div class="prompt-formula-box">
+      <h4>💡 Nhắc lại công thức câu lệnh Prompt chuẩn 3 thành phần (Từ video Hoạt động 2):</h4>
+      <div class="formula-tags">
+        <span class="formula-tag tag-role">1. Đóng vai (Role): Cho AI biết nó là ai</span>
+        <span class="formula-tag tag-task">2. Nhiệm vụ (Task): Nêu rõ việc cần làm</span>
+        <span class="formula-tag tag-ctx">3. Bối cảnh (Context): Trình độ lớp 6, số câu giới hạn</span>
+      </div>
+      <p style="font-size: 0.88rem; color: #1e3a8a;">
+        <em>Ví dụ chuẩn:</em> <strong>"Em hãy đóng vai một nhà khoa học lịch sử [Vai trò], giải thích cho em ý nghĩa của chiến thắng Bạch Đằng năm 938 [Nhiệm vụ], bằng ngôn từ dễ hiểu cho học sinh lớp 6 trong khoảng 3 đến 4 câu ngắn gọn [Bối cảnh]."</strong>
+      </p>
     </div>
 
     <!-- Cẩm nang 4 KHÔNG -->
+    <h3 style="font-size: 1.15rem; color: #92400e; margin: 24px 0 8px; display: flex; align-items: center; gap: 8px;">
+      <span>🛡️</span> Cẩm nang 4 "KHÔNG" để bảo vệ an toàn số khi chat với AI:
+    </h3>
     <div class="safety-banner">
       <div class="safety-rule">
         <strong>1. KHÔNG chia sẻ tin cá nhân</strong>
-        <p>Tuyệt đối không gõ họ tên đầy đủ, địa chỉ nhà, SĐT, trường lớp hay mật khẩu vào AI.</p>
+        <p>Tuyệt đối không gõ họ tên đầy đủ, địa chỉ nhà, SĐT, trường lớp hay mật khẩu vào ô chat của AI.</p>
       </div>
       <div class="safety-rule">
         <strong>2. KHÔNG tin tưởng 100%</strong>
-        <p>AI có thể bị "ảo giác" (bịa thông tin). Luôn kiểm chứng lại với Sách giáo khoa và Thầy cô.</p>
+        <p>AI có thể bị "ảo giác" (bịa thông tin). Luôn đối chiếu kiểm chứng lại với Sách giáo khoa và Thầy cô.</p>
       </div>
       <div class="safety-rule">
         <strong>3. KHÔNG copy-paste nguyên văn</strong>
-        <p>Hãy tự chắt lọc thông tin và viết lại bằng lời văn của em để rèn luyện tính tự chủ.</p>
+        <p>Hãy tự chắt lọc thông tin và viết lại bằng lời văn của em để nhận trọn điểm tự chủ ở Học liệu 5.</p>
       </div>
       <div class="safety-rule">
         <strong>4. KHÔNG dùng từ khiếm nhã</strong>
-        <p>Luôn tôn trọng, lịch sự, không yêu cầu nội dung xấu, bạo lực hoặc gian lận.</p>
+        <p>Luôn tôn trọng, lịch sự, không yêu cầu nội dung xấu, bạo lực hay tìm cách gian lận thi cử.</p>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
   <footer>
-    <p>Chương trình GDPT 2018 - Tin học 6 | Hoạt động 3: Trải nghiệm công cụ AI an toàn</p>
+    <p>Chương trình GDPT 2018 - Tin học 6 | Hoạt động 3: Trải nghiệm công cụ AI an toàn trên SchoolAI</p>
   </footer>
 </div>
 
 <script>
-  // Web Audio Context for Sound Effects
-  const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-  function playAlertSound(isError) {
-    if (!audioCtx) return;
-    try {
-      const osc = audioCtx.createOscillator();
-      const gain = audioCtx.createGain();
-      osc.connect(gain);
-      gain.connect(audioCtx.destination);
-      if (isError) {
-        osc.frequency.setValueAtTime(200, audioCtx.currentTime);
-        osc.frequency.setValueAtTime(150, audioCtx.currentTime + 0.15);
-        gain.gain.setValueAtTime(0.2, audioCtx.currentTime);
-        gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.3);
-        osc.start();
-        osc.stop(audioCtx.currentTime + 0.3);
-      } else {
-        osc.frequency.setValueAtTime(587.33, audioCtx.currentTime);
-        osc.frequency.setValueAtTime(880, audioCtx.currentTime + 0.1);
-        gain.gain.setValueAtTime(0.15, audioCtx.currentTime);
-        gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.25);
-        osc.start();
-        osc.stop(audioCtx.currentTime + 0.25);
-      }
-    } catch(e) {}
-  }
-
-  function handleInputKey(event) {
+  function handleCodeKey(event) {
     if (event.key === 'Enter') {
-      sendPrompt();
+      joinSchoolAI();
     }
   }
 
-  function sendPrompt() {
-    const input = document.getElementById('userInput');
-    const text = input.value.trim();
-    if (!text) return;
-
-    // Append User Message
-    appendMessage('user', escapeHTML(text));
-    input.value = '';
-
-    // Check Safety (Phone numbers, password, sensitive personal info)
-    const phonePattern = /(0|\+84)(3|5|7|8|9)[0-9]{8}/;
-    const passPattern = /(mật khẩu|mat khau|password|pass|cccd|cmnd|địa chỉ nhà|so nha)/i;
-
-    if (phonePattern.test(text) || passPattern.test(text)) {
-      playAlertSound(true);
-      setTimeout(function() {
-        appendMessage('bot', `
-          <strong style="color: #b91c1c;">🚨 CẢNH BÁO AN TOÀN SỐ!</strong><br>
-          Hệ thống phát hiện em đang chia sẻ thông tin cá nhân hoặc nhạy cảm (số điện thoại, mật khẩu, địa chỉ...).<br>
-          <em>Em hãy nhớ Nguyên tắc 1 trong Cẩm nang 4 KHÔNG: Tuyệt đối không nhập thông tin định danh cá nhân vào ô chat của AI để bảo vệ quyền riêng tư!</em>
-        `);
-      }, 500);
-      return;
+  function joinSchoolAI() {
+    const input = document.getElementById('roomCodeInput');
+    const code = input.value.trim().toUpperCase();
+    if (code) {
+      window.open('https://app.schoolai.com/code/' + encodeURIComponent(code), '_blank');
+    } else {
+      window.open('https://schoolai.com/join', '_blank');
     }
-
-    // Process Educational Response based on prompt structure
-    playAlertSound(false);
-    setTimeout(function() {
-      const lower = text.toLowerCase();
-      
-      const hasRole = lower.includes("đóng vai") || lower.includes("dong vai") || lower.includes("hóa thân") || lower.includes("vai trò") || lower.includes("nhà khoa học") || lower.includes("cô giáo") || lower.includes("thầy giáo") || lower.includes("chuyên gia") || lower.includes("phi hành gia") || lower.includes("bác sĩ");
-      const hasContext = lower.includes("lớp 6") || lower.includes("lop 6") || lower.includes("ngắn gọn") || lower.includes("câu") || lower.includes("dễ hiểu") || lower.includes("học sinh") || lower.includes("gạch đầu dòng");
-      const hasTask = lower.includes("hãy") || lower.includes("giải thích") || lower.includes("kể") || lower.includes("tóm tắt") || lower.includes("liệt kê") || lower.includes("nêu");
-
-      let response = "";
-
-      if (hasRole && hasContext && hasTask) {
-        // Đạt đủ 3 thành phần
-        response = `
-          <strong>🌟 Đánh giá cấu trúc: Câu lệnh (Prompt) của em rất chuẩn xác!</strong><br>
-          • Đóng vai (Role): Đã xác định rõ vai trò chuyên môn.<br>
-          • Nhiệm vụ (Task): Yêu cầu hành động cụ thể.<br>
-          • Bối cảnh (Context): Có giới hạn đối tượng tiếp nhận và dung lượng rõ ràng.<br><br>
-          <strong>🤖 Phản hồi của Trợ lý AI:</strong><br>
-          Chào em! Với vai trò em đã phân công, thầy/cô xin giải thích theo đúng yêu cầu:<br>
-          Nội dung em vừa hỏi là một chủ đề rất ý nghĩa. Khi em cung cấp đầy đủ ngữ cảnh và độ tuổi lớp 6, câu trả lời sẽ được chọn lọc những ý chính xác, ngôn từ gần gũi, không dùng thuật ngữ cao siêu, giúp em dễ dàng nắm bắt bản chất vấn đề và tự mình tóm tắt lại.<br><br>
-          <em>👉 Em hãy chụp ảnh màn hình đoạn đối thoại này (thấy rõ câu hỏi của em và phản hồi của AI) để nộp bài ở Học liệu 4 nhé!</em>
-        `;
-      } else {
-        // Thiếu thành phần
-        let missing = [];
-        if (!hasRole) missing.push("<strong>[Đóng vai (Role)]</strong> (ví dụ: 'Đóng vai cô giáo Lịch sử...', 'Đóng vai một nhà khoa học...')");
-        if (!hasTask) missing.push("<strong>[Nhiệm vụ (Task)]</strong> (ví dụ: 'hãy giải thích...', 'hãy tóm tắt trong 3 ý...')");
-        if (!hasContext) missing.push("<strong>[Bối cảnh / Điều kiện (Context)]</strong> (ví dụ: 'dành cho học sinh lớp 6 dễ hiểu, trong khoảng 4 câu ngắn gọn')");
-
-        response = `
-          <strong>⚠️ Nhận xét câu lệnh Prompt của em:</strong><br>
-          Câu lệnh của em đang bị thiếu: ${missing.join(", ")}.<br><br>
-          <em>Nếu thiếu các thành phần trên, AI sẽ trả lời theo mức độ học thuật chung chung hoặc dài dòng. Em hãy đọc lại công thức ở Hoạt động 2, viết lại câu lệnh đầy đủ cả 3 thành phần rồi gửi lại nhé!</em>
-        `;
-      }
-
-      appendMessage('bot', response);
-    }, 700);
   }
 
-  function appendMessage(sender, htmlContent) {
-    const body = document.getElementById('chatBody');
-    const msg = document.createElement('div');
-    msg.className = `chat-msg ${sender}`;
-    msg.innerHTML = `
-      <div class="msg-avatar ${sender}">${sender === 'bot' ? '🤖' : 'HS'}</div>
-      <div class="msg-bubble ${sender}">${htmlContent}</div>
-    `;
-    body.appendChild(msg);
-    body.scrollTop = body.scrollHeight;
+  function openDirectSchoolAI() {
+    window.open('https://schoolai.com/join', '_blank');
   }
 
-  function escapeHTML(str) {
-    if (!str) return '';
-    return str.replace(/[&<>'"]/g, 
-      tag => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[tag] || tag)
-    );
+  function openHomeSchoolAI() {
+    window.open('https://schoolai.com', '_blank');
   }
 </script>
 

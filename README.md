@@ -22,7 +22,7 @@
 3. **`hoc_lieu_3_cong_cu_genai_an_toan.html` (Hoạt động 3 - Trải nghiệm 15 phút)**
    - **Chủ đề:** Trạm Trải Nghiệm GenAI An Toàn Học Đường - **SchoolAI**.
    - **Lựa chọn duy nhất:** Nền tảng **SchoolAI (Spaces)** (`schoolai.com`) đáp ứng trọn vẹn chính sách bảo vệ trẻ em (COPPA, FERPA, Nghị định 13/2023/NĐ-CP): Không yêu cầu tài khoản cá nhân, học sinh 11 tuổi vào học bằng Room Code, thầy cô giám sát 100%.
-   - Tích hợp **SchoolAI Space Simulator** tương tác trực tiếp: Có bộ lọc cảnh báo đỏ khi nhập dữ liệu cá nhân (SĐT, mật khẩu, CCCD) và phân tích cấu trúc prompt đạt chuẩn.
+   - Tích hợp cổng nhập **Room Code** trực tiếp để vào không gian lớp học SchoolAI của giáo viên, hướng dẫn 4 bước tương tác an toàn và cẩm nang 4 "KHÔNG" bảo vệ bản thân.
    - Cẩm nang 4 "KHÔNG" bảo vệ bản thân và an toàn số.
 
 4. **`hoc_lieu_4_nop_bai_assignment_rubric.html` (Hoạt động 3 - Nộp bài Luyện tập 15 phút)**

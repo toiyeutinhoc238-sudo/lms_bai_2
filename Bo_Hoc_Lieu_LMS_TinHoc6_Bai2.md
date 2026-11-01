@@ -10,7 +10,7 @@
 Bộ học liệu này được thiết kế đồng bộ cho 1 tiết học trực tuyến (E-learning 45 phút), bao gồm 5 cấu phần tương ứng với tiến trình dạy học:
 1. **Học liệu 1 (Khởi động - 5 phút):** Diễn đàn thảo luận (Forum) trên LMS kích hoạt tư duy và nhu cầu sử dụng AI.
 2. **Học liệu 2 (Hình thành kiến thức mới - 15 phút):** Gói SCORM Video & Infographic tương tác tích hợp Pop-up Quiz (H5P / Edpuzzle) hướng dẫn kỹ thuật viết Prompt (công thức 3 thành phần).
-3. **Học liệu 3 (Luyện tập - 15 phút):** Trạm GenAI an toàn chuẩn mực duy nhất cho học sinh 11 tuổi (**SchoolAI** - chuẩn COPPA/FERPA) kèm Khung thực hành SchoolAI Space Simulator và Cẩm nang 4 "KHÔNG" bảo mật thông tin.
+3. **Học liệu 3 (Luyện tập - 15 phút):** Trạm GenAI an toàn chuẩn mực duy nhất cho học sinh 11 tuổi (**SchoolAI** - chuẩn COPPA/FERPA) kèm cổng vào phòng học bằng Room Code trực tiếp và Cẩm nang 4 "KHÔNG" bảo mật thông tin.
 4. **Học liệu 4 (Luyện tập - Nộp bài):** Cấu hình hoạt động Nộp bài (Assignment) trên LMS kèm **Rubric đánh giá 10 điểm** (chấm ảnh chụp màn hình đoạn chat).
 5. **Học liệu 5 (Vận dụng - 10 phút):** Công cụ Blog / Nhật ký học tập (Glossary) trên LMS kèm **Rubric đánh giá 10 điểm** (đánh giá bài tóm tắt kiến thức, không sao chép).
 
@@ -234,7 +234,7 @@ Giáo viên nhúng nội dung này ngay bên dưới link công cụ trên LMS:
 ### 2. Đề bài & Hướng dẫn chi tiết cho Học sinh (Student Instruction)
 
 > **NHIỆM VỤ CỦA EM:**
-> Em hãy đóng vai một "Chỉ huy công nghệ", sử dụng công cụ AI an toàn (SchoolAI hoặc SchoolAI Space Simulator) để tìm hiểu một chủ đề môn học lớp 6 mà em yêu thích!
+> Em hãy đóng vai một "Chỉ huy công nghệ", sử dụng công cụ AI an toàn (SchoolAI) thông qua mã phòng của thầy cô để tìm hiểu một chủ đề môn học lớp 6 mà em yêu thích!
 >
 > **CÁC BƯỚC THỰC HIỆN:**
 > 1. **Bước 1:** Chọn 1 trong 3 chủ đề học tập gợi ý dưới đây:

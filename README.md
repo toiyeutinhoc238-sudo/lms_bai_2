@@ -20,9 +20,9 @@
    - Chuẩn đóng gói **SCORM 1.2** (`SCORM_KyThuatVietPrompt_TinHoc6.zip`) tự động gửi điểm về Sổ điểm LMS.
 
 3. **`hoc_lieu_3_cong_cu_genai_an_toan.html` (Hoạt động 3 - Trải nghiệm 15 phút)**
-   - **Chủ đề:** Trạm Trải Nghiệm GenAI An Toàn Học Đường.
-   - Danh mục link truy cập các công cụ AI được kiểm duyệt: **EduChat** (`educhat.vn`), **SchoolAI Spaces** (`schoolai.com`), **Khanmigo** (`khanacademy.org`).
-   - Tích hợp **EduChat Sandbox Simulator** tương tác trực tiếp: Có bộ lọc cảnh báo đỏ khi nhập dữ liệu cá nhân (SĐT, mật khẩu) và phân tích cấu trúc prompt đạt chuẩn 10/10.
+   - **Chủ đề:** Trạm Trải Nghiệm GenAI An Toàn Học Đường - **SchoolAI**.
+   - **Lựa chọn duy nhất:** Nền tảng **SchoolAI (Spaces)** (`schoolai.com`) đáp ứng trọn vẹn chính sách bảo vệ trẻ em (COPPA, FERPA, Nghị định 13/2023/NĐ-CP): Không yêu cầu tài khoản cá nhân, học sinh 11 tuổi vào học bằng Room Code, thầy cô giám sát 100%.
+   - Tích hợp **SchoolAI Space Simulator** tương tác trực tiếp: Có bộ lọc cảnh báo đỏ khi nhập dữ liệu cá nhân (SĐT, mật khẩu, CCCD) và phân tích cấu trúc prompt đạt chuẩn.
    - Cẩm nang 4 "KHÔNG" bảo vệ bản thân và an toàn số.
 
 4. **`hoc_lieu_4_nop_bai_assignment_rubric.html` (Hoạt động 3 - Nộp bài Luyện tập 15 phút)**

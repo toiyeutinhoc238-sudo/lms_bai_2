@@ -10,7 +10,7 @@
 Bộ học liệu này được thiết kế đồng bộ cho 1 tiết học trực tuyến (E-learning 45 phút), bao gồm 5 cấu phần tương ứng với tiến trình dạy học:
 1. **Học liệu 1 (Khởi động - 5 phút):** Diễn đàn thảo luận (Forum) trên LMS kích hoạt tư duy và nhu cầu sử dụng AI.
 2. **Học liệu 2 (Hình thành kiến thức mới - 15 phút):** Gói SCORM Video & Infographic tương tác tích hợp Pop-up Quiz (H5P / Edpuzzle) hướng dẫn kỹ thuật viết Prompt (công thức 3 thành phần).
-3. **Học liệu 3 (Luyện tập - 15 phút):** Danh mục link công cụ GenAI an toàn phù hợp lứa tuổi (EduChat, SchoolAI, Khanmigo...) kèm Cẩm nang 4 "KHÔNG" bảo mật thông tin.
+3. **Học liệu 3 (Luyện tập - 15 phút):** Trạm GenAI an toàn chuẩn mực duy nhất cho học sinh 11 tuổi (**SchoolAI** - chuẩn COPPA/FERPA) kèm Khung thực hành SchoolAI Space Simulator và Cẩm nang 4 "KHÔNG" bảo mật thông tin.
 4. **Học liệu 4 (Luyện tập - Nộp bài):** Cấu hình hoạt động Nộp bài (Assignment) trên LMS kèm **Rubric đánh giá 10 điểm** (chấm ảnh chụp màn hình đoạn chat).
 5. **Học liệu 5 (Vận dụng - 10 phút):** Công cụ Blog / Nhật ký học tập (Glossary) trên LMS kèm **Rubric đánh giá 10 điểm** (đánh giá bài tóm tắt kiến thức, không sao chép).
 
@@ -171,18 +171,22 @@ TIẾN TRÌNH VIDEO TƯƠNG TÁC (TIMELINE THỰC TẾ):
 
 ---
 
-## HỌC LIỆU 3: LINK CÔNG CỤ GENAI AN TOÀN & CẨM NANG AN TOÀN SỐ
+## HỌC LIỆU 3: CÔNG CỤ GENAI AN TOÀN DUY NHẤT CHO HỌC SINH 11 TUỔI - SCHOOLAI
 
-Nhằm đảm bảo an toàn dữ liệu, quyền riêng tư cho học sinh lứa tuổi 11-12 tuổi (lớp 6) theo khuyến nghị của UNESCO (2023), giáo viên cung cấp danh mục công cụ đã qua chọn lọc:
+Căn cứ vào **Khuyến nghị UNESCO (2023)** về Trí tuệ nhân tạo trong giáo dục, các chính sách bảo vệ dữ liệu trẻ em quốc tế (**COPPA, FERPA**) và **Nghị định 13/2023/NĐ-CP của Việt Nam**, học sinh lớp 6 (11 tuổi) **chỉ được phép sử dụng duy nhất nền tảng SchoolAI (`schoolai.com`)**:
 
-### 1. Danh sách công cụ GenAI an toàn được khuyên dùng
+### 1. Phân tích Policy & Lý do lựa chọn duy nhất SchoolAI
 
-| Tên công cụ | Đường link truy cập | Đặc điểm an toàn nổi bật | Phù hợp cho lớp 6 |
-| :--- | :--- | :--- | :---: |
-| **EduChat** *(Ưu tiên 1)* | `https://www.educhat.vn` (hoặc hệ thống EduChat trường học) | • Được thiết kế chuyên biệt cho học sinh phổ thông.<br>• Tự động chặn và lọc từ ngữ độc hại, bạo lực.<br>• Không thu thập thông tin cá nhân cho mục đích quảng cáo. | ⭐⭐⭐⭐⭐ |
-| **SchoolAI (Spaces)** *(Ưu tiên 2)* | `https://schoolai.com` | • Giáo viên tạo phòng học (Space) và cấp mã Code cho học sinh.<br>• Học sinh **không cần đăng ký tài khoản cá nhân / không cần email**.<br>• Giáo viên theo dõi lịch sử chat thời gian thực để can thiệp kịp thời. | ⭐⭐⭐⭐⭐ |
-| **Khanmigo (Khan Academy)** | `https://www.khanacademy.org/khanmigo` | • AI gia sư chuẩn mực thế giới của Khan Academy.<br>• **Không giải bài hộ**: Hướng dẫn học sinh tư duy từng bước bằng phương pháp gợi mở Socrates. | ⭐⭐⭐⭐⭐ |
-| **Microsoft Copilot for Education** | `https://copilot.microsoft.com` | • Sử dụng bằng tài khoản định danh của nhà trường (Office 365 A1/A3).<br>• Dữ liệu đoạn chat không bị dùng để huấn luyện mô hình công cộng. | ⭐⭐⭐⭐ |
+| Tiêu chuẩn an toàn & Pháp lý | Yêu cầu đối với học sinh 11 tuổi (Lớp 6) | Đánh giá SchoolAI |
+| :--- | :--- | :---: |
+| **Bảo vệ danh tính (Zero-PII)** | Học sinh không được cung cấp Email, SĐT, Mật khẩu cá nhân | ✅ **100% Đạt:** Học sinh vào bằng **Mã phòng (Room Code)** do GV cấp, không cần tài khoản. |
+| **Chứng nhận Policy (COPPA/FERPA)** | Phải có cơ chế đại diện nhà trường và cam kết bảo vệ dữ liệu trẻ em | ✅ **100% Đạt:** Chứng nhận SOC 2 Type 2, cam kết Student Privacy Pledge. |
+| **Không thương mại hóa dữ liệu** | Nghiêm cấm dùng dữ liệu trẻ em để quảng cáo hoặc huấn luyện AI thương mại | ✅ **100% Đạt:** Cam kết tuyệt đối không bán hoặc dùng dữ liệu học sinh để train mô hình. |
+| **Giáo viên giám sát thực thời** | Thầy cô phải nhìn thấy và can thiệp được mọi đoạn đối thoại của học sinh | ✅ **100% Đạt:** Màn hình Teacher Dashboard thời gian thực, có cờ báo động ngôn từ xấu. |
+| **Phương pháp sư phạm Socratic** | Không giải hộ bài tập, chỉ đóng vai gia sư định hướng tư duy | ✅ **100% Đạt:** Được cấu hình từ chối giải hộ, chỉ đặt câu hỏi gợi ý từng bước. |
+
+> ⚠️ **LƯU Ý POLICY QUAN TRỌNG VỀ ĐỘ TUỔI:**  
+> Các công cụ AI thương mại như **ChatGPT (OpenAI)** quy định độ tuổi tối thiểu là 13 tuổi (phải có cha mẹ đồng ý), **Claude (Anthropic)** quy định từ 18 tuổi trở lên. Do đó, học sinh lớp 6 (11 tuổi) **tuyệt đối không được phép tự ý đăng ký tài khoản thương mại** vì vi phạm điều khoản dịch vụ (Policy) và pháp luật bảo vệ quyền riêng tư trẻ em.
 
 ---
 
@@ -230,7 +234,7 @@ Giáo viên nhúng nội dung này ngay bên dưới link công cụ trên LMS:
 ### 2. Đề bài & Hướng dẫn chi tiết cho Học sinh (Student Instruction)
 
 > **NHIỆM VỤ CỦA EM:**
-> Em hãy đóng vai một "Chỉ huy công nghệ", sử dụng công cụ AI (EduChat hoặc SchoolAI) để tìm hiểu một chủ đề môn học lớp 6 mà em yêu thích!
+> Em hãy đóng vai một "Chỉ huy công nghệ", sử dụng công cụ AI an toàn (SchoolAI hoặc SchoolAI Space Simulator) để tìm hiểu một chủ đề môn học lớp 6 mà em yêu thích!
 >
 > **CÁC BƯỚC THỰC HIỆN:**
 > 1. **Bước 1:** Chọn 1 trong 3 chủ đề học tập gợi ý dưới đây:
@@ -267,7 +271,7 @@ Giáo viên nhúng nội dung này ngay bên dưới link công cụ trên LMS:
     * ✅ Yếu tố 2: Nhiệm vụ = *"giải thích ý nghĩa chiến thắng Bạch Đằng năm 938"* (Đạt)
     * ✅ Yếu tố 3: Bối cảnh = *"cho học sinh lớp 6 nghe trong khoảng 4 câu ngắn gọn, dễ hiểu"* (Đạt)
     * ✅ Ngôn từ lịch sự, có thưa gửi, gõ dấu tiếng Việt chuẩn 100%.
-    * ✅ Ảnh chụp màn hình hiển thị cả khung câu hỏi màu xanh và câu trả lời màu xám của EduChat.
+    * ✅ Ảnh chụp màn hình hiển thị cả khung câu hỏi màu xanh và câu trả lời màu xám của SchoolAI.
   * ➔ **Điểm đánh giá:** $5 + 3 + 2 = 10\text{ điểm}$.
   * 💬 **Lời nhận xét (Feedback) của GV trên LMS:** *"Tuyệt vời! Em đã nắm vững công thức viết Prompt 3 thành phần và chọn chủ đề Lịch sử rất ý nghĩa. Tiếp tục phát huy ở Hoạt động 4 nhé!"*
 

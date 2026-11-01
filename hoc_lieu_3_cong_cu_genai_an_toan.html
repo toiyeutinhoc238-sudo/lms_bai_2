@@ -159,83 +159,168 @@
       font-size: 1.25rem;
     }
 
-    /* Safe Tools Grid */
-    .tools-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 16px;
-      margin: 16px 0;
+    /* SchoolAI Spotlight Card (Duy nhất cho học sinh 11 tuổi) */
+    .schoolai-spotlight {
+      background: linear-gradient(145deg, #ffffff, #f0f9ff);
+      border: 2px solid #38bdf8;
+      border-radius: 16px;
+      padding: 24px;
+      margin: 18px 0;
+      box-shadow: 0 10px 25px -5px rgba(2, 132, 199, 0.12);
     }
 
-    .tool-box {
-      border: 1.5px solid var(--border);
-      border-radius: 12px;
-      padding: 18px;
-      background: #fafafa;
+    .spotlight-header {
       display: flex;
-      flex-direction: column;
+      flex-wrap: wrap;
       justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 20px;
+      border-bottom: 1.5px solid #e0f2fe;
+      padding-bottom: 18px;
+    }
+
+    .spotlight-badge {
+      display: inline-block;
+      background: #0284c7;
+      color: white;
+      font-size: 0.75rem;
+      font-weight: 800;
+      padding: 4px 12px;
+      border-radius: 20px;
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+    }
+
+    .spotlight-name {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: #0369a1;
+      margin-bottom: 6px;
+    }
+
+    .spotlight-tagline {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+    }
+
+    .spotlight-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .btn-primary-action {
+      display: inline-flex;
+      align-items: gap;
+      gap: 8px;
+      background: #0284c7;
+      color: white;
+      text-decoration: none;
+      padding: 10px 18px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 0.92rem;
+      transition: all 0.2s;
+      box-shadow: 0 4px 12px rgba(2, 132, 199, 0.25);
+    }
+
+    .btn-primary-action:hover {
+      background: #0369a1;
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary-action {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: white;
+      color: #0284c7;
+      border: 1.5px solid #0284c7;
+      text-decoration: none;
+      padding: 10px 18px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 0.92rem;
       transition: all 0.2s;
     }
 
-    .tool-box:hover {
-      border-color: var(--primary);
-      transform: translateY(-2px);
-      box-shadow: var(--shadow);
-      background: white;
-    }
-
-    .tool-box.featured {
-      border-color: #38bdf8;
+    .btn-secondary-action:hover {
       background: #f0f9ff;
+      transform: translateY(-2px);
     }
 
-    .tool-header {
+    .policy-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+
+    .policy-card {
+      background: white;
+      border: 1px solid #bae6fd;
+      border-radius: 12px;
+      padding: 16px;
       display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 10px;
+      gap: 12px;
+      align-items: flex-start;
+      transition: all 0.2s;
     }
 
-    .tool-name {
-      font-weight: 800;
-      font-size: 1.1rem;
+    .policy-card:hover {
+      border-color: #0284c7;
+      box-shadow: var(--shadow);
+    }
+
+    .policy-icon {
+      font-size: 1.5rem;
+      flex-shrink: 0;
+      line-height: 1;
+    }
+
+    .policy-info h4 {
+      font-size: 0.95rem;
       color: #0f172a;
+      font-weight: 800;
+      margin-bottom: 4px;
     }
 
-    .tool-badge {
-      font-size: 0.75rem;
-      background: #dbeafe;
-      color: #1e40af;
-      padding: 3px 8px;
+    .policy-info p {
+      font-size: 0.84rem;
+      color: #475569;
+      line-height: 1.45;
+    }
+
+    .policy-warning-box {
+      background: #fff7ed;
+      border: 1.5px solid #ffedd5;
+      border-left: 4px solid #ea580c;
       border-radius: 10px;
-      font-weight: 700;
+      padding: 14px 18px;
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
     }
 
-    .tool-desc {
-      font-size: 0.88rem;
-      color: var(--text-muted);
-      line-height: 1.5;
-      margin-bottom: 14px;
+    .warning-icon {
+      font-size: 1.4rem;
+      flex-shrink: 0;
+      line-height: 1;
     }
 
-    .btn-link {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-      background: var(--primary);
-      color: white;
-      text-decoration: none;
-      padding: 8px 14px;
-      border-radius: 8px;
-      font-size: 0.88rem;
-      font-weight: 700;
-      transition: background 0.2s;
+    .warning-content strong {
+      display: block;
+      color: #9a3412;
+      font-size: 0.9rem;
+      margin-bottom: 4px;
     }
 
-    .btn-link:hover {
-      background: var(--primary-hover);
+    .warning-content p {
+      font-size: 0.85rem;
+      color: #7c2d12;
+      line-height: 1.45;
+      margin: 0;
     }
 
     /* Safe Chat Simulator Box */
@@ -419,75 +504,88 @@
     <p>Chuyên đề Trí tuệ Nhân tạo - Môn Tin học 6 | Khám phá các công cụ AI phù hợp lứa tuổi và thực hành viết câu lệnh Prompt</p>
   </header>
 
-  <!-- Phần 1: Danh sách công cụ an toàn -->
+  <!-- Phần 1: Công cụ an toàn duy nhất -->
   <section class="section-card">
     <div class="section-title">
-      <span class="icon">🔗</span>
-      <h2>1. Danh mục các công cụ GenAI an toàn được khuyên dùng</h2>
+      <span class="icon">🛡️</span>
+      <h2>1. Công cụ GenAI an toàn duy nhất được lựa chọn: SchoolAI</h2>
     </div>
     <p>
-      Theo khuyến nghị của <strong>UNESCO (2023)</strong> về Trí tuệ nhân tạo trong giáo dục, học sinh lớp 6 cần được hướng dẫn sử dụng các công cụ AI có cơ chế kiểm duyệt nội dung độc hại và bảo vệ dữ liệu trẻ em:
+      Căn cứ theo <strong>Khuyến nghị của UNESCO (2023)</strong> về Trí tuệ nhân tạo trong giáo dục và các chính sách bảo vệ dữ liệu trẻ em quốc tế (<strong>COPPA, FERPA</strong>), học sinh lớp 6 (11 tuổi) <strong>chỉ được phép sử dụng duy nhất nền tảng SchoolAI</strong> được thiết kế chuyên biệt và khép kín cho nhà trường K-12:
     </p>
 
-    <div class="tools-grid">
-      <!-- Tool 1 -->
-      <div class="tool-box featured">
-        <div>
-          <div class="tool-header">
-            <span class="tool-name">EduChat VN</span>
-            <span class="tool-badge">Ưu tiên số 1</span>
-          </div>
-          <p class="tool-desc">
-            Trợ lý AI chuyên dụng cho học sinh phổ thông. Tự động lọc ngôn từ độc hại, bảo vệ dữ liệu cá nhân học đường.
-          </p>
+    <!-- SchoolAI Spotlight Card -->
+    <div class="schoolai-spotlight">
+      <div class="spotlight-header">
+        <div class="spotlight-title-group">
+          <div class="spotlight-badge">LỰA CHỌN DUY NHẤT CHO HỌC SINH 11 TUỔI</div>
+          <h3 class="spotlight-name">SchoolAI (Spaces) - Trợ lý AI Giáo dục An toàn</h3>
+          <p class="spotlight-tagline">Nền tảng trí tuệ nhân tạo học đường tuân thủ tuyệt đối luật bảo vệ trẻ em COPPA, FERPA và Nghị định 13/2023/NĐ-CP</p>
         </div>
-        <a href="https://www.educhat.vn" target="_blank" class="btn-link">
-          <span>🚀</span> Mở EduChat.vn
-        </a>
+        <div class="spotlight-actions">
+          <a href="https://schoolai.com" target="_blank" class="btn-primary-action">
+            <span>🌐</span> Mở SchoolAI.com
+          </a>
+          <a href="https://schoolai.com/join" target="_blank" class="btn-secondary-action">
+            <span>🔑</span> Vào phòng học (Join Code)
+          </a>
+        </div>
       </div>
 
-      <!-- Tool 2 -->
-      <div class="tool-box">
-        <div>
-          <div class="tool-header">
-            <span class="tool-name">SchoolAI (Spaces)</span>
-            <span class="tool-badge">Lớp học an toàn</span>
+      <!-- 4 Trụ cột Policy -->
+      <div class="policy-grid">
+        <div class="policy-card">
+          <div class="policy-icon">🛡️</div>
+          <div class="policy-info">
+            <h4>1. Không lộ lọt thông tin (Zero-PII)</h4>
+            <p>Học sinh 11 tuổi vào học bằng <strong>mã phòng (Room Code)</strong> do thầy cô cấp. <strong>Tuyệt đối không cần đăng ký tài khoản</strong>, không thu thập Email, SĐT, hay Mật khẩu cá nhân.</p>
           </div>
-          <p class="tool-desc">
-            Học sinh vào bằng mã Room Code của thầy cô, <strong>không cần đăng ký email/SĐT cá nhân</strong>, thầy cô giám sát được nội dung chat.
-          </p>
         </div>
-        <a href="https://schoolai.com" target="_blank" class="btn-link">
-          <span>🚀</span> Mở SchoolAI.com
-        </a>
+
+        <div class="policy-card">
+          <div class="policy-icon">📜</div>
+          <div class="policy-info">
+            <h4>2. Chuẩn mực Policy quốc tế (COPPA & FERPA)</h4>
+            <p>Đạt chứng nhận bảo mật <strong>SOC 2 Type 2</strong> và cam kết <em>Student Privacy Pledge</em>. Dữ liệu của học sinh <strong>không bao giờ bị đem đi bán hoặc dùng để huấn luyện mô hình AI thương mại</strong>.</p>
+          </div>
+        </div>
+
+        <div class="policy-card">
+          <div class="policy-icon">👨‍🏫</div>
+          <div class="policy-info">
+            <h4>3. Thầy cô giám sát 100% thời gian thực</h4>
+            <p>Mọi câu hỏi và câu trả lời trong tiết học đều hiển thị trên <strong>Teacher Dashboard</strong> của giáo viên. Hệ thống tự động gắn cờ đỏ nếu học sinh nhắc đến từ ngữ tiêu cực hoặc độc hại.</p>
+          </div>
+        </div>
+
+        <div class="policy-card">
+          <div class="policy-icon">🎓</div>
+          <div class="policy-info">
+            <h4>4. Phương pháp Socratic (Không giải hộ bài tập)</h4>
+            <p>SchoolAI được lập trình đóng vai người hướng dẫn gợi mở từng bước, <strong>tuyệt đối không đưa ra đáp án sẵn</strong> để giúp học sinh tự chủ tư duy và sáng tạo kiến thức.</p>
+          </div>
+        </div>
       </div>
 
-      <!-- Tool 3 -->
-      <div class="tool-box">
-        <div>
-          <div class="tool-header">
-            <span class="tool-name">Khanmigo</span>
-            <span class="tool-badge">Gia sư Socratic</span>
-          </div>
-          <p class="tool-desc">
-            Trợ lý AI chuẩn mực của Khan Academy. Định hướng tư duy từng bước, <strong>tuyệt đối không giải bài hộ</strong> để rèn tự học.
-          </p>
+      <!-- Cảnh báo Policy quan trọng -->
+      <div class="policy-warning-box">
+        <div class="warning-icon">⚠️</div>
+        <div class="warning-content">
+          <strong>LƯU Ý QUAN TRỌNG VỀ ĐỘ TUỔI & CHÍNH SÁCH (POLICY):</strong>
+          <p>Các công cụ AI thương mại phổ biến như <strong>ChatGPT</strong> (quy định tối thiểu từ 13 tuổi trở lên) hay <strong>Claude</strong> (từ 18 tuổi trở lên) <strong>TUYỆT ĐỐI KHÔNG ĐƯỢC PHÉP</strong> để học sinh 11 tuổi tự đăng ký và sử dụng độc lập vì vi phạm điều khoản dịch vụ (Policy) và pháp luật bảo vệ quyền riêng tư trẻ em.</p>
         </div>
-        <a href="https://www.khanacademy.org/khanmigo" target="_blank" class="btn-link">
-          <span>🚀</span> Khám phá Khanmigo
-        </a>
       </div>
     </div>
   </section>
 
-  <!-- Phần 2: Sandbox mô phỏng trực tiếp EduChat -->
+  <!-- Phần 2: Sandbox mô phỏng trực tiếp SchoolAI -->
   <section class="section-card">
     <div class="section-title">
       <span class="icon">🤖</span>
-      <h2>2. Khung thực hành câu lệnh (EduChat Safe Sandbox)</h2>
+      <h2>2. Khung thực hành câu lệnh (SchoolAI Space Simulator)</h2>
     </div>
     <p style="margin-bottom: 16px;">
-      Em hãy tự suy nghĩ và nhập câu lệnh (Prompt) của mình vào khung bên dưới theo công thức đã học ở Hoạt động 2: 
+      Em hãy tự suy nghĩ và nhập câu lệnh (Prompt) của mình vào không gian học tập mô phỏng <strong>SchoolAI Space</strong> dưới đây theo công thức đã học: 
       <strong>[Đóng vai] + [Nhiệm vụ] + [Bối cảnh / Điều kiện]</strong>. 
       Sau khi AI phản hồi, em hãy chụp ảnh màn hình để chuẩn bị nộp bài ở <strong>Học liệu 4</strong> nhé!
     </p>
@@ -495,9 +593,9 @@
     <div class="chat-simulator" id="chatSimulator">
       <div class="chat-header">
         <div class="chat-title">
-          <span>🤖</span> <strong>EduChat Simulator</strong> (Trợ lý AI Tin học 6)
+          <span>🤖</span> <strong>SchoolAI Space Simulator</strong> (Trợ lý AI Tin học 6)
         </div>
-        <span style="font-size: 0.8rem; background: rgba(255,255,255,0.25); padding: 2px 10px; border-radius: 10px;">Chế độ an toàn: BẬT</span>
+        <span style="font-size: 0.8rem; background: rgba(255,255,255,0.25); padding: 2px 10px; border-radius: 10px;">Chế độ an toàn K-12: BẬT</span>
       </div>
 
       <!-- Chat Body -->
@@ -505,7 +603,7 @@
         <div class="chat-msg bot">
           <div class="msg-avatar bot">🤖</div>
           <div class="msg-bubble bot">
-            Xin chào em! Thầy là <strong>EduChat - Trợ lý học tập môn Tin học 6</strong>.<br>
+            Xin chào em! Thầy là <strong>SchoolAI - Trợ lý học tập môn Tin học 6</strong>.<br>
             Em hãy tự soạn một câu lệnh (Prompt) theo công thức 3 thành phần: 
             <strong>[Đóng vai] + [Nhiệm vụ] + [Bối cảnh]</strong> để hỏi về một chủ đề môn học em muốn tìm hiểu nhé!
           </div>

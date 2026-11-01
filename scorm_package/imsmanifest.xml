@@ -12,7 +12,7 @@
   </metadata>
   <organizations default="ORG_TINHOC6_BAI2">
     <organization identifier="ORG_TINHOC6_BAI2">
-      <title>Tin học 6 - Bài 2: Bí kíp giao tiếp với AI (Kỹ thuật viết Prompt)</title>
+      <title>Tin học 6 - Bài 2: Mẹo viết câu lệnh (Prompt) cho AI - Cần cung cấp bối cảnh, vai trò và yêu cầu rõ ràng</title>
       <item identifier="ITEM_PROMPT_LESSON" identifierref="RES_PROMPT_LESSON">
         <title>Video tương tác: Kỹ thuật viết Prompt cho AI</title>
         <adlcp:masteryscore>80</adlcp:masteryscore>
@@ -24,7 +24,7 @@
       <file href="index.html"/>
       <file href="scorm_api.js"/>
       <file href="style.css"/>
+      <file href="video_bai_hoc.mp4"/>
     </resource>
   </resources>
 </manifest>
-

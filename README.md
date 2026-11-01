@@ -13,10 +13,10 @@
    - Giao diện diễn đàn tương tác: Đăng bình luận, Thả tim, Phản hồi, tự động ghi nhận LMS Log chuyên cần.
 
 2. **`hoc_lieu_2_video_infographic_tuong_tac.html` (Hoạt động 2 - Hình thành kiến thức 15 phút)**
-   - **Chủ đề:** *"Bí kíp giao tiếp với AI - Kỹ thuật viết Prompt"*.
-   - Infographic tương tác trực quan: **Công thức Vàng 3 thành phần**: `[Đóng vai] + [Nhiệm vụ] + [Bối cảnh/Điều kiện]`.
-   - Interactive Prompt Builder cho học sinh ghép thử prompt thời gian thực.
-   - Trình chiếu video bài giảng mô phỏng tích hợp **3 Pop-up Quiz tương tác** (01:15, 03:00, 04:30) bắt buộc trả lời mới được xem tiếp.
+   - **Chủ đề:** Video tương tác: *"Mẹo viết câu lệnh (prompt) cho AI - Cần cung cấp bối cảnh, vai trò và yêu cầu rõ ràng"* (Thời lượng: 06:27).
+   - Tích hợp tệp video bài giảng thực tế (`video_bai_hoc.mp4`).
+   - Cơ chế khóa tua lướt SCORM và **3 câu hỏi neo chặn (Checkpoint Quiz)** tại 01:45, 03:30, 05:20.
+   - Infographic tóm tắt 3 trụ cột vàng: Vai trò + Yêu cầu rõ ràng + Bối cảnh.
    - Chuẩn đóng gói **SCORM 1.2** (`SCORM_KyThuatVietPrompt_TinHoc6.zip`) tự động gửi điểm về Sổ điểm LMS.
 
 3. **`hoc_lieu_3_cong_cu_genai_an_toan.html` (Hoạt động 3 - Trải nghiệm 15 phút)**

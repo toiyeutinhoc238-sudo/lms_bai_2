@@ -668,8 +668,8 @@
           <button class="toggle-btn" id="btnTableView" onclick="switchView('table')" title="Dạng danh sách">☰</button>
         </div>
 
-        <button class="btn btn-danger" style="padding: 7px 12px; font-size: 0.8rem;" onclick="clearAllArticles()">
-          <span>🗑️</span> Xóa dữ liệu mẫu
+        <button class="btn btn-outline" style="padding: 7px 12px; font-size: 0.8rem; color: #b91c1c;" onclick="clearAllArticles()">
+          <span>🗑️</span> Làm trống Drive
         </button>
       </div>
     </div>
@@ -791,50 +791,17 @@
   let activeGradingId = null;
   let tempScores = { c1: null, c2: null, c3: null };
 
-  // Sample data to make drive active immediately
-  const SAMPLE_ARTICLES = [
-    {
-      id: 'art_sample_1',
-      author: 'Nguyễn Văn An - Lớp 6A',
-      title: 'Điều em tâm đắc về mưu kế cọc gỗ Bạch Đằng năm 938',
-      content: 'Sau khi trò chuyện với trợ lý AI, em đã hiểu rõ hơn về mưu kế cắm cọc gỗ trên sông Bạch Đằng năm 938 của Ngô Quyền. Nhờ biết tính con nước thủy triều lên xuống, quân ta đã nhử thuyền chiến của giặc Nam Hán vào bãi cọc và giành thắng lợi vang dội. Chiến thắng lịch sử này đã chấm dứt hơn 1.000 năm Bắc thuộc và mở ra thời kỳ độc lập lâu dài cho dân tộc ta. Em rất tự hào về trí tuệ của cha ông mình!',
-      time: '01/11/2026, 09:30',
-      score: 10,
-      c1: 5, c2: 3, c3: 2,
-      feedback: 'Bài viết tuyệt vời! Giọng văn tự nhiên, đúng 4 câu, không sao chép máy móc.'
-    },
-    {
-      id: 'art_sample_2',
-      author: 'Trần Thị Mai - Lớp 6B',
-      title: 'Khám phá bí mật về Mặt Trăng tròn khuyết',
-      content: 'Qua cuộc trò chuyện cùng AI, em biết được rằng Mặt Trăng không tự phát ra ánh sáng mà nó phản chiếu lại ánh sáng của Mặt Trời. Vì Mặt Trăng chuyển động quanh Trái Đất nên phần bề mặt được chiếu sáng hướng về phía chúng ta thay đổi theo từng ngày. Do đó, vào ban đêm em nhìn lên bầu trời lúc thấy trăng khuyết hình lưỡi liềm, lúc lại thấy trăng tròn vành vạnh. Khoa học tự nhiên thật là kỳ diệu!',
-      time: '01/11/2026, 09:42',
-      score: null,
-      c1: null, c2: null, c3: null,
-      feedback: ''
-    },
-    {
-      id: 'art_sample_3',
-      author: 'Lê Minh Tuấn - Lớp 6A',
-      title: 'Trái Đất quay và hiện tượng ngày đêm',
-      content: 'Trái Đất của chúng ta có hình khối cầu và liên tục tự quay quanh trục từ Tây sang Đông. Vì vậy, Mặt Trời chỉ có thể chiếu sáng được một nửa bề mặt Trái Đất, nơi được chiếu sáng là ban ngày, còn nửa đối diện chìm trong bóng tối là ban đêm. Khi Trái Đất tiếp tục quay, ngày và đêm cứ thế luân phiên nhau liên tục mà không bao giờ ngừng lại.',
-      time: '01/11/2026, 09:55',
-      score: 9,
-      c1: 5, c2: 2, c3: 2,
-      feedback: 'Tóm tắt rất mạch lạc, đúng trọng tâm kiến thức Địa lí lớp 6!'
-    }
-  ];
-
+  // Load real student submissions from localStorage (100% real data, no mock)
   function getArticles() {
     try {
       const data = localStorage.getItem(STORAGE_KEY);
-      if (!data) {
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(SAMPLE_ARTICLES));
-        return SAMPLE_ARTICLES;
-      }
-      return JSON.parse(data);
+      if (!data) return [];
+      let list = JSON.parse(data);
+      // Ensure no mock/sample data persists
+      list = list.filter(item => item && item.id && !item.id.includes('sample'));
+      return list;
     } catch(e) {
-      return SAMPLE_ARTICLES;
+      return [];
     }
   }
 
@@ -1085,3 +1052,4 @@
 
 </body>
 </html>
+

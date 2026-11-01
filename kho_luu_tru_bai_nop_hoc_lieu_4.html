@@ -671,8 +671,8 @@
           <button class="toggle-btn" id="btnTableView" onclick="switchView('table')" title="Dạng danh sách">☰</button>
         </div>
 
-        <button class="btn btn-danger" style="padding: 7px 12px; font-size: 0.8rem;" onclick="clearAllSubmissions()">
-          <span>🗑️</span> Xóa dữ liệu mẫu
+        <button class="btn btn-outline" style="padding: 7px 12px; font-size: 0.8rem; color: #b91c1c;" onclick="clearAllSubmissions()">
+          <span>🗑️</span> Làm trống Drive
         </button>
       </div>
     </div>
@@ -795,56 +795,17 @@
   let activeGradingId = null;
   let tempScores = { c1: null, c2: null, c3: null };
 
-  // Sample data to make drive active immediately
-  const SAMPLE_DATA = [
-    {
-      id: 'sub_sample_1',
-      studentName: 'Nguyễn Văn An',
-      className: '6A',
-      fileName: 'minh_chung_chat_schoolai_an.png',
-      fileSize: '142 KB',
-      submittedAt: '01/11/2026, 09:15',
-      fileData: 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400" viewBox="0 0 600 400"><rect width="600" height="400" fill="%230f172a"/><rect x="20" y="20" width="560" height="360" rx="10" fill="%231e293b"/><text x="40" y="60" fill="%2338bdf8" font-family="sans-serif" font-size="16" font-weight="bold">SchoolAI Space: Bạn đồng hành lớp 6</text><rect x="40" y="90" width="520" height="80" rx="8" fill="%230284c7"/><text x="55" y="115" fill="white" font-family="sans-serif" font-size="13">Nguyễn Văn An (6A):</text><text x="55" y="140" fill="white" font-family="sans-serif" font-size="13">"Đóng vai nhà sử học, kể cho em ý nghĩa trận Bạch Đằng năm 938</text><text x="55" y="158" fill="white" font-family="sans-serif" font-size="13">trong 3 câu dễ hiểu cho học sinh lớp 6."</text><rect x="40" y="190" width="520" height="150" rx="8" fill="%23334155"/><text x="55" y="215" fill="%23a7f3d0" font-family="sans-serif" font-size="13">Trợ lý Dot (SchoolAI):</text><text x="55" y="240" fill="white" font-family="sans-serif" font-size="12">1. Chiến thắng Bạch Đằng năm 938 do Ngô Quyền lãnh đạo đã đập tan</text><text x="55" y="260" fill="white" font-family="sans-serif" font-size="12">hoàn toàn quân xâm lược Nam Hán nhờ mưu kế cắm cọc gỗ độc đáo.</text><text x="55" y="280" fill="white" font-family="sans-serif" font-size="12">2. Thắng lợi lịch sử này đã chấm dứt hơn 1.000 năm Bắc thuộc tối tăm.</text><text x="55" y="300" fill="white" font-family="sans-serif" font-size="12">3. Mở ra kỷ nguyên độc lập, tự chủ lâu dài cho non sông đất nước ta!</text></svg>',
-      score: 10,
-      c1: 5, c2: 3, c3: 2,
-      feedback: 'Câu lệnh cấu trúc chuẩn 3 thành phần, lời văn trong sáng lịch sự!'
-    },
-    {
-      id: 'sub_sample_2',
-      studentName: 'Trần Thị Mai',
-      className: '6B',
-      fileName: 'anh_prompt_khoa_hoc_mai.png',
-      fileSize: '168 KB',
-      submittedAt: '01/11/2026, 09:22',
-      fileData: 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400" viewBox="0 0 600 400"><rect width="600" height="400" fill="%230f172a"/><rect x="20" y="20" width="560" height="360" rx="10" fill="%231e293b"/><text x="40" y="60" fill="%2338bdf8" font-family="sans-serif" font-size="16" font-weight="bold">SchoolAI Space: Khám phá KHTN 6</text><rect x="40" y="90" width="520" height="70" rx="8" fill="%230284c7"/><text x="55" y="115" fill="white" font-family="sans-serif" font-size="13">Trần Thị Mai (6B):</text><text x="55" y="140" fill="white" font-family="sans-serif" font-size="13">"Đóng vai nhà thiên văn học, giải thích vì sao Mặt Trăng lúc tròn lúc khuyết trong 3 câu."</text><rect x="40" y="180" width="520" height="150" rx="8" fill="%23334155"/><text x="55" y="205" fill="%23a7f3d0" font-family="sans-serif" font-size="13">Trợ lý Dot (SchoolAI):</text><text x="55" y="230" fill="white" font-family="sans-serif" font-size="12">Mặt Trăng không tự phát sáng mà phản chiếu ánh sáng từ Mặt Trời.</text><text x="55" y="250" fill="white" font-family="sans-serif" font-size="12">Khi Mặt Trăng quay quanh Trái Đất, góc nhìn phần được chiếu sáng thay đổi.</text><text x="55" y="270" fill="white" font-family="sans-serif" font-size="12">Đó là lý do chúng ta thấy trăng tròn, khuyết theo từng ngày trong tháng!</text></svg>',
-      score: null,
-      c1: null, c2: null, c3: null,
-      feedback: ''
-    },
-    {
-      id: 'sub_sample_3',
-      studentName: 'Lê Minh Tuấn',
-      className: '6A',
-      fileName: 'bai_tap_prompt_tuan.jpg',
-      fileSize: '135 KB',
-      submittedAt: '01/11/2026, 09:40',
-      fileData: 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400" viewBox="0 0 600 400"><rect width="600" height="400" fill="%230f172a"/><rect x="20" y="20" width="560" height="360" rx="10" fill="%231e293b"/><text x="40" y="60" fill="%2338bdf8" font-family="sans-serif" font-size="16" font-weight="bold">SchoolAI Space: Địa lí 6</text><rect x="40" y="90" width="520" height="60" rx="8" fill="%230284c7"/><text x="55" y="115" fill="white" font-family="sans-serif" font-size="13">Lê Minh Tuấn (6A):</text><text x="55" y="135" fill="white" font-family="sans-serif" font-size="13">"Hiện tượng ngày đêm luân phiên xảy ra thế nào?"</text><rect x="40" y="170" width="520" height="150" rx="8" fill="%23334155"/><text x="55" y="195" fill="%23a7f3d0" font-family="sans-serif" font-size="13">Trợ lý Dot (SchoolAI):</text><text x="55" y="220" fill="white" font-family="sans-serif" font-size="12">Do Trái Đất có hình cầu và tự quay quanh trục từ Tây sang Đông</text><text x="55" y="240" fill="white" font-family="sans-serif" font-size="12">nên một nửa được chiếu sáng là ngày, nửa kia là đêm liên tục thay phiên nhau!</text></svg>',
-      score: 7,
-      c1: 3, c2: 2, c3: 2,
-      feedback: 'Câu hỏi còn thiếu thành phần Đóng vai và Bối cảnh giới hạn câu, cần bổ sung thêm nhé!'
-    }
-  ];
-
+  // Load real student submissions from localStorage (100% real data, no mock)
   function getSubmissions() {
     try {
       const data = localStorage.getItem(STORAGE_KEY);
-      if (!data) {
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(SAMPLE_DATA));
-        return SAMPLE_DATA;
-      }
-      return JSON.parse(data);
+      if (!data) return [];
+      let list = JSON.parse(data);
+      // Ensure no mock/sample data persists
+      list = list.filter(item => item && item.id && !item.id.includes('sample'));
+      return list;
     } catch(e) {
-      return SAMPLE_DATA;
+      return [];
     }
   }
 
@@ -1120,3 +1081,4 @@
 
 </body>
 </html>
+

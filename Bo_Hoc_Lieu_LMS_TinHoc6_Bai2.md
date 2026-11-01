@@ -352,6 +352,12 @@ Giáo viên nhúng nội dung này ngay bên dưới link công cụ trên LMS:
 2. **Với Rubric cho Hoạt động 3 & Hoạt động 4:**
    * Trong phần cài đặt hoạt động **Assignment** hoặc **Forum/Blog**, tìm đến mục **Phương pháp chấm điểm (Grading method)**.
    * Chọn **Rubric**.
-   * Nhập các tiêu chí và điểm số tương ứng đúng theo 2 bảng Rubric đã cung cấp ở trên.
+   * Nhập các tiêu chí và điểm số tương ứng đúng theo 2 bảng Rubric đã cung cấp ở trên (hoặc tải tệp `Rubric_LMS_TinHoc6.json`).
    * Khi chấm bài, giáo viên chỉ cần click chọn mức độ (Tốt / Đạt / Cần cố gắng), hệ thống sẽ tự tính tổng điểm và gửi nhận xét tự động cho học sinh.
+
+3. **In phiếu Rubric ra tệp PDF hoặc in giấy A4 (`phieu_rubric_va_danh_gia.html`):**
+   * Giáo viên truy cập trang `phieu_rubric_va_danh_gia.html` để quản lý trọn bộ 3 phiếu đánh giá.
+   * **Tính năng in giấy A4:** Bấm nút **"🖨️ In / Lưu PDF (A4)"** để in ra giấy phục vụ chấm trực tiếp tại phòng máy hoặc phát cho học sinh tự chấm chéo.
+   * **Tính năng xuất PDF:** Bấm nút **"📥 Tải tệp PDF"** để tải file PDF của phiếu đang xem hoặc trọn bộ hồ sơ để nộp báo cáo chuyên môn.
+   * **Chấm điểm điện tử:** Cho phép click trực tiếp vào dòng tên, lớp, nhận xét để gõ nội dung trước khi xuất file PDF.
 

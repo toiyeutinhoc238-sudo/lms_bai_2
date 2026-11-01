@@ -30,17 +30,20 @@
    - Kéo thả nộp file ảnh chụp màn hình (`.png, .jpg`) đoạn chat với AI.
    - **Bảng Rubric tương tác 10 điểm** (3 tiêu chí theo KHBD): Cấu trúc câu lệnh (5đ), Nội dung & Ngôn từ (3đ), Hình thức minh chứng (2đ).
    - Tự động cộng điểm và xuất lời nhận xét sư phạm khi nhấp chọn từng mức độ.
+   - Tích hợp nút **In phiếu Rubric / Xuất file PDF (chuẩn A4)** trực tiếp.
 
 5. **`hoc_lieu_5_blog_nhat_ky_glossary_rubric.html` (Hoạt động 4 - Vận dụng 10 phút)**
    - **Chủ đề:** Góc Nhật Ký Học Tập (Blog/Glossary) "Nhà báo nhí tổng hợp tin tức".
    - Học sinh tự viết bài tóm tắt điều học được từ AI (3 đến 5 câu văn).
    - Trình soạn thảo có bộ đếm tự động số câu, số từ và **Cơ chế chống sao chép (Anti-plagiarism)** để rèn luyện tính tự chủ và trách nhiệm.
    - **Bảng Rubric tương tác 10 điểm**: Tính tự chủ không sao chép (5đ), Dung lượng & Tính chính xác (3đ), Trình bày & Chính tả (2đ).
+   - Tích hợp nút **In phiếu Rubric / Xuất file PDF (chuẩn A4)** trực tiếp.
 
 ---
 
 ## 🚀 CỔNG ĐIỀU PHỐI TRUNG TÂM & HỒ SƠ GIÁO VIÊN
 * **Cổng trung tâm:** `index.html` (Trang Portal điều hướng và cung cấp mã nhúng Iframe cho giáo viên).
+* **Hồ sơ Rubric & In PDF A4:** `phieu_rubric_va_danh_gia.html` (Trọn bộ 3 phiếu: Rubric 1, Rubric 2 và Bảng tổng hợp năng lực số; hỗ trợ in khổ A4 và xuất PDF một chạm).
 * **Gói SCORM 1.2:** `SCORM_KyThuatVietPrompt_TinHoc6.zip` (Sẵn sàng tải lên Moodle / Canvas / K12Online).
 * **Tài liệu học liệu chi tiết:** `Bo_Hoc_Lieu_LMS_TinHoc6_Bai2.md` & `Bo_Hoc_Lieu_LMS_TinHoc6_Bai2.html`.
 * **Cấu hình Rubric JSON:** `Rubric_LMS_TinHoc6.json`.

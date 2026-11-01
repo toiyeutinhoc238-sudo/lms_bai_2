@@ -394,13 +394,13 @@
     .checkpoint-flag {
       position: absolute;
       top: -6px;
-      width: 20px;
-      height: 20px;
+      width: 22px;
+      height: 22px;
       border-radius: 50%;
       background: #f59e0b;
       border: 2px solid #0f172a;
       transform: translateX(-50%);
-      font-size: 0.72rem;
+      font-size: 0.75rem;
       font-weight: 800;
       color: #0f172a;
       display: flex;
@@ -531,7 +531,7 @@
           Cần cung cấp bối cảnh, vai trò và yêu cầu rõ ràng
         </div>
         <div class="big-play-sub">
-          ⏱️ Thời lượng: 06:27 • Tích hợp 3 câu hỏi neo chặn (Checkpoint Quiz) tự động ghi điểm LMS
+          ⏱️ Thời lượng: 06:27 • Tích hợp 3 câu hỏi neo chặn (Checkpoint Quiz) chuẩn nội dung video
         </div>
       </div>
 
@@ -572,10 +572,13 @@
 
       <div class="timeline-track" id="timelineTrack" onclick="handleTimelineClick(event)" title="Khóa tua lướt vượt quá câu hỏi chưa hoàn thành">
         <div class="timeline-fill" id="timelineFill"></div>
-        <!-- 3 Checkpoint markers -->
-        <div class="checkpoint-flag" id="flag1" style="left: 27%;" title="Neo chặn 1 (01:45): Vai trò (Role)">1</div>
-        <div class="checkpoint-flag" id="flag2" style="left: 54%;" title="Neo chặn 2 (03:30): Bối cảnh (Context)">2</div>
-        <div class="checkpoint-flag" id="flag3" style="left: 83%;" title="Neo chặn 3 (05:20): Yêu cầu rõ ràng">3</div>
+        <!-- 3 Checkpoint markers matched to video chapters -->
+        <!-- Flag 1: 03:10 (Cuối Phần 2: So sánh "Viết về măng") -->
+        <div class="checkpoint-flag" id="flag1" style="left: 49%;" title="Neo chặn 1 (03:10): So sánh Prompt yếu vs Prompt tốt">1</div>
+        <!-- Flag 2: 04:40 (Cuối Phần 3: 3 Mẹo Bối cảnh - Vai trò - Yêu cầu) -->
+        <div class="checkpoint-flag" id="flag2" style="left: 72%;" title="Neo chặn 2 (04:40): Công thức 3 Mẹo">2</div>
+        <!-- Flag 3: 05:40 (Cuối Phần 4: Ví dụ thực hành hỏi về trồng sâm) -->
+        <div class="checkpoint-flag" id="flag3" style="left: 88%;" title="Neo chặn 3 (05:40): Phân tích Bối cảnh thực tế">3</div>
       </div>
 
       <button class="mute-btn" id="muteBtn" onclick="toggleMute()">🔊 Âm thanh</button>
@@ -590,16 +593,16 @@
     </div>
     <div class="formula-grid">
       <div class="formula-col" style="border-left-color: #8b5cf6;">
-        <h4 style="color: #c084fc;">1. VAI TRÒ (Role)</h4>
-        <p>Phân vai rõ ràng cho AI (ví dụ: giáo viên, chuyên gia, nhà khoa học) để AI sử dụng đúng góc nhìn và văn phong chuyên môn.</p>
+        <h4 style="color: #c084fc;">1. BỐI CẢNH (Context)</h4>
+        <p>Nói cho AI biết mình là ai, ở đâu và dùng để làm gì để AI đưa ra câu trả lời phù hợp với hoàn cảnh thực tế.</p>
       </div>
       <div class="formula-col" style="border-left-color: #0ea5e9;">
-        <h4 style="color: #38bdf8;">2. YÊU CẦU RÕ RÀNG (Task)</h4>
-        <p>Nêu hành động cụ thể cần thực hiện (giải thích, tóm tắt, so sánh...), tránh yêu cầu mơ hồ hoặc cộc lốc.</p>
+        <h4 style="color: #38bdf8;">2. VAI TRÒ (Role)</h4>
+        <p>Phân vai cụ thể cho AI (chuyên gia nông nghiệp, marketing, giáo viên...) để AI sử dụng đúng góc nhìn và văn phong chuyên môn.</p>
       </div>
       <div class="formula-col" style="border-left-color: #10b981;">
-        <h4 style="color: #4ade80;">3. BỐI CẢNH (Context)</h4>
-        <p>Cung cấp đối tượng tiếp nhận (cho học sinh lớp 6), dung lượng (trong 3-4 câu) và phong cách để câu trả lời chuẩn xác nhất.</p>
+        <h4 style="color: #4ade80;">3. YÊU CẦU & ĐỊNH DẠNG (Task)</h4>
+        <p>Nêu rõ việc AI cần làm và định dạng câu trả lời (5 câu, 3 gạch đầu dòng, bài đăng...) để nhận kết quả rõ ràng nhất.</p>
       </div>
     </div>
   </section>
@@ -644,50 +647,50 @@
   const video = document.getElementById('mainVideo');
   let userScore = 0;
   let activeCheckpoint = null;
-  let maxAllowedTime = 0; // Chống tua lướt qua câu hỏi chưa trả lời
+  let maxAllowedTime = 0;
 
-  // 3 Checkpoints theo đúng thời lượng video thực tế 06:27 (387 giây)
+  // 3 Checkpoints căn chỉnh chính xác 100% theo các phân đoạn nội dung của video thực tế
   const checkpoints = [
     {
       id: 1,
-      triggerTime: 105, // 01:45 (27% video)
-      tag: "📍 NEO CHẶN 1 (01:45): TẦM QUAN TRỌNG CỦA VAI TRÒ (ROLE)",
+      triggerTime: 190, // 03:10 (Ngay cuối Phần 2: So sánh prompt yếu "Viết về măng" vs prompt tốt "Viết 3 câu bán măng sạch")
+      tag: "📍 NEO CHẶN 1 (03:10): SO SÁNH PROMPT YẾU VÀ PROMPT TỐT",
       points: 35,
-      q: "Theo video bài học, việc cung cấp 'Vai trò' (Role) cho AI trong câu lệnh Prompt mang lại lợi ích gì?",
+      q: "Qua ví dụ so sánh ở Phần 2 giữa câu lệnh 'Viết về măng' và 'Viết 3 câu bán măng sạch', vì sao câu lệnh thứ hai lại giúp AI trả lời hữu ích hơn?",
       options: [
-        { text: "A. Giúp AI hiểu được góc nhìn chuyên môn, ngôn từ và phong cách phản hồi phù hợp với ngữ cảnh mong muốn.", correct: true },
-        { text: "B. Giúp AI tự động làm hết mọi việc mà người dùng không cần kiểm tra lại kết quả.", correct: false },
-        { text: "C. Giúp máy tính chạy nhanh hơn và tiết kiệm pin cho thiết bị.", correct: false }
+        { text: "A. Vì câu lệnh thứ hai ngắn hơn và dùng dấu chấm than.", correct: false },
+        { text: "B. Vì câu lệnh thứ hai giao việc rõ ràng, nêu cụ thể số lượng (3 câu) và mục đích sử dụng (để bán hàng) thay vì yêu cầu chung chung.", correct: true },
+        { text: "C. Vì AI tự ý bỏ qua câu lệnh thứ nhất do mạng chập chờn.", correct: false }
       ],
-      feedback: "Chính xác! Gán vai trò (Role) giúp AI định hình đúng góc độ chuyên môn và tông giọng để trả lời sát nhất với nhu cầu.",
+      feedback: "Chính xác! Đúng như video phân tích: Cùng là AI nhưng câu lệnh càng rõ ràng thì kết quả càng đúng ý; nếu hỏi chung chung thì AI chỉ trả lời kiến thức chung chung.",
       passed: false
     },
     {
       id: 2,
-      triggerTime: 210, // 03:30 (54% video)
-      tag: "📍 NEO CHẶN 2 (03:30): BỐI CẢNH (CONTEXT) VÀ RÀNG BUỘC",
+      triggerTime: 280, // 04:40 (Ngay cuối Phần 3: Sau khi giải thích chi tiết 3 mẹo: Bối cảnh, Vai trò, Yêu cầu)
+      tag: "📍 NEO CHẶN 2 (04:40): CÔNG THỨC 3 MẸO VIẾT PROMPT TỐT",
       points: 35,
-      q: "Nếu người dùng chỉ đưa ra yêu cầu chung chung mà quên cung cấp 'Bối cảnh' (Context) và các điều kiện ràng buộc, kết quả của AI sẽ ra sao?",
+      q: "Theo bài giảng trong video, công thức gồm 3 mẹo cốt lõi để viết một câu Prompt chuẩn xác cho AI bao gồm những thành phần nào?",
       options: [
-        { text: "A. AI sẽ từ chối trả lời và báo lỗi hệ thống.", correct: false },
-        { text: "B. AI sẽ đưa ra câu trả lời quá chung chung, dài dòng hoặc không phù hợp với đối tượng tiếp nhận.", correct: true },
-        { text: "C. AI vẫn luôn đoán đúng 100% ý định trong suy nghĩ của người dùng.", correct: false }
+        { text: "A. Bối cảnh (Context) + Vai trò (Role) + Yêu cầu và định dạng cụ thể (Task).", correct: true },
+        { text: "B. Tên dòng điện thoại + Họ tên người dùng + Mật khẩu tài khoản.", correct: false },
+        { text: "C. Lời khen AI thông minh + Thời gian chờ đợi + Lời cảm ơn.", correct: false }
       ],
-      feedback: "Rất chuẩn! Không có bối cảnh, AI sẽ phản hồi theo dữ liệu chung, dẫn đến câu trả lời lan man hoặc dùng thuật ngữ quá khó đối với học sinh lớp 6.",
+      feedback: "Rất chuẩn! Công thức 3 trụ cột được ví như mắm, muối, mì chính trong món ăn gồm: 1. Bối cảnh (mình là ai/ở đâu); 2. Vai trò (AI đóng vai ai); 3. Yêu cầu & định dạng cụ thể.",
       passed: false
     },
     {
       id: 3,
-      triggerTime: 320, // 05:20 (82% video)
-      tag: "📍 NEO CHẶN 3 (05:20): CÔNG THỨC PROMPT HOÀN CHỈNH",
+      triggerTime: 340, // 05:40 (Ngay cuối Phần 4: Sau ví dụ thực hành gộp 3 mẹo hỏi về kỹ thuật trồng sâm)
+      tag: "📍 NEO CHẶN 3 (05:40): PHÂN TÍCH BỐI CẢNH TRONG THỰC HÀNH",
       points: 30,
-      q: "Theo video, một câu Prompt hoàn chỉnh để đạt kết quả tốt nhất cần kết hợp đầy đủ những yếu tố nào?",
+      q: "Trong câu prompt thực hành ở Phần 4: 'Tôi là nông dân mới trồng sâm. Hãy đóng vai một chuyên gia nông nghiệp. Viết 3 gạch đầu dòng những lưu ý quan trọng nhất về tưới nước cho cây sâm 1 năm tuổi', đoạn nào thể hiện yếu tố BỐI CẢNH (Context)?",
       options: [
-        { text: "A. Chỉ cần gõ từ khóa ngắn gọn kèm dấu chấm hỏi.", correct: false },
-        { text: "B. Cung cấp đầy đủ: Vai trò (Role) + Yêu cầu rõ ràng (Task) + Bối cảnh và điều kiện cụ thể (Context).", correct: true },
-        { text: "C. Cung cấp thông tin tài khoản cá nhân và mật khẩu của người dùng.", correct: false }
+        { text: "A. 'Hãy đóng vai một chuyên gia nông nghiệp'", correct: false },
+        { text: "B. 'Tôi là nông dân mới trồng sâm'", correct: true },
+        { text: "C. 'Viết 3 gạch đầu dòng những lưu ý quan trọng nhất'", correct: false }
       ],
-      feedback: "Xuất sắc! Bí kíp cốt lõi chính là: Vai trò + Yêu cầu rõ ràng + Bối cảnh cụ thể để AI trở thành trợ lý đắc lực nhất!",
+      feedback: "Xuất sắc! 'Tôi là nông dân mới trồng sâm' chính là Bối cảnh (Context) giúp AI biết người hỏi là ai để đưa ra lời khuyên sát thực tế nhất!",
       passed: false
     }
   ];
@@ -746,7 +749,6 @@
   // Prevent skipping past checkpoints
   video.addEventListener('seeking', function() {
     if (video.currentTime > maxAllowedTime + 3) {
-      // Find first unpassed checkpoint
       const firstUnpassed = checkpoints.find(c => !c.passed);
       if (firstUnpassed && video.currentTime > firstUnpassed.triggerTime) {
         video.currentTime = firstUnpassed.triggerTime - 1;
@@ -860,7 +862,6 @@
     const pct = clickX / rect.width;
     const targetTime = pct * (video.duration || 387);
 
-    // Chặn tua lướt nếu câu hỏi trước đó chưa xong
     const firstUnpassed = checkpoints.find(c => !c.passed);
     if (firstUnpassed && targetTime > firstUnpassed.triggerTime) {
       alert("🔒 Em cần xem tuần tự và trả lời câu hỏi neo chặn trước khi tua đến đoạn này!");

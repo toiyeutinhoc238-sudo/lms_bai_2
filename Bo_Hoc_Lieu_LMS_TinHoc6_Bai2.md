@@ -107,62 +107,67 @@ $$\boxed{\text{PROMPT HIỆU QUẢ}} = \boxed{\text{1. ĐÓNG VAI (Role)}} + \bo
 
 ### 2. Kịch bản chi tiết Video tương tác (H5P Interactive Video / Edpuzzle Storyboard)
 
-* **Tổng thời lượng:** 05 phút 00 giây.
-* **Tích hợp:** 03 điểm dừng kiểm tra trắc nghiệm (Pop-up Checkpoints), tự động khóa video cho đến khi học sinh trả lời.
+* **Tên video bài giảng thực tế:** *"Mẹo viết câu lệnh (prompt) cho AI - Cần cung cấp bối cảnh, vai trò và yêu cầu rõ ràng"*.
+* **Tổng thời lượng:** 06 phút 27 giây (387 giây).
+* **Tích hợp:** 03 điểm dừng kiểm tra trắc nghiệm (Pop-up Checkpoints) căn chỉnh chính xác theo 5 phân đoạn nội dung của bài giảng video.
 * **Thang điểm SCORM:** 100 điểm (Câu 1: 35đ, Câu 2: 35đ, Câu 3: 30đ). Ngưỡng hoàn thành (Mastery Score): 80 điểm.
 
 ```
-TIẾN TRÌNH VIDEO TƯƠNG TÁC (TIMELINE):
-[00:00]-----[00:45]-----[01:15 CHECKPOINT 1]-----[02:30]-----[03:00 CHECKPOINT 2]-----[04:15]-----[04:30 CHECKPOINT 3]-----[05:00 KẾT THÚC]
+TIẾN TRÌNH VIDEO TƯƠNG TÁC (TIMELINE THỰC TẾ):
+[00:00 - 01:15: Đặt vấn đề] ➔ [01:15 - 02:18: Phần 1: Prompt là gì] ➔ [02:18 - 03:18: Phần 2: So sánh Prompt yếu vs xịn]
+➔ 🛑 [03:10 CHECKPOINT 1: So sánh Prompt]
+➔ [03:18 - 04:47: Phần 3: Công thức 3 Mẹo cốt lõi (Bối cảnh, Vai trò, Yêu cầu)]
+➔ 🛑 [04:40 CHECKPOINT 2: 3 Mẹo cốt lõi Bối cảnh - Vai trò - Yêu cầu]
+➔ [04:47 - 05:49: Phần 4: Ví dụ thực hành trên Gemini (Bác nông dân trồng sâm)]
+➔ 🛑 [05:40 CHECKPOINT 3: Phân tích thành phần Bối cảnh thực hành]
+➔ [05:49 - 06:27: Phần 5: Tổng kết bài học & Hoàn thành SCORM]
 ```
 
-#### Phân đoạn 1 (00:00 - 01:15): Khởi động & Giới thiệu Công thức Prompt
-* **Hình ảnh/Đồ họa:** Hoạt hình Robot trợ lý AI xuất hiện, một học sinh đặt câu hỏi cộc lốc và nhận về câu trả lời dài lê thê 10 trang. Robot giải thích nguyên nhân: AI phản hồi theo ngữ cảnh người dùng cung cấp.
-* **Lời dẫn (Voice-over):** *"Chào các bạn! AI rất thông minh nhưng lại không có giác quan thứ sáu để đoán ý bạn. Nếu bạn hỏi chung chung, AI sẽ trả lời lan man. Để điều khiển trợ lý AI, chúng ta cần 'thần chú' 3 thành phần: Đóng vai + Nhiệm vụ + Bối cảnh!"*
-* 🛑 **POP-UP QUIZ 1 (Xuất hiện tại 01:15):**
-  * **Loại câu hỏi:** Trắc nghiệm 1 đáp án đúng (Single Choice).
-  * **Nội dung:** *Công thức chuẩn để viết một câu lệnh (Prompt) hiệu quả cho AI gồm 3 thành phần nào?*
+#### Phân đoạn 1 & 2 (00:00 - 03:18): Prompt là gì? So sánh Prompt yếu vs Prompt xịn (Ví dụ Bán măng)
+* **Nội dung bài giảng:**
+  - Giải thích Prompt nôm na là lời nhắc, câu lệnh hoặc yêu cầu gửi cho AI, giống như việc giao việc cho nhân viên mới. Càng rõ ràng thì AI làm càng đúng ý.
+  - Phân tích ví dụ thực tế: Câu lệnh yếu *"Viết về măng"* khiến AI viết bách khoa toàn thư dài dòng, không dùng được; trong khi câu lệnh xịn *"Hãy đóng vai người bán hàng online có tâm, viết cho tôi 3 câu ngắn gọn để đăng lên Zalo bán măng tươi sạch của nhà trồng được, nhắm vào chị em văn phòng bận rộn"* mang lại kết quả cực kỳ hấp dẫn.
+* 🛑 **POP-UP QUIZ 1 (Xuất hiện tại 03:10 - Cuối Phần 2):**
+  * **Loại câu hỏi:** Trắc nghiệm hiểu bài & so sánh.
+  * **Nội dung:** *Qua ví dụ so sánh ở Phần 2 giữa câu lệnh 'Viết về măng' và 'Viết 3 câu bán măng sạch', vì sao câu lệnh thứ hai lại giúp AI trả lời hữu ích hơn?*
   * **Các lựa chọn:**
-    * A. Họ tên của em + Tên trường lớp + Câu hỏi bài tập
-    * B. **Đóng vai (Role) + Nhiệm vụ (Task) + Bối cảnh/Điều kiện (Context)** *(Đáp án đúng - 35 điểm)*
-    * C. Lời khen ngợi AI + Yêu cầu giải bài hộ + Lời cảm ơn
-    * D. Từ khóa ngắn gọn + Dấu chấm hỏi
+    * A. Vì câu lệnh thứ hai ngắn hơn và dùng dấu chấm than.
+    * B. **Vì câu lệnh thứ hai giao việc rõ ràng, nêu cụ thể số lượng (3 câu) và mục đích sử dụng (để bán hàng) thay vì yêu cầu chung chung.** *(Đáp án đúng - 35 điểm)*
+    * C. Vì AI tự ý bỏ qua câu lệnh thứ nhất do mạng chập chờn.
   * **Phản hồi sư phạm:**
-    * *Đúng:* Hoan hô em! 3 thành phần [Đóng vai] + [Nhiệm vụ] + [Bối cảnh] là chìa khóa vàng giúp AI hiểu chính xác yêu cầu của em.
-    * *Sai:* Chưa chính xác rồi! Em hãy nhớ: AI không cần biết thông tin cá nhân của em, mà chỉ cần biết: Em muốn nó Đóng vai ai, làm Nhiệm vụ gì, và trong Bối cảnh nào nhé!
+    * *Đúng:* Chính xác! Đúng như video phân tích: Cùng là AI nhưng câu lệnh càng rõ ràng thì kết quả càng đúng ý; nếu hỏi chung chung thì AI chỉ trả lời kiến thức chung chung.
 
-#### Phân đoạn 2 (01:15 - 03:00): Giải mã từng thành phần & Tầm quan trọng của Bối cảnh
-* **Hình ảnh/Đồ họa:** Phân tích tình huống bạn Nam nhờ AI giải thích hiện tượng quang hợp. Vì quên ghi "cho học sinh lớp 6", AI đưa ra phương trình phản ứng hóa học $6CO_2 + 6H_2O \rightarrow C_6H_{12}O_6 + 6O_2$ khiến Nam hoa mắt.
-* **Lời dẫn (Voice-over):** *"Bạn thấy đấy, yếu tố 'Bối cảnh' vô cùng quan trọng! Khi bạn cho AI biết người đọc là học sinh lớp 6 và giới hạn dung lượng trong 3-4 câu, AI sẽ tự động gạt bỏ những kiến thức cao siêu để chọn lọc lời giải thích gần gũi nhất."*
-* 🛑 **POP-UP QUIZ 2 (Xuất hiện tại 03:00):**
-  * **Loại câu hỏi:** Tình huống thực tế (Scenario-based question).
-  * **Nội dung:** *Bạn Nam nhờ AI giải thích quá trình quang hợp, nhưng AI trả về toàn công thức hóa học phức tạp lớp 11. Theo em, bạn Nam đã thiếu thành phần nào trong câu Prompt?*
+#### Phân đoạn 3 (03:18 - 04:47): Công thức 3 Mẹo để có câu lệnh chuẩn xịn
+* **Nội dung bài giảng:**
+  - Giới thiệu 3 trụ cột (như mắm, muối, mì chính trong món ăn):
+    1. **Bối cảnh (Context):** Nói cho AI biết mình là ai, ở đâu, tình huống ra sao (giáo viên, nông dân, học sinh...).
+    2. **Vai trò (Role):** Gán vai cụ thể cho AI (chuyên gia nông nghiệp, bác sĩ, nhà khoa học...).
+    3. **Yêu cầu & Định dạng cụ thể (Task & Format):** Nêu rõ việc cần làm và định dạng kết quả (viết 5 câu, 3 gạch đầu dòng, phong cách vui tươi...).
+* 🛑 **POP-UP QUIZ 2 (Xuất hiện tại 04:40 - Cuối Phần 3):**
+  * **Loại câu hỏi:** Nhận diện kiến thức cốt lõi.
+  * **Nội dung:** *Theo bài giảng trong video, công thức gồm 3 mẹo cốt lõi để viết một câu Prompt chuẩn xác cho AI bao gồm những thành phần nào?*
   * **Các lựa chọn:**
-    * A. Thiếu thành phần "Nhiệm vụ" (Task)
-    * B. Thiếu lời cảm ơn và chào hỏi AI
-    * C. **Thiếu thành phần "Bối cảnh / Điều kiện" (Context - ví dụ: dành cho học sinh lớp 6, giải thích đơn giản)** *(Đáp án đúng - 35 điểm)*
-    * D. Không có lỗi gì cả, AI luôn trả lời khó như vậy
+    * A. **Bối cảnh (Context) + Vai trò (Role) + Yêu cầu và định dạng cụ thể (Task).** *(Đáp án đúng - 35 điểm)*
+    * B. Tên dòng điện thoại + Họ tên người dùng + Mật khẩu tài khoản.
+    * C. Lời khen AI thông minh + Thời gian chờ đợi + Lời cảm ơn.
   * **Phản hồi sư phạm:**
-    * *Đúng:* Quá chuẩn! Khi thiếu Bối cảnh đối tượng tiếp nhận (học sinh lớp 6), AI sẽ mặc định giải thích theo góc nhìn học thuật chuyên sâu.
-    * *Sai:* Chưa đúng rồi! Nam đã có Nhiệm vụ là "giải thích quang hợp", nhưng Nam quên đặt "Bối cảnh" cho lứa tuổi lớp 6 đấy!
+    * *Đúng:* Rất chuẩn! Công thức 3 trụ cột được ví như mắm, muối, mì chính trong món ăn gồm: 1. Bối cảnh (mình là ai/ở đâu); 2. Vai trò (AI đóng vai ai); 3. Yêu cầu & định dạng cụ thể.
 
-#### Phân đoạn 3 (03:00 - 04:30): Thực chiến so sánh Prompt môn Lịch sử 6
-* **Hình ảnh/Đồ họa:** Minh họa màn hình chat trực tiếp. So sánh 2 câu prompt hỏi về cuộc khởi nghĩa Hai Bà Trưng.
-* **Lời dẫn (Voice-over):** *"Bây giờ, chúng mình hãy cùng thử sức với một bài tập Lịch sử 6 nhé. Khi muốn tìm hiểu về Hai Bà Trưng, chúng ta nên đặt câu lệnh như thế nào để vừa ngắn gọn vừa đúng trọng tâm bài học?"*
-* 🛑 **POP-UP QUIZ 3 (Xuất hiện tại 04:30):**
-  * **Loại câu hỏi:** Ứng dụng thực hành (Application question).
-  * **Nội dung:** *Câu Prompt nào dưới đây là ĐẦY ĐỦ VÀ CHUẨN XÁC NHẤT để nhờ AI hỗ trợ ôn tập môn Lịch sử 6?*
+#### Phân đoạn 4 (04:47 - 05:49): Ví dụ thực hành kết hợp 3 mẹo trên Gemini
+* **Nội dung bài giảng:**
+  - Thực hành trực tiếp trên Gemini câu lệnh hoàn chỉnh: *"Tôi là nông dân mới trồng sâm Fansipan (Bối cảnh). Hãy đóng vai một chuyên gia nông nghiệp (Vai trò). Viết 3 gạch đầu dòng những lưu ý quan trọng nhất khi tưới nước cho cây sâm 1 năm tuổi vào mùa mưa (Yêu cầu & Định dạng)"*. Kết quả AI phản hồi chuẩn xác, thiết thực.
+* 🛑 **POP-UP QUIZ 3 (Xuất hiện tại 05:40 - Cuối Phần 4):**
+  * **Loại câu hỏi:** Vận dụng phân tích ngữ cảnh thực tế.
+  * **Nội dung:** *Trong câu prompt thực hành ở Phần 4: 'Tôi là nông dân mới trồng sâm. Hãy đóng vai một chuyên gia nông nghiệp. Viết 3 gạch đầu dòng những lưu ý quan trọng nhất về tưới nước cho cây sâm 1 năm tuổi', đoạn nào thể hiện yếu tố BỐI CẢNH (Context)?*
   * **Các lựa chọn:**
-    * A. *"Hai Bà Trưng là ai?"*
-    * B. **"Đóng vai cô giáo dạy Lịch sử, hãy kể tóm tắt cuộc khởi nghĩa Hai Bà Trưng trong khoảng 4 câu cho học sinh lớp 6 dễ hiểu."** *(Đáp án đúng - 30 điểm)*
-    * C. *"Kể về Hai Bà Trưng thật dài và giải hết bài tập SGK cho tôi."*
-    * D. *"Lịch sử Việt Nam có những nữ anh hùng nào?"*
+    * A. 'Hãy đóng vai một chuyên gia nông nghiệp'
+    * B. **'Tôi là nông dân mới trồng sâm'** *(Đáp án đúng - 30 điểm)*
+    * C. 'Viết 3 gạch đầu dòng những lưu ý quan trọng nhất'
   * **Phản hồi sư phạm:**
-    * *Đúng:* Xuất sắc! Câu B có đầy đủ: [Đóng vai cô giáo Lịch sử] + [Nhiệm vụ: kể tóm tắt khởi nghĩa] + [Bối cảnh: trong 4 câu cho học sinh lớp 6].
-    * *Sai:* Câu B mới là câu chuẩn nhất vì đáp ứng trọn vẹn cả 3 mảnh ghép của công thức!
+    * *Đúng:* Xuất sắc! 'Tôi là nông dân mới trồng sâm' chính là Bối cảnh (Context) giúp AI biết người hỏi là ai để đưa ra lời khuyên sát thực tế nhất!
 
-#### Phân đoạn 4 (04:30 - 05:00): Trách nhiệm người học & Thông điệp UNESCO
-* **Lời dẫn (Voice-over):** *"Chúc mừng các bạn đã nắm trọn bí kíp! Hãy nhớ: AI là trợ lý, người làm chủ chính là bạn. Hãy luôn kiểm chứng thông tin và tự mình chắt lọc kiến thức nhé!"*
+#### Phân đoạn 5 (05:49 - 06:27): Tổng kết & Hoàn thành bài học SCORM
+* **Nội dung bài giảng:** Tổng kết ngắn gọn: Sử dụng AI hiệu quả không cần kỹ thuật phức tạp, mấu chốt là giao việc rõ ràng, đủ bối cảnh, vai trò và yêu cầu. Tự động cộng điểm và ghi nhận vào sổ điểm SCORM LMS.
 
 ---
 

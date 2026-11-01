@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tin học 6 - Bài 2: Bí kíp giao tiếp với AI (Kỹ thuật viết Prompt)</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="scorm_api.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <!-- Header Banner -->
+  <header class="header-card">
+    <span class="badge-tag">Học liệu E-Learning Tương tác • SCORM 1.2</span>
+    <h1>TIN HỌC 6 - BÀI 2: LỢI ÍCH VÀ CÁCH SỬ DỤNG CÔNG CỤ AI PHÙ HỢP</h1>
+    <p>Chủ đề trọng tâm: <strong>"Bí kíp giao tiếp với AI - Kỹ thuật viết câu lệnh (Prompt)"</strong></p>
+  </header>
+
+  <!-- Phần 1: Infographic tương tác: Công thức viết Prompt -->
+  <section class="section-card">
+    <div class="section-title">
+      <span class="icon">💡</span>
+      <h2>Phần 1: Khám phá "Công thức Vàng" viết Prompt</h2>
+    </div>
+    <p>
+      Trí tuệ nhân tạo (GenAI) giống như một tấm gương phản chiếu: <em>"Bạn hỏi mơ hồ, AI trả lời lan man. Bạn hỏi rõ ràng, AI phản hồi chuẩn xác!"</em>.
+      Để AI trở thành trợ lý học tập đắc lực, em hãy ghi nhớ <strong>Công thức 3 thành phần</strong> dưới đây:
+    </p>
+
+    <!-- 3 Formula Cards -->
+    <div class="formula-grid">
+      <div class="formula-card card-role" onclick="showTip('role')">
+        <div class="formula-header">
+          <h3>1. Đóng vai (Role)</h3>
+          <span style="font-size: 1.5rem;">🎭</span>
+        </div>
+        <p>Xác định rõ em muốn AI hóa thân thành ai để dùng đúng văn phong và chuyên môn phù hợp.</p>
+        <div class="formula-example">
+          "Đóng vai một nhà khoa học vũ trụ..."<br>
+          "Đóng vai cô giáo dạy Lịch sử lớp 6..."
+        </div>
+      </div>
+
+      <div class="formula-card card-task" onclick="showTip('task')">
+        <div class="formula-header">
+          <h3>2. Nhiệm vụ (Task)</h3>
+          <span style="font-size: 1.5rem;">🎯</span>
+        </div>
+        <p>Nêu rõ việc cụ thể em cần AI thực hiện (giải thích, tóm tắt, so sánh, đặt câu hỏi...).</p>
+        <div class="formula-example">
+          "Hãy giải thích hiện tượng nhật thực..."<br>
+          "Hãy kể 3 chiến công hiển hách của Hai Bà Trưng..."
+        </div>
+      </div>
+
+      <div class="formula-card card-context" onclick="showTip('context')">
+        <div class="formula-header">
+          <h3>3. Bối cảnh & Điều kiện (Context)</h3>
+          <span style="font-size: 1.5rem;">📦</span>
+        </div>
+        <p>Chỉ rõ đối tượng tiếp nhận, dung lượng (số câu/từ) và phong cách trả lời dễ hiểu.</p>
+        <div class="formula-example">
+          "Dành cho học sinh lớp 6, dài từ 3-4 câu, dùng ví dụ gần gũi..."
+        </div>
+      </div>
+    </div>
+
+    <!-- Interactive Prompt Playground -->
+    <div class="playground-box">
+      <h3 style="font-size: 1.05rem; color: #1e3a8a; margin-bottom: 12px;">
+        🧪 Góc thực hành: Ghép thử câu Prompt của riêng em
+      </h3>
+      <div class="playground-controls">
+        <div class="form-group">
+          <label>1. Chọn Đóng vai (Role):</label>
+          <select id="selectRole" onchange="updatePromptPreview()">
+            <option value="Đóng vai một nhà sinh học vui tính">Nhà sinh học vui tính</option>
+            <option value="Đóng vai thầy giáo Lịch sử nhiệt huyết">Thầy giáo Lịch sử nhiệt huyết</option>
+            <option value="Đóng vai một phi hành gia khám phá vũ trụ">Phi hành gia khám phá vũ trụ</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>2. Chọn Nhiệm vụ (Task):</label>
+          <select id="selectTask" onchange="updatePromptPreview()">
+            <option value="hãy giải thích quá trình quang hợp của cây xanh">Giải thích quá trình quang hợp</option>
+            <option value="hãy kể về ý nghĩa của chiến thắng Bạch Đằng năm 938">Kể về chiến thắng Bạch Đằng 938</option>
+            <option value="hãy giải thích vì sao Mặt Trăng có nhiều vết lõm">Giải thích các vết lõm trên Mặt Trăng</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>3. Chọn Bối cảnh (Context):</label>
+          <select id="selectContext" onchange="updatePromptPreview()">
+            <option value="cho học sinh lớp 6 dễ hiểu, trong khoảng 4 câu văn ngắn gọn.">Cho HS lớp 6, trong 4 câu ngắn</option>
+            <option value="dưới dạng 3 gạch đầu dòng sinh động, dùng hình ảnh so sánh vui vẻ.">Dạng 3 gạch đầu dòng vui vẻ</option>
+            <option value="bằng ngôn từ trong sáng, kết thúc bằng một câu đố vui nhỏ.">Ngôn từ trong sáng + 1 câu đố vui</option>
+          </select>
+        </div>
+      </div>
+
+      <p style="font-size: 0.88rem; font-weight: 600; color: #475569;">Câu Prompt hoàn chỉnh của em:</p>
+      <div class="result-prompt-box" id="promptDisplay">
+        <span class="role-text" id="roleSpan">Đóng vai một nhà sinh học vui tính</span>, 
+        <span class="task-text" id="taskSpan">hãy giải thích quá trình quang hợp của cây xanh</span> 
+        <span class="context-text" id="contextSpan">cho học sinh lớp 6 dễ hiểu, trong khoảng 4 câu văn ngắn gọn.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Phần 2: Video tương tác mô phỏng (Interactive Video & Pop-up Quizzes) -->
+  <section class="section-card">
+    <div class="section-title">
+      <span class="icon">🎬</span>
+      <h2>Phần 2: Video bài học tương tác "Bí kíp giao tiếp với AI"</h2>
+    </div>
+    <p style="margin-bottom: 16px;">
+      Em hãy bấm <strong>Phát video</strong>. Trong quá trình xem, video sẽ tự động dừng tại <strong>3 điểm kiểm tra (Pop-up Quiz)</strong>.
+      Em cần trả lời chính xác để ghi điểm và gửi kết quả về Sổ điểm LMS!
+    </p>
+
+    <div class="video-player-container">
+      <!-- Màn hình chiếu video -->
+      <div class="video-screen" id="videoScreen">
+        <div class="video-slide-content" id="slideContent">
+          <div class="video-avatar" id="avatarEmoji">🤖</div>
+          <h3 class="video-title" id="slideTitle">Chào mừng em đến với thế giới AI!</h3>
+          <p class="video-desc" id="slideDesc">
+            AI là trợ lý thông minh, nhưng nó chỉ có thể giúp em tốt nhất khi em biết cách ra lệnh chính xác. Hãy bấm nút Play bên dưới để bắt đầu bài học!
+          </p>
+        </div>
+
+        <!-- Pop-up Quiz Overlay -->
+        <div class="quiz-overlay" id="quizOverlay">
+          <div class="quiz-card">
+            <div class="quiz-header">
+              <span class="quiz-badge" id="quizBadge">Câu hỏi tương tác 1/3</span>
+              <span style="font-size: 0.85rem; color: #64748b;" id="quizPoints">+35 điểm</span>
+            </div>
+            <h3 class="quiz-question" id="quizQuestionText">Tiêu đề câu hỏi?</h3>
+            <div class="quiz-options" id="quizOptionsContainer">
+              <!-- Options rendered dynamically -->
+            </div>
+            <div class="quiz-feedback" id="quizFeedbackBox"></div>
+            <div class="quiz-actions">
+              <button class="btn btn-primary" id="quizSubmitBtn" onclick="checkCurrentAnswer()">Kiểm tra đáp án</button>
+              <button class="btn btn-success" id="quizContinueBtn" style="display: none;" onclick="resumeLesson()">Tiếp tục bài học ➔</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Thanh điều khiển video -->
+      <div class="video-controls">
+        <button class="play-btn" id="playBtn" onclick="togglePlay()">▶</button>
+        <div class="progress-track" id="progressTrack" onclick="seekVideo(event)">
+          <div class="progress-bar-fill" id="progressBar"></div>
+          <!-- 3 Checkpoints Markers -->
+          <div class="checkpoint-marker" style="left: 25%;" title="Câu hỏi 1 (01:15)" id="cp1"></div>
+          <div class="checkpoint-marker" style="left: 60%;" title="Câu hỏi 2 (03:00)" id="cp2"></div>
+          <div class="checkpoint-marker" style="left: 90%;" title="Câu hỏi 3 (04:30)" id="cp3"></div>
+        </div>
+        <div class="time-display" id="timeDisplay">00:00 / 05:00</div>
+      </div>
+    </div>
+
+    <!-- Tổng kết điểm SCORM -->
+    <div class="score-summary-card" id="scoreSummaryCard">
+      <h2>🎉 Chúc mừng em đã hoàn thành bài học!</h2>
+      <p>Tổng điểm bài tập tương tác của em:</p>
+      <div class="score-big" id="finalScoreDisplay">100 / 100</div>
+      <p id="feedbackText">Em đã nắm vững bí kíp giao tiếp với AI và sẵn sàng cho bài tập thực hành!</p>
+      <button class="btn btn-primary" style="margin-top: 14px; background: #f59e0b; color: #1e293b; font-weight: 700;" onclick="submitSCORMScore()">
+        🚀 Lưu và Nộp điểm lên Hệ thống LMS
+      </button>
+      <div class="lms-status-text" id="lmsStatusMsg">Đang kết nối chuẩn SCORM 1.2...</div>
+    </div>
+  </section>
+
+  <!-- Phần 3: 4 Nguyên tắc an toàn khi dùng AI -->
+  <section class="section-card">
+    <div class="section-title">
+      <span class="icon">🛡️</span>
+      <h2>Phần 3: Cẩm nang 4 "KHÔNG" bảo vệ bản thân khi trò chuyện với AI</h2>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; margin-top: 12px;">
+      <div style="background: #fef2f2; border: 1px solid #fecaca; border-radius: 8px; padding: 14px;">
+        <strong style="color: #b91c1c;">1. KHÔNG đưa thông tin cá nhân:</strong>
+        <p style="font-size: 0.88rem; color: #475569; margin-top: 4px;">Tuyệt đối không nhập họ tên thật, số điện thoại, địa chỉ nhà, trường lớp hay mật khẩu.</p>
+      </div>
+      <div style="background: #fffbeb; border: 1px solid #fde68a; border-radius: 8px; padding: 14px;">
+        <strong style="color: #b45309;">2. KHÔNG tin tưởng 100%:</strong>
+        <p style="font-size: 0.88rem; color: #475569; margin-top: 4px;">AI có thể "bịa đặt" thông tin (ảo giác AI). Em phải kiểm chứng lại với Sách giáo khoa và thầy cô.</p>
+      </div>
+      <div style="background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 8px; padding: 14px;">
+        <strong style="color: #1d4ed8;">3. KHÔNG sao chép nguyên văn:</strong>
+        <p style="font-size: 0.88rem; color: #475569; margin-top: 4px;">Không copy-paste bài làm của AI nộp cho thầy cô. Hãy chắt lọc ý chính và diễn đạt bằng lời văn của mình.</p>
+      </div>
+      <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; padding: 14px;">
+        <strong style="color: #15803d;">4. KHÔNG dùng từ ngữ khiếm nhã:</strong>
+        <p style="font-size: 0.88rem; color: #475569; margin-top: 4px;">Luôn giao tiếp văn minh, tôn trọng, không yêu cầu AI tạo nội dung bạo lực hay độc hại.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>Chương trình Giáo dục Phổ thông 2018 - Môn Tin học 6 - Chuyên đề Trí tuệ Nhân tạo (AI)</p>
+    <p style="margin-top: 4px; font-size: 0.82rem;">Học liệu tuân thủ khuyến nghị UNESCO (2023) về Giáo dục Trí tuệ nhân tạo có trách nhiệm.</p>
+  </footer>
+</div>
+
+<script>
+// Logic Interactive Prompt Preview
+function updatePromptPreview() {
+  var r = document.getElementById('selectRole').value;
+  var t = document.getElementById('selectTask').value;
+  var c = document.getElementById('selectContext').value;
+  
+  document.getElementById('roleSpan').innerText = r;
+  document.getElementById('taskSpan').innerText = t;
+  document.getElementById('contextSpan').innerText = c;
+}
+
+function showTip(type) {
+  if (type === 'role') alert("Mẹo cho Role: Em có thể gán cho AI vai trò bất kỳ như: 'Chuyên gia Lịch sử', 'Gia sư Toán học', 'Nhà văn kể chuyện thiếu nhi' để AI dùng ngôn ngữ phù hợp nhất!");
+  if (type === 'task') alert("Mẹo cho Task: Hãy dùng các động từ hành động rõ ràng: 'Hãy giải thích...', 'Hãy liệt kê 3 điểm...', 'Hãy tóm tắt...' tránh câu hỏi mơ hồ.");
+  if (type === 'context') alert("Mẹo cho Context: Nhớ ghi 'cho học sinh lớp 6' để AI không dùng các thuật ngữ đại học quá cao siêu nhé!");
+}
+
+// Interactive Video Scenes & Checkpoints
+var currentTime = 0;
+var totalDuration = 300; // 5 phút = 300 giây
+var isPlaying = false;
+var timerInterval = null;
+
+var scenes = [
+  { start: 0, end: 45, emoji: "🤖", title: "Khám phá AI - Trợ lý thông minh", desc: "AI có thể trả lời hàng triệu câu hỏi, nhưng chất lượng câu trả lời lại phụ thuộc 100% vào cách em đặt câu hỏi (Prompt)!" },
+  { start: 45, end: 75, emoji: "🔑", title: "Bí mật: Công thức vàng 3 thành phần", desc: "Để AI hiểu chuẩn xác, em cần công thức: [Đóng vai (Role)] + [Nhiệm vụ (Task)] + [Bối cảnh / Điều kiện (Context)]." },
+  { start: 75, end: 140, emoji: "🎭", title: "Thành phần 1: Đóng vai (Role)", desc: "Khi được phân vai cụ thể (như cô giáo, phi hành gia), AI sẽ tự động chọn lọc kiến thức và tông giọng đúng chuyên môn!" },
+  { start: 140, end: 180, emoji: "📦", title: "Thành phần 2 & 3: Nhiệm vụ & Bối cảnh", desc: "Nhiệm vụ là việc AI cần làm. Bối cảnh giúp AI biết người đọc là ai (HS lớp 6) và độ dài bao nhiêu (3-4 câu) để không trả lời quá khó." },
+  { start: 180, end: 260, emoji: "⚖️", title: "So sánh: Prompt tồi vs Prompt siêu đẳng", desc: "Hỏi 'Kể về mặt trăng' -> AI trả lời lan man. Hỏi 'Đóng vai phi hành gia, kể về mặt trăng cho HS lớp 6 trong 3 câu' -> Câu trả lời cực hay!" },
+  { start: 260, end: 300, emoji: "🌟", title: "Tự chủ & Trách nhiệm khi dùng AI", desc: "Hãy dùng AI như một người bạn gợi ý thông minh, tự mình chắt lọc kiến thức và tuyệt đối không copy-paste nguyên văn!" }
+];
+
+var quizzes = [
+  {
+    checkpointTime: 75, // 01:15 (25% track)
+    badge: "Pop-up Quiz 1 / 3",
+    points: 35,
+    question: "Câu hỏi 1: Công thức chuẩn để viết một câu lệnh (Prompt) hiệu quả cho AI gồm 3 thành phần nào?",
+    options: [
+      { text: "A. Họ tên của em + Tên trường lớp + Câu hỏi bài tập", correct: false },
+      { text: "B. Đóng vai (Role) + Nhiệm vụ (Task) + Bối cảnh/Điều kiện (Context)", correct: true },
+      { text: "C. Lời khen AI + Yêu cầu làm bài tập giúp + Lời cảm ơn", correct: false },
+      { text: "D. Từ khóa ngắn gọn + Dấu chấm hỏi", correct: false }
+    ],
+    explanation: "Chính xác! Công thức 3 thành phần vàng là: Đóng vai (AI là ai) + Nhiệm vụ (AI làm gì) + Bối cảnh (Dành cho ai, độ dài bao nhiêu)."
+  },
+  {
+    checkpointTime: 180, // 03:00 (60% track)
+    badge: "Pop-up Quiz 2 / 3",
+    points: 35,
+    question: "Câu hỏi 2: Bạn Nam nhờ AI giải thích quá trình quang hợp, nhưng AI trả lời toàn các công thức hóa học phức tạp dành cho học sinh cấp 3. Bạn Nam đã thiếu thành phần nào trong Prompt?",
+    options: [
+      { text: "A. Thiếu thành phần 'Nhiệm vụ' (Task)", correct: false },
+      { text: "B. Thiếu lời cảm ơn AI", correct: false },
+      { text: "C. Thiếu 'Bối cảnh/Điều kiện' (Context - ví dụ: dành cho học sinh lớp 6, giải thích đơn giản)", correct: true },
+      { text: "D. Không có lỗi gì, AI luôn trả lời như vậy", correct: false }
+    ],
+    explanation: "Rất chuẩn! Nếu thiếu Bối cảnh (Context: dành cho HS lớp 6, giải thích ngắn gọn), AI sẽ mặc định trả lời theo mức độ kiến thức nâng cao."
+  },
+  {
+    checkpointTime: 270, // 04:30 (90% track)
+    badge: "Pop-up Quiz 3 / 3",
+    points: 30,
+    question: "Câu hỏi 3: Bạn Mai cần tìm hiểu về Hai Bà Trưng trong môn Lịch sử 6. Câu Prompt nào dưới đây là ĐẦY ĐỦ VÀ CHUẨN XÁC NHẤT theo công thức đã học?",
+    options: [
+      { text: "A. 'Kể về Hai Bà Trưng đi.'", correct: false },
+      { text: "B. 'Đóng vai cô giáo dạy Lịch sử, hãy kể tóm tắt cuộc khởi nghĩa Hai Bà Trưng trong khoảng 4 câu cho học sinh lớp 6 dễ hiểu.'", correct: true },
+      { text: "C. 'Giải bài tập Lịch sử trang 20 giúp tôi ngay lập tức.'", correct: false },
+      { text: "D. 'Hai Bà Trưng là ai?'", correct: false }
+    ],
+    explanation: "Xuất sắc! Câu B có đủ 3 yếu tố: [Đóng vai cô giáo Lịch sử] + [Nhiệm vụ: kể tóm tắt khởi nghĩa] + [Bối cảnh: trong 4 câu cho HS lớp 6]."
+  }
+];
+
+var userScore = 0;
+var completedCheckpoints = [false, false, false];
+var selectedOptionIndex = null;
+var currentActiveQuizIndex = null;
+
+function togglePlay() {
+  if (isPlaying) {
+    pauseVideo();
+  } else {
+    playVideo();
+  }
+}
+
+function playVideo() {
+  isPlaying = true;
+  document.getElementById('playBtn').innerText = "⏸";
+  timerInterval = setInterval(function() {
+    currentTime++;
+    if (currentTime > totalDuration) {
+      currentTime = totalDuration;
+      pauseVideo();
+      finishLesson();
+      return;
+    }
+    updateProgressUI();
+    checkQuizTrigger();
+  }, 300); // Tốc độ chạy video mô phỏng
+}
+
+function pauseVideo() {
+  isPlaying = false;
+  document.getElementById('playBtn').innerText = "▶";
+  clearInterval(timerInterval);
+}
+
+function updateProgressUI() {
+  var pct = (currentTime / totalDuration) * 100;
+  document.getElementById('progressBar').style.width = pct + "%";
+  
+  var m = Math.floor(currentTime / 60);
+  var s = currentTime % 60;
+  var sm = m < 10 ? "0" + m : m;
+  var ss = s < 10 ? "0" + s : s;
+  document.getElementById('timeDisplay').innerText = sm + ":" + ss + " / 05:00";
+
+  // Cập nhật slide tương ứng
+  for (var i = 0; i < scenes.length; i++) {
+    if (currentTime >= scenes[i].start && currentTime < scenes[i].end) {
+      document.getElementById('avatarEmoji').innerText = scenes[i].emoji;
+      document.getElementById('slideTitle').innerText = scenes[i].title;
+      document.getElementById('slideDesc').innerText = scenes[i].desc;
+      break;
+    }
+  }
+}
+
+function checkQuizTrigger() {
+  for (var i = 0; i < quizzes.length; i++) {
+    if (!completedCheckpoints[i] && currentTime >= quizzes[i].checkpointTime) {
+      pauseVideo();
+      showQuizModal(i);
+      break;
+    }
+  }
+}
+
+function showQuizModal(quizIndex) {
+  currentActiveQuizIndex = quizIndex;
+  selectedOptionIndex = null;
+  var q = quizzes[quizIndex];
+  
+  document.getElementById('quizBadge').innerText = q.badge;
+  document.getElementById('quizPoints').innerText = "+" + q.points + " điểm";
+  document.getElementById('quizQuestionText').innerText = q.question;
+  
+  var container = document.getElementById('quizOptionsContainer');
+  container.innerHTML = "";
+  
+  q.options.forEach(function(opt, idx) {
+    var btn = document.createElement('div');
+    btn.className = "option-btn";
+    btn.innerText = opt.text;
+    btn.onclick = function() {
+      selectQuizOption(idx);
+    };
+    container.appendChild(btn);
+  });
+  
+  document.getElementById('quizFeedbackBox').style.display = "none";
+  document.getElementById('quizSubmitBtn').style.display = "inline-block";
+  document.getElementById('quizContinueBtn').style.display = "none";
+  
+  document.getElementById('quizOverlay').style.display = "flex";
+}
+
+function selectQuizOption(idx) {
+  selectedOptionIndex = idx;
+  var btns = document.querySelectorAll('.option-btn');
+  btns.forEach(function(b, i) {
+    if (i === idx) {
+      b.classList.add('selected');
+    } else {
+      b.classList.remove('selected');
+    }
+  });
+}
+
+function checkCurrentAnswer() {
+  if (selectedOptionIndex === null) {
+    alert("Em hãy chọn một phương án trả lời trước nhé!");
+    return;
+  }
+  
+  var q = quizzes[currentActiveQuizIndex];
+  var isCorrect = q.options[selectedOptionIndex].correct;
+  var btns = document.querySelectorAll('.option-btn');
+  
+  btns.forEach(function(b, i) {
+    b.onclick = null; // Khóa không cho bấm lại
+    if (q.options[i].correct) {
+      b.classList.add('correct');
+    } else if (i === selectedOptionIndex) {
+      b.classList.add('incorrect');
+    }
+  });
+  
+  var fb = document.getElementById('quizFeedbackBox');
+  fb.style.display = "block";
+  
+  if (isCorrect) {
+    userScore += q.points;
+    fb.className = "quiz-feedback success";
+    fb.innerHTML = "<strong>✅ Đúng rồi!</strong> " + q.explanation;
+  } else {
+    fb.className = "quiz-feedback error";
+    fb.innerHTML = "<strong>❌ Chưa chính xác.</strong> " + q.explanation;
+  }
+  
+  completedCheckpoints[currentActiveQuizIndex] = true;
+  document.getElementById('cp' + (currentActiveQuizIndex + 1)).classList.add('passed');
+  
+  document.getElementById('quizSubmitBtn').style.display = "none";
+  document.getElementById('quizContinueBtn').style.display = "inline-block";
+}
+
+function resumeLesson() {
+  document.getElementById('quizOverlay').style.display = "none";
+  currentTime += 2; // Nhích qua checkpoint
+  playVideo();
+}
+
+function finishLesson() {
+  document.getElementById('scoreSummaryCard').style.display = "block";
+  document.getElementById('finalScoreDisplay').innerText = userScore + " / 100";
+  
+  // Tự động gửi kết quả SCORM
+  submitSCORMScore();
+}
+
+function submitSCORMScore() {
+  var statusDiv = document.getElementById('lmsStatusMsg');
+  statusDiv.innerHTML = "⏳ Đang ghi nhận điểm (" + userScore + "/100) vào Sổ điểm LMS...";
+  
+  try {
+    scorm.setScore(userScore, 100, 0);
+    setTimeout(function() {
+      statusDiv.innerHTML = "✅ <strong>ĐÃ GỬI THÀNH CÔNG!</strong> Điểm số " + userScore + "/100 đã được đồng bộ vào hệ thống LMS.";
+    }, 600);
+  } catch (e) {
+    statusDiv.innerHTML = "ℹ️ Chế độ xem trước cục bộ. Trong hệ thống LMS thực tế, điểm " + userScore + " sẽ được lưu vào Gradebook.";
+  }
+}
+
+function seekVideo(event) {
+  var track = document.getElementById('progressTrack');
+  var rect = track.getBoundingClientRect();
+  var clickX = event.clientX - rect.left;
+  var pct = clickX / rect.width;
+  currentTime = Math.floor(pct * totalDuration);
+  updateProgressUI();
+}
+
+// Khởi chạy ban đầu
+updateProgressUI();
+</script>
+
+</body>
+</html>
+

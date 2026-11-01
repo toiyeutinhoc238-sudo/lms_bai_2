@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Học liệu 3: Trạm Trải Nghiệm GenAI An Toàn - Tin học 6 Bài 2</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #0284c7;
+      --primary-hover: #0369a1;
+      --primary-light: #f0f9ff;
+      --secondary: #0d9488;
+      --accent: #f59e0b;
+      --danger: #ef4444;
+      --success: #10b981;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text: #0f172a;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+      --radius: 16px;
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+      --shadow-lg: 0 10px 25px -5px rgba(2, 132, 199, 0.25);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      background: linear-gradient(135deg, #f0f9ff 0%, #f8fafc 100%);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 20px 16px;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 960px;
+    }
+
+    /* Top Nav */
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .btn-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: white;
+      color: var(--primary);
+      text-decoration: none;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+      transition: all 0.2s;
+    }
+
+    .btn-back:hover {
+      background: var(--primary-light);
+      transform: translateX(-3px);
+    }
+
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #ecfdf5;
+      color: #065f46;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+
+    /* Header */
+    .header-card {
+      background: linear-gradient(135deg, #0369a1 0%, #0284c7 60%, #38bdf8 100%);
+      color: white;
+      padding: 28px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-lg);
+      margin-bottom: 24px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .tag-bubble {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(4px);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 12px;
+    }
+
+    .header-card h1 {
+      font-size: 1.7rem;
+      font-weight: 800;
+      margin-bottom: 8px;
+      line-height: 1.35;
+    }
+
+    .header-card p {
+      font-size: 0.98rem;
+      opacity: 0.92;
+    }
+
+    /* Card styling */
+    .section-card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+      margin-bottom: 24px;
+      border: 1px solid var(--border);
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 1.3rem;
+      color: #0369a1;
+      margin-bottom: 16px;
+      border-bottom: 2px solid var(--primary-light);
+      padding-bottom: 10px;
+    }
+
+    .section-title span.icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      background: var(--primary-light);
+      border-radius: 10px;
+      font-size: 1.25rem;
+    }
+
+    /* Safe Tools Grid */
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+      margin: 16px 0;
+    }
+
+    .tool-box {
+      border: 1.5px solid var(--border);
+      border-radius: 12px;
+      padding: 18px;
+      background: #fafafa;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.2s;
+    }
+
+    .tool-box:hover {
+      border-color: var(--primary);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+      background: white;
+    }
+
+    .tool-box.featured {
+      border-color: #38bdf8;
+      background: #f0f9ff;
+    }
+
+    .tool-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+
+    .tool-name {
+      font-weight: 800;
+      font-size: 1.1rem;
+      color: #0f172a;
+    }
+
+    .tool-badge {
+      font-size: 0.75rem;
+      background: #dbeafe;
+      color: #1e40af;
+      padding: 3px 8px;
+      border-radius: 10px;
+      font-weight: 700;
+    }
+
+    .tool-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+      margin-bottom: 14px;
+    }
+
+    .btn-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      background: var(--primary);
+      color: white;
+      text-decoration: none;
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      transition: background 0.2s;
+    }
+
+    .btn-link:hover {
+      background: var(--primary-hover);
+    }
+
+    /* Safe Chat Simulator Box */
+    .chat-simulator {
+      border: 2px solid #bae6fd;
+      border-radius: 14px;
+      overflow: hidden;
+      background: white;
+      box-shadow: var(--shadow);
+    }
+
+    .chat-header {
+      background: #0284c7;
+      color: white;
+      padding: 14px 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .chat-title {
+      font-weight: 700;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .chat-body {
+      height: 380px;
+      overflow-y: auto;
+      padding: 18px;
+      background: #f8fafc;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .chat-msg {
+      display: flex;
+      gap: 10px;
+      max-width: 85%;
+      animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .chat-msg.bot {
+      align-self: flex-start;
+    }
+
+    .chat-msg.user {
+      align-self: flex-end;
+      flex-direction: row-reverse;
+    }
+
+    .msg-avatar {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+
+    .msg-avatar.bot { background: #e0f2fe; color: #0284c7; }
+    .msg-avatar.user { background: #dcfce7; color: #166534; }
+
+    .msg-bubble {
+      padding: 12px 16px;
+      border-radius: 14px;
+      font-size: 0.92rem;
+      line-height: 1.55;
+    }
+
+    .msg-bubble.bot {
+      background: white;
+      border: 1px solid var(--border);
+      color: #334155;
+      border-top-left-radius: 2px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+
+    .msg-bubble.user {
+      background: #0284c7;
+      color: white;
+      border-top-right-radius: 2px;
+    }
+
+    .chat-quick-tags {
+      padding: 10px 16px;
+      background: #f1f5f9;
+      border-top: 1px solid var(--border);
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .quick-tag-label {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #475569;
+    }
+
+    .tag-btn {
+      background: white;
+      border: 1px solid #cbd5e1;
+      border-radius: 16px;
+      padding: 4px 10px;
+      font-size: 0.8rem;
+      cursor: pointer;
+      color: #334155;
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+
+    .tag-btn:hover {
+      background: #e0f2fe;
+      border-color: #38bdf8;
+      color: #0369a1;
+    }
+
+    .chat-input-row {
+      display: flex;
+      padding: 12px 16px;
+      background: white;
+      border-top: 1px solid var(--border);
+      gap: 10px;
+    }
+
+    .chat-input {
+      flex-grow: 1;
+      padding: 10px 14px;
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      font-size: 0.92rem;
+      outline: none;
+    }
+
+    .chat-input:focus {
+      border-color: var(--primary);
+    }
+
+    .btn-send {
+      background: #0284c7;
+      color: white;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 10px;
+      font-weight: 700;
+      cursor: pointer;
+      font-size: 0.9rem;
+      transition: background 0.2s;
+    }
+
+    .btn-send:hover {
+      background: #0369a1;
+    }
+
+    /* Safety banner */
+    .safety-banner {
+      background: #fffbeb;
+      border: 1.5px solid #fde68a;
+      border-radius: 12px;
+      padding: 18px;
+      margin-top: 16px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+    }
+
+    .safety-rule strong {
+      display: block;
+      color: #b45309;
+      font-size: 0.92rem;
+      margin-bottom: 4px;
+    }
+
+    .safety-rule p {
+      font-size: 0.85rem;
+      color: #475569;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px 0;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <a href="index.html" class="btn-back">
+      <span>←</span> Về Cổng Trọn Bộ Học Liệu
+    </a>
+    <div class="status-badge">
+      <span>🛡️</span> Bộ lọc An toàn K-12: Đang kích hoạt
+    </div>
+  </div>
+
+  <!-- Header Card -->
+  <header class="header-card">
+    <span class="tag-bubble">HỌC LIỆU 3 • LUYỆN TẬP THỰC HÀNH (15 PHÚT)</span>
+    <h1>Trạm Trải Nghiệm GenAI An Toàn Cho Học Đường</h1>
+    <p>Chuyên đề Trí tuệ Nhân tạo - Môn Tin học 6 | Khám phá các công cụ AI phù hợp lứa tuổi và thực hành viết Prompt</p>
+  </header>
+
+  <!-- Phần 1: Danh sách công cụ an toàn -->
+  <section class="section-card">
+    <div class="section-title">
+      <span class="icon">🔗</span>
+      <h2>1. Danh mục các công cụ GenAI an toàn được khuyên dùng</h2>
+    </div>
+    <p>
+      Theo khuyến nghị của <strong>UNESCO (2023)</strong> về Trí tuệ nhân tạo trong giáo dục, học sinh lớp 6 cần được hướng dẫn sử dụng các công cụ AI có cơ chế kiểm duyệt nội dung độc hại và bảo vệ dữ liệu trẻ em:
+    </p>
+
+    <div class="tools-grid">
+      <!-- Tool 1 -->
+      <div class="tool-box featured">
+        <div>
+          <div class="tool-header">
+            <span class="tool-name">EduChat VN</span>
+            <span class="tool-badge">Ưu tiên số 1</span>
+          </div>
+          <p class="tool-desc">
+            Trợ lý AI chuyên dụng cho học sinh phổ thông. Tự động lọc ngôn từ độc hại, bảo vệ dữ liệu cá nhân học đường.
+          </p>
+        </div>
+        <a href="https://www.educhat.vn" target="_blank" class="btn-link">
+          <span>🚀</span> Mở EduChat.vn
+        </a>
+      </div>
+
+      <!-- Tool 2 -->
+      <div class="tool-box">
+        <div>
+          <div class="tool-header">
+            <span class="tool-name">SchoolAI (Spaces)</span>
+            <span class="tool-badge">Lớp học an toàn</span>
+          </div>
+          <p class="tool-desc">
+            Học sinh vào bằng mã Room Code của thầy cô, <strong>không cần đăng ký email/SĐT cá nhân</strong>, thầy cô giám sát được nội dung chat.
+          </p>
+        </div>
+        <a href="https://schoolai.com" target="_blank" class="btn-link">
+          <span>🚀</span> Mở SchoolAI.com
+        </a>
+      </div>
+
+      <!-- Tool 3 -->
+      <div class="tool-box">
+        <div>
+          <div class="tool-header">
+            <span class="tool-name">Khanmigo</span>
+            <span class="tool-badge">Gia sư Socratic</span>
+          </div>
+          <p class="tool-desc">
+            Trợ lý AI chuẩn mực của Khan Academy. Định hướng tư duy từng bước, <strong>tuyệt đối không giải bài hộ</strong> để rèn tự học.
+          </p>
+        </div>
+        <a href="https://www.khanacademy.org/khanmigo" target="_blank" class="btn-link">
+          <span>🚀</span> Khám phá Khanmigo
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Phần 2: Sandbox mô phỏng trực tiếp EduChat -->
+  <section class="section-card">
+    <div class="section-title">
+      <span class="icon">🤖</span>
+      <h2>2. Khung trải nghiệm thử nghiệm câu lệnh (EduChat Safe Sandbox)</h2>
+    </div>
+    <p style="margin-bottom: 16px;">
+      Em có thể nhập thử câu Prompt của mình vào khung chat mô phỏng dưới đây để kiểm tra phản hồi của AI trước khi chụp màn hình nộp bài cho <strong>Học liệu 4</strong>:
+    </p>
+
+    <div class="chat-simulator" id="chatSimulator">
+      <div class="chat-header">
+        <div class="chat-title">
+          <span>🤖</span> <strong>EduChat Simulator</strong> (Trợ lý AI Tin học 6)
+        </div>
+        <span style="font-size: 0.8rem; background: rgba(255,255,255,0.25); padding: 2px 10px; border-radius: 10px;">Chế độ an toàn: BẬT</span>
+      </div>
+
+      <!-- Chat Body -->
+      <div class="chat-body" id="chatBody">
+        <div class="chat-msg bot">
+          <div class="msg-avatar bot">🤖</div>
+          <div class="msg-bubble bot">
+            Xin chào em! Thầy là <strong>EduChat - Trợ lý học tập môn Tin học 6</strong>. 
+            Em hãy thử gửi cho thầy một câu lệnh (Prompt) theo công thức 3 thành phần: 
+            <strong>[Đóng vai] + [Nhiệm vụ] + [Bối cảnh]</strong> nhé! Thầy sẵn sàng hỗ trợ các môn Lịch sử, KHTN và Địa lí!
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick prompts -->
+      <div class="chat-quick-tags">
+        <span class="quick-tag-label">💡 Gợi ý nhanh:</span>
+        <button class="tag-btn" onclick="fillPrompt(1)">Sử 6: Bạch Đằng 938</button>
+        <button class="tag-btn" onclick="fillPrompt(2)">KHTN 6: Hiện tượng Quang hợp</button>
+        <button class="tag-btn" onclick="fillPrompt(3)">KHTN 6: Mặt Trăng khuyết</button>
+        <button class="tag-btn" onclick="fillPrompt(4)">Thử prompt cộc lốc (chưa đạt)</button>
+      </div>
+
+      <!-- Input row -->
+      <div class="chat-input-row">
+        <input type="text" id="userInput" class="chat-input" placeholder="Nhập câu prompt của em... (Ví dụ: Đóng vai cô giáo Lịch sử, hãy giải thích...)" onkeydown="handleInputKey(event)">
+        <button class="btn-send" onclick="sendPrompt()">Gửi câu lệnh ➔</button>
+      </div>
+    </div>
+
+    <!-- Cẩm nang 4 KHÔNG -->
+    <div class="safety-banner">
+      <div class="safety-rule">
+        <strong>1. KHÔNG chia sẻ tin cá nhân</strong>
+        <p>Tuyệt đối không gõ họ tên đầy đủ, địa chỉ nhà, SĐT, trường lớp hay mật khẩu vào AI.</p>
+      </div>
+      <div class="safety-rule">
+        <strong>2. KHÔNG tin tưởng 100%</strong>
+        <p>AI có thể bị "ảo giác" (bịa thông tin). Luôn kiểm chứng lại với Sách giáo khoa và Thầy cô.</p>
+      </div>
+      <div class="safety-rule">
+        <strong>3. KHÔNG copy-paste nguyên văn</strong>
+        <p>Hãy tự chắt lọc thông tin và viết lại bằng lời văn của em để rèn luyện tính tự chủ.</p>
+      </div>
+      <div class="safety-rule">
+        <strong>4. KHÔNG dùng từ khiếm nhã</strong>
+        <p>Luôn tôn trọng, lịch sự, không yêu cầu nội dung xấu, bạo lực hoặc gian lận.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>Chương trình GDPT 2018 - Tin học 6 | Hoạt động 3: Trải nghiệm công cụ AI an toàn</p>
+  </footer>
+</div>
+
+<script>
+  // Web Audio Context for Sound Effects
+  const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+  function playAlertSound(isError) {
+    if (!audioCtx) return;
+    try {
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+      osc.connect(gain);
+      gain.connect(audioCtx.destination);
+      if (isError) {
+        osc.frequency.setValueAtTime(200, audioCtx.currentTime);
+        osc.frequency.setValueAtTime(150, audioCtx.currentTime + 0.15);
+        gain.gain.setValueAtTime(0.2, audioCtx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.3);
+        osc.start();
+        osc.stop(audioCtx.currentTime + 0.3);
+      } else {
+        osc.frequency.setValueAtTime(587.33, audioCtx.currentTime); // D5
+        osc.frequency.setValueAtTime(880, audioCtx.currentTime + 0.1); // A5
+        gain.gain.setValueAtTime(0.15, audioCtx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.25);
+        osc.start();
+        osc.stop(audioCtx.currentTime + 0.25);
+      }
+    } catch(e) {}
+  }
+
+  function fillPrompt(type) {
+    const input = document.getElementById('userInput');
+    if (type === 1) {
+      input.value = "Đóng vai cô giáo Lịch sử, hãy giải thích ý nghĩa của chiến thắng Bạch Đằng năm 938 cho học sinh lớp 6 nghe trong khoảng 4 câu ngắn gọn, dễ hiểu nhé!";
+    } else if (type === 2) {
+      input.value = "Đóng vai một nhà thực vật học, hãy giải thích quá trình quang hợp của cây xanh cho học sinh lớp 6 hiểu được trong 3 gạch đầu dòng vui vẻ.";
+    } else if (type === 3) {
+      input.value = "Đóng vai một phi hành gia, hãy giải thích vì sao Mặt Trăng lúc tròn lúc khuyết cho học sinh lớp 6 trong 4 câu đơn giản.";
+    } else if (type === 4) {
+      input.value = "Chiến thắng Bạch Đằng năm 938 là gì?";
+    }
+    input.focus();
+  }
+
+  function handleInputKey(event) {
+    if (event.key === 'Enter') {
+      sendPrompt();
+    }
+  }
+
+  function sendPrompt() {
+    const input = document.getElementById('userInput');
+    const text = input.value.trim();
+    if (!text) return;
+
+    // Append User Message
+    appendMessage('user', text);
+    input.value = '';
+
+    // Check Safety (Phone numbers, password, sensitive personal info)
+    const phonePattern = /(0|\+84)(3|5|7|8|9)[0-9]{8}/;
+    const passPattern = /(mật khẩu|mat khau|password|pass|cccd|cmnd)/i;
+
+    if (phonePattern.test(text) || passPattern.test(text)) {
+      playAlertSound(true);
+      setTimeout(function() {
+        appendMessage('bot', `
+          <strong style="color: #b91c1c;">🚨 CẢNH BÁO AN TOÀN SỐ!</strong><br>
+          Hệ thống phát hiện em đang chia sẻ thông tin cá nhân hoặc nhạy cảm (số điện thoại, mật khẩu).<br>
+          <em>Hãy nhớ Nguyên tắc 1 trong Cẩm nang 4 KHÔNG: Tuyệt đối không nhập thông tin định danh cá nhân vào ô chat của AI để bảo vệ quyền riêng tư của em!</em>
+        `);
+      }, 500);
+      return;
+    }
+
+    // Process Educational Response
+    playAlertSound(false);
+    setTimeout(function() {
+      const lower = text.toLowerCase();
+      let response = "";
+
+      const hasRole = lower.includes("đóng vai") || lower.includes("dong vai") || lower.includes("hóa thân") || lower.includes("nhà khoa học") || lower.includes("cô giáo") || lower.includes("phi hành gia");
+      const hasContext = lower.includes("lớp 6") || lower.includes("lop 6") || lower.includes("ngắn gọn") || lower.includes("câu") || lower.includes("dễ hiểu");
+
+      if (hasRole && hasContext) {
+        // Chuẩn 3 thành phần
+        if (lower.includes("bạch đằng") || lower.includes("bach dang")) {
+          response = `
+            <strong>🌟 Nhận xét: Prompt xuất sắc đạt trọn vẹn 3 thành phần! (10/10)</strong><br><br>
+            Chào em, cô giáo Lịch sử xin giải thích cho em nhé:<br>
+            1. Chiến thắng Bạch Đằng năm 938 do Ngô Quyền lãnh đạo là một kỳ tích quân sự vĩ đại của dân tộc ta.<br>
+            2. Nhờ cắm cọc gỗ nhọn dưới lòng sông và dựa vào con nước thủy triều, quân ta đã nhấn chìm toàn bộ chiến thuyền của quân Nam Hán.<br>
+            3. Trận đánh này đã đập tan mưu đồ xâm lược của kẻ thù và tiêu diệt chủ tướng Hoằng Tháo.<br>
+            4. Ý nghĩa to lớn nhất là đã chính thức chấm dứt hơn 1.000 năm Bắc thuộc, mở ra kỷ nguyên độc lập tự chủ lâu dài cho đất nước Việt Nam!
+          `;
+        } else if (lower.includes("quang hợp") || lower.includes("quang hop")) {
+          response = `
+            <strong>🌟 Nhận xét: Prompt xuất sắc chuẩn công thức 3 thành phần! (10/10)</strong><br><br>
+            Chào bạn nhỏ! Dưới góc nhìn nhà thực vật học, quang hợp giống như một "nhà bếp kỳ diệu" của cây xanh đấy:<br>
+            • Cây dùng lá xanh làm "nồi nấu", hút ánh sáng Mặt Trời và khí Carbonic (CO₂) từ không khí.<br>
+            • Rễ hút nước từ đất đưa lên làm nguyên liệu để tạo ra đường nuôi cây lớn khỏe.<br>
+            • Đặc biệt nhất, quá trình này nhả ra khí Oxy mát lành cho con người và muôn loài cùng thở đấy!
+          `;
+        } else {
+          response = `
+            <strong>🌟 Nhận xét: Prompt của em rất chuẩn cấu trúc 3 thành phần [Đóng vai] + [Nhiệm vụ] + [Bối cảnh]!</strong><br><br>
+            Với vai trò chuyên gia, thầy/cô xin giải thích ngắn gọn cho học sinh lớp 6:<br>
+            Vấn đề em hỏi thực chất xuất phát từ quy luật vận động tự nhiên. Nhờ em đã giới hạn dung lượng và đối tượng lớp 6, câu trả lời này được chắt lọc bằng ngôn từ gần gũi, giúp em dễ dàng ghi nhớ và ứng dụng vào bài học!
+          `;
+        }
+      } else {
+        // Thiếu thành phần
+        response = `
+          <strong>⚠️ Nhận xét sư phạm: Câu Prompt của em có thể cải thiện hơn!</strong><br>
+          ${!hasRole ? "• Em quên đặt <em>[Đóng vai (Role)]</em> cho AI (ví dụ: 'Đóng vai cô giáo Lịch sử...').<br>" : ""}
+          ${!hasContext ? "• Em chưa nêu rõ <em>[Bối cảnh (Context)]</em> (ví dụ: 'dành cho học sinh lớp 6, trong 4 câu ngắn gọn').<br>" : ""}
+          <br>
+          <em>Nếu em hỏi chung chung thế này, câu trả lời sẽ rất dài và có thể dùng nhiều thuật ngữ khó. Em hãy bổ sung thêm các thành phần theo công thức đã học ở Hoạt động 2 để nhận câu trả lời hay nhất nhé!</em>
+        `;
+      }
+
+      appendMessage('bot', response);
+    }, 700);
+  }
+
+  function appendMessage(sender, htmlContent) {
+    const body = document.getElementById('chatBody');
+    const msg = document.createElement('div');
+    msg.className = `chat-msg ${sender}`;
+    msg.innerHTML = `
+      <div class="msg-avatar ${sender}">${sender === 'bot' ? '🤖' : 'HS'}</div>
+      <div class="msg-bubble ${sender}">${htmlContent}</div>
+    `;
+    body.appendChild(msg);
+    body.scrollTop = body.scrollHeight;
+  }
+</script>
+
+</body>
+</html>
+

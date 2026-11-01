@@ -1,0 +1,671 @@
+KẾ HOẠCH BÀI DẠY TIN HỌC 6 - CHUYÊN ĐỀ TRÍ TUỆ NHÂN TẠO
+Tên bài học: BÀI 2: LỢI ÍCH VÀ CÁCH SỬ DỤNG CÔNG CỤ AI PHÙ HỢP
+Môn học: Tin học 6
+Thời lượng: 1 tiết trực tuyến
+1. Mục tiêu
+1.1. Về kiến thức:
+●​ (6.A3.2) Trình bày được lợi ích của AI trong việc hỗ trợ con người học hỏi, rèn
+luyện kĩ năng và mở rộng hiểu biết khi được sử dụng đúng cách, có mục đích
+rõ ràng. Sử dụng được một công cụ AI phù hợp lứa tuổi để hỗ trợ một nhiệm
+vụ học tập đơn giản và nói lại được điều mình đã học thêm.
+1.2. Về năng lực đặc thù AI:
+NLa: Tư duy lấy con người làm trung tâm
+●​ (1) Biết kiểm chứng thông tin, kết quả do AI cung cấp;
+●​ (2) Biết bảo vệ quyền riêng tư, dữ liệu cá nhân;
+1.3. Về năng lực chung:
+●​ (3) Tự chủ và tự học: Chủ động phân bổ thời gian tự truy cập hệ thống LMS ở
+nhà, hoàn thành video học tập và các bài trắc nghiệm tương tác đúng hạn.
+1.4. Về phẩm chất:
+●​ (4) Trách nhiệm: Nhận thức rõ bản thân phải tự chịu trách nhiệm đối với các
+quyết định và kết quả học tập của mình, không đổ lỗi cho các công cụ máy móc
+hỗ trợ.
+
+2. Thiết bị dạy học và học liệu
+2.1. Giáo viên
+2.2. Học sinh
+3. Tiến trình dạy học
+3.1. Tiến trình dạy học
+Hoạt động học
+
+Mục tiêu
+
+(thời gian)
+
+Nội dung dạy học
+
+PPDH/
+
+Phương án
+
+Phương án ứng
+
+trọng tâm
+
+KTDH
+
+đánh giá
+
+dụng CNTT
+(Phương pháp
+- Công cụ)
+
+Hoạt động 1:
+
+(2)
+
+Khơi gợi nhu cầu sử Dạy học trực
+
+Quan sát LMS
+
+Công cụ Forum
+
+Khởi động (5
+
+dụng AI: Chia sẻ về
+
+tuyến (Diễn
+
+log để đánh giá (Diễn đàn thảo
+
+phút)
+
+khó khăn khi làm
+
+đàn -
+
+sự chuyên cần.
+
+luận) trên LMS.
+
+bài tập về nhà và
+
+Forum).
+
+mong muốn có "trợ
+lý ảo" hỗ trợ.
+Hoạt động 2:
+
+- Trình bày lợi ích
+
+Tự học có
+
+Điểm bài tập
+
+Gói SCORM
+
+Hình thành kiến (3)
+
+của AI khi dùng
+
+hướng dẫn
+
+trắc nghiệm
+
+video tương tác
+
+thức mmới
+
+đúng cách.
+
+qua
+
+ngắn (pop-up
+
+hoặc
+
+Video/Infogr
+
+quiz) tích hợp
+
+Infographic
+
+aphic.
+
+trong video.
+
+nhúng trực tiếp
+
+"Bí kíp giao tiếp
+với AI" (15 phút)
+
+(6.A3.2), (1),
+
+- Nắm công thức
+viết Prompt: Đóng
+vai + Nhiệm vụ +
+Bối cảnh.
+- Hiểu cách AI hoạt
+động (phản hồi theo
+
+trên LMS.
+
+Hoạt động học
+
+Mục tiêu
+
+(thời gian)
+
+Nội dung dạy học
+
+PPDH/
+
+Phương án
+
+Phương án ứng
+
+trọng tâm
+
+KTDH
+
+đánh giá
+
+dụng CNTT
+(Phương pháp
+- Công cụ)
+
+ngữ cảnh người
+dùng cung cấp)
+
+Hoạt động 3:
+
+(6.A3.2), (2),
+
+- Biết dùng công cụ
+
+Thực hành cá Chấm điểm file Link công cụ
+
+Luyện tập
+
+(3)
+
+AI phục vụ học tập.
+
+nhân trên nền ảnh
+
+GenAI an toàn
+
+tảng số.
+
+(screenshot)
+
+(như EduChat
+
+nộp trên hệ
+
+hoặc một công
+
+Thực hành "Hỏi
+
+- Viết 1 câu lệnh
+
+đúng - Trúng đáp
+
+(prompt) hỏi AI về
+
+án" (15 phút)
+
+thống (Sử dụng cụ phù hợp lứa
+
+một chủ đề môn học
+(Lịch sử/KHTN)
+theo đúng công thức
+đã học.
+
+Rubric). Tiêu
+
+tuổi do trường
+
+chí: Câu lệnh
+
+gợi ý) và công
+
+rõ ràng, đúng
+
+cụ Nộp bài
+
+cấu trúc.
+
+(Assignment)
+trên LMS.
+
+- Chụp ảnh màn
+hình đoạn chat.
+Hoạt động 4:
+Vận dụng
+"Nhà báo nhí
+tổng hợp tin
+tức"(10 phút)
+
+(6.A3.2), (4)
+
+- Trình bày lại được
+điều mình đã học
+thêm từ AI.
+
+Thực hành cá Đánh giá bài
+
+Công cụ Blog
+
+nhân.
+
+đăng trên Blog
+
+hoặc Nhật ký
+
+(Sử dụng
+
+(Glossary) trên
+
+Rubric). Tiêu
+
+LMS.
+
+- Thể hiện trách
+
+chí: Diễn đạt
+
+nhiệm: Không
+
+bằng ngôn ngữ
+
+copy-paste nguyên
+
+riêng, tự chịu
+
+văn, tự chắt lọc
+
+trách nhiệm kết
+
+thông tin và viết lại
+
+quả.
+
+Hoạt động học
+(thời gian)
+
+Mục tiêu
+
+Nội dung dạy học
+
+PPDH/
+
+Phương án
+
+Phương án ứng
+
+trọng tâm
+
+KTDH
+
+đánh giá
+
+dụng CNTT
+(Phương pháp
+- Công cụ)
+
+bằng văn phong của
+mình.
+
+3.2. Các hoạt động học
+Hoạt động 1. Khởi động (Trực tuyến không đồng bộ - 5 phút)
+a. Mục tiêu: (2).
+b. Nội dung: Khơi gợi nhu cầu sử dụng AI thông qua Diễn đàn (Forum) trên LMS.
+GV đặt câu hỏi: "Khi gặp một bài tập khó ở nhà, em thường làm gì? Nếu có một 'trợ
+lý ảo AI', em sẽ muốn hỏi nó điều gì nhất?"
+c. Sản phẩm: Ít nhất 1 bình luận trả lời của mỗi học sinh trên Diễn đàn.
+d. Tổ chức thực hiện:
+●​ Bước 1: Chuyển giao nhiệm vụ: GV đăng câu hỏi chủ đề trên Forum của
+LMS và thiết lập thời hạn hoàn thành. Yêu cầu học sinh vào đọc và phản hồi.
+●​ Bước 2: Thực hiện nhiệm vụ: HS chủ động đăng nhập LMS bằng thiết bị cá
+nhân, suy nghĩ, liên hệ thực tiễn và gõ câu trả lời lên Diễn đàn.
+●​ Bước 3: Báo cáo, thảo luận: Hệ thống LMS hiển thị công khai các bình luận.
+HS có thể đọc và tương tác với câu trả lời của các bạn trong lớp.
+●​ Bước 4: Kết luận, nhận định: Hệ thống tự động ghi nhận lượt tham gia (LMS
+log) để đánh giá chuyên cần. GV duyệt qua các câu trả lời để tạo sự kết nối,
+dẫn dắt vào bài học mới.
+Hoạt động 2. Hình thành kiến thức mới - "Bí kíp giao tiếp với AI" (Trực tuyến 15 phút)
+a. Mục tiêu: (6.A3.2), (1), (3).
+b. Nội dung: Học sinh xem Video/Infographic tương tác hướng dẫn kỹ thuật viết
+Prompt. Nắm được lợi ích của AI khi dùng đúng cách, cách AI phản hồi theo ngữ
+cảnh và công thức viết Prompt: Đóng vai + Nhiệm vụ + Bối cảnh.
+c. Sản phẩm: Kết quả bài tập trắc nghiệm ngắn (pop-up quiz) tích hợp trong video
+(VD: Chọn đáp án đúng cho một cấu trúc prompt chuẩn).
+
+d. Tổ chức thực hiện:
+●​ Bước 1: Chuyển giao nhiệm vụ: GV nhúng Gói SCORM Video/Infographic
+tương tác (dùng H5P hoặc Edpuzzle) lên LMS. Yêu cầu HS xem tài liệu và trả
+lời các câu hỏi xuất hiện giữa chừng.
+●​ Bước 2: Thực hiện nhiệm vụ: HS tự truy cập và xem bài giảng. Khi video
+dừng lại, HS vận dụng kiến thức vừa nghe để trả lời câu hỏi trắc nghiệm
+(pop-up) mới có thể xem tiếp.
+●​ Bước 3: Báo cáo, thảo luận: Tiến độ hoàn thành video và điểm số trắc nghiệm
+của từng cá nhân được đồng bộ thẳng vào sổ điểm điện tử của LMS.
+●​ Bước 4: Kết luận, nhận định: GV kiểm tra báo cáo tự động trên hệ thống,
+đánh giá mức độ hiểu bài của HS thông qua kết quả trắc nghiệm và có phương
+án hỗ trợ kịp thời cho HS điểm thấp.
+Hoạt động 3. Luyện tập - Thực hành "Hỏi đúng - Trúng đáp án" (Trực tuyến 15 phút)
+a. Mục tiêu: (6.A3.2), (2), (3).
+b. Nội dung: HS truy cập công cụ GenAI an toàn (như EduChat) để thực hành viết 1
+câu lệnh (prompt) hỏi về một chủ đề môn học (Lịch sử/KHTN) áp dụng đúng công
+thức: Đóng vai + Nhiệm vụ + Bối cảnh.
+c. Sản phẩm: 01 file ảnh chụp màn hình (screenshot) thể hiện rõ câu lệnh của HS và
+câu trả lời của AI, tải lên mục Assignment trên LMS.
+d. Tổ chức thực hiện:
+●​ Bước 1: Chuyển giao nhiệm vụ: GV cung cấp link công cụ GenAI và công cụ
+Nộp bài (Assignment) trên LMS. Yêu cầu HS đặt câu hỏi cho AI theo công
+thức đã học, chụp màn hình minh chứng và nộp lên hệ thống.
+●​ Bước 2: Thực hiện nhiệm vụ: HS truy cập công cụ AI, soạn câu lệnh kĩ lưỡng
+(VD: "Đóng vai một nhà khoa học, hãy giải thích hiện tượng nhật thực..."),
+nhấn gửi và nhận kết quả.
+
+●​ Bước 3: Báo cáo, thảo luận: HS thao tác chụp màn hình đoạn chat và tải file
+ảnh lên mục Assignment của LMS đúng hạn.
+●​ Bước 4: Kết luận, nhận định: GV chấm điểm các bài nộp dựa trên Rubric
+đánh giá được cài đặt sẵn (Tiêu chí: Câu lệnh rõ ràng, đúng cấu trúc). Trả điểm
+và nhận xét (Feedback) cho HS.
+Hoạt động 4. Vận dụng - "Nhà báo nhí tổng hợp tin tức" (Trực tuyến - 10 phút)
+a. Mục tiêu: (6.A3.2), (4).
+b. Nội dung: Học sinh đọc hiểu kết quả mà AI cung cấp ở Hoạt động 3, không
+copy-paste nguyên văn mà tự chắt lọc thông tin và viết lại bằng văn phong của mình
+để rèn luyện tính tự chịu trách nhiệm.
+c. Sản phẩm: 01 đoạn văn ngắn (3-5 câu) tóm tắt kiến thức mới trên Blog hoặc Nhật
+ký (Glossary) của LMS.
+d. Tổ chức thực hiện:
+●​ Bước 1: Chuyển giao nhiệm vụ: GV tạo mục Blog trên LMS. Giao nhiệm vụ:
+"Hãy viết lại điều em vừa học được từ AI. Yêu cầu tuyệt đối không copy-paste
+nguyên văn để thể hiện trách nhiệm với bài làm cá nhân!".
+●​ Bước 2: Thực hiện nhiệm vụ: HS đọc kỹ kết quả trả về của AI ở Hoạt động 3,
+suy nghĩ, chắt lọc ý chính và tự gõ tóm tắt lên Blog.
+●​ Bước 3: Báo cáo, thảo luận: Bài đăng của học sinh được lưu giữ công khai
+trên hệ thống, tạo thành một cuốn nhật ký học tập chung của lớp.
+●​ Bước 4: Kết luận, nhận định: GV dùng Rubric đánh giá bài đăng của HS
+(Tiêu chí: Diễn đạt bằng ngôn ngữ riêng, tự chịu trách nhiệm kết quả, không
+sao chép). Hệ thống ghi nhận điểm và GV gửi tin nhắn khích lệ lớp hoàn thành
+chuyên đề.
+
+HỒ SƠ BÀI DẠY
+1. Rubric chấm điểm Hoạt động 3: Thực hành "Hỏi đúng - Trúng đáp án"
+Tiêu chí
+đánh giá
+
+Tốt (Giỏi)
+
+Đạt (Khá/Trung
+bình)
+
+Cần cố gắng
+(Chưa đạt)
+
+Điểm
+tối đa
+
+1. Cấu trúc
+câu lệnh
+(Prompt)
+(Trọng tâm
+nhất)
+
+(5 điểm) Câu
+lệnh thể hiện
+đầy đủ 3 yếu
+tố: 1. Đóng
+vai. 2. Nhiệm
+vụ. 3. Bối
+cảnh/Điều
+kiện.
+
+(3 điểm) Câu lệnh
+thiếu 1 trong 3 yếu
+tố (thường là quên
+mất phần "Đóng
+vai" hoặc "Bối
+cảnh").
+
+(1 điểm)
+Câu lệnh chỉ
+có từ khóa
+ngắn gọn,
+cộc lốc hoặc
+hỏi chung
+chung.
+
+5
+điểm
+
+2. Nội dung
+và Ngôn từ
+
+(3 điểm) Chủ
+đề hỏi thuộc
+kiến thức học
+tập. Ngôn từ
+lịch sự, gõ
+tiếng Việt có
+dấu đầy đủ.
+
+(2 điểm) Hỏi sai
+chủ đề học tập
+HOẶC gõ tiếng
+Việt không dấu,
+viết tắt nhiều.
+
+(0 điểm)
+Dùng từ ngữ
+thiếu chuẩn
+mực, vi
+phạm
+nguyên tắc
+an toàn.
+
+3
+điểm
+
+3. Hình
+thức minh
+chứng
+
+(2 điểm) Ảnh
+chụp màn
+hình rõ nét,
+thấy rõ ràng
+toàn bộ câu
+hỏi của học
+sinh và câu trả
+lời của AI.
+
+(1 điểm) Ảnh chụp
+bị mờ, bị cắt xén
+chỉ thấy câu trả lời
+mà không thấy câu
+hỏi của học sinh.
+
+(0 điểm)
+Không nộp
+ảnh chụp
+màn hình
+hoặc nộp sai
+file.
+
+2
+điểm
+
+2. Rubric chấm điểm Hoạt động 4: "Nhà báo nhí tổng hợp tin tức"
+●​ Mục tiêu cần đo: Trình bày lại được kiến thức và thể hiện năng lực tự chịu
+trách nhiệm, không đổ lỗi/ỷ lại vào máy móc.
+●​ Hình thức nộp: Đoạn văn ngắn trên Blog/Diễn đàn của LMS.
+●​ Thang điểm: 10 điểm.
+Tiêu chí
+đánh giá
+
+Tốt (Giỏi)
+
+Đạt (Khá/Trung
+bình)
+
+Cần cố gắng
+(Chưa đạt)
+
+Điểm
+tối đa
+
+1. Tính tự
+chủ
+(Không
+Copy-Past
+e) (Trọng
+tâm)
+
+(5 điểm) Đọc
+văn bản thấy rõ
+giọng văn của
+học sinh. Tự
+tóm tắt và gõ
+lại 100% bằng
+ngôn từ của
+mình.
+
+(3 điểm) Có sự
+chỉnh sửa, nhưng
+vẫn còn
+copy-paste một vài
+câu dài nguyên
+văn từ AI.
+
+(0 điểm)
+Hành vi
+Copy - Paste
+nguyên xi
+100% câu trả
+lời của AI.
+
+5
+điểm
+
+2. Dung
+lượng và
+Tính chính
+xác
+
+(3 điểm) Đảm
+bảo độ dài yêu
+cầu (từ 3 đến 5
+câu). Thông tin
+tóm tắt lại
+chính xác.
+
+(1.5 điểm) Viết
+quá ngắn (chỉ 1-2
+câu) HOẶC tóm
+tắt sai kiến thức
+trọng tâm.
+
+(0 điểm) Nội
+dung hoàn
+toàn lạc đề
+hoặc không
+viết gì.
+
+3
+điểm
+
+3. Trình
+bày và
+Chính tả
+
+(2 điểm) Câu
+văn rõ nghĩa,
+viết hoa đầu
+câu, có dấu
+chấm câu,
+không sai lỗi
+chính tả.
+
+(1 điểm) Câu văn
+còn lủng củng, sai
+từ 2-3 lỗi chính tả
+hoặc quên dùng
+dấu câu.
+
+(0 điểm) Sai
+quá nhiều lỗi
+chính tả
+khiến người
+đọc không
+hiểu nội
+dung.
+
+2
+điểm
+
+Cách giáo viên sử dụng Rubric này trên LMS:
+●​ Với môn Đào tạo điện tử, có thể nhập trực tiếp các Rubric này vào công cụ
+Rubric / Grading Criteria của tính năng Assignment và Forum trên Moodle
+hoặc Google Classroom.
+●​ Khi chấm bài, giáo viên chỉ cần click vào các ô mức độ (Tốt / Đạt / Cần cố
+gắng), hệ thống LMS sẽ tự động cộng điểm và xuất ra phản hồi (Feedback)
+minh bạch cho học sinh. Học sinh lớp 6 khi nhìn vào bảng này cũng biết chính
+xác giáo viên yêu cầu mình phải làm gì.
+TÀI LIỆU THAM KHẢO
+BÀI 2 TIẾT 1
+1.​ Việc thiết kế trực tuyến (E-learning) cho bài học này là hợp lý vì 2 lý do
+chính:
+-​ Phù hợp với đặc thù kỹ năng số: Việc học cách sử dụng AI và viết prompt
+đòi hỏi học sinh phải thao tác trực tiếp trên máy tính. Môi trường E-learning
+cho phép các em tự do thử nghiệm, nhập các prompt khác nhau và nhận kết quả
+tức thời từ AI mà không bị giới hạn bởi thời gian tiết học trên lớp hay áp lực từ
+bạn bè.
+-​ Mức độ nhận thức (Vận dụng): Học sinh cần không gian tự học để tiếp thu
+công thức (thông qua video tương tác) trước khi tiến hành bước vận dụng (thực
+hành trên một công cụ cụ thể). LMS cung cấp môi trường lý tưởng để kết hợp
+cả hai bước này, đồng thời cho phép giáo viên theo dõi nhật ký (log) và đánh
+giá sản phẩm (ảnh chụp màn hình) của từng em một cách hệ thống.
+2. Kiến thức nền (Prerequisite Knowledge)
+Để học sinh (lớp 6) có thể đạt được mục tiêu bài học (6.A3.2), các em cần có một số
+hiểu biết cơ bản:
+●​ Học sinh đã biết gì: Từ Bài 1, học sinh đã biết AI do con người tạo ra và kiểm
+soát, và nó có thể hỗ trợ con người trong nhiều việc (như học tập). Các em
+cũng cần có kỹ năng sử dụng máy tính/thiết bị thông minh cơ bản.
+
+●​ Giáo viên cần chuẩn bị gì: Giáo viên cần cung cấp một học liệu số trực quan
+(như Infographic hoặc Video ngắn) để giải thích về "Prompt" (câu lệnh) và
+công thức cơ bản để giao tiếp với AI. Trong ngữ cảnh Bài 2 này, chúng ta sẽ
+thiết kế một Video Tương tác để truyền tải nội dung này.
+3. Nguồn tài liệu chuyên môn dành cho Giáo viên (Minh chứng báo cáo)
+Để minh chứng các hoạt động trên được thiết kế dựa trên hướng dẫn quốc tế, bạn hãy
+sử dụng các trích dẫn sau từ tài liệu UNESCO (2023):
+Minh chứng cho việc dạy kỹ thuật viết câu lệnh (Prompt-engineering) (Hoạt
+động 2)
+●​ Tài liệu: UNESCO (2023) - Guidance for Generative AI in Education and
+Research.
+●​ Vị trí highlight: Mục 1.3 - Prompt-engineering to generate desired outputs,
+Trang 11-12.
+●​ Nội dung gốc: "Prompt-engineering is most successful when the prompt
+articulates a coherent chain of reasoning... Specific recommendations include:
+Use simple, clear and straightforward language... Include context, which is
+crucial for generating relevant and meaningful completions." (Kỹ thuật viết
+prompt thành công nhất khi prompt trình bày một chuỗi suy luận mạch lạc...
+Các khuyến nghị cụ thể bao gồm: Sử dụng ngôn ngữ đơn giản, rõ ràng và dễ
+hiểu... Bao gồm ngữ cảnh, điều này rất quan trọng để tạo ra các câu trả lời liên
+quan và có ý nghĩa).
+
+●​ Áp dụng: Đây là cơ sở khoa học để bạn thiết kế Video hướng dẫn học sinh viết
+prompt rõ ràng, đơn giản và có bối cảnh (Đóng vai + Nhiệm vụ + Bối cảnh).
+
+Minh chứng cho việc sử dụng AI như một công cụ hỗ trợ học tập (Hoạt động 3 &
+4)
+●​ Tài liệu: UNESCO (2023).
+●​ Vị trí highlight: Mục 5.3.3 Generative AI as a 1:1 coach for the self-paced
+acquisition of foundational skills, Bảng 5 (Trang 32) và Bảng 6 (Trang 33) Co-designing uses of GenAI.
+●​ Nội dung gốc: Bảng 6 gợi ý việc sử dụng GenAI như một "Socratic
+challenger" (người đặt câu hỏi theo phương pháp Socrates) hoặc "Advisor for
+project-based learning" (Cố vấn cho học tập theo dự án). Bảng 5 gợi ý việc sử
+dụng GenAI như một "1:1 language skills coach" (huấn luyện viên kỹ năng
+ngôn ngữ 1:1).
+
+●​ Áp dụng: Chứng minh rằng việc cho học sinh lớp 6 sử dụng AI để hỏi bài, tìm
+hiểu kiến thức mới là một phương pháp sư phạm được UNESCO công nhận và
+
+khuyến nghị, giúp AI đóng vai trò như một người tư vấn hoặc huấn luyện viên
+1:1, hỗ trợ học tập hiệu quả.
+
+

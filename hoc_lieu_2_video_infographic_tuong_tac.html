@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Học liệu 2: Video Tương Tác & Infographic SCORM - Kỹ Thuật Viết Prompt</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script src="scorm_package/scorm_api.js"></script>
+  <style>
+    :root {
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --primary-light: #eff6ff;
+      --secondary: #0d9488;
+      --accent: #f59e0b;
+      --danger: #ef4444;
+      --success: #10b981;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text-main: #1e293b;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+      --radius: 16px;
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+      --shadow-lg: 0 10px 25px -5px rgba(37, 99, 235, 0.25);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      background: linear-gradient(135deg, #eff6ff 0%, #f8fafc 100%);
+      color: var(--text-main);
+      line-height: 1.6;
+      padding: 20px 16px;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 960px;
+    }
+
+    /* Top Nav */
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .btn-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: white;
+      color: var(--primary);
+      text-decoration: none;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+      transition: all 0.2s;
+    }
+
+    .btn-back:hover {
+      background: var(--primary-light);
+      transform: translateX(-3px);
+    }
+
+    .scorm-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #e0f2fe;
+      color: #0369a1;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+
+    /* Header */
+    .header-card {
+      background: linear-gradient(135deg, #1e40af 0%, #2563eb 60%, #3b82f6 100%);
+      color: white;
+      padding: 30px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-lg);
+      margin-bottom: 24px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .badge-tag {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(4px);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+    }
+
+    .header-card h1 {
+      font-size: 1.75rem;
+      font-weight: 800;
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+
+    .header-card p {
+      opacity: 0.95;
+      font-size: 1rem;
+    }
+
+    /* Section Cards */
+    .section-card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      padding: 26px;
+      box-shadow: var(--shadow);
+      margin-bottom: 24px;
+      border: 1px solid var(--border);
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 1.3rem;
+      color: #1e3a8a;
+      margin-bottom: 16px;
+      border-bottom: 2px solid var(--primary-light);
+      padding-bottom: 10px;
+    }
+
+    .section-title span.icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      background: var(--primary-light);
+      border-radius: 10px;
+      font-size: 1.25rem;
+    }
+
+    /* 3 Formula Columns */
+    .formula-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin: 20px 0;
+    }
+
+    .formula-card {
+      border-radius: 12px;
+      padding: 20px;
+      border-left: 6px solid var(--primary);
+      background: #f8fafc;
+      transition: all 0.2s;
+    }
+
+    .formula-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow);
+    }
+
+    .formula-card.card-role { border-left-color: #8b5cf6; background: #f5f3ff; }
+    .formula-card.card-task { border-left-color: #0ea5e9; background: #f0f9ff; }
+    .formula-card.card-context { border-left-color: #10b981; background: #ecfdf5; }
+
+    .formula-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+
+    .formula-header h3 {
+      font-size: 1.1rem;
+      font-weight: 800;
+    }
+
+    .formula-card p {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+      line-height: 1.5;
+    }
+
+    .formula-example {
+      background: white;
+      padding: 10px 12px;
+      border-radius: 8px;
+      font-size: 0.88rem;
+      border: 1px dashed var(--border);
+      font-style: italic;
+      color: #334155;
+    }
+
+    /* Interactive Prompt Playground */
+    .playground-box {
+      background: #f8fafc;
+      border: 2px dashed #cbd5e1;
+      border-radius: 12px;
+      padding: 22px;
+      margin-top: 18px;
+    }
+
+    .playground-controls {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.88rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+      color: #475569;
+    }
+
+    .form-group select {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1.5px solid #cbd5e1;
+      border-radius: 8px;
+      font-size: 0.92rem;
+      background: white;
+      outline: none;
+      cursor: pointer;
+    }
+
+    .form-group select:focus {
+      border-color: var(--primary);
+    }
+
+    .result-prompt-box {
+      background: #0f172a;
+      color: #f8fafc;
+      padding: 16px;
+      border-radius: 10px;
+      font-family: monospace;
+      font-size: 0.98rem;
+      line-height: 1.6;
+      margin-top: 10px;
+    }
+
+    .result-prompt-box span.role-text { color: #c084fc; font-weight: bold; }
+    .result-prompt-box span.task-text { color: #38bdf8; font-weight: bold; }
+    .result-prompt-box span.context-text { color: #4ade80; font-weight: bold; }
+
+    /* Video Player Simulation */
+    .video-player-container {
+      background: #0f172a;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      color: white;
+      position: relative;
+    }
+
+    .video-screen {
+      min-height: 380px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 30px;
+      text-align: center;
+      position: relative;
+      background: radial-gradient(circle at center, #1e293b 0%, #0f172a 100%);
+    }
+
+    .video-slide-content {
+      max-width: 680px;
+      animation: fadeIn 0.4s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.97); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .video-avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.2rem;
+      margin: 0 auto 16px;
+      box-shadow: 0 0 25px rgba(59, 130, 246, 0.5);
+    }
+
+    .video-title {
+      font-size: 1.4rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+      color: #60a5fa;
+    }
+
+    .video-desc {
+      font-size: 1.05rem;
+      color: #cbd5e1;
+      line-height: 1.6;
+    }
+
+    /* Video controls */
+    .video-controls {
+      background: #1e293b;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      border-top: 1px solid #334155;
+    }
+
+    .play-btn {
+      background: var(--primary);
+      border: none;
+      color: white;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      transition: all 0.2s;
+    }
+
+    .play-btn:hover {
+      background: var(--primary-dark);
+      transform: scale(1.05);
+    }
+
+    .progress-track {
+      flex-grow: 1;
+      height: 8px;
+      background: #334155;
+      border-radius: 4px;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .progress-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #3b82f6, #10b981);
+      width: 0%;
+      border-radius: 4px;
+      transition: width 0.3s;
+    }
+
+    .checkpoint-marker {
+      position: absolute;
+      top: -5px;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: #f59e0b;
+      border: 2px solid #0f172a;
+      transform: translateX(-50%);
+      cursor: pointer;
+      z-index: 2;
+      transition: transform 0.2s;
+    }
+
+    .checkpoint-marker:hover {
+      transform: translateX(-50%) scale(1.3);
+    }
+
+    .checkpoint-marker.passed {
+      background: #10b981;
+    }
+
+    .time-display {
+      font-family: monospace;
+      font-size: 0.88rem;
+      color: #94a3b8;
+      min-width: 90px;
+    }
+
+    /* Modal Popup Quiz */
+    .quiz-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(15, 23, 42, 0.94);
+      backdrop-filter: blur(6px);
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 24px;
+      z-index: 10;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .quiz-card {
+      background: white;
+      color: var(--text-main);
+      border-radius: 14px;
+      max-width: 620px;
+      width: 100%;
+      padding: 24px;
+      box-shadow: var(--shadow-lg);
+      border-top: 6px solid var(--accent);
+      text-align: left;
+    }
+
+    .quiz-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 14px;
+    }
+
+    .quiz-badge {
+      background: #fef3c7;
+      color: #b45309;
+      font-weight: 700;
+      font-size: 0.82rem;
+      padding: 4px 10px;
+      border-radius: 12px;
+    }
+
+    .quiz-question {
+      font-size: 1.08rem;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 16px;
+      line-height: 1.5;
+    }
+
+    .quiz-options {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+
+    .option-btn {
+      display: flex;
+      align-items: center;
+      padding: 12px 16px;
+      border: 1.5px solid #e2e8f0;
+      border-radius: 8px;
+      background: #f8fafc;
+      font-size: 0.95rem;
+      cursor: pointer;
+      text-align: left;
+      transition: all 0.2s;
+      color: #334155;
+    }
+
+    .option-btn:hover {
+      background: #f1f5f9;
+      border-color: #cbd5e1;
+    }
+
+    .option-btn.selected {
+      border-color: var(--primary);
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      font-weight: 700;
+    }
+
+    .option-btn.correct {
+      border-color: var(--success);
+      background: #ecfdf5;
+      color: #065f46;
+      font-weight: bold;
+    }
+
+    .option-btn.incorrect {
+      border-color: var(--danger);
+      background: #fef2f2;
+      color: #991b1b;
+    }
+
+    .quiz-feedback {
+      display: none;
+      padding: 12px 14px;
+      border-radius: 8px;
+      margin-bottom: 14px;
+      font-size: 0.92rem;
+      line-height: 1.45;
+    }
+
+    .quiz-feedback.success {
+      background: #ecfdf5;
+      color: #065f46;
+      border-left: 4px solid var(--success);
+    }
+
+    .quiz-feedback.error {
+      background: #fef2f2;
+      color: #991b1b;
+      border-left: 4px solid var(--danger);
+    }
+
+    .quiz-actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 0.92rem;
+      cursor: pointer;
+      border: none;
+      transition: 0.2s;
+    }
+
+    .btn-primary { background: var(--primary); color: white; }
+    .btn-primary:hover { background: var(--primary-dark); }
+    .btn-success { background: var(--success); color: white; }
+    .btn-success:hover { background: #059669; }
+
+    /* Summary Card */
+    .score-summary-card {
+      display: none;
+      background: linear-gradient(135deg, #065f46, #047857);
+      color: white;
+      padding: 26px;
+      border-radius: var(--radius);
+      text-align: center;
+      margin-top: 24px;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .score-big {
+      font-size: 3.2rem;
+      font-weight: 900;
+      color: #fef08a;
+      margin: 10px 0;
+    }
+
+    .lms-status-text {
+      font-size: 0.95rem;
+      opacity: 0.95;
+      margin-top: 10px;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      margin-top: 30px;
+      padding: 10px 0;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <a href="index.html" class="btn-back">
+      <span>←</span> Về Cổng Trọn Bộ Học Liệu
+    </a>
+    <div class="scorm-badge" id="scormBadge">
+      <span>📦</span> SCORM 1.2: Sẵn sàng ghi điểm
+    </div>
+  </div>
+
+  <!-- Header Card -->
+  <header class="header-card">
+    <span class="badge-tag">HỌC LIỆU 2 • HÌNH THÀNH KIẾN THỨC MỚI (15 PHÚT)</span>
+    <h1>Video & Infographic Tương Tác: Bí Kíp Giao Tiếp Với AI</h1>
+    <p>Chuyên đề Trí tuệ Nhân tạo - Môn Tin học 6 | Làm chủ công thức viết Prompt 3 thành phần chuẩn quốc tế</p>
+  </header>
+
+  <!-- Phần 1: Infographic tương tác -->
+  <section class="section-card">
+    <div class="section-title">
+      <span class="icon">💡</span>
+      <h2>Phần 1: Khám phá "Công thức Vàng" viết Prompt</h2>
+    </div>
+    <p>
+      Trí tuệ nhân tạo (AI) giống như một tấm gương: <em>"Em hỏi mơ hồ, AI trả lời lan man. Em hỏi rõ ràng, AI phản hồi chuẩn xác!"</em>.
+      Để điều khiển trợ lý AI, em cần nắm vững <strong>Công thức 3 mảnh ghép</strong> sau:
+    </p>
+
+    <!-- 3 Formula Cards -->
+    <div class="formula-grid">
+      <div class="formula-card card-role">
+        <div class="formula-header">
+          <h3>1. Đóng vai (Role)</h3>
+          <span style="font-size: 1.5rem;">🎭</span>
+        </div>
+        <p>Xác định rõ em muốn AI hóa thân thành ai để dùng đúng văn phong và chuyên môn phù hợp.</p>
+        <div class="formula-example">
+          "Đóng vai cô giáo dạy Lịch sử lớp 6..."<br>
+          "Đóng vai một phi hành gia khám phá vũ trụ..."
+        </div>
+      </div>
+
+      <div class="formula-card card-task">
+        <div class="formula-header">
+          <h3>2. Nhiệm vụ (Task)</h3>
+          <span style="font-size: 1.5rem;">🎯</span>
+        </div>
+        <p>Nêu rõ việc cụ thể em cần AI thực hiện (giải thích, tóm tắt, so sánh, đặt câu đố...).</p>
+        <div class="formula-example">
+          "Hãy giải thích hiện tượng nhật thực..."<br>
+          "Hãy kể tóm tắt ý nghĩa chiến thắng Bạch Đằng 938..."
+        </div>
+      </div>
+
+      <div class="formula-card card-context">
+        <div class="formula-header">
+          <h3>3. Bối cảnh & Điều kiện (Context)</h3>
+          <span style="font-size: 1.5rem;">📦</span>
+        </div>
+        <p>Chỉ rõ đối tượng nhận tin, dung lượng số câu và phong cách diễn đạt dễ hiểu.</p>
+        <div class="formula-example">
+          "Cho học sinh lớp 6 dễ hiểu, trong khoảng 4 câu ngắn gọn, dùng ví dụ sinh động..."
+        </div>
+      </div>
+    </div>
+
+    <!-- Playground -->
+    <div class="playground-box">
+      <h3 style="font-size: 1.05rem; color: #1e3a8a; margin-bottom: 12px;">
+        🧪 Góc thực hành: Ghép thử câu Prompt của riêng em
+      </h3>
+      <div class="playground-controls">
+        <div class="form-group">
+          <label>1. Chọn Đóng vai (Role):</label>
+          <select id="selectRole" onchange="updatePromptPreview()">
+            <option value="Đóng vai một nhà sinh học vui tính">Nhà sinh học vui tính</option>
+            <option value="Đóng vai thầy giáo Lịch sử nhiệt huyết">Thầy giáo Lịch sử nhiệt huyết</option>
+            <option value="Đóng vai một phi hành gia khám phá vũ trụ">Phi hành gia khám phá vũ trụ</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>2. Chọn Nhiệm vụ (Task):</label>
+          <select id="selectTask" onchange="updatePromptPreview()">
+            <option value="hãy giải thích quá trình quang hợp của cây xanh">Giải thích quá trình quang hợp</option>
+            <option value="hãy kể về ý nghĩa của chiến thắng Bạch Đằng năm 938">Kể về chiến thắng Bạch Đằng 938</option>
+            <option value="hãy giải thích vì sao Mặt Trăng có nhiều vết lõm">Giải thích các vết lõm trên Mặt Trăng</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>3. Chọn Bối cảnh (Context):</label>
+          <select id="selectContext" onchange="updatePromptPreview()">
+            <option value="cho học sinh lớp 6 dễ hiểu, trong khoảng 4 câu văn ngắn gọn.">Cho HS lớp 6, trong 4 câu ngắn</option>
+            <option value="dưới dạng 3 gạch đầu dòng sinh động, dùng hình ảnh so sánh vui vẻ.">Dạng 3 gạch đầu dòng vui vẻ</option>
+            <option value="bằng ngôn từ trong sáng, kết thúc bằng một câu đố vui nhỏ.">Ngôn từ trong sáng + 1 câu đố vui</option>
+          </select>
+        </div>
+      </div>
+
+      <p style="font-size: 0.88rem; font-weight: 700; color: #475569;">Câu Prompt hoàn chỉnh của em:</p>
+      <div class="result-prompt-box" id="promptDisplay">
+        <span class="role-text" id="roleSpan">Đóng vai một nhà sinh học vui tính</span>, 
+        <span class="task-text" id="taskSpan">hãy giải thích quá trình quang hợp của cây xanh</span> 
+        <span class="context-text" id="contextSpan">cho học sinh lớp 6 dễ hiểu, trong khoảng 4 câu văn ngắn gọn.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Phần 2: Video tương tác mô phỏng -->
+  <section class="section-card">
+    <div class="section-title">
+      <span class="icon">🎬</span>
+      <h2>Phần 2: Video bài giảng tương tác (Pop-up Quiz)</h2>
+    </div>
+    <p style="margin-bottom: 16px;">
+      Em hãy bấm nút <strong>Phát video</strong>. Trong quá trình học, video sẽ tự động dừng tại <strong>3 điểm kiểm tra (Checkpoint Quiz)</strong>.
+      Em cần trả lời chính xác để ghi điểm và gửi kết quả về Sổ điểm LMS!
+    </p>
+
+    <div class="video-player-container">
+      <div class="video-screen" id="videoScreen">
+        <div class="video-slide-content" id="slideContent">
+          <div class="video-avatar" id="avatarEmoji">🤖</div>
+          <h3 class="video-title" id="slideTitle">Chào mừng em đến với thế giới AI!</h3>
+          <p class="video-desc" id="slideDesc">
+            AI là trợ lý thông minh, nhưng nó chỉ có thể giúp em tốt nhất khi em biết cách ra lệnh chính xác. Hãy bấm nút Play bên dưới để bắt đầu bài học!
+          </p>
+        </div>
+
+        <!-- Pop-up Quiz Overlay -->
+        <div class="quiz-overlay" id="quizOverlay">
+          <div class="quiz-card">
+            <div class="quiz-header">
+              <span class="quiz-badge" id="quizBadge">Câu hỏi tương tác 1/3</span>
+              <span style="font-size: 0.85rem; color: #64748b; font-weight: 700;" id="quizPoints">+35 điểm</span>
+            </div>
+            <h3 class="quiz-question" id="quizQuestionText">Tiêu đề câu hỏi?</h3>
+            <div class="quiz-options" id="quizOptionsContainer"></div>
+            <div class="quiz-feedback" id="quizFeedbackBox"></div>
+            <div class="quiz-actions">
+              <button class="btn btn-primary" id="quizSubmitBtn" onclick="checkCurrentAnswer()">Kiểm tra đáp án</button>
+              <button class="btn btn-success" id="quizContinueBtn" style="display: none;" onclick="resumeLesson()">Tiếp tục bài học ➔</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Controls -->
+      <div class="video-controls">
+        <button class="play-btn" id="playBtn" onclick="togglePlay()">▶</button>
+        <div class="progress-track" id="progressTrack" onclick="seekVideo(event)">
+          <div class="progress-bar-fill" id="progressBar"></div>
+          <div class="checkpoint-marker" style="left: 25%;" title="Câu hỏi 1 (01:15)" id="cp1"></div>
+          <div class="checkpoint-marker" style="left: 60%;" title="Câu hỏi 2 (03:00)" id="cp2"></div>
+          <div class="checkpoint-marker" style="left: 90%;" title="Câu hỏi 3 (04:30)" id="cp3"></div>
+        </div>
+        <div class="time-display" id="timeDisplay">00:00 / 05:00</div>
+      </div>
+    </div>
+
+    <!-- Summary Score -->
+    <div class="score-summary-card" id="scoreSummaryCard">
+      <h2>🎉 Chúc mừng em đã hoàn thành bài học!</h2>
+      <p>Tổng điểm bài tập tương tác của em:</p>
+      <div class="score-big" id="finalScoreDisplay">100 / 100</div>
+      <p id="feedbackText">Em đã nắm vững bí kíp giao tiếp với AI và sẵn sàng cho bài tập thực hành!</p>
+      <div class="lms-status-text" id="lmsStatusMsg">✅ Đã gửi điểm vào Sổ điểm LMS chuẩn SCORM 1.2</div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>Chương trình GDPT 2018 - Môn Tin học 6 | Gói SCORM 1.2 chuẩn hóa cho Moodle, Canvas, K12Online</p>
+  </footer>
+</div>
+
+<script>
+  // Web Audio Context for Sound Effects
+  const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+  function playSoundEffect(isSuccess) {
+    if (!audioCtx) return;
+    try {
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+      osc.connect(gain);
+      gain.connect(audioCtx.destination);
+      if (isSuccess) {
+        osc.frequency.setValueAtTime(523.25, audioCtx.currentTime); // C5
+        osc.frequency.setValueAtTime(659.25, audioCtx.currentTime + 0.1); // E5
+        osc.frequency.setValueAtTime(783.99, audioCtx.currentTime + 0.2); // G5
+        gain.gain.setValueAtTime(0.18, audioCtx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.4);
+        osc.start();
+        osc.stop(audioCtx.currentTime + 0.4);
+      } else {
+        osc.frequency.setValueAtTime(280, audioCtx.currentTime);
+        gain.gain.setValueAtTime(0.12, audioCtx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.25);
+        osc.start();
+        osc.stop(audioCtx.currentTime + 0.25);
+      }
+    } catch(e) {}
+  }
+
+  function updatePromptPreview() {
+    var r = document.getElementById('selectRole').value;
+    var t = document.getElementById('selectTask').value;
+    var c = document.getElementById('selectContext').value;
+    document.getElementById('roleSpan').innerText = r;
+    document.getElementById('taskSpan').innerText = t;
+    document.getElementById('contextSpan').innerText = c;
+  }
+
+  // Video Simulator Logic
+  var currentTime = 0;
+  var totalDuration = 300;
+  var isPlaying = false;
+  var timerInterval = null;
+
+  var scenes = [
+    { start: 0, end: 45, emoji: "🤖", title: "Khám phá AI - Trợ lý thông minh", desc: "AI có thể trả lời hàng triệu câu hỏi, nhưng chất lượng câu trả lời lại phụ thuộc 100% vào cách em đặt câu hỏi (Prompt)!" },
+    { start: 45, end: 75, emoji: "🔑", title: "Bí mật: Công thức vàng 3 thành phần", desc: "Để AI hiểu chuẩn xác, em cần công thức: [Đóng vai (Role)] + [Nhiệm vụ (Task)] + [Bối cảnh / Điều kiện (Context)]." },
+    { start: 75, end: 140, emoji: "🎭", title: "Thành phần 1: Đóng vai (Role)", desc: "Khi được phân vai cụ thể (như cô giáo, phi hành gia), AI sẽ tự động chọn lọc kiến thức và tông giọng đúng chuyên môn!" },
+    { start: 140, end: 180, emoji: "📦", title: "Thành phần 2 & 3: Nhiệm vụ & Bối cảnh", desc: "Nhiệm vụ là việc AI cần làm. Bối cảnh giúp AI biết người đọc là ai (HS lớp 6) và độ dài bao nhiêu (3-4 câu) để không trả lời quá khó." },
+    { start: 180, end: 260, emoji: "⚖️", title: "So sánh: Prompt tồi vs Prompt siêu đẳng", desc: "Hỏi 'Kể về mặt trăng' -> AI trả lời lan man. Hỏi 'Đóng vai phi hành gia, kể về mặt trăng cho HS lớp 6 trong 3 câu' -> Câu trả lời cực hay!" },
+    { start: 260, end: 300, emoji: "🌟", title: "Tự chủ & Trách nhiệm khi dùng AI", desc: "Hãy dùng AI như một người bạn gợi ý thông minh, tự mình chắt lọc kiến thức và tuyệt đối không copy-paste nguyên văn!" }
+  ];
+
+  var quizzes = [
+    {
+      checkpointTime: 75,
+      badge: "Pop-up Quiz 1 / 3",
+      points: 35,
+      question: "Câu hỏi 1: Công thức chuẩn để viết một câu lệnh (Prompt) hiệu quả cho AI gồm 3 thành phần nào?",
+      options: [
+        { text: "A. Họ tên của em + Tên trường lớp + Câu hỏi bài tập", correct: false },
+        { text: "B. Đóng vai (Role) + Nhiệm vụ (Task) + Bối cảnh/Điều kiện (Context)", correct: true },
+        { text: "C. Lời khen AI + Yêu cầu làm bài tập giúp + Lời cảm ơn", correct: false },
+        { text: "D. Từ khóa ngắn gọn + Dấu chấm hỏi", correct: false }
+      ],
+      explanation: "Chính xác! Công thức 3 thành phần vàng là: Đóng vai (AI là ai) + Nhiệm vụ (AI làm gì) + Bối cảnh (Dành cho ai, độ dài bao nhiêu)."
+    },
+    {
+      checkpointTime: 180,
+      badge: "Pop-up Quiz 2 / 3",
+      points: 35,
+      question: "Câu hỏi 2: Bạn Nam nhờ AI giải thích quá trình quang hợp, nhưng AI trả lời toàn các công thức hóa học phức tạp dành cho học sinh cấp 3. Bạn Nam đã thiếu thành phần nào trong Prompt?",
+      options: [
+        { text: "A. Thiếu thành phần 'Nhiệm vụ' (Task)", correct: false },
+        { text: "B. Thiếu lời cảm ơn AI", correct: false },
+        { text: "C. Thiếu 'Bối cảnh/Điều kiện' (Context - ví dụ: dành cho học sinh lớp 6, giải thích đơn giản)", correct: true },
+        { text: "D. Không có lỗi gì, AI luôn trả lời như vậy", correct: false }
+      ],
+      explanation: "Rất chuẩn! Nếu thiếu Bối cảnh (Context: dành cho HS lớp 6, giải thích ngắn gọn), AI sẽ mặc định trả lời theo mức độ kiến thức nâng cao."
+    },
+    {
+      checkpointTime: 270,
+      badge: "Pop-up Quiz 3 / 3",
+      points: 30,
+      question: "Câu hỏi 3: Bạn Mai cần tìm hiểu về Hai Bà Trưng trong môn Lịch sử 6. Câu Prompt nào dưới đây là ĐẦY ĐỦ VÀ CHUẨN XÁC NHẤT theo công thức đã học?",
+      options: [
+        { text: "A. 'Kể về Hai Bà Trưng đi.'", correct: false },
+        { text: "B. 'Đóng vai cô giáo dạy Lịch sử, hãy kể tóm tắt cuộc khởi nghĩa Hai Bà Trưng trong khoảng 4 câu cho học sinh lớp 6 dễ hiểu.'", correct: true },
+        { text: "C. 'Giải bài tập Lịch sử trang 20 giúp tôi ngay lập tức.'", correct: false },
+        { text: "D. 'Hai Bà Trưng là ai?'", correct: false }
+      ],
+      explanation: "Xuất sắc! Câu B có đủ 3 yếu tố: [Đóng vai cô giáo Lịch sử] + [Nhiệm vụ: kể tóm tắt khởi nghĩa] + [Bối cảnh: trong 4 câu cho HS lớp 6]."
+    }
+  ];
+
+  var userScore = 0;
+  var completedCheckpoints = [false, false, false];
+  var selectedOptionIndex = null;
+  var currentActiveQuizIndex = null;
+
+  function togglePlay() {
+    if (isPlaying) {
+      pauseVideo();
+    } else {
+      playVideo();
+    }
+  }
+
+  function playVideo() {
+    isPlaying = true;
+    document.getElementById('playBtn').innerText = "⏸";
+    timerInterval = setInterval(function() {
+      currentTime++;
+      if (currentTime > totalDuration) {
+        currentTime = totalDuration;
+        pauseVideo();
+        finishLesson();
+        return;
+      }
+      updateProgressUI();
+      checkQuizTrigger();
+    }, 280);
+  }
+
+  function pauseVideo() {
+    isPlaying = false;
+    document.getElementById('playBtn').innerText = "▶";
+    clearInterval(timerInterval);
+  }
+
+  function updateProgressUI() {
+    var pct = (currentTime / totalDuration) * 100;
+    document.getElementById('progressBar').style.width = pct + "%";
+    
+    var m = Math.floor(currentTime / 60);
+    var s = currentTime % 60;
+    var sm = m < 10 ? "0" + m : m;
+    var ss = s < 10 ? "0" + s : s;
+    document.getElementById('timeDisplay').innerText = sm + ":" + ss + " / 05:00";
+
+    for (var i = 0; i < scenes.length; i++) {
+      if (currentTime >= scenes[i].start && currentTime < scenes[i].end) {
+        document.getElementById('avatarEmoji').innerText = scenes[i].emoji;
+        document.getElementById('slideTitle').innerText = scenes[i].title;
+        document.getElementById('slideDesc').innerText = scenes[i].desc;
+        break;
+      }
+    }
+  }
+
+  function checkQuizTrigger() {
+    for (var i = 0; i < quizzes.length; i++) {
+      if (!completedCheckpoints[i] && currentTime >= quizzes[i].checkpointTime) {
+        pauseVideo();
+        showQuizModal(i);
+        break;
+      }
+    }
+  }
+
+  function showQuizModal(quizIndex) {
+    currentActiveQuizIndex = quizIndex;
+    selectedOptionIndex = null;
+    var q = quizzes[quizIndex];
+    
+    document.getElementById('quizBadge').innerText = q.badge;
+    document.getElementById('quizPoints').innerText = "+" + q.points + " điểm";
+    document.getElementById('quizQuestionText').innerText = q.question;
+    
+    var container = document.getElementById('quizOptionsContainer');
+    container.innerHTML = "";
+    
+    q.options.forEach(function(opt, idx) {
+      var btn = document.createElement('div');
+      btn.className = "option-btn";
+      btn.innerText = opt.text;
+      btn.onclick = function() { selectQuizOption(idx); };
+      container.appendChild(btn);
+    });
+    
+    document.getElementById('quizFeedbackBox').style.display = "none";
+    document.getElementById('quizSubmitBtn').style.display = "inline-block";
+    document.getElementById('quizContinueBtn').style.display = "none";
+    document.getElementById('quizOverlay').style.display = "flex";
+  }
+
+  function selectQuizOption(idx) {
+    selectedOptionIndex = idx;
+    var btns = document.querySelectorAll('.option-btn');
+    btns.forEach(function(b, i) {
+      if (i === idx) b.classList.add('selected');
+      else b.classList.remove('selected');
+    });
+  }
+
+  function checkCurrentAnswer() {
+    if (selectedOptionIndex === null) {
+      alert("Em hãy chọn một phương án trả lời trước nhé!");
+      return;
+    }
+    
+    var q = quizzes[currentActiveQuizIndex];
+    var isCorrect = q.options[selectedOptionIndex].correct;
+    var btns = document.querySelectorAll('.option-btn');
+    
+    btns.forEach(function(b, i) {
+      b.onclick = null;
+      if (q.options[i].correct) b.classList.add('correct');
+      else if (i === selectedOptionIndex) b.classList.add('incorrect');
+    });
+    
+    var fb = document.getElementById('quizFeedbackBox');
+    fb.style.display = "block";
+    
+    if (isCorrect) {
+      userScore += q.points;
+      playSoundEffect(true);
+      fb.className = "quiz-feedback success";
+      fb.innerHTML = "<strong>✅ Đúng rồi!</strong> " + q.explanation;
+    } else {
+      playSoundEffect(false);
+      fb.className = "quiz-feedback error";
+      fb.innerHTML = "<strong>❌ Chưa chính xác.</strong> " + q.explanation;
+    }
+    
+    completedCheckpoints[currentActiveQuizIndex] = true;
+    document.getElementById('cp' + (currentActiveQuizIndex + 1)).classList.add('passed');
+    document.getElementById('quizSubmitBtn').style.display = "none";
+    document.getElementById('quizContinueBtn').style.display = "inline-block";
+  }
+
+  function resumeLesson() {
+    document.getElementById('quizOverlay').style.display = "none";
+    currentTime += 2;
+    playVideo();
+  }
+
+  function finishLesson() {
+    document.getElementById('scoreSummaryCard').style.display = "block";
+    document.getElementById('finalScoreDisplay').innerText = userScore + " / 100";
+    playSoundEffect(true);
+    
+    try {
+      if (typeof scorm !== 'undefined') {
+        scorm.setScore(userScore, 100, 0);
+      }
+    } catch (e) {}
+
+    if (window.parent && window.parent !== window) {
+      window.parent.postMessage({ source: 'LMS_VIDEO_SCORM_ACTIVITY_2', score: userScore, status: 'completed' }, '*');
+    }
+  }
+
+  function seekVideo(event) {
+    var track = document.getElementById('progressTrack');
+    var rect = track.getBoundingClientRect();
+    var clickX = event.clientX - rect.left;
+    var pct = clickX / rect.width;
+    currentTime = Math.floor(pct * totalDuration);
+    updateProgressUI();
+  }
+</script>
+
+</body>
+</html>
+

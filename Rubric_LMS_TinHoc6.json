@@ -1,0 +1,77 @@
+{
+  "course": "Tin học 6",
+  "lesson": "Bài 2: Lợi ích và cách sử dụng công cụ AI phù hợp",
+  "rubrics": [
+    {
+      "activity_id": "act_3_assignment",
+      "activity_name": "Thực hành Hỏi đúng - Trúng đáp án",
+      "tool": "Assignment",
+      "max_score": 10,
+      "criteria": [
+        {
+          "criterion_name": "Cấu trúc câu lệnh (Prompt)",
+          "weight": 5,
+          "levels": [
+            { "level": "Tốt", "score": 5, "description": "Câu lệnh thể hiện đầy đủ 3 yếu tố: 1. Đóng vai (Role), 2. Nhiệm vụ (Task), 3. Bối cảnh/Điều kiện (Context)." },
+            { "level": "Đạt", "score": 3, "description": "Câu lệnh thiếu 1 trong 3 yếu tố (thường là quên mất phần Đóng vai hoặc Bối cảnh)." },
+            { "level": "Cần cố gắng", "score": 1, "description": "Câu lệnh chỉ có từ khóa ngắn gọn, cộc lốc hoặc hỏi chung chung." }
+          ]
+        },
+        {
+          "criterion_name": "Nội dung và Ngôn từ",
+          "weight": 3,
+          "levels": [
+            { "level": "Tốt", "score": 3, "description": "Chủ đề hỏi thuộc kiến thức học tập. Ngôn từ lịch sự, gõ tiếng Việt có dấu đầy đủ." },
+            { "level": "Đạt", "score": 2, "description": "Hỏi sai chủ đề học tập HOẶC gõ tiếng Việt không dấu, viết tắt nhiều." },
+            { "level": "Cần cố gắng", "score": 0, "description": "Dùng từ ngữ thiếu chuẩn mực, vi phạm nguyên tắc an toàn." }
+          ]
+        },
+        {
+          "criterion_name": "Hình thức minh chứng",
+          "weight": 2,
+          "levels": [
+            { "level": "Tốt", "score": 2, "description": "Ảnh chụp màn hình rõ nét, thấy rõ ràng toàn bộ câu hỏi của học sinh và câu trả lời của AI." },
+            { "level": "Đạt", "score": 1, "description": "Ảnh chụp bị mờ, bị cắt xén chỉ thấy câu trả lời mà không thấy câu hỏi của học sinh." },
+            { "level": "Cần cố gắng", "score": 0, "description": "Không nộp ảnh chụp màn hình hoặc nộp sai file." }
+          ]
+        }
+      ]
+    },
+    {
+      "activity_id": "act_4_blog",
+      "activity_name": "Nhà báo nhí tổng hợp tin tức",
+      "tool": "Blog / Glossary",
+      "max_score": 10,
+      "criteria": [
+        {
+          "criterion_name": "Tính tự chủ (Không Copy-Paste)",
+          "weight": 5,
+          "levels": [
+            { "level": "Tốt", "score": 5, "description": "Đọc văn bản thấy rõ giọng văn của học sinh. Tự tóm tắt và gõ lại 100% bằng ngôn từ của mình." },
+            { "level": "Đạt", "score": 3, "description": "Có sự chỉnh sửa, nhưng vẫn còn copy-paste một vài câu dài nguyên văn từ AI." },
+            { "level": "Cần cố gắng", "score": 0, "description": "Hành vi Copy - Paste nguyên xi 100% câu trả lời của AI." }
+          ]
+        },
+        {
+          "criterion_name": "Dung lượng và Tính chính xác",
+          "weight": 3,
+          "levels": [
+            { "level": "Tốt", "score": 3, "description": "Đảm bảo độ dài yêu cầu (từ 3 đến 5 câu). Thông tin tóm tắt lại chính xác." },
+            { "level": "Đạt", "score": 1.5, "description": "Viết quá ngắn (chỉ 1-2 câu) HOẶC tóm tắt sai kiến thức trọng tâm." },
+            { "level": "Cần cố gắng", "score": 0, "description": "Nội dung hoàn toàn lạc đề hoặc không viết gì." }
+          ]
+        },
+        {
+          "criterion_name": "Trình bày và Chính tả",
+          "weight": 2,
+          "levels": [
+            { "level": "Tốt", "score": 2, "description": "Câu văn rõ nghĩa, viết hoa đầu câu, có dấu chấm câu, không sai lỗi chính tả." },
+            { "level": "Đạt", "score": 1, "description": "Câu văn còn lủng củng, sai từ 2-3 lỗi chính tả hoặc quên dùng dấu câu." },
+            { "level": "Cần cố gắng", "score": 0, "description": "Sai quá nhiều lỗi chính tả khiến người đọc không hiểu nội dung." }
+          ]
+        }
+      ]
+    }
+  ]
+}
+

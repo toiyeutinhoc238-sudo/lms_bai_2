@@ -2,160 +2,172 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
-  <title>Rubric 2 - Đánh Giá Bài Tóm Tắt Kiến Thức</title>
+  <title>Rubric 2 - Đánh Giá Bài Tóm Tắt Kiến Thức (Chuẩn A4)</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --text: #0f172a;
-      --border: #64748b;
-    }
     * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Plus Jakarta Sans', sans-serif; }
-    body { background: #fff; color: var(--text); padding: 15mm 18mm; line-height: 1.4; font-size: 13px; }
-    .header-table { width: 100%; border-collapse: collapse; margin-bottom: 12px; border-bottom: 2px solid #0f172a; padding-bottom: 8px; }
-    .header-table td { vertical-align: top; padding-bottom: 6px; }
-    .school-info { font-size: 11px; font-weight: 700; text-transform: uppercase; line-height: 1.4; color: #334155; }
-    .doc-meta { text-align: right; font-size: 11px; font-weight: 700; color: #0369a1; }
-    .sheet-title { text-align: center; margin-bottom: 14px; }
-    .sheet-title h1 { font-size: 16px; font-weight: 900; color: #0f172a; text-transform: uppercase; margin-bottom: 4px; }
-    .sheet-title p { font-size: 12px; color: #64748b; font-style: italic; }
-    .student-box { border: 1px dashed #94a3b8; border-radius: 6px; padding: 8px 14px; margin-bottom: 14px; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 10px; font-size: 12px; }
+    html, body { background: #fff; color: #0f172a; line-height: 1.35; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    @page { size: A4 portrait; margin: 0; }
+    .page-container {
+      width: 210mm;
+      height: 296mm;
+      max-height: 296mm;
+      margin: 0 auto;
+      padding: 10mm 15mm 8mm 15mm;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .header-table { width: 100%; border-collapse: collapse; margin-bottom: 8px; border-bottom: 1.5px solid #0f172a; padding-bottom: 6px; }
+    .header-table td { vertical-align: top; padding-bottom: 4px; }
+    .school-info { font-size: 11px; font-weight: 700; text-transform: uppercase; line-height: 1.35; color: #334155; }
+    .doc-meta { text-align: right; font-size: 11px; font-weight: 700; color: #0369a1; line-height: 1.35; }
+    .sheet-title { text-align: center; margin-bottom: 8px; }
+    .sheet-title h1 { font-size: 15px; font-weight: 900; color: #0f172a; text-transform: uppercase; letter-spacing: 0.3px; margin-bottom: 2px; }
+    .sheet-title p { font-size: 11.5px; color: #64748b; font-style: italic; }
+    .student-box { border: 1px dashed #cbd5e1; border-radius: 6px; padding: 5px 12px; margin-bottom: 8px; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 8px; font-size: 12px; background: #f8fafc; }
     .student-box span.field { border-bottom: 1px dotted #64748b; display: inline-block; width: 65%; min-height: 14px; }
-    .rubric-table { width: 100%; border-collapse: collapse; margin-bottom: 14px; font-size: 12px; }
-    .rubric-table th, .rubric-table td { border: 1px solid #64748b; padding: 8px 10px; vertical-align: top; line-height: 1.4; }
-    .rubric-table th { background: #f1f5f9; font-weight: 800; text-align: center; color: #0f172a; }
+    .rubric-table { width: 100%; border-collapse: collapse; margin-bottom: 8px; font-size: 11px; line-height: 1.32; }
+    .rubric-table th, .rubric-table td { border: 1px solid #64748b; padding: 5px 7px; vertical-align: top; }
+    .rubric-table th { background: #f1f5f9; font-weight: 800; text-align: center; color: #0f172a; padding: 6px 7px; }
     .rubric-table td.col-crit { background: #fafafa; font-weight: 700; }
-    .pts { display: block; font-weight: 800; color: #0284c7; margin-top: 4px; font-size: 11.5px; }
-    .result-footer { border: 1px solid #94a3b8; border-radius: 6px; padding: 10px 14px; display: grid; grid-template-columns: 2fr 1fr; gap: 14px; background: #fafafa; }
-    .teacher-comment h5 { font-size: 11.5px; font-weight: 800; margin-bottom: 6px; }
-    .comment-lines { border-bottom: 1px dotted #94a3b8; height: 20px; margin-bottom: 4px; }
+    .pts { display: block; font-weight: 800; color: #0284c7; margin-top: 3px; font-size: 10.5px; }
+    .result-footer { border: 1px solid #94a3b8; border-radius: 6px; padding: 8px 12px; display: grid; grid-template-columns: 2.2fr 1fr; gap: 12px; background: #fafafa; }
+    .teacher-comment h5 { font-size: 11px; font-weight: 800; margin-bottom: 4px; }
+    .comment-lines { border-bottom: 1px dotted #94a3b8; height: 18px; margin-bottom: 3px; }
     .score-summary { text-align: center; display: flex; flex-direction: column; justify-content: space-between; }
-    .score-box { font-size: 14px; font-weight: 900; color: #0369a1; background: #fff; border: 2px solid #0284c7; border-radius: 6px; padding: 6px; margin-bottom: 6px; }
-    .sig-area { font-size: 11px; color: #475569; }
+    .score-box { font-size: 14px; font-weight: 900; color: #0369a1; background: #fff; border: 1.5px solid #0284c7; border-radius: 6px; padding: 4px; margin-bottom: 4px; }
+    .sig-area { font-size: 10.5px; color: #475569; line-height: 1.25; }
     @media print {
-      body { padding: 10mm 12mm; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-      @page { size: A4 portrait; margin: 0; }
+      body { margin: 0; padding: 0; }
+      .page-container { width: 210mm !important; height: 296mm !important; max-height: 296mm !important; padding: 10mm 15mm 8mm 15mm !important; }
+      .no-print { display: none !important; }
     }
   </style>
 </head>
 <body>
-  <table class="header-table">
-    <tr>
-      <td style="width: 60%;">
-        <div class="school-info">
-          TRƯỜNG THCS: ................................................................<br>
-          TỔ: TOÁN - TIN HỌC • NĂM HỌC 2025 - 2026<br>
-          MÔN: TIN HỌC 6 (THEO CHƯƠNG TRÌNH GDPT 2018)
-        </div>
-      </td>
-      <td style="width: 40%;">
-        <div class="doc-meta">
-          PHIẾU ĐÁNH GIÁ BÀI VIẾT TỔNG HỢP<br>
-          BÀI 2 - HOẠT ĐỘNG 4 (VẬN DỤNG)<br>
-          Thang điểm: 10.0 điểm
-        </div>
-      </td>
-    </tr>
-  </table>
+  <div class="page-container">
+    <div>
+      <table class="header-table">
+        <tr>
+          <td style="width: 60%;">
+            <div class="school-info">
+              TRƯỜNG THCS: ................................................................<br>
+              TỔ: TOÁN - TIN HỌC • NĂM HỌC 2025 - 2026<br>
+              MÔN: TIN HỌC 6 (THEO CHƯƠNG TRÌNH GDPT 2018)
+            </div>
+          </td>
+          <td style="width: 40%;">
+            <div class="doc-meta">
+              PHIẾU ĐÁNH GIÁ BÀI VIẾT TỔNG HỢP<br>
+              BÀI 2 - HOẠT ĐỘNG 4 (VẬN DỤNG)<br>
+              Thang điểm tối đa: 10.0 điểm
+            </div>
+          </td>
+        </tr>
+      </table>
 
-  <div class="sheet-title">
-    <h1>RUBRIC ĐÁNH GIÁ BÀI TÓM TẮT KIẾN THỨC / NHẬT KÝ</h1>
-    <p>Áp dụng cho Hoạt động 4: Đánh giá tính tự chủ, liêm chính và năng lực tóm tắt (Tin học 6 - Bài 2)</p>
-  </div>
-
-  <div class="student-box">
-    <div><strong>Họ và tên:</strong> <span class="field"></span></div>
-    <div><strong>Lớp:</strong> <span class="field"></span></div>
-    <div><strong>Số câu tóm tắt:</strong> ......... câu</div>
-  </div>
-
-  <table class="rubric-table">
-    <thead>
-      <tr>
-        <th style="width: 26%;">Tiêu chí</th>
-        <th style="width: 27%;">Mức 1: TỐT (Điểm tối đa)</th>
-        <th style="width: 27%;">Mức 2: ĐẠT (Khá / Đạt)</th>
-        <th style="width: 20%;">Mức 3: CẦN CỐ GẮNG</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td class="col-crit">
-          1. Tính tự chủ (Không sao chép)<br>
-          <em>(Liêm chính học thuật)</em>
-          <span class="pts">Tối đa: 5.0 điểm</span>
-        </td>
-        <td>
-          Thể hiện rõ giọng văn của học sinh lớp 6. Tự chắt lọc và diễn đạt <strong>100% bằng ngôn từ của mình</strong>, không sao chép AI.
-          <span class="pts">Đạt: 5.0 điểm</span>
-        </td>
-        <td>
-          Có chỉnh sửa câu chữ nhưng vẫn còn sao chép (copy-paste) nguyên văn một vài câu từ AI.
-          <span class="pts">Đạt: 3.0 điểm</span>
-        </td>
-        <td>
-          Sao chép (copy-paste) <strong>nguyên xi 100%</strong> văn phong phức tạp của AI vào bài làm.
-          <span class="pts">Đạt: 0.0 điểm</span>
-        </td>
-      </tr>
-      <tr>
-        <td class="col-crit">
-          2. Dung lượng & Tính chính xác<br>
-          <em>(Hiểu biết kiến thức)</em>
-          <span class="pts">Tối đa: 3.0 điểm</span>
-        </td>
-        <td>
-          Đảm bảo đúng quy định dung lượng <strong>(từ 3 đến 5 câu văn)</strong>. Kiến thức tóm tắt chính xác, logic, dễ hiểu.
-          <span class="pts">Đạt: 3.0 điểm</span>
-        </td>
-        <td>
-          Viết quá ngắn (dưới 3 câu) hoặc quá dài (trên 6 câu), nội dung còn lộn xộn hoặc thiếu ý chính.
-          <span class="pts">Đạt: 2.0 điểm</span>
-        </td>
-        <td>
-          Tóm tắt sai lệch kiến thức hoặc nội dung không liên quan đến chủ đề đã tương tác với AI.
-          <span class="pts">Đạt: 1.0 điểm</span>
-        </td>
-      </tr>
-      <tr>
-        <td class="col-crit">
-          3. Trình bày & Chính tả<br>
-          <em>(Kỹ năng diễn đạt)</em>
-          <span class="pts">Tối đa: 2.0 điểm</span>
-        </td>
-        <td>
-          Trình bày sạch đẹp, đúng chính tả tiếng Việt, viết hoa đầu câu, có dấu chấm câu ngắt nghỉ rõ ràng.
-          <span class="pts">Đạt: 2.0 điểm</span>
-        </td>
-        <td>
-          Mắc từ 1 đến 3 lỗi chính tả, diễn đạt còn vụng về chưa thật trôi chảy.
-          <span class="pts">Đạt: 1.0 điểm</span>
-        </td>
-        <td>
-          Sai nhiều lỗi chính tả (trên 4 lỗi), câu văn què cụt, không ngắt câu rõ ràng.
-          <span class="pts">Đạt: 0.0 điểm</span>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-
-  <div class="result-footer">
-    <div class="teacher-comment">
-      <h5>💬 NHẬN XÉT CỦA GIÁO VIÊN:</h5>
-      <div class="comment-lines"></div>
-      <div class="comment-lines"></div>
-    </div>
-    <div class="score-summary">
-      <div class="score-box">
-        TỔNG ĐIỂM: ........ / 10
+      <div class="sheet-title">
+        <h1>RUBRIC ĐÁNH GIÁ BÀI TÓM TẮT KIẾN THỨC / NHẬT KÝ</h1>
+        <p>Áp dụng cho Hoạt động 4: Đánh giá tính tự chủ, liêm chính và năng lực tóm tắt (Tin học 6 - Bài 2)</p>
       </div>
-      <div class="sig-area">
-        <strong>Giáo viên chấm bài</strong><br>
-        <em>(Ký và ghi rõ họ tên)</em>
+
+      <div class="student-box">
+        <div><strong>Họ và tên:</strong> <span class="field" contenteditable="true"></span></div>
+        <div><strong>Lớp:</strong> <span class="field" contenteditable="true"></span></div>
+        <div><strong>Số câu tóm tắt:</strong> ......... câu</div>
+      </div>
+
+      <table class="rubric-table">
+        <thead>
+          <tr>
+            <th style="width: 25%;">Tiêu chí</th>
+            <th style="width: 27%;">Mức 1: TỐT (Điểm tối đa)</th>
+            <th style="width: 27%;">Mức 2: ĐẠT (Khá / Đạt)</th>
+            <th style="width: 21%;">Mức 3: CẦN CỐ GẮNG</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="col-crit">
+              <strong>1. Tính tự chủ (Không sao chép)</strong><br>
+              <em>(Liêm chính học thuật)</em>
+              <span class="pts">Tối đa: 5.0 điểm</span>
+            </td>
+            <td>
+              Thể hiện rõ giọng văn của học sinh lớp 6. Tự chắt lọc và diễn đạt <strong>100% bằng ngôn từ của mình</strong>, không sao chép AI.
+              <span class="pts">Đạt: 5.0 điểm</span>
+            </td>
+            <td>
+              Có chỉnh sửa câu chữ nhưng vẫn còn sao chép (copy-paste) nguyên văn một vài câu từ AI.
+              <span class="pts">Đạt: 3.0 điểm</span>
+            </td>
+            <td>
+              Sao chép (copy-paste) <strong>nguyên xi 100%</strong> văn phong phức tạp của AI vào bài làm.
+              <span class="pts">Đạt: 0.0 điểm</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="col-crit">
+              <strong>2. Dung lượng & Tính chính xác</strong><br>
+              <em>(Hiểu biết kiến thức)</em>
+              <span class="pts">Tối đa: 3.0 điểm</span>
+            </td>
+            <td>
+              Đảm bảo đúng quy định dung lượng <strong>(từ 3 đến 5 câu văn)</strong>. Kiến thức tóm tắt chính xác, logic, dễ hiểu.
+              <span class="pts">Đạt: 3.0 điểm</span>
+            </td>
+            <td>
+              Viết quá ngắn (dưới 3 câu) hoặc quá dài (trên 6 câu), nội dung còn lộn xộn hoặc thiếu ý chính.
+              <span class="pts">Đạt: 2.0 điểm</span>
+            </td>
+            <td>
+              Tóm tắt sai lệch kiến thức hoặc nội dung không liên quan đến chủ đề đã tương tác với AI.
+              <span class="pts">Đạt: 1.0 điểm</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="col-crit">
+              <strong>3. Trình bày & Chính tả</strong><br>
+              <em>(Kỹ năng diễn đạt)</em>
+              <span class="pts">Tối đa: 2.0 điểm</span>
+            </td>
+            <td>
+              Trình bày sạch đẹp, đúng chính tả tiếng Việt, viết hoa đầu câu, có dấu chấm câu ngắt nghỉ rõ ràng.
+              <span class="pts">Đạt: 2.0 điểm</span>
+            </td>
+            <td>
+              Mắc từ 1 đến 3 lỗi chính tả, diễn đạt còn vụng về chưa thật trôi chảy.
+              <span class="pts">Đạt: 1.0 điểm</span>
+            </td>
+            <td>
+              Sai nhiều lỗi chính tả (trên 4 lỗi), câu văn què cụt, không ngắt câu rõ ràng.
+              <span class="pts">Đạt: 0.0 điểm</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="result-footer">
+      <div class="teacher-comment">
+        <h5>💬 NHẬN XÉT CỦA GIÁO VIÊN:</h5>
+        <div class="comment-lines" contenteditable="true"></div>
+        <div class="comment-lines" contenteditable="true"></div>
+      </div>
+      <div class="score-summary">
+        <div class="score-box">
+          TỔNG ĐIỂM: ........ / 10
+        </div>
+        <div class="sig-area">
+          <strong>Giáo viên chấm bài</strong><br>
+          <em>(Ký và ghi rõ họ tên)</em>
+        </div>
       </div>
     </div>
   </div>
 </body>
 </html>
-

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Phiếu Rubric Đánh Giá - Tin học 6 Bài 2</title>
+  <title>Phiếu Rubric Đánh Giá - Tin học 6 Bài 2 (Chuẩn A4)</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -15,7 +15,7 @@
       --text: #0f172a;
       --text-muted: #64748b;
       --border: #cbd5e1;
-      --bg: #f8fafc;
+      --bg: #f1f5f9;
       --card: #ffffff;
     }
 
@@ -29,48 +29,49 @@
     body {
       background: var(--bg);
       color: var(--text);
-      line-height: 1.5;
-      padding: 24px;
+      line-height: 1.4;
+      padding: 20px 10px;
     }
 
     /* Web Toolbar */
     .top-toolbar {
-      max-width: 900px;
-      margin: 0 auto 24px auto;
+      max-width: 210mm;
+      margin: 0 auto 16px auto;
       background: #ffffff;
-      padding: 16px 24px;
-      border-radius: 16px;
+      padding: 16px 20px;
+      border-radius: 14px;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
-      gap: 16px;
+      gap: 12px;
       border: 1px solid #e2e8f0;
     }
 
     .toolbar-left h1 {
-      font-size: 1.15rem;
+      font-size: 1.1rem;
       font-weight: 800;
       color: #0369a1;
+      margin-bottom: 2px;
     }
 
     .toolbar-left p {
-      font-size: 0.85rem;
+      font-size: 0.82rem;
       color: var(--text-muted);
     }
 
     .toolbar-actions {
       display: flex;
-      gap: 10px;
+      gap: 8px;
       flex-wrap: wrap;
     }
 
     .btn {
-      padding: 9px 16px;
-      border-radius: 10px;
+      padding: 8px 14px;
+      border-radius: 8px;
       font-weight: 700;
-      font-size: 0.85rem;
+      font-size: 0.82rem;
       cursor: pointer;
       display: inline-flex;
       align-items: center;
@@ -83,10 +84,12 @@
     .btn-primary {
       background: #0284c7;
       color: white;
+      box-shadow: 0 2px 6px rgba(2, 132, 199, 0.3);
     }
 
     .btn-primary:hover {
       background: #0369a1;
+      transform: translateY(-1px);
     }
 
     .btn-outline {
@@ -96,23 +99,38 @@
     }
 
     .btn-outline:hover {
-      background: #f1f5f9;
+      background: #f8fafc;
       border-color: #94a3b8;
+    }
+
+    /* Guide Banner */
+    .guide-banner {
+      max-width: 210mm;
+      margin: 0 auto 16px auto;
+      background: #e0f2fe;
+      border: 1px solid #bae6fd;
+      border-radius: 10px;
+      padding: 10px 16px;
+      font-size: 0.82rem;
+      color: #0369a1;
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
 
     /* Tabs */
     .view-tabs {
-      max-width: 900px;
-      margin: 0 auto 20px auto;
+      max-width: 210mm;
+      margin: 0 auto 16px auto;
       display: flex;
-      gap: 8px;
+      gap: 6px;
       flex-wrap: wrap;
     }
 
     .tab-btn {
-      padding: 8px 16px;
+      padding: 7px 14px;
       border-radius: 8px;
-      font-size: 0.85rem;
+      font-size: 0.82rem;
       font-weight: 700;
       border: 1px solid #cbd5e1;
       background: white;
@@ -129,76 +147,76 @@
 
     /* Sheets Container */
     .sheets-container {
-      max-width: 900px;
+      max-width: 210mm;
       margin: 0 auto;
       display: flex;
       flex-direction: column;
-      gap: 32px;
+      gap: 24px;
     }
 
-    /* Paper Sheet (Simulates A4 paper) */
+    /* Paper Sheet - EXACT A4 RATIO (210mm x 296mm) */
     .paper-sheet {
+      width: 210mm;
+      height: 296mm;
+      max-height: 296mm;
+      box-sizing: border-box;
+      margin: 0 auto;
+      padding: 10mm 15mm 8mm 15mm;
       background: #ffffff;
-      padding: 40px 45px;
-      border-radius: 16px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-      border: 1px solid #e2e8f0;
+      border-radius: 4px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      position: relative;
+      overflow: hidden;
+      page-break-inside: avoid;
+      page-break-after: always;
+      break-after: page;
     }
 
     .sheet-header-table {
       width: 100%;
       border-collapse: collapse;
-      margin-bottom: 20px;
-      border-bottom: 2px solid #0f172a;
-      padding-bottom: 14px;
+      margin-bottom: 8px;
+      border-bottom: 1.5px solid #0f172a;
+      padding-bottom: 6px;
     }
 
     .sheet-header-table td {
       vertical-align: top;
-      padding-bottom: 12px;
+      padding-bottom: 4px;
     }
 
     .school-info {
-      font-size: 0.85rem;
+      font-size: 0.72rem;
       font-weight: 700;
-      line-height: 1.4;
+      line-height: 1.35;
       text-transform: uppercase;
       color: #334155;
     }
 
     .doc-meta {
       text-align: right;
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: #475569;
-    }
-
-    .badge-doc {
-      display: inline-block;
-      background: #e0f2fe;
+      font-size: 0.72rem;
+      font-weight: 700;
       color: #0369a1;
-      font-weight: 800;
-      font-size: 0.75rem;
-      padding: 3px 10px;
-      border-radius: 12px;
-      margin-bottom: 4px;
+      line-height: 1.35;
     }
 
     .sheet-title {
       text-align: center;
-      margin-bottom: 22px;
+      margin-bottom: 8px;
     }
 
     .sheet-title h2 {
-      font-size: 1.35rem;
+      font-size: 0.98rem;
       font-weight: 900;
       color: #0f172a;
-      letter-spacing: -0.3px;
-      margin-bottom: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      margin-bottom: 2px;
     }
 
     .sheet-title p {
-      font-size: 0.88rem;
+      font-size: 0.75rem;
       color: #64748b;
       font-style: italic;
     }
@@ -207,34 +225,35 @@
     .student-info-box {
       background: #f8fafc;
       border: 1px dashed #cbd5e1;
-      border-radius: 10px;
-      padding: 12px 18px;
-      margin-bottom: 22px;
+      border-radius: 6px;
+      padding: 5px 12px;
+      margin-bottom: 8px;
       display: grid;
       grid-template-columns: 2fr 1fr 1fr;
-      gap: 12px;
-      font-size: 0.88rem;
+      gap: 8px;
+      font-size: 0.76rem;
     }
 
     .student-info-box span.field {
-      border-bottom: 1px dotted #94a3b8;
+      border-bottom: 1px dotted #64748b;
       display: inline-block;
       width: 60%;
+      min-height: 14px;
     }
 
     /* Rubric Table */
     .rubric-table {
       width: 100%;
       border-collapse: collapse;
-      margin-bottom: 22px;
-      font-size: 0.86rem;
+      margin-bottom: 8px;
+      font-size: 0.73rem;
+      line-height: 1.32;
     }
 
     .rubric-table th, .rubric-table td {
-      border: 1px solid #94a3b8;
-      padding: 10px 12px;
+      border: 1px solid #64748b;
+      padding: 5px 7px;
       vertical-align: top;
-      line-height: 1.45;
     }
 
     .rubric-table th {
@@ -242,43 +261,44 @@
       color: #0f172a;
       font-weight: 800;
       text-align: center;
+      padding: 6px 7px;
     }
 
     .rubric-table td.criterion-col {
       background: #fafafa;
-      font-weight: 600;
+      font-weight: 700;
     }
 
     .rubric-table .level-pts {
       display: block;
       font-weight: 800;
       color: #0284c7;
-      margin-top: 4px;
+      margin-top: 3px;
+      font-size: 0.7rem;
     }
 
     /* Signature & Result Box */
     .result-footer {
-      border: 1px solid #cbd5e1;
-      border-radius: 10px;
-      padding: 16px;
-      margin-top: 14px;
+      border: 1px solid #94a3b8;
+      border-radius: 6px;
+      padding: 8px 12px;
       display: grid;
-      grid-template-columns: 2fr 1fr;
-      gap: 16px;
-      background: #f8fafc;
+      grid-template-columns: 2.2fr 1fr;
+      gap: 12px;
+      background: #fafafa;
     }
 
     .teacher-comment h5 {
-      font-size: 0.88rem;
+      font-size: 0.74rem;
       font-weight: 800;
       color: #334155;
-      margin-bottom: 6px;
+      margin-bottom: 4px;
     }
 
     .teacher-comment .comment-lines {
-      border-bottom: 1px dotted #cbd5e1;
-      height: 24px;
-      margin-bottom: 6px;
+      border-bottom: 1px dotted #94a3b8;
+      height: 18px;
+      margin-bottom: 3px;
     }
 
     .score-summary {
@@ -289,26 +309,27 @@
     }
 
     .score-total-box {
-      font-size: 1.15rem;
+      font-size: 0.95rem;
       font-weight: 900;
       color: #0369a1;
       background: white;
-      border: 2px solid #0284c7;
-      border-radius: 8px;
-      padding: 8px;
-      margin-bottom: 8px;
+      border: 1.5px solid #0284c7;
+      border-radius: 6px;
+      padding: 4px;
+      margin-bottom: 4px;
     }
 
     .signature-area {
-      font-size: 0.82rem;
+      font-size: 0.72rem;
       color: #475569;
+      line-height: 1.25;
     }
 
     /* Editable Field Highlight */
     .field:focus, .comment-lines:focus {
       outline: 2px solid #0284c7;
       background: #eff6ff;
-      border-radius: 4px;
+      border-radius: 2px;
       padding: 0 4px;
     }
 
@@ -321,7 +342,7 @@
       color: white;
       padding: 12px 20px;
       border-radius: 12px;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       font-weight: 700;
       box-shadow: 0 10px 25px rgba(0,0,0,0.25);
       z-index: 9999;
@@ -340,41 +361,50 @@
       transform: translateY(0);
     }
 
-    /* Print Styles */
+    /* Strict A4 Printing Styles (Zero Overlap / Zero Spillover) */
     @media print {
-      body {
-        background: #ffffff;
-        padding: 0;
-        margin: 0;
-        -webkit-print-color-adjust: exact;
-        print-color-adjust: exact;
+      @page {
+        size: A4 portrait;
+        margin: 0 !important;
       }
 
-      .top-toolbar, .view-tabs, .toast-box {
+      html, body {
+        background: #ffffff !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+
+      .top-toolbar, .view-tabs, .guide-banner, .toast-box {
         display: none !important;
       }
 
       .sheets-container {
         max-width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
         gap: 0 !important;
       }
 
       .paper-sheet {
+        width: 210mm !important;
+        height: 296mm !important;
+        max-height: 296mm !important;
+        margin: 0 !important;
+        padding: 10mm 15mm 8mm 15mm !important;
         box-shadow: none !important;
         border: none !important;
-        padding: 12mm 15mm !important;
-        page-break-after: always;
-        break-after: page;
+        border-radius: 0 !important;
+        overflow: hidden !important;
+        page-break-inside: avoid !important;
+        page-break-after: always !important;
+        break-after: page !important;
       }
 
-      .paper-sheet:last-child {
-        page-break-after: auto;
-        break-after: auto;
-      }
-
-      @page {
-        size: A4 portrait;
-        margin: 10mm;
+      .paper-sheet:last-of-type {
+        page-break-after: auto !important;
+        break-after: auto !important;
       }
     }
   </style>
@@ -385,24 +415,26 @@
   <div class="top-toolbar">
     <div class="toolbar-left">
       <h1>Hồ Sơ Rubric Đánh Giá Năng Lực Học Sinh - Bài 2</h1>
-      <p>Môn Tin học 6 | Phục vụ in phiếu giấy A4 hoặc xuất lưu trữ tệp PDF chuẩn KHBD</p>
+      <p>Môn Tin học 6 | Thiết kế chuẩn A4 khít 100% trang giấy, không bị tràn hay lệch trang</p>
     </div>
     <div class="toolbar-actions">
-      <button class="btn btn-primary" onclick="window.print()" title="Mở hộp thoại In hoặc Lưu dưới dạng PDF của trình duyệt">
-        <span>🖨️</span> In / Lưu PDF (A4)
+      <button class="btn btn-primary" onclick="printCleanPDF()" title="Mở hộp thoại In hoặc Lưu dưới dạng PDF của trình duyệt (Khuyên dùng)">
+        <span>🖨️</span> In / Lưu PDF Trình Duyệt
       </button>
-      <button class="btn btn-outline" style="background: #0284c7; color: white;" onclick="exportCurrentPDF()" title="Tải xuống tệp PDF tương ứng với phiếu đang xem">
+      <button class="btn btn-outline" style="background: #0284c7; color: white;" onclick="downloadExactPDF()" title="Tải xuống tệp PDF chuẩn A4">
         <span>📥</span> Tải tệp PDF
-      </button>
-      <button class="btn btn-outline" onclick="exportSpecificPDF('sheet-rubric1', 'RUBRIC_1_DANH_GIA_THUC_HANH_PROMPT.pdf')" title="Tải riêng tệp PDF Rubric 1">
-        <span>📄</span> Tải PDF Rubric 1
-      </button>
-      <button class="btn btn-outline" onclick="exportSpecificPDF('sheet-rubric2', 'RUBRIC_2_DANH_GIA_BAI_TOM_TAT_NHAT_KY.pdf')" title="Tải riêng tệp PDF Rubric 2">
-        <span>📄</span> Tải PDF Rubric 2
       </button>
       <a href="index.html" class="btn btn-outline">
         <span>←</span> Cổng học liệu
       </a>
+    </div>
+  </div>
+
+  <!-- Instruction Banner -->
+  <div class="guide-banner">
+    <span>💡</span>
+    <div>
+      <strong>Mẹo xuất PDF sắc nét và chuẩn xác 100%:</strong> Bấm nút <strong>"In / Lưu PDF Trình Duyệt"</strong> (hoặc nhấn <code>Ctrl + P</code>) ➔ Tại mục Máy in (Destination) chọn <strong>"Save as PDF" (Lưu dưới dạng PDF)</strong> ➔ Mục Tỷ lệ (Scale) chọn <strong>Mặc định (100%)</strong> ➔ Bấm Lưu. File PDF xuất ra sẽ khít vừa vặn 1 trang A4 không bị lệch hay nhảy trang!
     </div>
   </div>
 
@@ -423,99 +455,99 @@
         <tr>
           <td style="width: 60%;">
             <div class="school-info">
-              TRƯỜNG THCS: ....................................................<br>
+              TRƯỜNG THCS: ................................................................<br>
               TỔ: TOÁN - TIN HỌC • NĂM HỌC 2025 - 2026<br>
-              MÔN: TIN HỌC 6 (BỘ SÁCH THEO CT GDPT 2018)
+              MÔN: TIN HỌC 6 (THEO CHƯƠNG TRÌNH GDPT 2018)
             </div>
           </td>
-          <td style="width: 40%; text-align: right;">
+          <td style="width: 40%;">
             <div class="doc-meta">
-              <span class="badge-doc">PHIẾU ĐÁNH GIÁ THỰC HÀNH</span><br>
-              <strong>BÀI 2 - HOẠT ĐỘNG 3 (LUYỆN TẬP)</strong><br>
-              Thời lượng thực hiện: 15 phút
+              PHIẾU ĐÁNH GIÁ SẢN PHẨM THỰC HÀNH<br>
+              BÀI 2 - HOẠT ĐỘNG 3 (LUYỆN TẬP)<br>
+              Thang điểm tối đa: 10.0 điểm
             </div>
           </td>
         </tr>
       </table>
 
       <div class="sheet-title">
-        <h2>RUBRIC ĐÁNH GIÁ SẢN PHẨM THỰC HÀNH CÂU LỆNH PROMPT CHO AI</h2>
+        <h2>RUBRIC ĐÁNH GIÁ SẢN PHẨM CÂU LỆNH PROMPT CHO AI</h2>
         <p>Áp dụng cho Hoạt động 3: "Hỏi đúng - Trúng đáp án" (Chấm ảnh chụp màn hình tương tác với SchoolAI)</p>
       </div>
 
       <div class="student-info-box">
-        <div><strong>Họ và tên học sinh:</strong> <span class="field"></span></div>
-        <div><strong>Lớp:</strong> <span class="field"></span></div>
+        <div><strong>Họ và tên:</strong> <span class="field" contenteditable="true"></span></div>
+        <div><strong>Lớp:</strong> <span class="field" contenteditable="true"></span></div>
         <div><strong>Ngày nộp:</strong> ...../...../2026</div>
       </div>
 
       <table class="rubric-table">
         <thead>
           <tr>
-            <th style="width: 25%;">Tiêu chí đánh giá</th>
+            <th style="width: 25%;">Tiêu chí</th>
             <th style="width: 27%;">Mức 1: TỐT (Điểm tối đa)</th>
-            <th style="width: 27%;">Mức 2: ĐẠT (Khá / Trung bình)</th>
+            <th style="width: 27%;">Mức 2: ĐẠT (Khá / Đạt)</th>
             <th style="width: 21%;">Mức 3: CẦN CỐ GẮNG</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td class="criterion-col">
-              <strong>1. Cấu trúc câu lệnh (Prompt)</strong><br>
-              <em>(Trọng tâm cốt lõi bài học)</em>
+              <strong>1. Cấu trúc câu lệnh</strong><br>
+              <em>(Trọng tâm cốt lõi)</em>
               <span class="level-pts">Tối đa: 5.0 điểm</span>
             </td>
             <td>
-              Câu lệnh thể hiện <strong>đầy đủ cả 3 thành phần</strong>:<br>
+              Câu lệnh có <strong>đủ 3 thành phần</strong>:<br>
               1. Đóng vai (Role)<br>
               2. Nhiệm vụ (Task)<br>
               3. Bối cảnh / Điều kiện (Context).
               <span class="level-pts">Đạt: 5.0 điểm</span>
             </td>
             <td>
-              Câu lệnh <strong>thiếu 1 trong 3 thành phần</strong> (thường thiếu phần Đóng vai hoặc quên giới hạn Bối cảnh cho HS lớp 6).
+              Câu lệnh <strong>thiếu 1 trong 3 thành phần</strong> (thường thiếu Đóng vai hoặc Bối cảnh trình độ lớp 6).
               <span class="level-pts">Đạt: 3.0 điểm</span>
             </td>
             <td>
-              Câu lệnh chỉ có từ khóa cộc lốc, hỏi chung chung, không có cấu trúc.
+              Câu lệnh cộc lốc, từ khóa rời rạc, không có cấu trúc.
               <span class="level-pts">Đạt: 1.0 điểm</span>
             </td>
           </tr>
           <tr>
             <td class="criterion-col">
               <strong>2. Nội dung & Ngôn từ</strong><br>
-              <em>(Văn hóa ứng xử & an toàn số)</em>
+              <em>(Văn hóa & an toàn số)</em>
               <span class="level-pts">Tối đa: 3.0 điểm</span>
             </td>
             <td>
-              Hỏi đúng kiến thức môn học lớp 6 (Lịch sử/KHTN/Địa lí). Ngôn từ lịch sự, văn minh, gõ tiếng Việt có dấu chuẩn xác 100%.
+              Hỏi đúng kiến thức học tập lớp 6 (Lịch sử, KHTN...). Ngôn từ văn minh, lịch sự, gõ tiếng Việt có dấu chuẩn 100%.
               <span class="level-pts">Đạt: 3.0 điểm</span>
             </td>
             <td>
-              Hỏi sai chủ đề học tập <strong>hoặc</strong> gõ tiếng Việt không dấu, viết tắt, dùng nhiều teencode.
+              Hỏi sai chủ đề học tập <strong>hoặc</strong> gõ tiếng Việt không dấu, viết tắt, teencode.
               <span class="level-pts">Đạt: 2.0 điểm</span>
             </td>
             <td>
-              Dùng từ ngữ khiếm nhã, vi phạm nguyên tắc bảo mật thông tin cá nhân.
+              Dùng từ ngữ khiếm nhã, vi phạm bảo mật thông tin cá nhân.
               <span class="level-pts">Đạt: 0.0 điểm</span>
             </td>
           </tr>
           <tr>
             <td class="criterion-col">
-              <strong>3. Hình thức minh chứng</strong><br>
+              <strong>3. Minh chứng tương tác</strong><br>
               <em>(Kỹ năng công nghệ)</em>
               <span class="level-pts">Tối đa: 2.0 điểm</span>
             </td>
             <td>
-              Ảnh chụp màn hình sắc nét, rõ ràng, <strong>thấy trọn vẹn cả câu lệnh của học sinh và phản hồi của SchoolAI</strong>.
+              Ảnh chụp màn hình sắc nét, rõ ràng, <strong>thấy cả câu lệnh của học sinh và phản hồi của SchoolAI</strong>.
               <span class="level-pts">Đạt: 2.0 điểm</span>
             </td>
             <td>
-              Ảnh chụp bị mờ hoặc bị cắt xén, chỉ thấy câu trả lời của AI mà không thấy rõ câu lệnh của học sinh.
+              Ảnh mờ hoặc bị cắt xén, chỉ thấy câu trả lời mà không thấy rõ câu lệnh của học sinh.
               <span class="level-pts">Đạt: 1.0 điểm</span>
             </td>
             <td>
-              Không nộp ảnh, nộp sai tệp tin hoặc ảnh lỗi không mở được.
+              Không nộp ảnh minh chứng, nộp sai tệp hoặc ảnh lỗi không mở được.
               <span class="level-pts">Đạt: 0.0 điểm</span>
             </td>
           </tr>
@@ -525,8 +557,8 @@
       <div class="result-footer">
         <div class="teacher-comment">
           <h5>💬 NHẬN XÉT CỦA GIÁO VIÊN:</h5>
-          <div class="comment-lines"></div>
-          <div class="comment-lines"></div>
+          <div class="comment-lines" contenteditable="true"></div>
+          <div class="comment-lines" contenteditable="true"></div>
         </div>
         <div class="score-summary">
           <div class="score-total-box">
@@ -546,77 +578,77 @@
         <tr>
           <td style="width: 60%;">
             <div class="school-info">
-              TRƯỜNG THCS: ....................................................<br>
+              TRƯỜNG THCS: ................................................................<br>
               TỔ: TOÁN - TIN HỌC • NĂM HỌC 2025 - 2026<br>
-              MÔN: TIN HỌC 6 (BỘ SÁCH THEO CT GDPT 2018)
+              MÔN: TIN HỌC 6 (THEO CHƯƠNG TRÌNH GDPT 2018)
             </div>
           </td>
-          <td style="width: 40%; text-align: right;">
+          <td style="width: 40%;">
             <div class="doc-meta">
-              <span class="badge-doc">PHIẾU ĐÁNH GIÁ BÀI VIẾT</span><br>
-              <strong>BÀI 2 - HOẠT ĐỘNG 4 (VẬN DỤNG)</strong><br>
-              Thời lượng thực hiện: 10 phút
+              PHIẾU ĐÁNH GIÁ BÀI VIẾT TỔNG HỢP<br>
+              BÀI 2 - HOẠT ĐỘNG 4 (VẬN DỤNG)<br>
+              Thang điểm tối đa: 10.0 điểm
             </div>
           </td>
         </tr>
       </table>
 
       <div class="sheet-title">
-        <h2>RUBRIC ĐÁNH GIÁ BÀI TÓM TẮT KIẾN THỨC / NHẬT KÝ HỌC TẬP</h2>
+        <h2>RUBRIC ĐÁNH GIÁ BÀI TÓM TẮT KIẾN THỨC / NHẬT KÝ</h2>
         <p>Áp dụng cho Hoạt động 4: "Nhà báo nhí tổng hợp tin tức" (Đánh giá tính tự chủ và chống sao chép AI)</p>
       </div>
 
       <div class="student-info-box">
-        <div><strong>Họ và tên học sinh:</strong> <span class="field"></span></div>
-        <div><strong>Lớp:</strong> <span class="field"></span></div>
+        <div><strong>Họ và tên:</strong> <span class="field" contenteditable="true"></span></div>
+        <div><strong>Lớp:</strong> <span class="field" contenteditable="true"></span></div>
         <div><strong>Số câu tóm tắt:</strong> ......... câu</div>
       </div>
 
       <table class="rubric-table">
         <thead>
           <tr>
-            <th style="width: 25%;">Tiêu chí đánh giá</th>
+            <th style="width: 25%;">Tiêu chí</th>
             <th style="width: 27%;">Mức 1: TỐT (Điểm tối đa)</th>
-            <th style="width: 27%;">Mức 2: ĐẠT (Khá / Trung bình)</th>
+            <th style="width: 27%;">Mức 2: ĐẠT (Khá / Đạt)</th>
             <th style="width: 21%;">Mức 3: CẦN CỐ GẮNG</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td class="criterion-col">
-              <strong>1. Tính tự chủ (Không sao chép)</strong><br>
-              <em>(Năng lực tự chủ & Trách nhiệm số)</em>
+              <strong>1. Tính tự chủ</strong><br>
+              <em>(Liêm chính học thuật)</em>
               <span class="level-pts">Tối đa: 5.0 điểm</span>
             </td>
             <td>
-              Bài viết thể hiện rõ <strong>giọng văn của học sinh lớp 6</strong>. Tự chắt lọc và diễn đạt <strong>100% bằng ngôn từ của mình</strong>, không sao chép máy móc từ AI.
+              Thể hiện rõ giọng văn của học sinh lớp 6. Tự chắt lọc và diễn đạt <strong>100% bằng ngôn từ của mình</strong>, không sao chép AI.
               <span class="level-pts">Đạt: 5.0 điểm</span>
             </td>
             <td>
-              Có chỉnh sửa câu chữ nhưng vẫn còn sao chép (copy-paste) nguyên văn một vài câu dài từ phản hồi của AI.
+              Có chỉnh sửa câu chữ nhưng vẫn còn sao chép (copy-paste) nguyên văn một vài câu từ AI.
               <span class="level-pts">Đạt: 3.0 điểm</span>
             </td>
             <td>
-              Sao chép (Copy - Paste) <strong>nguyên xi 100%</strong> văn phong phức tạp của AI vào bài làm.
+              Sao chép (copy-paste) <strong>nguyên xi 100%</strong> văn phong phức tạp của AI vào bài làm.
               <span class="level-pts">Đạt: 0.0 điểm</span>
             </td>
           </tr>
           <tr>
             <td class="criterion-col">
-              <strong>2. Dung lượng & Tính chính xác</strong><br>
+              <strong>2. Dung lượng & Chính xác</strong><br>
               <em>(Hiểu biết kiến thức)</em>
               <span class="level-pts">Tối đa: 3.0 điểm</span>
             </td>
             <td>
-              Đảm bảo đúng quy định dung lượng <strong>(từ 3 đến 5 câu văn)</strong>. Kiến thức cốt lõi được tóm tắt chính xác, logic, dễ hiểu.
+              Đảm bảo đúng quy định dung lượng <strong>(từ 3 đến 5 câu văn)</strong>. Kiến thức tóm tắt chính xác, logic, dễ hiểu.
               <span class="level-pts">Đạt: 3.0 điểm</span>
             </td>
             <td>
-              Viết quá ngắn (dưới 3 câu) hoặc quá dài lê thê (trên 6 câu), nội dung còn lộn xộn hoặc thiếu ý chính.
+              Viết quá ngắn (dưới 3 câu) hoặc quá dài (trên 6 câu), nội dung còn lộn xộn hoặc thiếu ý chính.
               <span class="level-pts">Đạt: 2.0 điểm</span>
             </td>
             <td>
-              Tóm tắt sai lệch kiến thức hoặc nội dung không liên quan đến chủ đề đã hỏi AI.
+              Tóm tắt sai lệch kiến thức hoặc nội dung không liên quan đến chủ đề đã tương tác với AI.
               <span class="level-pts">Đạt: 1.0 điểm</span>
             </td>
           </tr>
@@ -631,7 +663,7 @@
               <span class="level-pts">Đạt: 2.0 điểm</span>
             </td>
             <td>
-              Mắc từ 1 đến 3 lỗi chính tả, dùng từ ngữ diễn đạt chưa thật trôi chảy.
+              Mắc từ 1 đến 3 lỗi chính tả, diễn đạt còn vụng về chưa thật trôi chảy.
               <span class="level-pts">Đạt: 1.0 điểm</span>
             </td>
             <td>
@@ -645,8 +677,8 @@
       <div class="result-footer">
         <div class="teacher-comment">
           <h5>💬 NHẬN XÉT CỦA GIÁO VIÊN:</h5>
-          <div class="comment-lines"></div>
-          <div class="comment-lines"></div>
+          <div class="comment-lines" contenteditable="true"></div>
+          <div class="comment-lines" contenteditable="true"></div>
         </div>
         <div class="score-summary">
           <div class="score-total-box">
@@ -666,39 +698,39 @@
         <tr>
           <td style="width: 60%;">
             <div class="school-info">
-              TRƯỜNG THCS: ....................................................<br>
+              TRƯỜNG THCS: ................................................................<br>
               TỔ: TOÁN - TIN HỌC • NĂM HỌC 2025 - 2026<br>
-              MÔN: TIN HỌC 6 (BỘ SÁCH THEO CT GDPT 2018)
+              MÔN: TIN HỌC 6 (THEO CHƯƠNG TRÌNH GDPT 2018)
             </div>
           </td>
-          <td style="width: 40%; text-align: right;">
+          <td style="width: 40%;">
             <div class="doc-meta">
-              <span class="badge-doc">HỒ SƠ ĐÁNH GIÁ NĂNG LỰC SỐ</span><br>
-              <strong>KHUNG UNESCO AI CFT & GDPT 2018</strong><br>
-              Bài 2: Lợi ích và cách dùng AI phù hợp
+              HỒ SƠ ĐÁNH GIÁ NĂNG LỰC SỐ<br>
+              KHUNG UNESCO AI CFT & GDPT 2018<br>
+              Bài 2: Dùng AI phù hợp & an toàn
             </div>
           </td>
         </tr>
       </table>
 
       <div class="sheet-title">
-        <h2>BẢNG TỔNG HỢP ĐÁNH GIÁ NĂNG LỰC HỌC SINH QUA 5 HỌC LIỆU LMS</h2>
+        <h2>BẢNG TỔNG HỢP ĐÁNH GIÁ NĂNG LỰC SỐ HỌC SINH QUA 5 HỌC LIỆU LMS</h2>
         <p>Hồ sơ theo dõi tiến trình học tập kết hợp (Blended Learning) Tiết 1 E-learning & Tiết 2 Lớp học</p>
       </div>
 
       <div class="student-info-box">
-        <div><strong>Họ và tên học sinh:</strong> <span class="field"></span></div>
-        <div><strong>Lớp:</strong> <span class="field"></span></div>
+        <div><strong>Họ và tên:</strong> <span class="field" contenteditable="true"></span></div>
+        <div><strong>Lớp:</strong> <span class="field" contenteditable="true"></span></div>
         <div><strong>Thời gian học LMS:</strong> 45 phút</div>
       </div>
 
       <table class="rubric-table">
         <thead>
           <tr>
-            <th style="width: 18%;">Học liệu số LMS</th>
-            <th style="width: 30%;">Hoạt động & Mục tiêu sư phạm</th>
-            <th style="width: 24%;">Năng lực số hình thành</th>
-            <th style="width: 28%;">Kết quả & Mức độ đạt</th>
+            <th style="width: 17%;">Học liệu LMS</th>
+            <th style="width: 31%;">Nội dung & Mục tiêu sư phạm</th>
+            <th style="width: 25%;">Năng lực số hình thành</th>
+            <th style="width: 27%;">Kết quả & Mức độ đạt</th>
           </tr>
         </thead>
         <tbody>
@@ -708,7 +740,7 @@
               <em>(Khởi động)</em>
             </td>
             <td>Diễn đàn LMS: Nêu nhu cầu và ý tưởng sử dụng trợ lý AI.</td>
-            <td>Giao tiếp và hợp tác trong môi trường số lành mạnh.</td>
+            <td>Giao tiếp & hợp tác trong môi trường số văn minh.</td>
             <td>
               [ &nbsp; ] Đạt chuyên cần (Đã đăng bài)<br>
               [ &nbsp; ] Chưa tham gia
@@ -717,13 +749,13 @@
           <tr>
             <td class="criterion-col">
               <strong>Học liệu 2</strong><br>
-              <em>(Kiến thức mới)</em>
+              <em>(Kiến thức)</em>
             </td>
             <td>Video SCORM tương tác: Kỹ thuật viết Prompt chuẩn 3 thành phần.</td>
-            <td>Hiểu nguyên lý tương tác với AI tạo sinh.</td>
+            <td>Hiểu nguyên lý ra lệnh tương tác với AI tạo sinh.</td>
             <td>
               Điểm số SCORM: .......... / 100đ<br>
-              <em>(Ngưỡng hoàn thành: ≥ 80 điểm)</em>
+              <em>(Ngưỡng đạt: ≥ 80 điểm)</em>
             </td>
           </tr>
           <tr>
@@ -734,7 +766,7 @@
             <td>Trạm GenAI an toàn: Thực hành trên SchoolAI & Cẩm nang 4 KHÔNG.</td>
             <td>An toàn số, bảo vệ dữ liệu cá nhân (NĐ 13/2023/NĐ-CP).</td>
             <td>
-              [ &nbsp; ] Nhận diện tốt thông tin nhạy cảm<br>
+              [ &nbsp; ] Nhận diện tốt tin nhạy cảm<br>
               [ &nbsp; ] Cần nhắc nhở thêm
             </td>
           </tr>
@@ -743,8 +775,8 @@
               <strong>Học liệu 4</strong><br>
               <em>(Luyện tập)</em>
             </td>
-            <td>Cổng nộp bài Assignment: Ảnh chụp tương tác câu lệnh Prompt.</td>
-            <td>Kỹ năng ra lệnh cho AI (Prompt Engineering cơ bản).</td>
+            <td>Cổng nộp Assignment: Ảnh chụp minh chứng tương tác Prompt.</td>
+            <td>Kỹ năng viết câu lệnh Prompt Engineering cơ bản.</td>
             <td>
               Điểm Rubric: .......... / 10 điểm<br>
               Xếp loại: [ &nbsp; ] Tốt &nbsp; [ &nbsp; ] Đạt
@@ -768,11 +800,11 @@
       <div class="result-footer">
         <div class="teacher-comment">
           <h5>🌟 ĐÁNH GIÁ CHUNG VỀ NĂNG LỰC SỐ CỦA HỌC SINH:</h5>
-          <div class="comment-lines"></div>
-          <div class="comment-lines"></div>
+          <div class="comment-lines" contenteditable="true"></div>
+          <div class="comment-lines" contenteditable="true"></div>
         </div>
         <div class="score-summary">
-          <div class="score-total-box" style="font-size: 1rem;">
+          <div class="score-total-box" style="font-size: 0.88rem;">
             KẾT QUẢ BÀI 2: [ &nbsp; ] ĐẠT &nbsp; [ &nbsp; ] TỐT
           </div>
           <div class="signature-area">
@@ -830,88 +862,59 @@
       }, 4000);
     }
 
-    function exportCurrentPDF() {
-      if (typeof html2pdf === 'undefined') {
-        window.print();
-        return;
-      }
-
-      let targetElem = document.getElementById('sheetsContainer');
-      let filename = 'TRON_BO_RUBRIC_DANH_GIA_TINHOC6_BAI2.pdf';
-
-      if (currentFilter === 'rubric1') {
-        targetElem = document.getElementById('sheet-rubric1');
-        filename = 'RUBRIC_1_DANH_GIA_THUC_HANH_PROMPT.pdf';
-      } else if (currentFilter === 'rubric2') {
-        targetElem = document.getElementById('sheet-rubric2');
-        filename = 'RUBRIC_2_DANH_GIA_BAI_TOM_TAT_NHAT_KY.pdf';
-      } else if (currentFilter === 'tonghop') {
-        targetElem = document.getElementById('sheet-tonghop');
-        filename = 'BANG_TONG_HOP_DANH_GIA_NANG_LUC_SO_BAI2.pdf';
-      }
-
-      showToast('⏳ Đang kết xuất tệp PDF: ' + filename + '...');
-      
-      const opt = {
-        margin: [6, 8, 6, 8],
-        filename: filename,
-        image: { type: 'jpeg', quality: 0.98 },
-        html2canvas: { scale: 2, useCORS: true, letterRendering: true },
-        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
-      };
-
-      html2pdf().set(opt).from(targetElem).save().then(() => {
-        showToast('✅ Đã tải xuống tệp ' + filename + ' thành công!');
-      }).catch(err => {
-        console.error(err);
-        showToast('⚠️ Đang chuyển sang hộp thoại in trực tiếp...');
-        window.print();
-      });
+    function printCleanPDF() {
+      // Direct native browser print: produces 100% vector crisp PDF fitting exact A4 pages
+      window.print();
     }
 
-    function exportSpecificPDF(sheetId, filename) {
-      if (typeof html2pdf === 'undefined') {
-        window.print();
+    function downloadExactPDF() {
+      let targetElemId = 'sheet-rubric1';
+      let filename = 'RUBRIC_1_DANH_GIA_THUC_HANH_PROMPT.pdf';
+
+      if (currentFilter === 'rubric2') {
+        targetElemId = 'sheet-rubric2';
+        filename = 'RUBRIC_2_DANH_GIA_BAI_TOM_TAT_NHAT_KY.pdf';
+      } else if (currentFilter === 'tonghop') {
+        targetElemId = 'sheet-tonghop';
+        filename = 'BANG_TONG_HOP_DANH_GIA_NANG_LUC_SO_BAI2.pdf';
+      } else if (currentFilter === 'all') {
+        // If 'all' is selected, browser print is much cleaner for multi-page A4
+        showToast('💡 Đang mở hộp thoại lưu PDF toàn bộ 3 trang A4 chuẩn xác...');
+        setTimeout(() => {
+          window.print();
+        }, 500);
         return;
       }
-      const elem = document.getElementById(sheetId);
+
+      const elem = document.getElementById(targetElemId);
       if (!elem) return;
 
-      // Temporarily display if hidden
-      const prevDisplay = elem.style.display;
-      elem.style.display = 'block';
+      showToast('⏳ Đang kết xuất ' + filename + ' chuẩn A4 khít 1 trang...');
 
-      showToast('⏳ Đang tạo tệp ' + filename + '...');
+      // Precise A4 settings matching 210mm x 297mm
       const opt = {
-        margin: [6, 8, 6, 8],
+        margin: 0,
         filename: filename,
         image: { type: 'jpeg', quality: 0.98 },
-        html2canvas: { scale: 2, useCORS: true, letterRendering: true },
+        html2canvas: {
+          scale: 2,
+          useCORS: true,
+          logging: false,
+          letterRendering: true,
+          scrollY: 0,
+          scrollX: 0
+        },
         jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
       };
 
       html2pdf().set(opt).from(elem).save().then(() => {
-        elem.style.display = prevDisplay;
-        showToast('✅ Đã tải xuống ' + filename + '!');
+        showToast('✅ Đã tải xuống ' + filename + ' chuẩn 1 trang A4!');
       }).catch(err => {
-        elem.style.display = prevDisplay;
         console.error(err);
+        showToast('⚠️ Chuyển sang trình in trực tiếp...');
         window.print();
       });
     }
-
-    // Enable contenteditable on blanks for electronic grading before print
-    document.addEventListener('DOMContentLoaded', () => {
-      document.querySelectorAll('.student-info-box span.field').forEach(span => {
-        span.setAttribute('contenteditable', 'true');
-        span.setAttribute('title', 'Nhấp chuột vào đây để nhập thông tin học sinh');
-      });
-      document.querySelectorAll('.teacher-comment .comment-lines').forEach(div => {
-        div.setAttribute('contenteditable', 'true');
-        div.setAttribute('title', 'Nhấp chuột vào đây để nhập nhận xét');
-      });
-    });
   </script>
 </body>
 </html>
-

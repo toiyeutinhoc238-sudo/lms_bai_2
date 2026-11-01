@@ -439,49 +439,31 @@
       font-size: 0.85rem;
     }
 
-    /* Infographic Card Below */
-    .info-card {
-      background: #0f172a;
-      border-radius: var(--radius);
-      padding: 24px;
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      margin-top: 20px;
-    }
-
-    .info-title {
-      font-size: 1.25rem;
+    /* Anti-skip Warning Toast */
+    .video-toast {
+      position: absolute;
+      top: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(220, 38, 38, 0.95);
+      backdrop-filter: blur(8px);
+      color: #ffffff;
+      padding: 10px 22px;
+      border-radius: 30px;
+      font-size: 0.92rem;
       font-weight: 800;
-      color: #a5b4fc;
-      margin-bottom: 14px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
+      display: none;
+      z-index: 50;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45);
+      border: 1px solid rgba(254, 202, 202, 0.4);
+      pointer-events: none;
+      animation: fadeInDown 0.25s ease;
+      white-space: nowrap;
     }
 
-    .formula-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 16px;
-      margin-top: 14px;
-    }
-
-    .formula-col {
-      background: rgba(255, 255, 255, 0.03);
-      border-left: 4px solid var(--primary-light);
-      border-radius: 8px;
-      padding: 16px;
-    }
-
-    .formula-col h4 {
-      font-size: 1.05rem;
-      color: #38bdf8;
-      margin-bottom: 6px;
-    }
-
-    .formula-col p {
-      font-size: 0.88rem;
-      color: #cbd5e1;
-      line-height: 1.5;
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translate(-50%, -10px); }
+      to { opacity: 1; transform: translate(-50%, 0); }
     }
 
     footer {
@@ -516,12 +498,15 @@
     </div>
 
     <!-- Screen Stage with Real Video -->
-    <div class="screen-stage">
-      <video id="mainVideo" playsinline preload="auto">
+    <div class="screen-stage" oncontextmenu="return false;">
+      <video id="mainVideo" playsinline preload="auto" disablepictureinpicture controlslist="nodownload nofullscreen noremoteplayback" oncontextmenu="return false;">
         <source src="video_bai_hoc.mp4" type="video/mp4">
         <source src="Mẹo viết câu lệnh (prompt) cho AI- Cần cung cấp bối cảnh, vai trò và yêu cầu rõ ràng..mp4" type="video/mp4">
         Trình duyệt của em không hỗ trợ phát video HTML5.
       </video>
+
+      <!-- Warning Toast Anti-Skip -->
+      <div class="video-toast" id="videoToast">🔒 Em không thể tua nhanh video! Vui lòng xem tuần tự bài giảng.</div>
 
       <!-- Big Play Overlay at start -->
       <div class="big-play-overlay" id="bigPlayOverlay" onclick="startPlay()">
@@ -585,30 +570,8 @@
     </div>
   </div>
 
-  <!-- Infographic Summary -->
-  <section class="info-card">
-    <div class="info-title">
-      <span>💡</span>
-      <span>Tóm Tắt 3 Trụ Cột Vàng Khi Viết Prompt (Theo Video Bài Học)</span>
-    </div>
-    <div class="formula-grid">
-      <div class="formula-col" style="border-left-color: #8b5cf6;">
-        <h4 style="color: #c084fc;">1. BỐI CẢNH (Context)</h4>
-        <p>Nói cho AI biết mình là ai, ở đâu và dùng để làm gì để AI đưa ra câu trả lời phù hợp với hoàn cảnh thực tế.</p>
-      </div>
-      <div class="formula-col" style="border-left-color: #0ea5e9;">
-        <h4 style="color: #38bdf8;">2. VAI TRÒ (Role)</h4>
-        <p>Phân vai cụ thể cho AI (chuyên gia nông nghiệp, marketing, giáo viên...) để AI sử dụng đúng góc nhìn và văn phong chuyên môn.</p>
-      </div>
-      <div class="formula-col" style="border-left-color: #10b981;">
-        <h4 style="color: #4ade80;">3. YÊU CẦU & ĐỊNH DẠNG (Task)</h4>
-        <p>Nêu rõ việc AI cần làm và định dạng câu trả lời (5 câu, 3 gạch đầu dòng, bài đăng...) để nhận kết quả rõ ràng nhất.</p>
-      </div>
-    </div>
-  </section>
-
   <footer>
-    <p>Chương trình GDPT 2018 - Tin học 6 | Gói học liệu video tương tác chuẩn SCORM 1.2</p>
+    <p>Chương trình GDPT 2018 - Tin học 6 | Gói học liệu video tương tác chuẩn SCORM 1.2 (Chế độ chống tua lướt & ghi nhận điểm tự động)</p>
   </footer>
 </div>
 
@@ -647,7 +610,23 @@
   const video = document.getElementById('mainVideo');
   let userScore = 0;
   let activeCheckpoint = null;
-  let maxAllowedTime = 0;
+  let maxWatchedTime = 0; // Vị trí giây lớn nhất học sinh đã xem thực tế
+
+  // Hiển thị thông báo toast cảnh báo chống tua
+  let toastTimer = null;
+  function showToast(msg) {
+    const toast = document.getElementById('videoToast');
+    if (!toast) {
+      alert(msg);
+      return;
+    }
+    toast.innerText = msg;
+    toast.style.display = 'block';
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => {
+      toast.style.display = 'none';
+    }, 2800);
+  }
 
   // 3 Checkpoints căn chỉnh chính xác 100% theo các phân đoạn nội dung của video thực tế
   const checkpoints = [
@@ -729,8 +708,10 @@
     const cur = video.currentTime;
     const dur = video.duration || 387;
 
-    // Track max watched position
-    if (cur > maxAllowedTime) maxAllowedTime = cur;
+    // Chỉ cập nhật maxWatchedTime khi video phát tuần tự bình thường (bước nhảy hợp lệ <= 2s)
+    if (cur > maxWatchedTime && cur <= maxWatchedTime + 2.5) {
+      maxWatchedTime = cur;
+    }
 
     // Update UI Time
     document.getElementById('timeDisplay').innerText = `${formatTime(cur)} / ${formatTime(dur)}`;
@@ -746,18 +727,34 @@
     }
   });
 
-  // Prevent skipping past checkpoints
+  // 1. Chặn tua lướt tiến về phía trước bằng mọi cách
   video.addEventListener('seeking', function() {
-    if (video.currentTime > maxAllowedTime + 3) {
-      const firstUnpassed = checkpoints.find(c => !c.passed);
-      if (firstUnpassed && video.currentTime > firstUnpassed.triggerTime) {
-        video.currentTime = firstUnpassed.triggerTime - 1;
-        alert("🔒 Chế độ SCORM: Em cần xem video và trả lời câu hỏi neo chặn để mở khóa nội dung tiếp theo!");
-      }
+    if (video.currentTime > maxWatchedTime + 1.2) {
+      video.currentTime = maxWatchedTime;
+      showToast("🔒 Thao tác tua nhanh bị chặn! Vui lòng theo dõi tuần tự bài giảng.");
+    }
+  });
+
+  // 2. Chặn tăng tốc độ phát video (playbackRate > 1.0)
+  video.addEventListener('ratechange', function() {
+    if (video.playbackRate > 1.0) {
+      video.playbackRate = 1.0;
+      showToast("🔒 Tốc độ phát bị cố định ở mức chuẩn 1.0x để đảm bảo việc học!");
+    }
+  });
+
+  // 3. Chặn phím tắt tua nhanh (ArrowRight, L, ArrowUp...)
+  window.addEventListener('keydown', function(e) {
+    if (['ArrowRight', 'ArrowUp', 'KeyL'].includes(e.code) || e.key === 'ArrowRight' || e.key === 'ArrowUp' || e.key === 'l' || e.key === 'L') {
+      e.preventDefault();
+      showToast("🔒 Phím tắt tua nhanh video đã bị khóa!");
     }
   });
 
   video.addEventListener('ended', function() {
+    // Khi đã hoàn thành toàn bộ bài học, cho phép tua xem lại tự do
+    maxWatchedTime = video.duration || 387;
+    
     document.getElementById('completionBanner').style.display = 'flex';
     document.getElementById('finalScoreDisplay').innerText = `${userScore} / 100`;
     
@@ -835,8 +832,10 @@
 
   function resumeVideo() {
     document.getElementById('checkpointOverlay').style.display = 'none';
-    video.currentTime = activeCheckpoint.triggerTime + 2;
-    maxAllowedTime = video.currentTime;
+    video.currentTime = activeCheckpoint.triggerTime + 1;
+    if (video.currentTime > maxWatchedTime) {
+      maxWatchedTime = video.currentTime;
+    }
     video.play();
     document.getElementById('playToggleBtn').innerText = '❚❚';
   }
@@ -844,7 +843,7 @@
   function replayVideo() {
     document.getElementById('completionBanner').style.display = 'none';
     video.currentTime = 0;
-    maxAllowedTime = 0;
+    maxWatchedTime = 0;
     checkpoints.forEach(c => {
       c.passed = false;
       document.getElementById(`flag${c.id}`).classList.remove('passed');
@@ -855,19 +854,21 @@
     document.getElementById('playToggleBtn').innerText = '❚❚';
   }
 
+  // 4. Xử lý click thanh tiến trình: Tuyệt đối chặn tua tiến vượt quá thời gian đã xem
   function handleTimelineClick(e) {
     const track = document.getElementById('timelineTrack');
     const rect = track.getBoundingClientRect();
     const clickX = e.clientX - rect.left;
-    const pct = clickX / rect.width;
+    const pct = Math.max(0, Math.min(1, clickX / rect.width));
     const targetTime = pct * (video.duration || 387);
 
-    const firstUnpassed = checkpoints.find(c => !c.passed);
-    if (firstUnpassed && targetTime > firstUnpassed.triggerTime) {
-      alert("🔒 Em cần xem tuần tự và trả lời câu hỏi neo chặn trước khi tua đến đoạn này!");
+    // Chặn click tua vượt quá thời gian đã học
+    if (targetTime > maxWatchedTime + 1.2) {
+      showToast("🔒 Em không thể tua nhanh vượt đoạn chưa học! Vui lòng xem tuần tự.");
       return;
     }
 
+    // Cho phép click tua lùi lại để nghe lại đoạn trước đó
     video.currentTime = targetTime;
   }
 </script>

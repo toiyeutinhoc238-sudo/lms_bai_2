@@ -249,6 +249,32 @@
       padding: 4px 12px;
       border-radius: 12px;
     }
+
+    /* Anti-skip Warning Toast */
+    .video-toast {
+      position: absolute;
+      top: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(220, 38, 38, 0.95);
+      backdrop-filter: blur(8px);
+      color: #ffffff;
+      padding: 10px 22px;
+      border-radius: 30px;
+      font-size: 0.92rem;
+      font-weight: 800;
+      display: none;
+      z-index: 50;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45);
+      border: 1px solid rgba(254, 202, 202, 0.4);
+      pointer-events: none;
+      animation: fadeInDown 0.25s ease;
+      white-space: nowrap;
+    }
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translate(-50%, -10px); }
+      to { opacity: 1; transform: translate(-50%, 0); }
+    }
   </style>
 </head>
 <body>
@@ -262,11 +288,14 @@
       <div class="score-indicator" id="scoreIndicator">Điểm: 0 / 100</div>
     </div>
 
-    <div class="screen-stage">
-      <video id="mainVideo" playsinline preload="auto">
+    <div class="screen-stage" oncontextmenu="return false;">
+      <video id="mainVideo" playsinline preload="auto" disablepictureinpicture controlslist="nodownload nofullscreen noremoteplayback" oncontextmenu="return false;">
         <source src="video_bai_hoc.mp4" type="video/mp4">
         Trình duyệt không hỗ trợ HTML5 video.
       </video>
+
+      <!-- Warning Toast Anti-Skip -->
+      <div class="video-toast" id="videoToast">🔒 Em không thể tua nhanh video! Vui lòng xem tuần tự bài giảng.</div>
 
       <div class="big-play-overlay" id="bigPlayOverlay" onclick="startPlay()">
         <div class="big-play-btn">▶</div>
@@ -319,7 +348,23 @@
   const video = document.getElementById('mainVideo');
   let userScore = 0;
   let activeCheckpoint = null;
-  let maxAllowedTime = 0;
+  let maxWatchedTime = 0; // Vị trí giây lớn nhất học sinh đã xem thực tế
+
+  // Hiển thị toast cảnh báo chống tua
+  let toastTimer = null;
+  function showToast(msg) {
+    const toast = document.getElementById('videoToast');
+    if (!toast) {
+      alert(msg);
+      return;
+    }
+    toast.innerText = msg;
+    toast.style.display = 'block';
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => {
+      toast.style.display = 'none';
+    }, 2800);
+  }
 
   // 3 Checkpoints căn chỉnh chính xác 100% theo các phân đoạn nội dung của video thực tế
   const checkpoints = [
@@ -395,7 +440,10 @@
     const cur = video.currentTime;
     const dur = video.duration || 387;
 
-    if (cur > maxAllowedTime) maxAllowedTime = cur;
+    // Cập nhật vị trí xem lớn nhất một cách tuần tự (không cho phép bước nhảy lớn)
+    if (cur > maxWatchedTime && cur <= maxWatchedTime + 2.5) {
+      maxWatchedTime = cur;
+    }
 
     document.getElementById('timeDisplay').innerText = `${formatTime(cur)} / ${formatTime(dur)}`;
     const pct = (cur / dur) * 100;
@@ -409,17 +457,34 @@
     }
   });
 
+  // 1. Chặn tua lướt tiến về phía trước bằng mọi cách
   video.addEventListener('seeking', function() {
-    if (video.currentTime > maxAllowedTime + 3) {
-      const firstUnpassed = checkpoints.find(c => !c.passed);
-      if (firstUnpassed && video.currentTime > firstUnpassed.triggerTime) {
-        video.currentTime = firstUnpassed.triggerTime - 1;
-        alert("🔒 Chế độ SCORM: Em cần xem video và trả lời câu hỏi neo chặn để mở khóa nội dung tiếp theo!");
-      }
+    if (video.currentTime > maxWatchedTime + 1.2) {
+      video.currentTime = maxWatchedTime;
+      showToast("🔒 Thao tác tua nhanh bị chặn! Vui lòng theo dõi tuần tự bài giảng.");
+    }
+  });
+
+  // 2. Chặn tăng tốc độ phát video (playbackRate > 1.0)
+  video.addEventListener('ratechange', function() {
+    if (video.playbackRate > 1.0) {
+      video.playbackRate = 1.0;
+      showToast("🔒 Tốc độ phát bị cố định ở mức chuẩn 1.0x để đảm bảo việc học!");
+    }
+  });
+
+  // 3. Chặn phím tắt tua nhanh (ArrowRight, L, ArrowUp...)
+  window.addEventListener('keydown', function(e) {
+    if (['ArrowRight', 'ArrowUp', 'KeyL'].includes(e.code) || e.key === 'ArrowRight' || e.key === 'ArrowUp' || e.key === 'l' || e.key === 'L') {
+      e.preventDefault();
+      showToast("🔒 Phím tắt tua nhanh video đã bị khóa!");
     }
   });
 
   video.addEventListener('ended', function() {
+    // Khi đã hoàn thành toàn bộ bài học, mở khóa tua tự do để xem lại
+    maxWatchedTime = video.duration || 387;
+
     document.getElementById('completionBanner').style.display = 'flex';
     document.getElementById('finalScoreDisplay').innerText = `${userScore} / 100`;
     try {
@@ -486,24 +551,29 @@
 
   function resumeVideo() {
     document.getElementById('checkpointOverlay').style.display = 'none';
-    video.currentTime = activeCheckpoint.triggerTime + 2;
-    maxAllowedTime = video.currentTime;
+    video.currentTime = activeCheckpoint.triggerTime + 1;
+    if (video.currentTime > maxWatchedTime) {
+      maxWatchedTime = video.currentTime;
+    }
     video.play();
     document.getElementById('playToggleBtn').innerText = '❚❚';
   }
 
+  // 4. Xử lý click thanh tiến trình: Tuyệt đối chặn tua tiến vượt quá thời gian đã xem
   function handleTimelineClick(e) {
     const track = document.getElementById('timelineTrack');
     const rect = track.getBoundingClientRect();
     const clickX = e.clientX - rect.left;
-    const pct = clickX / rect.width;
+    const pct = Math.max(0, Math.min(1, clickX / rect.width));
     const targetTime = pct * (video.duration || 387);
 
-    const firstUnpassed = checkpoints.find(c => !c.passed);
-    if (firstUnpassed && targetTime > firstUnpassed.triggerTime) {
-      alert("🔒 Em cần xem tuần tự và trả lời câu hỏi neo chặn trước khi tua đến đoạn này!");
+    // Chặn click tua vượt quá thời gian đã học
+    if (targetTime > maxWatchedTime + 1.2) {
+      showToast("🔒 Em không thể tua nhanh vượt đoạn chưa học! Vui lòng xem tuần tự.");
       return;
     }
+
+    // Cho phép click tua lùi lại để nghe lại đoạn trước đó
     video.currentTime = targetTime;
   }
 </script>

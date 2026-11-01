@@ -228,6 +228,7 @@ Giáo viên nhúng nội dung này ngay bên dưới link công cụ trên LMS:
 * **Dung lượng tối đa:** 5 MB.
 * **Thời hạn hoàn thành:** 15 phút trong giờ học trực tuyến (hoặc trước buổi học kế tiếp).
 * **Phương thức chấm điểm:** Bảng tiêu chí đánh giá (Rubric). Thang điểm: 10 điểm.
+* **Link Thư mục Google Drive Nộp bài chính thức:** [https://drive.google.com/drive/folders/1N4MIlx9gx_LnO4LPmdAuCpQcMtHokwr3?usp=sharing](https://drive.google.com/drive/folders/1N4MIlx9gx_LnO4LPmdAuCpQcMtHokwr3?usp=sharing)
 
 ---
 
@@ -285,6 +286,7 @@ Giáo viên nhúng nội dung này ngay bên dưới link công cụ trên LMS:
 * **Loại công cụ:** Công cụ Blog môn học (Blog post) hoặc Thuật ngữ (Glossary / Collaborative Wiki).
 * **Mục tiêu giáo dục:** Rèn luyện năng lực tự chủ và tự học (trình bày lại điều mình đã học được từ AI), hình thành phẩm chất **Trách nhiệm** (tự chịu trách nhiệm về kết quả, không copy-paste nguyên văn, không ỷ lại vào công nghệ).
 * **Sản phẩm yêu cầu:** 01 bài đăng ngắn từ **3 đến 5 câu**.
+* **Link Thư mục Google Drive Nhật ký học tập chính thức:** [https://drive.google.com/drive/folders/1o0Y7hb1UQcuXPTsVk3z-EUYB_Ed6e0vp?usp=sharing](https://drive.google.com/drive/folders/1o0Y7hb1UQcuXPTsVk3z-EUYB_Ed6e0vp?usp=sharing)
 
 ---
 

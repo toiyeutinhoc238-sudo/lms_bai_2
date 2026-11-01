@@ -392,8 +392,11 @@
       <a href="index.html" class="btn-back">
         <span>←</span> Cổng Học Liệu
       </a>
-      <a href="kho_luu_tru_bai_nop_hoc_lieu_4.html" target="_blank" class="btn-back" style="color: #0284c7; border-color: #38bdf8; background: #f0f9ff;">
-        <span>📁</span> Mở Kho Drive Bài Nộp
+      <a href="https://drive.google.com/drive/folders/1N4MIlx9gx_LnO4LPmdAuCpQcMtHokwr3?usp=sharing" target="_blank" class="btn-back" style="color: #0284c7; border-color: #38bdf8; background: #f0f9ff; font-weight: 800;">
+        <span>☁️</span> Google Drive Nộp Bài Chính Thức
+      </a>
+      <a href="kho_luu_tru_bai_nop_hoc_lieu_4.html" target="_blank" class="btn-back" style="color: #475569; border-color: #cbd5e1; background: white;">
+        <span>📁</span> Kho Drive LMS
       </a>
     </div>
     <div class="submission-status" id="subStatus">
@@ -410,6 +413,20 @@
 
   <!-- Phần 1: Hướng dẫn nhiệm vụ -->
   <section class="section-card">
+    <!-- Official Google Drive Submission Banner -->
+    <div style="background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); border: 2px solid #0284c7; border-radius: 12px; padding: 16px 20px; margin-bottom: 20px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px; box-shadow: 0 4px 12px rgba(2, 132, 199, 0.12);">
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <span style="font-size: 2.2rem;">☁️</span>
+        <div>
+          <div style="font-size: 1.05rem; font-weight: 800; color: #0369a1;">Nơi nộp bài chính thức của lớp: Google Drive Thầy Cô</div>
+          <div style="font-size: 0.88rem; color: #334155;">Học sinh nộp tệp ảnh chụp màn hình vào thư mục dùng chung để Thầy Cô lưu trữ và đánh giá.</div>
+        </div>
+      </div>
+      <a href="https://drive.google.com/drive/folders/1N4MIlx9gx_LnO4LPmdAuCpQcMtHokwr3?usp=sharing" target="_blank" style="background: #0284c7; color: white; padding: 10px 18px; border-radius: 10px; font-weight: 800; font-size: 0.92rem; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 4px 10px rgba(2, 132, 199, 0.35);">
+        <span>🚀</span> Mở Thư Mục Google Drive Nộp Bài ↗
+      </a>
+    </div>
+
     <div class="section-title">
       <span class="icon">📋</span>
       <h2>1. Nhiệm vụ và các bước thực hiện</h2>
@@ -456,11 +473,14 @@
     <div class="preview-container" id="previewContainer">
       <h4 style="margin-bottom: 10px; color: #1e293b;">Ảnh chụp minh chứng bài làm của em:</h4>
       <img id="previewImg" class="preview-img" alt="Minh chứng đoạn chat">
-      <div>
-        <button class="btn-submit-work" onclick="submitWork()">
+      <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-top: 16px;">
+        <button class="btn-submit-work" style="margin-top: 0;" onclick="submitWork()">
           🚀 Nộp bài lên Hệ thống LMS
         </button>
-        <button class="btn-submit-work" style="background: #64748b; margin-left: 10px;" onclick="resetUpload()">
+        <a href="https://drive.google.com/drive/folders/1N4MIlx9gx_LnO4LPmdAuCpQcMtHokwr3?usp=sharing" target="_blank" class="btn-submit-work" style="background: #0284c7; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; margin-top: 0;">
+          <span>☁️</span> Mở Google Drive để nộp tệp ảnh chính thức
+        </a>
+        <button class="btn-submit-work" style="background: #64748b; margin-top: 0;" onclick="resetUpload()">
           Chọn ảnh khác
         </button>
       </div>
@@ -681,7 +701,7 @@
       window.parent.postMessage({ source: 'LMS_ASSIGNMENT_ACTIVITY_4', status: 'submitted', timestamp: new Date().toISOString() }, '*');
     }
     
-    alert(`🎉 Chúc mừng ${sName}! Bài làm đã được tải lên Kho Drive Lưu Trữ Bài Nộp của lớp thành công! Thầy cô có thể xem và chấm điểm Rubric ngay trên Drive.`);
+    alert(`🎉 Chúc mừng ${sName}! Bài làm đã được ghi nhận trên hệ thống. Em có thể bấm vào nút "Mở Google Drive" để tải ảnh trực tiếp vào Thư mục Google Drive chính thức của lớp nhé!`);
   }
 
   function selectRubric(criterionIndex, levelIndex, points) {

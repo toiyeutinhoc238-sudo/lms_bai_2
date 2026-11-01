@@ -453,8 +453,11 @@
       <a href="index.html" class="btn-back">
         <span>←</span> Cổng Học Liệu
       </a>
-      <a href="kho_luu_tru_nhat_ky_hoc_lieu_5.html" target="_blank" class="btn-back" style="color: #059669; border-color: #34d399; background: #ecfdf5;">
-        <span>📚</span> Mở Kho Drive Nhật Ký
+      <a href="https://drive.google.com/drive/folders/1o0Y7hb1UQcuXPTsVk3z-EUYB_Ed6e0vp?usp=sharing" target="_blank" class="btn-back" style="color: #059669; border-color: #34d399; background: #ecfdf5; font-weight: 800;">
+        <span>☁️</span> Google Drive Nhật Ký Chính Thức
+      </a>
+      <a href="kho_luu_tru_nhat_ky_hoc_lieu_5.html" target="_blank" class="btn-back" style="color: #475569; border-color: #cbd5e1; background: white;">
+        <span>📚</span> Kho Drive LMS
       </a>
     </div>
     <div class="badge-status" id="blogStatus">
@@ -471,6 +474,20 @@
 
   <!-- Phần 1: Soạn thảo bài báo nhí -->
   <section class="section-card">
+    <!-- Official Google Drive Submission Banner -->
+    <div style="background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%); border: 2px solid #059669; border-radius: 12px; padding: 16px 20px; margin-bottom: 20px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px; box-shadow: 0 4px 12px rgba(5, 150, 105, 0.12);">
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <span style="font-size: 2.2rem;">☁️</span>
+        <div>
+          <div style="font-size: 1.05rem; font-weight: 800; color: #065f46;">Nơi nộp bài chính thức của lớp: Google Drive Thầy Cô</div>
+          <div style="font-size: 0.88rem; color: #334155;">Học sinh nộp bài viết nhật ký/tóm tắt vào thư mục dùng chung để Thầy Cô lưu trữ và đánh giá.</div>
+        </div>
+      </div>
+      <a href="https://drive.google.com/drive/folders/1o0Y7hb1UQcuXPTsVk3z-EUYB_Ed6e0vp?usp=sharing" target="_blank" style="background: #059669; color: white; padding: 10px 18px; border-radius: 10px; font-weight: 800; font-size: 0.92rem; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 4px 10px rgba(5, 150, 105, 0.35);">
+        <span>🚀</span> Mở Thư Mục Google Drive Nhật Ký ↗
+      </a>
+    </div>
+
     <div class="section-title">
       <span class="icon">✍️</span>
       <h2>1. Tòa soạn Nhà báo nhí: Viết bài tóm tắt kiến thức</h2>
@@ -514,9 +531,14 @@
           </div>
         </div>
 
-        <button type="submit" class="btn-publish">
-          <span>📰</span> Đăng bài lên Nhật ký học tập lớp học
-        </button>
+        <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 14px;">
+          <button type="submit" class="btn-publish" style="margin-top: 0;">
+            <span>📰</span> Đăng bài lên Nhật ký học tập
+          </button>
+          <a href="https://drive.google.com/drive/folders/1o0Y7hb1UQcuXPTsVk3z-EUYB_Ed6e0vp?usp=sharing" target="_blank" class="btn-publish" style="background: #0284c7; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; margin-top: 0;">
+            <span>☁️</span> Mở Google Drive để nộp bài
+          </a>
+        </div>
       </form>
     </div>
 
@@ -808,7 +830,7 @@
       window.parent.postMessage({ source: 'LMS_BLOG_ACTIVITY_5', status: 'published', title: title, student: name }, '*');
     }
 
-    alert("🎉 Chúc mừng em! Bài viết tóm tắt của em đã được đăng lên Trang Nhật ký học tập của lớp.");
+    alert("🎉 Chúc mừng em! Bài viết tóm tắt của em đã được ghi nhận trên trang Nhật ký học tập của lớp. Em có thể bấm vào nút \"Mở Google Drive\" để nộp bài vào Thư mục Google Drive chính thức của Thầy Cô nhé!");
   }
 
   function selectRubric(criterionIndex, levelIndex, points) {

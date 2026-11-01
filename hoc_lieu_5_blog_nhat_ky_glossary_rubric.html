@@ -449,16 +449,11 @@
 <div class="container">
   <!-- Top Bar -->
   <div class="top-bar">
-    <div style="display: flex; gap: 8px; flex-wrap: wrap;">
-      <a href="index.html" class="btn-back">
-        <span>←</span> Cổng Học Liệu
-      </a>
-      <a href="https://drive.google.com/drive/folders/1o0Y7hb1UQcuXPTsVk3z-EUYB_Ed6e0vp?usp=sharing" target="_blank" class="btn-back" style="color: #059669; border-color: #34d399; background: #ecfdf5; font-weight: 800;">
-        <span>☁️</span> Nộp bài qua Google Drive
-      </a>
-    </div>
+    <a href="index.html" class="btn-back">
+      <span>←</span> Cổng Học Liệu
+    </a>
     <div class="badge-status" id="blogStatus">
-      <span>☁️</span> Nộp bài trực tiếp vào Google Drive
+      <span>☁️</span> Nộp bài qua Google Drive
     </div>
   </div>
 
@@ -469,68 +464,58 @@
     <p>Chuyên đề Trí tuệ Nhân tạo - Môn Tin học 6 | Tự tóm tắt kiến thức từ AI bằng chính văn phong của em</p>
   </header>
 
-  <!-- Phần 1: Soạn thảo bài báo nhí & Nộp qua Google Drive -->
+  <!-- Phần 1: Hướng dẫn nhiệm vụ & Nộp bài Google Drive -->
   <section class="section-card">
     <div class="section-title">
       <span class="icon">✍️</span>
-      <h2>1. Tòa soạn Nhà báo nhí: Viết bài tóm tắt & Nộp bài</h2>
+      <h2>1. Nhiệm vụ và các bước thực hiện</h2>
     </div>
-    <p style="margin-bottom: 14px;">
-      Em vừa phỏng vấn xong Trợ lý AI ở Hoạt động 3. Bây giờ hãy gấp cửa sổ chat lại, tự chắt lọc thông tin và viết một đoạn văn ngắn 
-      <strong>(từ 3 đến 5 câu)</strong> chia sẻ điều em học được:
-    </p>
+    <div class="steps-grid">
+      <div class="step-box">
+        <div class="step-num">Bước 1</div>
+        <p>Đọc lại câu trả lời em vừa nhận được từ AI ở Hoạt động 3.</p>
+      </div>
+      <div class="step-box">
+        <div class="step-num">Bước 2</div>
+        <p>Gấp màn hình chat lại! Tự suy nghĩ và viết tóm tắt ngắn gọn <strong>từ 3 đến 5 câu</strong>.</p>
+      </div>
+      <div class="step-box">
+        <div class="step-num">Bước 3</div>
+        <p>Tuân thủ <strong>Quy tắc Tự chủ</strong>: Tuyệt đối không sao chép nguyên văn AI.</p>
+      </div>
+      <div class="step-box">
+        <div class="step-num">Bước 4</div>
+        <p>Bấm nút bên dưới để <strong>nộp bài viết vào Thư mục Google Drive</strong> của lớp.</p>
+      </div>
+    </div>
 
-    <!-- Editor -->
-    <div class="editor-box">
-      <form id="articleForm" onsubmit="submitToGoogleDrive(event)">
-        <div class="form-group">
-          <label for="reporterName">Họ và tên học sinh / Lớp: <span style="color: var(--danger)">*</span></label>
-          <input type="text" id="reporterName" class="form-input" placeholder="Ví dụ: Nguyễn Văn An - Lớp 6A" required>
-        </div>
+    <div class="anti-copy-box" style="margin: 16px 0;">
+      <span style="font-size: 1.3rem;">🛡️</span>
+      <div>
+        <strong>Quy tắc tự chủ và trách nhiệm:</strong> Tuyệt đối không Copy - Paste nguyên văn câu trả lời của AI. 
+        Hãy diễn đạt bằng ngôn từ trong sáng của chính em để nhận trọn <strong>5 điểm Tự chủ</strong>!
+      </div>
+    </div>
 
-        <div class="form-group">
-          <label for="articleTitle">Tiêu đề bài tóm tắt: <span style="color: var(--danger)">*</span></label>
-          <input type="text" id="articleTitle" class="form-input" placeholder="Tự đặt tiêu đề cho bài viết của em..." required>
-        </div>
+    <!-- Official Google Drive Submission Card (Sole Method) -->
+    <div style="background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%); border: 2px solid #059669; border-radius: 14px; padding: 26px 20px; margin: 20px 0; text-align: center; box-shadow: 0 4px 15px rgba(5, 150, 105, 0.15);">
+      <div style="font-size: 2.8rem; margin-bottom: 8px;">☁️</div>
+      <h3 style="font-size: 1.35rem; font-weight: 800; color: #065f46; margin-bottom: 8px;">
+        CỔNG NỘP BÀI CHÍNH THỨC QUA GOOGLE DRIVE
+      </h3>
+      <p style="font-size: 0.95rem; color: #334155; max-width: 620px; margin: 0 auto 14px auto;">
+        Học sinh nộp trực tiếp bài viết tóm tắt (hoặc tạo Tài liệu Google Doc) vào thư mục Google Drive của Thầy Cô.
+      </p>
+      
+      <div style="background: white; border: 1.5px dashed #34d399; border-radius: 10px; padding: 12px 18px; display: inline-block; margin-bottom: 20px; font-size: 0.92rem; color: #0f172a;">
+        📌 <strong>Quy tắc đặt tên file/bài viết:</strong> <code>[Họ và tên] - [Lớp] - NhatKyHocTap</code> (Ví dụ: <em>NguyenVanAn_6A_NhatKyHocTap</em>)
+      </div>
 
-        <div class="form-group">
-          <label for="articleContent">Nội dung tóm tắt (3 đến 5 câu văn): <span style="color: var(--danger)">*</span></label>
-          <textarea id="articleContent" class="form-textarea" rows="4" placeholder="Viết lại bằng lời văn của chính em. Tuyệt đối không sao chép nguyên văn câu từ của AI..." oninput="updateCounters()" required></textarea>
-          
-          <div class="counter-bar">
-            <div>
-              Số câu: <span class="counter-tag" id="sentenceCount">0 / 3-5 câu</span> |
-              Số từ: <span class="counter-tag" id="wordCount">0 từ</span>
-            </div>
-            <div id="statusTip" style="color: #64748b;">Mục tiêu: Đạt từ 3 đến 5 câu</div>
-          </div>
-        </div>
-
-        <div class="anti-copy-box">
-          <span style="font-size: 1.3rem;">🛡️</span>
-          <div>
-            <strong>Quy tắc tự chủ và trách nhiệm:</strong> Tuyệt đối không Copy - Paste nguyên văn câu trả lời của AI. 
-            Hãy diễn đạt bằng ngôn từ trong sáng của chính em để nhận trọn <strong>5 điểm Tự chủ</strong>!
-          </div>
-        </div>
-
-        <div style="background: #f0fdf4; border: 1.5px solid #a7f3d0; border-radius: 10px; padding: 14px 18px; margin: 16px 0;">
-          <div style="font-weight: 800; color: #065f46; font-size: 0.95rem; margin-bottom: 4px;">
-            ☁️ Nơi nộp bài chính thức: Thư mục Google Drive của lớp
-          </div>
-          <div style="font-size: 0.88rem; color: #334155; margin-bottom: 12px;">
-            Sau khi soạn xong bài viết (3–5 câu), em bấm nút bên dưới để <strong>tải tệp bài viết về máy</strong> và <strong>mở thẳng Google Drive để nộp bài</strong> nhé!
-          </div>
-          <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-            <button type="submit" class="btn-publish" style="margin-top: 0; background: linear-gradient(135deg, #059669, #047857);">
-              <span>☁️</span> Tải File & Mở Google Drive Nộp Bài ↗
-            </button>
-            <a href="https://drive.google.com/drive/folders/1o0Y7hb1UQcuXPTsVk3z-EUYB_Ed6e0vp?usp=sharing" target="_blank" class="btn-publish" style="background: #0284c7; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; margin-top: 0;">
-              <span>📁</span> Mở Thư Mục Google Drive Trực Tiếp ↗
-            </a>
-          </div>
-        </div>
-      </form>
+      <div>
+        <a href="https://drive.google.com/drive/folders/1o0Y7hb1UQcuXPTsVk3z-EUYB_Ed6e0vp?usp=sharing" target="_blank" style="background: linear-gradient(135deg, #059669, #047857); color: white; padding: 14px 34px; border-radius: 12px; font-weight: 800; font-size: 1.12rem; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; box-shadow: 0 6px 20px rgba(5, 150, 105, 0.4); transition: transform 0.2s;">
+          <span>☁️</span> MỞ GOOGLE DRIVE ĐỂ NỘP BÀI VIẾT ↗
+        </a>
+      </div>
     </div>
   </section>
 
@@ -673,87 +658,6 @@
         osc.stop(audioCtx.currentTime + 0.2);
       }
     } catch(e) {}
-  }
-
-  // Pre-fill student name if available
-  window.addEventListener('load', function() {
-    const savedName = localStorage.getItem('TINHOC6_STUDENT_NAME');
-    const savedClass = localStorage.getItem('TINHOC6_STUDENT_CLASS');
-    if (savedName && savedClass) {
-      document.getElementById('reporterName').value = `${savedName} - Lớp ${savedClass}`;
-    }
-  });
-
-  function updateCounters() {
-    const text = document.getElementById('articleContent').value.trim();
-    const words = text ? text.split(/\s+/).length : 0;
-    const sentences = text ? (text.match(/[^.!?]+[.!?]+(\s|$)/g) || []).length : 0;
-
-    const sBadge = document.getElementById('sentenceCount');
-    const wBadge = document.getElementById('wordCount');
-    const tip = document.getElementById('statusTip');
-
-    sBadge.innerText = `${sentences} câu`;
-    wBadge.innerText = `${words} từ`;
-
-    if (sentences >= 3 && sentences <= 5) {
-      sBadge.className = "counter-tag good";
-      tip.innerText = "✅ Dung lượng hoàn hảo (3-5 câu)!";
-      tip.style.color = "#059669";
-    } else if (sentences > 5) {
-      sBadge.className = "counter-tag";
-      tip.innerText = "⚠️ Hơi dài một chút (nên rút gọn dưới 5 câu)";
-      tip.style.color = "#b45309";
-    } else {
-      sBadge.className = "counter-tag";
-      tip.innerText = "Mục tiêu: Viết từ 3 đến 5 câu";
-      tip.style.color = "#64748b";
-    }
-  }
-
-  function submitToGoogleDrive(e) {
-    if (e) e.preventDefault();
-    const name = document.getElementById('reporterName').value.trim();
-    const title = document.getElementById('articleTitle').value.trim();
-    const content = document.getElementById('articleContent').value.trim();
-
-    if (!name || !title || !content) {
-      alert("Em hãy nhập đầy đủ Họ tên, Tiêu đề và Nội dung bài viết trước khi nộp nhé!");
-      return;
-    }
-
-    playBeep(true);
-
-    // Create a downloadable text file for student to upload to Google Drive
-    const textData = `BÀI VIẾT TÓM TẮT KIẾN THỨC - NHÀ BÁO NHÍ\n` +
-      `Môn: Tin học 6 - Bài 2\n` +
-      `Học sinh: ${name}\n` +
-      `Tiêu đề: ${title}\n` +
-      `Thời gian: ${new Date().toLocaleString('vi-VN')}\n` +
-      `----------------------------------------\n\n` +
-      `${content}\n`;
-
-    const blob = new Blob([textData], { type: 'text/plain;charset=utf-8' });
-    const link = document.createElement('a');
-    link.href = URL.createObjectURL(blob);
-    const cleanFileName = name.replace(/[^a-zA-Z0-9\u00C0-\u024F\u1EA0-\u1EF9]/g, '_');
-    link.download = `NhatKy_${cleanFileName}.txt`;
-    link.click();
-
-    // Copy content to clipboard
-    if (navigator.clipboard) {
-      navigator.clipboard.writeText(content).catch(() => {});
-    }
-
-    const statusBadge = document.getElementById('blogStatus');
-    statusBadge.className = "badge-status done";
-    statusBadge.innerHTML = "<span>✅</span> Đã tải tệp & Mở Google Drive";
-
-    // Open Google Drive in new tab
-    const driveUrl = "https://drive.google.com/drive/folders/1o0Y7hb1UQcuXPTsVk3z-EUYB_Ed6e0vp?usp=sharing";
-    window.open(driveUrl, '_blank');
-
-    alert(`🎉 Bài viết của em (${name}) đã được tải về máy thành tệp tin text!\n\nCửa sổ Thư mục Google Drive của lớp đang mở ra. Em hãy kéo thả tệp tin vừa tải về vào Google Drive để hoàn thành việc nộp bài cho Thầy Cô nhé!`);
   }
 
   function selectRubric(criterionIndex, levelIndex, points) {

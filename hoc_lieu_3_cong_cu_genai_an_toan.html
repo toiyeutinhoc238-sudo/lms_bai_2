@@ -330,43 +330,9 @@
       border-top-right-radius: 2px;
     }
 
-    .chat-quick-tags {
-      padding: 10px 16px;
-      background: #f1f5f9;
-      border-top: 1px solid var(--border);
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      align-items: center;
-    }
-
-    .quick-tag-label {
-      font-size: 0.8rem;
-      font-weight: 700;
-      color: #475569;
-    }
-
-    .tag-btn {
-      background: white;
-      border: 1px solid #cbd5e1;
-      border-radius: 16px;
-      padding: 4px 10px;
-      font-size: 0.8rem;
-      cursor: pointer;
-      color: #334155;
-      font-weight: 600;
-      transition: all 0.2s;
-    }
-
-    .tag-btn:hover {
-      background: #e0f2fe;
-      border-color: #38bdf8;
-      color: #0369a1;
-    }
-
     .chat-input-row {
       display: flex;
-      padding: 12px 16px;
+      padding: 14px 16px;
       background: white;
       border-top: 1px solid var(--border);
       gap: 10px;
@@ -374,7 +340,7 @@
 
     .chat-input {
       flex-grow: 1;
-      padding: 10px 14px;
+      padding: 12px 14px;
       border: 1.5px solid var(--border);
       border-radius: 10px;
       font-size: 0.92rem;
@@ -389,7 +355,7 @@
       background: #0284c7;
       color: white;
       border: none;
-      padding: 10px 18px;
+      padding: 10px 20px;
       border-radius: 10px;
       font-weight: 700;
       cursor: pointer;
@@ -450,7 +416,7 @@
   <header class="header-card">
     <span class="tag-bubble">HỌC LIỆU 3 • LUYỆN TẬP THỰC HÀNH (15 PHÚT)</span>
     <h1>Trạm Trải Nghiệm GenAI An Toàn Cho Học Đường</h1>
-    <p>Chuyên đề Trí tuệ Nhân tạo - Môn Tin học 6 | Khám phá các công cụ AI phù hợp lứa tuổi và thực hành viết Prompt</p>
+    <p>Chuyên đề Trí tuệ Nhân tạo - Môn Tin học 6 | Khám phá các công cụ AI phù hợp lứa tuổi và thực hành viết câu lệnh Prompt</p>
   </header>
 
   <!-- Phần 1: Danh sách công cụ an toàn -->
@@ -518,10 +484,12 @@
   <section class="section-card">
     <div class="section-title">
       <span class="icon">🤖</span>
-      <h2>2. Khung trải nghiệm thử nghiệm câu lệnh (EduChat Safe Sandbox)</h2>
+      <h2>2. Khung thực hành câu lệnh (EduChat Safe Sandbox)</h2>
     </div>
     <p style="margin-bottom: 16px;">
-      Em có thể nhập thử câu Prompt của mình vào khung chat mô phỏng dưới đây để kiểm tra phản hồi của AI trước khi chụp màn hình nộp bài cho <strong>Học liệu 4</strong>:
+      Em hãy tự suy nghĩ và nhập câu lệnh (Prompt) của mình vào khung bên dưới theo công thức đã học ở Hoạt động 2: 
+      <strong>[Đóng vai] + [Nhiệm vụ] + [Bối cảnh / Điều kiện]</strong>. 
+      Sau khi AI phản hồi, em hãy chụp ảnh màn hình để chuẩn bị nộp bài ở <strong>Học liệu 4</strong> nhé!
     </p>
 
     <div class="chat-simulator" id="chatSimulator">
@@ -537,25 +505,16 @@
         <div class="chat-msg bot">
           <div class="msg-avatar bot">🤖</div>
           <div class="msg-bubble bot">
-            Xin chào em! Thầy là <strong>EduChat - Trợ lý học tập môn Tin học 6</strong>. 
-            Em hãy thử gửi cho thầy một câu lệnh (Prompt) theo công thức 3 thành phần: 
-            <strong>[Đóng vai] + [Nhiệm vụ] + [Bối cảnh]</strong> nhé! Thầy sẵn sàng hỗ trợ các môn Lịch sử, KHTN và Địa lí!
+            Xin chào em! Thầy là <strong>EduChat - Trợ lý học tập môn Tin học 6</strong>.<br>
+            Em hãy tự soạn một câu lệnh (Prompt) theo công thức 3 thành phần: 
+            <strong>[Đóng vai] + [Nhiệm vụ] + [Bối cảnh]</strong> để hỏi về một chủ đề môn học em muốn tìm hiểu nhé!
           </div>
         </div>
       </div>
 
-      <!-- Quick prompts -->
-      <div class="chat-quick-tags">
-        <span class="quick-tag-label">💡 Gợi ý nhanh:</span>
-        <button class="tag-btn" onclick="fillPrompt(1)">Sử 6: Bạch Đằng 938</button>
-        <button class="tag-btn" onclick="fillPrompt(2)">KHTN 6: Hiện tượng Quang hợp</button>
-        <button class="tag-btn" onclick="fillPrompt(3)">KHTN 6: Mặt Trăng khuyết</button>
-        <button class="tag-btn" onclick="fillPrompt(4)">Thử prompt cộc lốc (chưa đạt)</button>
-      </div>
-
-      <!-- Input row -->
+      <!-- Input row (No pre-filled cheat buttons) -->
       <div class="chat-input-row">
-        <input type="text" id="userInput" class="chat-input" placeholder="Nhập câu prompt của em... (Ví dụ: Đóng vai cô giáo Lịch sử, hãy giải thích...)" onkeydown="handleInputKey(event)">
+        <input type="text" id="userInput" class="chat-input" placeholder="Tự nhập câu lệnh Prompt của em vào đây..." onkeydown="handleInputKey(event)">
         <button class="btn-send" onclick="sendPrompt()">Gửi câu lệnh ➔</button>
       </div>
     </div>
@@ -605,28 +564,14 @@
         osc.start();
         osc.stop(audioCtx.currentTime + 0.3);
       } else {
-        osc.frequency.setValueAtTime(587.33, audioCtx.currentTime); // D5
-        osc.frequency.setValueAtTime(880, audioCtx.currentTime + 0.1); // A5
+        osc.frequency.setValueAtTime(587.33, audioCtx.currentTime);
+        osc.frequency.setValueAtTime(880, audioCtx.currentTime + 0.1);
         gain.gain.setValueAtTime(0.15, audioCtx.currentTime);
         gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.25);
         osc.start();
         osc.stop(audioCtx.currentTime + 0.25);
       }
     } catch(e) {}
-  }
-
-  function fillPrompt(type) {
-    const input = document.getElementById('userInput');
-    if (type === 1) {
-      input.value = "Đóng vai cô giáo Lịch sử, hãy giải thích ý nghĩa của chiến thắng Bạch Đằng năm 938 cho học sinh lớp 6 nghe trong khoảng 4 câu ngắn gọn, dễ hiểu nhé!";
-    } else if (type === 2) {
-      input.value = "Đóng vai một nhà thực vật học, hãy giải thích quá trình quang hợp của cây xanh cho học sinh lớp 6 hiểu được trong 3 gạch đầu dòng vui vẻ.";
-    } else if (type === 3) {
-      input.value = "Đóng vai một phi hành gia, hãy giải thích vì sao Mặt Trăng lúc tròn lúc khuyết cho học sinh lớp 6 trong 4 câu đơn giản.";
-    } else if (type === 4) {
-      input.value = "Chiến thắng Bạch Đằng năm 938 là gì?";
-    }
-    input.focus();
   }
 
   function handleInputKey(event) {
@@ -641,68 +586,59 @@
     if (!text) return;
 
     // Append User Message
-    appendMessage('user', text);
+    appendMessage('user', escapeHTML(text));
     input.value = '';
 
     // Check Safety (Phone numbers, password, sensitive personal info)
     const phonePattern = /(0|\+84)(3|5|7|8|9)[0-9]{8}/;
-    const passPattern = /(mật khẩu|mat khau|password|pass|cccd|cmnd)/i;
+    const passPattern = /(mật khẩu|mat khau|password|pass|cccd|cmnd|địa chỉ nhà|so nha)/i;
 
     if (phonePattern.test(text) || passPattern.test(text)) {
       playAlertSound(true);
       setTimeout(function() {
         appendMessage('bot', `
           <strong style="color: #b91c1c;">🚨 CẢNH BÁO AN TOÀN SỐ!</strong><br>
-          Hệ thống phát hiện em đang chia sẻ thông tin cá nhân hoặc nhạy cảm (số điện thoại, mật khẩu).<br>
-          <em>Hãy nhớ Nguyên tắc 1 trong Cẩm nang 4 KHÔNG: Tuyệt đối không nhập thông tin định danh cá nhân vào ô chat của AI để bảo vệ quyền riêng tư của em!</em>
+          Hệ thống phát hiện em đang chia sẻ thông tin cá nhân hoặc nhạy cảm (số điện thoại, mật khẩu, địa chỉ...).<br>
+          <em>Em hãy nhớ Nguyên tắc 1 trong Cẩm nang 4 KHÔNG: Tuyệt đối không nhập thông tin định danh cá nhân vào ô chat của AI để bảo vệ quyền riêng tư!</em>
         `);
       }, 500);
       return;
     }
 
-    // Process Educational Response
+    // Process Educational Response based on prompt structure
     playAlertSound(false);
     setTimeout(function() {
       const lower = text.toLowerCase();
+      
+      const hasRole = lower.includes("đóng vai") || lower.includes("dong vai") || lower.includes("hóa thân") || lower.includes("vai trò") || lower.includes("nhà khoa học") || lower.includes("cô giáo") || lower.includes("thầy giáo") || lower.includes("chuyên gia") || lower.includes("phi hành gia") || lower.includes("bác sĩ");
+      const hasContext = lower.includes("lớp 6") || lower.includes("lop 6") || lower.includes("ngắn gọn") || lower.includes("câu") || lower.includes("dễ hiểu") || lower.includes("học sinh") || lower.includes("gạch đầu dòng");
+      const hasTask = lower.includes("hãy") || lower.includes("giải thích") || lower.includes("kể") || lower.includes("tóm tắt") || lower.includes("liệt kê") || lower.includes("nêu");
+
       let response = "";
 
-      const hasRole = lower.includes("đóng vai") || lower.includes("dong vai") || lower.includes("hóa thân") || lower.includes("nhà khoa học") || lower.includes("cô giáo") || lower.includes("phi hành gia");
-      const hasContext = lower.includes("lớp 6") || lower.includes("lop 6") || lower.includes("ngắn gọn") || lower.includes("câu") || lower.includes("dễ hiểu");
-
-      if (hasRole && hasContext) {
-        // Chuẩn 3 thành phần
-        if (lower.includes("bạch đằng") || lower.includes("bach dang")) {
-          response = `
-            <strong>🌟 Nhận xét: Prompt xuất sắc đạt trọn vẹn 3 thành phần! (10/10)</strong><br><br>
-            Chào em, cô giáo Lịch sử xin giải thích cho em nhé:<br>
-            1. Chiến thắng Bạch Đằng năm 938 do Ngô Quyền lãnh đạo là một kỳ tích quân sự vĩ đại của dân tộc ta.<br>
-            2. Nhờ cắm cọc gỗ nhọn dưới lòng sông và dựa vào con nước thủy triều, quân ta đã nhấn chìm toàn bộ chiến thuyền của quân Nam Hán.<br>
-            3. Trận đánh này đã đập tan mưu đồ xâm lược của kẻ thù và tiêu diệt chủ tướng Hoằng Tháo.<br>
-            4. Ý nghĩa to lớn nhất là đã chính thức chấm dứt hơn 1.000 năm Bắc thuộc, mở ra kỷ nguyên độc lập tự chủ lâu dài cho đất nước Việt Nam!
-          `;
-        } else if (lower.includes("quang hợp") || lower.includes("quang hop")) {
-          response = `
-            <strong>🌟 Nhận xét: Prompt xuất sắc chuẩn công thức 3 thành phần! (10/10)</strong><br><br>
-            Chào bạn nhỏ! Dưới góc nhìn nhà thực vật học, quang hợp giống như một "nhà bếp kỳ diệu" của cây xanh đấy:<br>
-            • Cây dùng lá xanh làm "nồi nấu", hút ánh sáng Mặt Trời và khí Carbonic (CO₂) từ không khí.<br>
-            • Rễ hút nước từ đất đưa lên làm nguyên liệu để tạo ra đường nuôi cây lớn khỏe.<br>
-            • Đặc biệt nhất, quá trình này nhả ra khí Oxy mát lành cho con người và muôn loài cùng thở đấy!
-          `;
-        } else {
-          response = `
-            <strong>🌟 Nhận xét: Prompt của em rất chuẩn cấu trúc 3 thành phần [Đóng vai] + [Nhiệm vụ] + [Bối cảnh]!</strong><br><br>
-            Với vai trò chuyên gia, thầy/cô xin giải thích ngắn gọn cho học sinh lớp 6:<br>
-            Vấn đề em hỏi thực chất xuất phát từ quy luật vận động tự nhiên. Nhờ em đã giới hạn dung lượng và đối tượng lớp 6, câu trả lời này được chắt lọc bằng ngôn từ gần gũi, giúp em dễ dàng ghi nhớ và ứng dụng vào bài học!
-          `;
-        }
+      if (hasRole && hasContext && hasTask) {
+        // Đạt đủ 3 thành phần
+        response = `
+          <strong>🌟 Đánh giá cấu trúc: Câu lệnh (Prompt) của em rất chuẩn xác!</strong><br>
+          • Đóng vai (Role): Đã xác định rõ vai trò chuyên môn.<br>
+          • Nhiệm vụ (Task): Yêu cầu hành động cụ thể.<br>
+          • Bối cảnh (Context): Có giới hạn đối tượng tiếp nhận và dung lượng rõ ràng.<br><br>
+          <strong>🤖 Phản hồi của Trợ lý AI:</strong><br>
+          Chào em! Với vai trò em đã phân công, thầy/cô xin giải thích theo đúng yêu cầu:<br>
+          Nội dung em vừa hỏi là một chủ đề rất ý nghĩa. Khi em cung cấp đầy đủ ngữ cảnh và độ tuổi lớp 6, câu trả lời sẽ được chọn lọc những ý chính xác, ngôn từ gần gũi, không dùng thuật ngữ cao siêu, giúp em dễ dàng nắm bắt bản chất vấn đề và tự mình tóm tắt lại.<br><br>
+          <em>👉 Em hãy chụp ảnh màn hình đoạn đối thoại này (thấy rõ câu hỏi của em và phản hồi của AI) để nộp bài ở Học liệu 4 nhé!</em>
+        `;
       } else {
         // Thiếu thành phần
+        let missing = [];
+        if (!hasRole) missing.push("<strong>[Đóng vai (Role)]</strong> (ví dụ: 'Đóng vai cô giáo Lịch sử...', 'Đóng vai một nhà khoa học...')");
+        if (!hasTask) missing.push("<strong>[Nhiệm vụ (Task)]</strong> (ví dụ: 'hãy giải thích...', 'hãy tóm tắt trong 3 ý...')");
+        if (!hasContext) missing.push("<strong>[Bối cảnh / Điều kiện (Context)]</strong> (ví dụ: 'dành cho học sinh lớp 6 dễ hiểu, trong khoảng 4 câu ngắn gọn')");
+
         response = `
-          <strong>⚠️ Nhận xét sư phạm: Câu Prompt của em có thể cải thiện hơn!</strong><br>
-          ${!hasRole ? "• Em quên đặt <em>[Đóng vai (Role)]</em> cho AI (ví dụ: 'Đóng vai cô giáo Lịch sử...').<br>" : ""}
-          ${!hasContext ? "• Em chưa nêu rõ <em>[Bối cảnh (Context)]</em> (ví dụ: 'dành cho học sinh lớp 6, trong 4 câu ngắn gọn').<br>" : ""}
-          <br>
-          <em>Nếu em hỏi chung chung thế này, câu trả lời sẽ rất dài và có thể dùng nhiều thuật ngữ khó. Em hãy bổ sung thêm các thành phần theo công thức đã học ở Hoạt động 2 để nhận câu trả lời hay nhất nhé!</em>
+          <strong>⚠️ Nhận xét câu lệnh Prompt của em:</strong><br>
+          Câu lệnh của em đang bị thiếu: ${missing.join(", ")}.<br><br>
+          <em>Nếu thiếu các thành phần trên, AI sẽ trả lời theo mức độ học thuật chung chung hoặc dài dòng. Em hãy đọc lại công thức ở Hoạt động 2, viết lại câu lệnh đầy đủ cả 3 thành phần rồi gửi lại nhé!</em>
         `;
       }
 
@@ -721,8 +657,14 @@
     body.appendChild(msg);
     body.scrollTop = body.scrollHeight;
   }
+
+  function escapeHTML(str) {
+    if (!str) return '';
+    return str.replace(/[&<>'"]/g, 
+      tag => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[tag] || tag)
+    );
+  }
 </script>
 
 </body>
 </html>
-

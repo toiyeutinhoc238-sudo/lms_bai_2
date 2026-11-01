@@ -55,6 +55,8 @@
       justify-content: space-between;
       align-items: center;
       margin-bottom: 20px;
+      flex-wrap: wrap;
+      gap: 10px;
     }
 
     .btn-back {
@@ -76,6 +78,30 @@
     .btn-back:hover {
       background: var(--primary-light);
       transform: translateX(-3px);
+    }
+
+    .user-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: white;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      color: #1e1b4b;
+    }
+
+    .btn-edit-user {
+      background: none;
+      border: none;
+      color: var(--primary);
+      cursor: pointer;
+      font-size: 0.8rem;
+      text-decoration: underline;
+      padding: 0 4px;
     }
 
     .badge-status {
@@ -234,7 +260,6 @@
       font-weight: 600;
     }
 
-    /* Netiquette alert */
     .safety-alert {
       background: #fffbeb;
       border: 1px dashed #fde68a;
@@ -273,6 +298,19 @@
       gap: 8px;
     }
 
+    .student-badge-field {
+      background: #f1f5f9;
+      padding: 10px 14px;
+      border-radius: 8px;
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: #334155;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
     .form-group {
       margin-bottom: 14px;
     }
@@ -285,7 +323,7 @@
       margin-bottom: 6px;
     }
 
-    .form-input, .form-textarea {
+    .form-textarea {
       width: 100%;
       padding: 12px 14px;
       border: 1.5px solid var(--border);
@@ -296,7 +334,7 @@
       background: #fafafa;
     }
 
-    .form-input:focus, .form-textarea:focus {
+    .form-textarea:focus {
       background: white;
       border-color: var(--primary);
       box-shadow: 0 0 0 3px rgba(67, 56, 202, 0.12);
@@ -349,6 +387,20 @@
       gap: 16px;
     }
 
+    .empty-state {
+      background: white;
+      border: 2px dashed #cbd5e1;
+      border-radius: 14px;
+      padding: 40px 20px;
+      text-align: center;
+      color: var(--text-muted);
+    }
+
+    .empty-icon {
+      font-size: 2.8rem;
+      margin-bottom: 10px;
+    }
+
     .comment-card {
       background: white;
       border-radius: 14px;
@@ -361,11 +413,6 @@
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(10px); }
       to { opacity: 1; transform: translateY(0); }
-    }
-
-    .comment-card.is-teacher {
-      border-left: 5px solid var(--primary);
-      background: #fcfbff;
     }
 
     .comment-card.is-user {
@@ -390,13 +437,13 @@
       width: 36px;
       height: 36px;
       border-radius: 50%;
-      background: #e2e8f0;
+      background: #e0f2fe;
       display: flex;
       align-items: center;
       justify-content: center;
       font-weight: 700;
-      font-size: 0.95rem;
-      color: #334155;
+      font-size: 0.92rem;
+      color: #0369a1;
     }
 
     .comment-time {
@@ -422,25 +469,87 @@
 
     .action-btn {
       background: none;
-      border: none;
+      border: 1px solid #e2e8f0;
+      padding: 4px 10px;
+      border-radius: 16px;
       color: var(--text-muted);
       cursor: pointer;
       display: flex;
       align-items: center;
       gap: 5px;
       font-weight: 600;
-      transition: color 0.2s;
+      transition: all 0.2s;
     }
 
     .action-btn:hover {
-      color: var(--primary);
+      background: #f1f5f9;
+      color: var(--text);
     }
 
     .action-btn.liked {
+      border-color: #fecdd3;
+      background: #fff1f2;
       color: #e11d48;
+      font-weight: 700;
     }
 
-    /* Footer */
+    /* Registration Modal */
+    .modal-overlay {
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(15, 23, 42, 0.75);
+      backdrop-filter: blur(5px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      padding: 16px;
+    }
+
+    .modal-box {
+      background: white;
+      border-radius: var(--radius);
+      padding: 30px;
+      max-width: 460px;
+      width: 100%;
+      box-shadow: var(--shadow-lg);
+      border-top: 6px solid var(--primary);
+      animation: modalIn 0.3s ease;
+    }
+
+    @keyframes modalIn {
+      from { transform: scale(0.95); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    .modal-title {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: #1e1b4b;
+      margin-bottom: 8px;
+    }
+
+    .modal-desc {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+      line-height: 1.5;
+    }
+
+    .form-input {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      font-size: 0.95rem;
+      outline: none;
+      margin-bottom: 14px;
+    }
+
+    .form-input:focus {
+      border-color: var(--primary);
+    }
+
     footer {
       text-align: center;
       padding: 24px 0 10px;
@@ -451,14 +560,45 @@
 </head>
 <body>
 
+<!-- Mandatory Name/Class Entry Modal -->
+<div class="modal-overlay" id="regModal">
+  <div class="modal-box">
+    <div class="modal-title">Chào mừng em đến với Diễn đàn!</div>
+    <p class="modal-desc">
+      Để tham gia thảo luận và ghi nhận chuyên cần trên hệ thống LMS, em hãy nhập chính xác <strong>Họ và tên</strong> cùng <strong>Lớp</strong> của mình:
+    </p>
+    <form id="regForm" onsubmit="handleRegistration(event)">
+      <label style="display: block; font-size: 0.88rem; font-weight: 700; color: #475569; margin-bottom: 6px;">
+        Họ và tên học sinh: <span style="color: var(--danger)">*</span>
+      </label>
+      <input type="text" id="regName" class="form-input" placeholder="Ví dụ: Nguyễn Văn An" required autofocus>
+
+      <label style="display: block; font-size: 0.88rem; font-weight: 700; color: #475569; margin-bottom: 6px;">
+        Lớp: <span style="color: var(--danger)">*</span>
+      </label>
+      <input type="text" id="regClass" class="form-input" placeholder="Ví dụ: 6A" required>
+
+      <button type="submit" class="btn-submit" style="width: 100%; justify-content: center; margin-top: 6px;">
+        <span>🚀</span> Vào Diễn Đàn Thảo Luận
+      </button>
+    </form>
+  </div>
+</div>
+
 <div class="container">
   <!-- Top Navigation -->
   <div class="top-bar">
     <a href="index.html" class="btn-back">
       <span>←</span> Về Cổng Trọn Bộ Học Liệu
     </a>
-    <div class="badge-status" id="forumStatus">
-      <span>⏳</span> Chưa gửi phản hồi
+    <div class="user-flex">
+      <div class="user-pill" id="userPillDisplay" style="display: none;">
+        <span>👤</span> <span id="userNameClassText">Học sinh</span>
+        <button class="btn-edit-user" onclick="openRegModal()">Đổi</button>
+      </div>
+      <div class="badge-status" id="forumStatus">
+        <span>⏳</span> Chưa gửi phản hồi
+      </div>
     </div>
   </div>
 
@@ -474,7 +614,7 @@
     <div class="author-info">
       <div class="author-avatar">GV</div>
       <div>
-        <div class="author-name">Thầy Nguyễn Hoàng Tuấn (Giáo viên Tin học)</div>
+        <div class="author-name">Giáo viên Bộ môn Tin học</div>
         <div class="author-role">Chủ đề thảo luận chính thức</div>
       </div>
     </div>
@@ -517,20 +657,22 @@
       <span>✍️</span> Góc trả lời của em
     </div>
 
+    <div class="student-badge-field">
+      <div>
+        Đang đăng bài với tên: <strong id="currentStudentLabel">Chưa nhập thông tin</strong>
+      </div>
+      <button class="btn-edit-user" onclick="openRegModal()">Thay đổi họ tên/lớp</button>
+    </div>
+
     <form id="forumForm" onsubmit="handleFormSubmit(event)">
       <div class="form-group">
-        <label for="studentName">Họ và tên học sinh / Lớp: <span style="color: var(--danger)">*</span></label>
-        <input type="text" id="studentName" class="form-input" placeholder="Ví dụ: Hoàng An - Lớp 6A" required>
+        <label for="ansQuestion1">Câu 1: Khi gặp bài tập khó ở nhà, em thường làm gì? <span style="color: var(--danger)">*</span></label>
+        <textarea id="ansQuestion1" class="form-textarea" rows="2" placeholder="Gõ câu trả lời của em tại đây..." required></textarea>
       </div>
 
       <div class="form-group">
-        <label for="ansQuestion1">Câu 1: Khi gặp bài tập khó ở nhà, em thường làm gì?</label>
-        <textarea id="ansQuestion1" class="form-textarea" rows="2" placeholder="Ví dụ: Em thường đọc lại ví dụ trong SGK, sau đó gọi điện hỏi bạn thân..." required></textarea>
-      </div>
-
-      <div class="form-group">
-        <label for="ansQuestion2">Câu 2: Câu hỏi đầu tiên em muốn hỏi Trợ lý AI là gì?</label>
-        <textarea id="ansQuestion2" class="form-textarea" rows="2" placeholder="Ví dụ: Em muốn hỏi vì sao bầu trời lại có màu xanh vào ban ngày..." required></textarea>
+        <label for="ansQuestion2">Câu 2: Câu hỏi đầu tiên em muốn hỏi Trợ lý AI là gì? <span style="color: var(--danger)">*</span></label>
+        <textarea id="ansQuestion2" class="form-textarea" rows="2" placeholder="Gõ câu hỏi em muốn nhờ AI giải đáp tại đây..." required></textarea>
       </div>
 
       <button type="submit" class="btn-submit">
@@ -542,95 +684,16 @@
   <!-- Discussion Thread -->
   <section>
     <div class="thread-title">
-      <span>💬 Ý kiến thảo luận của lớp (<span id="commentCount">4</span>)</span>
+      <span>💬 Ý kiến thảo luận của lớp (<span id="commentCount">0</span>)</span>
       <span class="thread-count">LMS Log: Ghi nhận chuyên cần</span>
     </div>
 
+    <!-- Empty state or list -->
     <div class="comment-list" id="commentList">
-      <!-- Comment 1 -->
-      <div class="comment-card">
-        <div class="comment-header">
-          <div class="user-flex">
-            <div class="user-avatar" style="background: #e0f2fe; color: #0369a1;">MA</div>
-            <div>
-              <div style="font-weight: 700; font-size: 0.92rem;">Trần Minh Anh • Lớp 6A</div>
-              <div class="comment-time">Vừa xong (10 phút trước)</div>
-            </div>
-          </div>
-          <span style="font-size: 0.8rem; background: #f1f5f9; padding: 2px 8px; border-radius: 6px;">Học sinh</span>
-        </div>
-        <div class="comment-body">
-          <strong>Câu 1:</strong> Khi gặp bài khó, em hay nhờ chị gái giảng giải giúp hoặc tra cứu trên mạng.<br>
-          <strong>Câu 2:</strong> Nếu có AI, em sẽ hỏi: <em>"Tại sao khủng long to lớn như vậy mà lại bị tuyệt chủng hoàn toàn vậy AI?"</em>
-        </div>
-        <div class="comment-footer">
-          <button class="action-btn" onclick="toggleLike(this)">❤️ <span>Thích (5)</span></button>
-          <button class="action-btn" onclick="openReplyAlert()">↩️ Trả lời</button>
-        </div>
-      </div>
-
-      <!-- Comment 2: GV phản hồi -->
-      <div class="comment-card is-teacher">
-        <div class="comment-header">
-          <div class="user-flex">
-            <div class="user-avatar" style="background: #ede9fe; color: #6d28d9;">GV</div>
-            <div>
-              <div style="font-weight: 700; font-size: 0.92rem; color: var(--primary);">Thầy Nguyễn Hoàng Tuấn (GV)</div>
-              <div class="comment-time">8 phút trước</div>
-            </div>
-          </div>
-          <span style="font-size: 0.8rem; background: #e0e7ff; color: #3730a3; padding: 2px 8px; border-radius: 6px; font-weight: 700;">Giáo viên hướng dẫn</span>
-        </div>
-        <div class="comment-body">
-          Chào Minh Anh! Câu hỏi về khủng long của em rất thú vị. Lát nữa ở <strong>Hoạt động 2</strong>, thầy sẽ hướng dẫn cả lớp công thức viết "câu lệnh ma thuật" để AI kể cho em nghe một câu chuyện sống động về thời kỳ khủng long nhé!
-        </div>
-        <div class="comment-footer">
-          <button class="action-btn liked" onclick="toggleLike(this)">❤️ <span>Thích (12)</span></button>
-        </div>
-      </div>
-
-      <!-- Comment 3 -->
-      <div class="comment-card">
-        <div class="comment-header">
-          <div class="user-flex">
-            <div class="user-avatar" style="background: #fef3c7; color: #b45309;">LB</div>
-            <div>
-              <div style="font-weight: 700; font-size: 0.92rem;">Lê Văn Bình • Lớp 6A</div>
-              <div class="comment-time">15 phút trước</div>
-            </div>
-          </div>
-          <span style="font-size: 0.8rem; background: #f1f5f9; padding: 2px 8px; border-radius: 6px;">Học sinh</span>
-        </div>
-        <div class="comment-body">
-          <strong>Câu 1:</strong> Em thường ngồi suy nghĩ 15 phút, nếu không ra thì đánh dấu hỏi để hôm sau lên lớp hỏi thầy cô.<br>
-          <strong>Câu 2:</strong> Em muốn hỏi AI cách giải nhanh các bài toán tìm x và nhờ AI giải thích từng bước cho em hiểu!
-        </div>
-        <div class="comment-footer">
-          <button class="action-btn" onclick="toggleLike(this)">❤️ <span>Thích (3)</span></button>
-          <button class="action-btn" onclick="openReplyAlert()">↩️ Trả lời</button>
-        </div>
-      </div>
-
-      <!-- Comment 4 -->
-      <div class="comment-card">
-        <div class="comment-header">
-          <div class="user-flex">
-            <div class="user-avatar" style="background: #fce7f3; color: #be185d;">HT</div>
-            <div>
-              <div style="font-weight: 700; font-size: 0.92rem;">Hà Phương Thảo • Lớp 6A</div>
-              <div class="comment-time">22 phút trước</div>
-            </div>
-          </div>
-          <span style="font-size: 0.8rem; background: #f1f5f9; padding: 2px 8px; border-radius: 6px;">Học sinh</span>
-        </div>
-        <div class="comment-body">
-          <strong>Câu 1:</strong> Em hay xem video bài giảng trên LMS trường mình.<br>
-          <strong>Câu 2:</strong> Em sẽ nhờ AI hướng dẫn cách vẽ một bức tranh phong cảnh mùa thu bằng màu nước!
-        </div>
-        <div class="comment-footer">
-          <button class="action-btn" onclick="toggleLike(this)">❤️ <span>Thích (7)</span></button>
-          <button class="action-btn" onclick="openReplyAlert()">↩️ Trả lời</button>
-        </div>
+      <div class="empty-state" id="emptyStateBox">
+        <div class="empty-icon">🌱</div>
+        <div style="font-weight: 700; font-size: 1.05rem; margin-bottom: 4px; color: #334155;">Chưa có bài thảo luận nào</div>
+        <p style="font-size: 0.9rem;">Hãy là người đầu tiên trả lời câu hỏi khởi động và chia sẻ cùng cả lớp nhé!</p>
       </div>
     </div>
   </section>
@@ -638,11 +701,14 @@
   <!-- Footer -->
   <footer>
     <p>Chương trình GDPT 2018 - Tin học 6 | Bài 2: Lợi ích và cách sử dụng công cụ AI phù hợp</p>
-    <p style="margin-top: 4px; font-size: 0.8rem; opacity: 0.8;">Hệ thống tự động ghi nhận nhật ký học tập (LMS Log) khi học sinh hoàn thành thảo luận.</p>
+    <p style="margin-top: 4px; font-size: 0.8rem; opacity: 0.8;">Hệ thống ghi nhận chuyên cần thực tế từ tài khoản học sinh tham gia thảo luận.</p>
   </footer>
 </div>
 
 <script>
+  let currentStudent = { name: '', class: '' };
+  let likedCommentIds = new Set(); // Theo dõi các bình luận người dùng này đã thích (tối đa 1 like/bình luận)
+
   // Web Audio Context for Sound Effects
   const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
   function playBeep(isSuccess) {
@@ -653,16 +719,16 @@
       osc.connect(gain);
       gain.connect(audioCtx.destination);
       if (isSuccess) {
-        osc.frequency.setValueAtTime(523.25, audioCtx.currentTime); // C5
-        osc.frequency.setValueAtTime(659.25, audioCtx.currentTime + 0.1); // E5
-        osc.frequency.setValueAtTime(783.99, audioCtx.currentTime + 0.2); // G5
+        osc.frequency.setValueAtTime(523.25, audioCtx.currentTime);
+        osc.frequency.setValueAtTime(659.25, audioCtx.currentTime + 0.1);
+        osc.frequency.setValueAtTime(783.99, audioCtx.currentTime + 0.2);
         gain.gain.setValueAtTime(0.15, audioCtx.currentTime);
         gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.35);
         osc.start();
         osc.stop(audioCtx.currentTime + 0.35);
       } else {
-        osc.frequency.setValueAtTime(440, audioCtx.currentTime);
-        gain.gain.setValueAtTime(0.1, audioCtx.currentTime);
+        osc.frequency.setValueAtTime(350, audioCtx.currentTime);
+        gain.gain.setValueAtTime(0.08, audioCtx.currentTime);
         gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.15);
         osc.start();
         osc.stop(audioCtx.currentTime + 0.15);
@@ -670,116 +736,246 @@
     } catch(e) {}
   }
 
-  // Handle Form Submission
+  // Check Registration on Load
+  window.addEventListener('load', function() {
+    loadUserData();
+    loadCommentsFromStorage();
+    loadLikedComments();
+  });
+
+  function loadUserData() {
+    const savedName = localStorage.getItem('TINHOC6_STUDENT_NAME');
+    const savedClass = localStorage.getItem('TINHOC6_STUDENT_CLASS');
+    if (savedName && savedClass) {
+      currentStudent.name = savedName;
+      currentStudent.class = savedClass;
+      updateUserUI();
+      document.getElementById('regModal').style.display = 'none';
+    } else {
+      document.getElementById('regModal').style.display = 'flex';
+    }
+  }
+
+  function handleRegistration(e) {
+    e.preventDefault();
+    const name = document.getElementById('regName').value.trim();
+    const sClass = document.getElementById('regClass').value.trim();
+    if (!name || !sClass) return;
+
+    currentStudent.name = name;
+    currentStudent.class = sClass;
+    localStorage.setItem('TINHOC6_STUDENT_NAME', name);
+    localStorage.setItem('TINHOC6_STUDENT_CLASS', sClass);
+
+    updateUserUI();
+    document.getElementById('regModal').style.display = 'none';
+    playBeep(true);
+  }
+
+  function openRegModal() {
+    document.getElementById('regName').value = currentStudent.name || '';
+    document.getElementById('regClass').value = currentStudent.class || '';
+    document.getElementById('regModal').style.display = 'flex';
+  }
+
+  function updateUserUI() {
+    document.getElementById('userPillDisplay').style.display = 'inline-flex';
+    document.getElementById('userNameClassText').innerText = `${currentStudent.name} (Lớp ${currentStudent.class})`;
+    document.getElementById('currentStudentLabel').innerText = `${currentStudent.name} - Lớp ${currentStudent.class}`;
+  }
+
+  // Load / Save Comments from LocalStorage (Real data only, no mock)
+  function getStoredComments() {
+    try {
+      const data = localStorage.getItem('TINHOC6_FORUM_COMMENTS');
+      return data ? JSON.parse(data) : [];
+    } catch(e) {
+      return [];
+    }
+  }
+
+  function saveStoredComments(list) {
+    localStorage.setItem('TINHOC6_FORUM_COMMENTS', JSON.stringify(list));
+  }
+
+  function loadLikedComments() {
+    try {
+      const data = localStorage.getItem('TINHOC6_FORUM_LIKES');
+      if (data) likedCommentIds = new Set(JSON.parse(data));
+    } catch(e) {}
+  }
+
+  function saveLikedComments() {
+    localStorage.setItem('TINHOC6_FORUM_LIKES', JSON.stringify(Array.from(likedCommentIds)));
+  }
+
+  function loadCommentsFromStorage() {
+    const comments = getStoredComments();
+    const list = document.getElementById('commentList');
+    const empty = document.getElementById('emptyStateBox');
+    
+    // Clear dynamic cards except empty box
+    Array.from(list.children).forEach(child => {
+      if (child.id !== 'emptyStateBox') list.removeChild(child);
+    });
+
+    if (comments.length === 0) {
+      if (empty) empty.style.display = 'block';
+      document.getElementById('commentCount').innerText = "0";
+      return;
+    }
+
+    if (empty) empty.style.display = 'none';
+    document.getElementById('commentCount').innerText = comments.length.toString();
+
+    // Render comments in reverse chronological order
+    comments.slice().reverse().forEach(c => {
+      const card = createCommentElement(c);
+      list.appendChild(card);
+    });
+
+    // Check if current user has already submitted
+    const hasSubmitted = comments.some(c => c.name === currentStudent.name && c.sClass === currentStudent.class);
+    if (hasSubmitted) {
+      const statusBadge = document.getElementById('forumStatus');
+      statusBadge.className = "badge-status done";
+      statusBadge.innerHTML = "<span>✅</span> Đã hoàn thành Khởi động";
+    }
+  }
+
+  function createCommentElement(c) {
+    const card = document.createElement('div');
+    const isCurrentUser = (c.name === currentStudent.name && c.sClass === currentStudent.class);
+    card.className = `comment-card ${isCurrentUser ? 'is-user' : ''}`;
+    card.id = `comment-${c.id}`;
+
+    const isLiked = likedCommentIds.has(c.id);
+
+    card.innerHTML = `
+      <div class="comment-header">
+        <div class="user-flex">
+          <div class="user-avatar" style="${isCurrentUser ? 'background: #dcfce7; color: #166534;' : ''}">
+            ${escapeHTML(c.name.substring(0, 2).toUpperCase())}
+          </div>
+          <div>
+            <div style="font-weight: 700; font-size: 0.92rem; ${isCurrentUser ? 'color: #166534;' : ''}">
+              ${escapeHTML(c.name)} • Lớp ${escapeHTML(c.sClass)} ${isCurrentUser ? '(Bài của em)' : ''}
+            </div>
+            <div class="comment-time">${escapeHTML(c.time || 'Vừa xong')}</div>
+          </div>
+        </div>
+        ${isCurrentUser ? '<span style="font-size: 0.8rem; background: #dcfce7; color: #166534; padding: 2px 8px; border-radius: 6px; font-weight: 700;">✔ Đã nộp</span>' : ''}
+      </div>
+      <div class="comment-body">
+        <strong>Câu 1:</strong> ${escapeHTML(c.q1)}<br>
+        <strong>Câu 2:</strong> ${escapeHTML(c.q2)}
+      </div>
+      <div class="comment-footer">
+        <button class="action-btn ${isLiked ? 'liked' : ''}" onclick="toggleLikeComment('${c.id}')">
+          <span>❤️</span> <span id="like-count-${c.id}">Thích (${c.likes || 0})</span>
+        </button>
+      </div>
+    `;
+    return card;
+  }
+
+  // Handle Form Submit
   function handleFormSubmit(e) {
     e.preventDefault();
-    const name = document.getElementById('studentName').value.trim();
+
+    if (!currentStudent.name || !currentStudent.class) {
+      openRegModal();
+      return;
+    }
+
     const q1 = document.getElementById('ansQuestion1').value.trim();
     const q2 = document.getElementById('ansQuestion2').value.trim();
 
-    if (!name || !q1 || !q2) {
+    if (!q1 || !q2) {
       alert("Em hãy điền đầy đủ cả 2 câu trả lời nhé!");
       return;
     }
 
     playBeep(true);
 
-    // Create New Comment Card
-    const card = document.createElement('div');
-    card.className = "comment-card is-user";
-    card.innerHTML = `
-      <div class="comment-header">
-        <div class="user-flex">
-          <div class="user-avatar" style="background: #dcfce7; color: #15803d;">${name.substring(0,2).toUpperCase()}</div>
-          <div>
-            <div style="font-weight: 700; font-size: 0.92rem; color: #166534;">${escapeHTML(name)} (Bài của em)</div>
-            <div class="comment-time">Vừa xong • Đã lưu vào LMS</div>
-          </div>
-        </div>
-        <span style="font-size: 0.8rem; background: #dcfce7; color: #166534; padding: 2px 8px; border-radius: 6px; font-weight: 700;">✔ Đã nộp</span>
-      </div>
-      <div class="comment-body">
-        <strong>Câu 1:</strong> ${escapeHTML(q1)}<br>
-        <strong>Câu 2:</strong> ${escapeHTML(q2)}
-      </div>
-      <div class="comment-footer">
-        <button class="action-btn liked" onclick="toggleLike(this)">❤️ <span>Thích (1)</span></button>
-        <span style="color: var(--success); font-weight: 600; font-size: 0.82rem;">🎉 Em đã hoàn thành Hoạt động 1!</span>
-      </div>
-    `;
+    const newComment = {
+      id: 'cmt_' + Date.now(),
+      name: currentStudent.name,
+      sClass: currentStudent.class,
+      q1: q1,
+      q2: q2,
+      time: 'Vừa xong',
+      likes: 0
+    };
 
-    const list = document.getElementById('commentList');
-    list.insertBefore(card, list.children[0]);
+    const comments = getStoredComments();
+    comments.push(newComment);
+    saveStoredComments(comments);
+
+    // Reload list
+    loadCommentsFromStorage();
 
     // Update Status Badge
     const statusBadge = document.getElementById('forumStatus');
     statusBadge.className = "badge-status done";
     statusBadge.innerHTML = "<span>✅</span> Đã hoàn thành Khởi động";
 
-    // Update Counter
-    const countElem = document.getElementById('commentCount');
-    countElem.innerText = parseInt(countElem.innerText) + 1;
-
     // Reset Form
     document.getElementById('forumForm').reset();
     document.getElementById('replySection').style.borderColor = "var(--success)";
 
-    // Save to localStorage
-    localStorage.setItem('TINHOC6_BAI2_ACT1_DONE', 'true');
-
     // Notify LMS
-    notifyLMS('FORUM_SUBMISSION_COMPLETED', {
-      student: name,
-      question1: q1,
-      question2: q2,
-      timestamp: new Date().toISOString()
-    });
-
-    alert("🎉 Chúc mừng em đã đăng bài thành công lên Diễn đàn! Hệ thống LMS đã ghi nhận điểm chuyên cần của em.");
-  }
-
-  function toggleLike(btn) {
-    playBeep(false);
-    btn.classList.toggle('liked');
-    const span = btn.querySelector('span');
-    let match = span.innerText.match(/\((\d+)\)/);
-    if (match) {
-      let count = parseInt(match[1]);
-      if (btn.classList.contains('liked')) {
-        span.innerText = `Thích (${count + 1})`;
-      } else {
-        span.innerText = `Thích (${Math.max(0, count - 1)})`;
-      }
+    if (window.parent && window.parent !== window) {
+      window.parent.postMessage({
+        source: 'LMS_FORUM_ACTIVITY_1',
+        student: currentStudent.name,
+        sClass: currentStudent.class,
+        question1: q1,
+        question2: q2,
+        timestamp: new Date().toISOString()
+      }, '*');
     }
+
+    alert("🎉 Chúc mừng em đã gửi câu trả lời thành công lên Diễn đàn! Hệ thống LMS đã ghi nhận điểm chuyên cần của em.");
   }
 
-  function openReplyAlert() {
-    alert("Em hãy sử dụng khung trả lời ở trên để gửi câu trả lời và đóng góp ý kiến của mình nhé!");
-    document.getElementById('ansQuestion2').focus();
+  // Tối đa 1 lần thả tim đối với 1 người bình luận
+  function toggleLikeComment(commentId) {
+    const comments = getStoredComments();
+    const target = comments.find(c => c.id === commentId);
+    if (!target) return;
+
+    if (!target.likes) target.likes = 0;
+
+    const btn = document.querySelector(`#comment-${commentId} .action-btn`);
+    const countSpan = document.getElementById(`like-count-${commentId}`);
+
+    if (likedCommentIds.has(commentId)) {
+      // Đã thích -> Huỷ thích (tối đa 1 lần)
+      likedCommentIds.delete(commentId);
+      target.likes = Math.max(0, target.likes - 1);
+      btn.classList.remove('liked');
+      playBeep(false);
+    } else {
+      // Chưa thích -> Thích (tăng 1)
+      likedCommentIds.add(commentId);
+      target.likes += 1;
+      btn.classList.add('liked');
+      playBeep(true);
+    }
+
+    saveStoredComments(comments);
+    saveLikedComments();
+    if (countSpan) countSpan.innerText = `Thích (${target.likes})`;
   }
 
   function escapeHTML(str) {
+    if (!str) return '';
     return str.replace(/[&<>'"]/g, 
       tag => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[tag] || tag)
     );
   }
-
-  function notifyLMS(type, data) {
-    if (window.parent && window.parent !== window) {
-      window.parent.postMessage({ source: 'LMS_FORUM_ACTIVITY_1', type: type, data: data }, '*');
-    }
-  }
-
-  // Restore status on load
-  window.addEventListener('load', function() {
-    if (localStorage.getItem('TINHOC6_BAI2_ACT1_DONE') === 'true') {
-      const statusBadge = document.getElementById('forumStatus');
-      statusBadge.className = "badge-status done";
-      statusBadge.innerHTML = "<span>✅</span> Đã hoàn thành Khởi động";
-    }
-  });
 </script>
 
 </body>
 </html>
-

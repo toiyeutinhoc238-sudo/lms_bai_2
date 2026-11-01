@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cổng Trọn Bộ Học Liệu Tin Học 6: Bài 2 (E-Learning LMS)</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
   <style>
     :root {
       --primary: #4338ca;
@@ -166,11 +168,30 @@
       letter-spacing: 0.5px;
     }
 
-    .badge-act1 { background: #e0e7ff; color: #3730a3; }
-    .badge-act2 { background: #dbeafe; color: #1e40af; }
-    .badge-act3 { background: #e0f2fe; color: #0369a1; }
-    .badge-act4 { background: #ede9fe; color: #6d28d9; }
-    .badge-act5 { background: #dcfce7; color: #15803d; }
+    .badge-act1 {
+      background: #e0e7ff;
+      color: #3730a3;
+    }
+
+    .badge-act2 {
+      background: #dbeafe;
+      color: #1e40af;
+    }
+
+    .badge-act3 {
+      background: #e0f2fe;
+      color: #0369a1;
+    }
+
+    .badge-act4 {
+      background: #ede9fe;
+      color: #6d28d9;
+    }
+
+    .badge-act5 {
+      background: #dcfce7;
+      color: #15803d;
+    }
 
     .time-badge {
       font-size: 0.8rem;
@@ -313,7 +334,10 @@
     .modal-overlay {
       display: none;
       position: fixed;
-      top: 0; left: 0; width: 100%; height: 100%;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
       background: rgba(15, 23, 42, 0.7);
       backdrop-filter: blur(4px);
       z-index: 100;
@@ -373,270 +397,278 @@
     }
   </style>
 </head>
+
 <body>
 
-<div class="container">
-  <!-- Header -->
-  <header>
-    <div class="tag">
-      <span>🚀</span> CHƯƠNG TRÌNH GDPT 2018 • MÔN TIN HỌC 6
-    </div>
-    <h1>Cổng Trọn Bộ Học Liệu Số: Bài 2</h1>
-    <p class="subtitle">
-      <strong>Chuyên đề: LỢI ÍCH VÀ CÁCH SỬ DỤNG CÔNG CỤ AI PHÙ HỢP</strong><br>
-      Bộ 5 học liệu trực tuyến độc lập tương ứng trọn vẹn tiến trình dạy học E-learning 45 phút, 
-      tuân thủ khung năng lực số của UNESCO (2023) về Giáo dục Trí tuệ nhân tạo có trách nhiệm.
-    </p>
-
-    <div class="badges-bar">
-      <div class="badge-item">⚡ 5 Học liệu độc lập</div>
-      <div class="badge-item">⏱️ Thời lượng: 45 phút</div>
-      <div class="badge-item">📦 Chuẩn SCORM 1.2</div>
-      <div class="badge-item">📊 Rubric 10 điểm chuẩn hóa</div>
-      <div class="badge-item">🛡️ An toàn số K-12</div>
-    </div>
-  </header>
-
-  <!-- 5 Independent Learning Materials -->
-  <div class="section-title">
-    <span>📚</span> 5 Học Liệu Trực Tuyến Độc Lập Cho Hệ Thống LMS
-  </div>
-
-  <div class="cards-grid">
-    <!-- Card 1 -->
-    <div class="card">
-      <div class="card-top">
-        <div class="card-meta">
-          <span class="activity-badge badge-act1">Hoạt động 1: Khởi động</span>
-          <span class="time-badge">⏱️ 5 phút</span>
-        </div>
-        <div class="card-title">Học liệu 1: Diễn đàn thảo luận (Forum)</div>
-        <p class="card-desc">
-          Diễn đàn tương tác khơi gợi nhu cầu sử dụng AI: <em>"Nếu có một Trợ lý ảo AI, em sẽ hỏi gì?"</em>. Học sinh thảo luận, chia sẻ câu hỏi và nhận phản hồi sư phạm thời gian thực.
-        </p>
-        <ul class="objective-list">
-          <li>Kích hoạt kiến thức nền từ Bài 1.</li>
-          <li>Rèn luyện kỹ năng đặt câu hỏi và văn hóa mạng.</li>
-          <li>Tự động ghi nhận LMS Log chuyên cần.</li>
-        </ul>
+  <div class="container">
+    <!-- Header -->
+    <header>
+      <div class="tag">
+        <span>🚀</span> CHƯƠNG TRÌNH GDPT 2018 • MÔN TIN HỌC 6
       </div>
-      <div class="card-actions">
-        <a href="hoc_lieu_1_dien_dan_khoi_dong.html" class="btn-launch" target="_blank">
-          <span>🚀</span> Mở học liệu
-        </a>
-        <button class="btn-secondary" onclick="openEmbedModal('hoc_lieu_1_dien_dan_khoi_dong.html')">
-          <span>📋</span> Nhúng
-        </button>
-      </div>
-    </div>
-
-    <!-- Card 2 -->
-    <div class="card">
-      <div class="card-top">
-        <div class="card-meta">
-          <span class="activity-badge badge-act2">Hoạt động 2: Kiến thức mới</span>
-          <span class="time-badge">⏱️ 15 phút</span>
-        </div>
-        <div class="card-title">Học liệu 2: Video & Infographic SCORM</div>
-        <p class="card-desc">
-          Khám phá <strong>Công thức Vàng viết Prompt 3 thành phần</strong>: <em>[Đóng vai] + [Nhiệm vụ] + [Bối cảnh]</em>. Video tích hợp 3 Pop-up Quiz tương tác tự động gửi điểm về Sổ điểm LMS.
-        </p>
-        <ul class="objective-list">
-          <li>Infographic tương tác & bộ ghép Prompt trực tiếp.</li>
-          <li>Video tương tác chuẩn H5P / Edpuzzle (5 phút).</li>
-          <li>Gói SCORM 1.2 nạp thẳng vào Moodle / K12Online.</li>
-        </ul>
-      </div>
-      <div class="card-actions">
-        <a href="hoc_lieu_2_video_infographic_tuong_tac.html" class="btn-launch" target="_blank">
-          <span>🚀</span> Mở học liệu
-        </a>
-        <a href="SCORM_KyThuatVietPrompt_TinHoc6.zip" class="btn-secondary" title="Tải gói SCORM">
-          <span>📦</span> SCORM .zip
-        </a>
-        <button class="btn-secondary" onclick="openEmbedModal('hoc_lieu_2_video_infographic_tuong_tac.html')">
-          <span>📋</span> Nhúng
-        </button>
-      </div>
-    </div>
-
-    <!-- Card 3 -->
-    <div class="card">
-      <div class="card-top">
-        <div class="card-meta">
-          <span class="activity-badge badge-act3">Hoạt động 3: Trải nghiệm</span>
-          <span class="time-badge">⏱️ 15 phút</span>
-        </div>
-        <div class="card-title">Học liệu 3: Trạm GenAI An Toàn Học Đường</div>
-        <p class="card-desc">
-          Danh mục công cụ AI an toàn được UNESCO khuyên dùng (EduChat, SchoolAI, Khanmigo) kèm <strong>EduChat Simulator</strong> tương tác trực tiếp và Cẩm nang 4 KHÔNG bảo mật dữ liệu.
-        </p>
-        <ul class="objective-list">
-          <li>Cổng kết nối các công cụ GenAI an toàn K-12.</li>
-          <li>Khung chat AI mô phỏng nhận diện đúng/sai Prompt.</li>
-          <li>Bộ lọc còi báo động vi phạm thông tin cá nhân.</li>
-        </ul>
-      </div>
-      <div class="card-actions">
-        <a href="hoc_lieu_3_cong_cu_genai_an_toan.html" class="btn-launch" target="_blank">
-          <span>🚀</span> Mở học liệu
-        </a>
-        <button class="btn-secondary" onclick="openEmbedModal('hoc_lieu_3_cong_cu_genai_an_toan.html')">
-          <span>📋</span> Nhúng
-        </button>
-      </div>
-    </div>
-
-    <!-- Card 4 -->
-    <div class="card">
-      <div class="card-top">
-        <div class="card-meta">
-          <span class="activity-badge badge-act4">Hoạt động 3: Luyện tập</span>
-          <span class="time-badge">⏱️ 15 phút</span>
-        </div>
-        <div class="card-title">Học liệu 4: Cổng Nộp Bài (Assignment)</div>
-        <p class="card-desc">
-          Học sinh nộp ảnh chụp màn hình đoạn chat thực hành viết Prompt hỏi AI. Tích hợp <strong>Bảng Rubric tương tác 10 điểm</strong> giúp HS tự đánh giá và GV chấm bài 1 chạm.
-        </p>
-        <ul class="objective-list">
-          <li>Kéo thả ảnh minh chứng hoặc dán từ clipboard.</li>
-          <li>Rubric 3 tiêu chí: Cấu trúc (5đ), Ngôn từ (3đ), Ảnh (2đ).</li>
-          <li>Tự động tính điểm và xuất Feedback sư phạm.</li>
-        </ul>
-      </div>
-      <div class="card-actions">
-        <a href="hoc_lieu_4_nop_bai_assignment_rubric.html" class="btn-launch" target="_blank">
-          <span>🚀</span> Mở học liệu
-        </a>
-        <button class="btn-secondary" onclick="openEmbedModal('hoc_lieu_4_nop_bai_assignment_rubric.html')">
-          <span>📋</span> Nhúng
-        </button>
-      </div>
-    </div>
-
-    <!-- Card 5 -->
-    <div class="card">
-      <div class="card-top">
-        <div class="card-meta">
-          <span class="activity-badge badge-act5">Hoạt động 4: Vận dụng</span>
-          <span class="time-badge">⏱️ 10 phút</span>
-        </div>
-        <div class="card-title">Học liệu 5: Nhật Ký Học Tập (Blog/Glossary)</div>
-        <p class="card-desc">
-          Góc vận dụng <em>"Nhà báo nhí tổng hợp tin tức"</em>: Học sinh tự viết bài tóm tắt kiến thức (3-5 câu) bằng chính văn phong của mình, rèn luyện tính tự chủ và trách nhiệm.
-        </p>
-        <ul class="objective-list">
-          <li>Trình soạn thảo có bộ đếm câu, từ tự động.</li>
-          <li>Cơ chế cảnh báo chống sao chép (Anti-plagiarism).</li>
-          <li>Bảng Rubric 10 điểm: Tự chủ 5đ, Dung lượng 3đ, Chính tả 2đ.</li>
-        </ul>
-      </div>
-      <div class="card-actions">
-        <a href="hoc_lieu_5_blog_nhat_ky_glossary_rubric.html" class="btn-launch" target="_blank">
-          <span>🚀</span> Mở học liệu
-        </a>
-        <button class="btn-secondary" onclick="openEmbedModal('hoc_lieu_5_blog_nhat_ky_glossary_rubric.html')">
-          <span>📋</span> Nhúng
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <!-- Teacher Resource Section -->
-  <div class="resource-card">
-    <div style="font-weight: 800; font-size: 1.25rem; color: #1e1b4b; display: flex; align-items: center; gap: 8px;">
-      <span>📂</span> Hồ Sơ Sư Phạm & Tệp Dữ Liệu Dành Cho Giáo Viên
-    </div>
-    <p style="font-size: 0.92rem; color: var(--text-muted); margin-top: 6px;">
-      Các tài liệu kèm theo sẵn sàng xuất báo cáo chuyên môn hoặc nhập khẩu trực tiếp vào LMS:
-    </p>
-
-    <div class="resource-grid">
-      <a href="KHBD%20B%C3%A0i%202.pdf" class="resource-item" target="_blank">
-        <div class="resource-icon">📕</div>
-        <div>
-          <div class="resource-name">Kế hoạch bài dạy (KHBD)</div>
-          <div class="resource-type">Tệp gốc PDF giáo án</div>
-        </div>
-      </a>
-
-      <a href="Bo_Hoc_Lieu_LMS_TinHoc6_Bai2.md" class="resource-item" target="_blank">
-        <div class="resource-icon">📝</div>
-        <div>
-          <div class="resource-name">Tài liệu học liệu chi tiết</div>
-          <div class="resource-type">Định dạng Markdown</div>
-        </div>
-      </a>
-
-      <a href="SCORM_KyThuatVietPrompt_TinHoc6.zip" class="resource-item">
-        <div class="resource-icon">📦</div>
-        <div>
-          <div class="resource-name">Gói SCORM 1.2 hoàn chỉnh</div>
-          <div class="resource-type">Nhập vào Moodle/K12</div>
-        </div>
-      </a>
-
-      <a href="Rubric_LMS_TinHoc6.json" class="resource-item" target="_blank">
-        <div class="resource-icon">📊</div>
-        <div>
-          <div class="resource-name">Cấu hình Rubric chuẩn</div>
-          <div class="resource-type">Tệp JSON chấm điểm</div>
-        </div>
-      </a>
-    </div>
-  </div>
-
-  <!-- Modal Embed -->
-  <div class="modal-overlay" id="embedModal" onclick="closeModalOnBg(event)">
-    <div class="modal-card">
-      <div class="modal-header">
-        <div class="modal-title">📋 Mã Nhúng Iframe Cho Hệ Thống LMS</div>
-        <button class="btn-close" onclick="closeEmbedModal()">✕</button>
-      </div>
-      <p style="font-size: 0.92rem; color: var(--text-muted);">
-        Thầy cô chỉ cần sao chép đoạn mã HTML bên dưới và dán vào công cụ soạn thảo của Moodle, Canvas, K12Online hoặc Google Sites:
+      <h1>Cổng Trọn Bộ Học Liệu Số: Bài 2</h1>
+      <p class="subtitle">
+        <strong>Chuyên đề: LỢI ÍCH VÀ CÁCH SỬ DỤNG CÔNG CỤ AI PHÙ HỢP</strong><br>
+        Bộ 5 học liệu trực tuyến độc lập tương ứng trọn vẹn tiến trình dạy học E-learning 45 phút,
+        tuân thủ khung năng lực số của UNESCO (2023) về Giáo dục Trí tuệ nhân tạo có trách nhiệm.
       </p>
-      <div class="code-box" id="iframeCode"></div>
-      <div style="text-align: right;">
-        <button class="btn-launch" style="padding: 8px 18px;" onclick="copyEmbedCode()">
-          <span>📄</span> Sao chép mã nhúng
-        </button>
+
+      <div class="badges-bar">
+        <div class="badge-item">⚡ 5 Học liệu độc lập</div>
+        <div class="badge-item">⏱️ Thời lượng: 45 phút</div>
+        <div class="badge-item">📦 Chuẩn SCORM 1.2</div>
+        <div class="badge-item">📊 Rubric 10 điểm chuẩn hóa</div>
+        <div class="badge-item">🛡️ An toàn số K-12</div>
+      </div>
+    </header>
+
+    <!-- 5 Independent Learning Materials -->
+    <div class="section-title">
+      <span>📚</span> 5 Học Liệu Trực Tuyến Độc Lập Cho Hệ Thống LMS
+    </div>
+
+    <div class="cards-grid">
+      <!-- Card 1 -->
+      <div class="card">
+        <div class="card-top">
+          <div class="card-meta">
+            <span class="activity-badge badge-act1">Hoạt động 1: Khởi động</span>
+            <span class="time-badge">⏱️ 5 phút</span>
+          </div>
+          <div class="card-title">Học liệu 1: Diễn đàn thảo luận (Forum)</div>
+          <p class="card-desc">
+            Diễn đàn tương tác khơi gợi nhu cầu sử dụng AI: <em>"Nếu có một Trợ lý ảo AI, em sẽ hỏi gì?"</em>. Học sinh
+            thảo luận, chia sẻ câu hỏi và nhận phản hồi sư phạm thời gian thực.
+          </p>
+          <ul class="objective-list">
+            <li>Kích hoạt kiến thức nền từ Bài 1.</li>
+            <li>Rèn luyện kỹ năng đặt câu hỏi và văn hóa mạng.</li>
+            <li>Tự động ghi nhận LMS Log chuyên cần.</li>
+          </ul>
+        </div>
+        <div class="card-actions">
+          <a href="hoc_lieu_1_dien_dan_khoi_dong.html" class="btn-launch" target="_blank">
+            <span>🚀</span> Mở học liệu
+          </a>
+          <button class="btn-secondary" onclick="openEmbedModal('hoc_lieu_1_dien_dan_khoi_dong.html')">
+            <span>📋</span> Nhúng
+          </button>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="card">
+        <div class="card-top">
+          <div class="card-meta">
+            <span class="activity-badge badge-act2">Hoạt động 2: Kiến thức mới</span>
+            <span class="time-badge">⏱️ 15 phút</span>
+          </div>
+          <div class="card-title">Học liệu 2: Video & Infographic SCORM</div>
+          <p class="card-desc">
+            Khám phá <strong>Công thức Vàng viết Prompt 3 thành phần</strong>: <em>[Đóng vai] + [Nhiệm vụ] + [Bối
+              cảnh]</em>. Video tích hợp 3 Pop-up Quiz tương tác tự động gửi điểm về Sổ điểm LMS.
+          </p>
+          <ul class="objective-list">
+            <li>Infographic tương tác & bộ ghép Prompt trực tiếp.</li>
+            <li>Video tương tác chuẩn H5P / Edpuzzle (5 phút).</li>
+            <li>Gói SCORM 1.2 nạp thẳng vào Moodle / K12Online.</li>
+          </ul>
+        </div>
+        <div class="card-actions">
+          <a href="hoc_lieu_2_video_infographic_tuong_tac.html" class="btn-launch" target="_blank">
+            <span>🚀</span> Mở học liệu
+          </a>
+          <a href="SCORM_KyThuatVietPrompt_TinHoc6.zip" class="btn-secondary" title="Tải gói SCORM">
+            <span>📦</span> SCORM .zip
+          </a>
+          <button class="btn-secondary" onclick="openEmbedModal('hoc_lieu_2_video_infographic_tuong_tac.html')">
+            <span>📋</span> Nhúng
+          </button>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="card">
+        <div class="card-top">
+          <div class="card-meta">
+            <span class="activity-badge badge-act3">Hoạt động 3: Trải nghiệm</span>
+            <span class="time-badge">⏱️ 15 phút</span>
+          </div>
+          <div class="card-title">Học liệu 3: Trạm GenAI An Toàn Học Đường</div>
+          <p class="card-desc">
+            Danh mục công cụ AI an toàn được UNESCO khuyên dùng (EduChat, SchoolAI, Khanmigo) kèm <strong>EduChat
+              Simulator</strong> tương tác trực tiếp và Cẩm nang 4 KHÔNG bảo mật dữ liệu.
+          </p>
+          <ul class="objective-list">
+            <li>Cổng kết nối các công cụ GenAI an toàn K-12.</li>
+            <li>Khung chat AI mô phỏng nhận diện đúng/sai Prompt.</li>
+            <li>Bộ lọc còi báo động vi phạm thông tin cá nhân.</li>
+          </ul>
+        </div>
+        <div class="card-actions">
+          <a href="hoc_lieu_3_cong_cu_genai_an_toan.html" class="btn-launch" target="_blank">
+            <span>🚀</span> Mở học liệu
+          </a>
+          <button class="btn-secondary" onclick="openEmbedModal('hoc_lieu_3_cong_cu_genai_an_toan.html')">
+            <span>📋</span> Nhúng
+          </button>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="card">
+        <div class="card-top">
+          <div class="card-meta">
+            <span class="activity-badge badge-act4">Hoạt động 3: Luyện tập</span>
+            <span class="time-badge">⏱️ 15 phút</span>
+          </div>
+          <div class="card-title">Học liệu 4: Cổng Nộp Bài (Assignment)</div>
+          <p class="card-desc">
+            Học sinh nộp ảnh chụp màn hình đoạn chat thực hành viết Prompt hỏi AI. Tích hợp <strong>Bảng Rubric tương
+              tác 10 điểm</strong> giúp HS tự đánh giá và GV chấm bài 1 chạm.
+          </p>
+          <ul class="objective-list">
+            <li>Kéo thả ảnh minh chứng hoặc dán từ clipboard.</li>
+            <li>Rubric 3 tiêu chí: Cấu trúc (5đ), Ngôn từ (3đ), Ảnh (2đ).</li>
+            <li>Tự động tính điểm và xuất Feedback sư phạm.</li>
+          </ul>
+        </div>
+        <div class="card-actions">
+          <a href="hoc_lieu_4_nop_bai_assignment_rubric.html" class="btn-launch" target="_blank">
+            <span>🚀</span> Mở học liệu
+          </a>
+          <button class="btn-secondary" onclick="openEmbedModal('hoc_lieu_4_nop_bai_assignment_rubric.html')">
+            <span>📋</span> Nhúng
+          </button>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="card">
+        <div class="card-top">
+          <div class="card-meta">
+            <span class="activity-badge badge-act5">Hoạt động 4: Vận dụng</span>
+            <span class="time-badge">⏱️ 10 phút</span>
+          </div>
+          <div class="card-title">Học liệu 5: Nhật Ký Học Tập (Blog/Glossary)</div>
+          <p class="card-desc">
+            Góc vận dụng <em>"Nhà báo nhí tổng hợp tin tức"</em>: Học sinh tự viết bài tóm tắt kiến thức (3-5 câu) bằng
+            chính văn phong của mình, rèn luyện tính tự chủ và trách nhiệm.
+          </p>
+          <ul class="objective-list">
+            <li>Trình soạn thảo có bộ đếm câu, từ tự động.</li>
+            <li>Cơ chế cảnh báo chống sao chép (Anti-plagiarism).</li>
+            <li>Bảng Rubric 10 điểm: Tự chủ 5đ, Dung lượng 3đ, Chính tả 2đ.</li>
+          </ul>
+        </div>
+        <div class="card-actions">
+          <a href="hoc_lieu_5_blog_nhat_ky_glossary_rubric.html" class="btn-launch" target="_blank">
+            <span>🚀</span> Mở học liệu
+          </a>
+          <button class="btn-secondary" onclick="openEmbedModal('hoc_lieu_5_blog_nhat_ky_glossary_rubric.html')">
+            <span>📋</span> Nhúng
+          </button>
+        </div>
       </div>
     </div>
+
+    <!-- Teacher Resource Section -->
+    <div class="resource-card">
+      <div style="font-weight: 800; font-size: 1.25rem; color: #1e1b4b; display: flex; align-items: center; gap: 8px;">
+        <span>📂</span> Hồ Sơ Sư Phạm & Tệp Dữ Liệu Dành Cho Giáo Viên
+      </div>
+      <p style="font-size: 0.92rem; color: var(--text-muted); margin-top: 6px;">
+        Các tài liệu kèm theo sẵn sàng xuất báo cáo chuyên môn hoặc nhập khẩu trực tiếp vào LMS:
+      </p>
+
+      <div class="resource-grid">
+        <a href="KHBD%20B%C3%A0i%202.pdf" class="resource-item" target="_blank">
+          <div class="resource-icon">📕</div>
+          <div>
+            <div class="resource-name">Kế hoạch bài dạy (KHBD)</div>
+            <div class="resource-type">Tệp gốc PDF giáo án</div>
+          </div>
+        </a>
+
+        <a href="Bo_Hoc_Lieu_LMS_TinHoc6_Bai2.md" class="resource-item" target="_blank">
+          <div class="resource-icon">📝</div>
+          <div>
+            <div class="resource-name">Tài liệu học liệu chi tiết</div>
+            <div class="resource-type">Định dạng Markdown</div>
+          </div>
+        </a>
+
+        <a href="SCORM_KyThuatVietPrompt_TinHoc6.zip" class="resource-item">
+          <div class="resource-icon">📦</div>
+          <div>
+            <div class="resource-name">Gói SCORM 1.2 hoàn chỉnh</div>
+            <div class="resource-type">Nhập vào Moodle/K12</div>
+          </div>
+        </a>
+
+        <a href="Rubric_LMS_TinHoc6.json" class="resource-item" target="_blank">
+          <div class="resource-icon">📊</div>
+          <div>
+            <div class="resource-name">Cấu hình Rubric chuẩn</div>
+            <div class="resource-type">Tệp JSON chấm điểm</div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- Modal Embed -->
+    <div class="modal-overlay" id="embedModal" onclick="closeModalOnBg(event)">
+      <div class="modal-card">
+        <div class="modal-header">
+          <div class="modal-title">📋 Mã Nhúng Iframe Cho Hệ Thống LMS</div>
+          <button class="btn-close" onclick="closeEmbedModal()">✕</button>
+        </div>
+        <p style="font-size: 0.92rem; color: var(--text-muted);">
+          Thầy cô chỉ cần sao chép đoạn mã HTML bên dưới và dán vào công cụ soạn thảo của Moodle, Canvas, K12Online hoặc
+          Google Sites:
+        </p>
+        <div class="code-box" id="iframeCode"></div>
+        <div style="text-align: right;">
+          <button class="btn-launch" style="padding: 8px 18px;" onclick="copyEmbedCode()">
+            <span>📄</span> Sao chép mã nhúng
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <p>Chương trình Giáo dục Phổ thông 2018 - Môn Tin học 6 | Bài 2: Lợi ích và cách sử dụng công cụ AI phù hợp</p>
+      <p style="margin-top: 4px; font-size: 0.8rem; opacity: 0.8;">Thiết kế mô đun web độc lập, tương thích 100% PC,
+        Laptop, Máy tính bảng và Điện thoại thông minh.</p>
+    </footer>
   </div>
 
-  <!-- Footer -->
-  <footer>
-    <p>Chương trình Giáo dục Phổ thông 2018 - Môn Tin học 6 | Bài 2: Lợi ích và cách sử dụng công cụ AI phù hợp</p>
-    <p style="margin-top: 4px; font-size: 0.8rem; opacity: 0.8;">Thiết kế mô đun web độc lập, tương thích 100% PC, Laptop, Máy tính bảng và Điện thoại thông minh.</p>
-  </footer>
-</div>
-
-<script>
-  function openEmbedModal(fileName) {
-    const code = `<iframe src="${fileName}" width="100%" height="750" frameborder="0" allowfullscreen style="border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);"></iframe>`;
-    document.getElementById('iframeCode').innerText = code;
-    document.getElementById('embedModal').style.display = 'flex';
-  }
-
-  function closeEmbedModal() {
-    document.getElementById('embedModal').style.display = 'none';
-  }
-
-  function closeModalOnBg(e) {
-    if (e.target.id === 'embedModal') {
-      closeEmbedModal();
+  <script>
+    function openEmbedModal(fileName) {
+      const code = `<iframe src="${fileName}" width="100%" height="750" frameborder="0" allowfullscreen style="border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);"></iframe>`;
+      document.getElementById('iframeCode').innerText = code;
+      document.getElementById('embedModal').style.display = 'flex';
     }
-  }
 
-  function copyEmbedCode() {
-    const code = document.getElementById('iframeCode').innerText;
-    navigator.clipboard.writeText(code).then(function() {
-      alert("✅ Đã sao chép mã nhúng Iframe vào bộ nhớ tạm! Thầy cô có thể dán vào LMS.");
-    });
-  }
-</script>
+    function closeEmbedModal() {
+      document.getElementById('embedModal').style.display = 'none';
+    }
+
+    function closeModalOnBg(e) {
+      if (e.target.id === 'embedModal') {
+        closeEmbedModal();
+      }
+    }
+
+    function copyEmbedCode() {
+      const code = document.getElementById('iframeCode').innerText;
+      navigator.clipboard.writeText(code).then(function () {
+        alert("✅ Đã sao chép mã nhúng Iframe vào bộ nhớ tạm! Thầy cô có thể dán vào LMS.");
+      });
+    }
+  </script>
 
 </body>
-</html>
 
+</html>

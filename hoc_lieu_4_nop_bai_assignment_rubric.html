@@ -236,7 +236,7 @@
 
     .preview-img {
       max-width: 100%;
-      max-height: 320px;
+      max-height: 360px;
       border-radius: 10px;
       border: 1.5px solid var(--border);
       box-shadow: var(--shadow);
@@ -312,26 +312,40 @@
 
     /* Score calculation box */
     .grading-summary {
-      background: #f0fdf4;
-      border: 1.5px solid #bbf7d0;
+      background: #f8fafc;
+      border: 1.5px solid #cbd5e1;
       border-radius: 12px;
       padding: 18px;
       margin-top: 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      transition: all 0.3s;
+    }
+
+    .grading-summary.evaluated {
+      background: #f0fdf4;
+      border-color: #bbf7d0;
     }
 
     .grading-score {
       font-size: 2rem;
       font-weight: 900;
+      color: var(--primary);
+    }
+
+    .grading-summary.evaluated .grading-score {
       color: #15803d;
     }
 
     .grading-feedback {
       font-size: 0.92rem;
-      color: #166534;
+      color: #475569;
       line-height: 1.5;
+    }
+
+    .grading-summary.evaluated .grading-feedback {
+      color: #166534;
     }
 
     footer {
@@ -359,7 +373,7 @@
   <header class="header-card">
     <span class="tag-bubble">HỌC LIỆU 4 • THỰC HÀNH NỘP BÀI (15 PHÚT)</span>
     <h1>Cổng Nộp Bài (Assignment) & Rubric Đánh Giá</h1>
-    <p>Nhiệm vụ: Thực hành "Hỏi đúng - Trúng đáp án với Trợ lý AI" | Đánh giá bằng Rubric 10 điểm</p>
+    <p>Nhiệm vụ: Thực hành "Hỏi đúng - Trúng đáp án với Trợ lý AI" | Đánh giá minh bạch bằng Rubric 10 điểm</p>
   </header>
 
   <!-- Phần 1: Hướng dẫn nhiệm vụ -->
@@ -371,33 +385,33 @@
     <div class="steps-grid">
       <div class="step-box">
         <div class="step-num">Bước 1</div>
-        <p>Chọn 1 chủ đề môn học lớp 6 (*Lịch sử: Bạch Đằng 938; KHTN: Quang hợp / Mặt Trăng; Địa lý*).</p>
+        <p>Chọn 1 chủ đề môn học lớp 6 em muốn tìm hiểu (*Lịch sử, Khoa học tự nhiên, Địa lý*).</p>
       </div>
       <div class="step-box">
         <div class="step-num">Bước 2</div>
-        <p>Soạn câu lệnh gửi AI đủ 3 thành phần: <strong>[Đóng vai] + [Nhiệm vụ] + [Bối cảnh]</strong>.</p>
+        <p>Tự viết câu lệnh gửi AI đủ 3 thành phần: <strong>[Đóng vai] + [Nhiệm vụ] + [Bối cảnh]</strong>.</p>
       </div>
       <div class="step-box">
         <div class="step-num">Bước 3</div>
-        <p>Chụp màn hình đoạn chat (thấy rõ cả câu hỏi của em và câu trả lời của AI).</p>
+        <p>Chụp màn hình đoạn chat (thấy rõ cả câu hỏi của em và phản hồi của AI).</p>
       </div>
       <div class="step-box">
         <div class="step-num">Bước 4</div>
-        <p>Tải file ảnh (<code>.png, .jpg</code>) lên hệ thống và đối chiếu với bảng Rubric.</p>
+        <p>Tải file ảnh (<code>.png, .jpg</code>) của chính em lên hệ thống để nộp bài.</p>
       </div>
     </div>
 
     <!-- Upload Box -->
     <div class="upload-area" id="uploadArea" onclick="triggerFileInput()">
       <div class="upload-icon">📤</div>
-      <div class="upload-text">Kéo thả ảnh chụp màn hình vào đây hoặc bấm để chọn tệp</div>
+      <div class="upload-text">Kéo thả ảnh chụp màn hình vào đây hoặc bấm để chọn tệp từ máy</div>
       <div class="upload-sub">Định dạng hỗ trợ: PNG, JPG, JPEG (Dung lượng tối đa 5MB)</div>
       <input type="file" id="fileInput" accept="image/*" style="display: none;" onchange="handleFileSelect(event)">
     </div>
 
     <!-- Image Preview -->
     <div class="preview-container" id="previewContainer">
-      <h4 style="margin-bottom: 10px; color: #1e293b;">Ảnh chụp minh chứng của em:</h4>
+      <h4 style="margin-bottom: 10px; color: #1e293b;">Ảnh chụp minh chứng bài làm của em:</h4>
       <img id="previewImg" class="preview-img" alt="Minh chứng đoạn chat">
       <div>
         <button class="btn-submit-work" onclick="submitWork()">
@@ -408,13 +422,6 @@
         </button>
       </div>
     </div>
-
-    <!-- Quick sample test -->
-    <div style="margin-top: 14px; text-align: center;">
-      <button class="btn-back" style="font-size: 0.85rem;" onclick="loadSampleImage()">
-        💡 Bấm để nạp nhanh Ảnh mẫu đạt 10/10 điểm (Xem thử nghiệm)
-      </button>
-    </div>
   </section>
 
   <!-- Phần 2: Bảng Rubric Đánh Giá Tương Tác 10 Điểm -->
@@ -424,7 +431,7 @@
       <h2>2. Bảng Rubric Đánh Giá Hoạt Động 3 (Thang điểm 10)</h2>
     </div>
     <p style="font-size: 0.92rem; color: var(--text-muted); margin-bottom: 12px;">
-      <em>Học sinh hoặc Giáo viên có thể nhấp chuột vào từng ô tiêu chí để xem cơ chế tính điểm và nhận xét tự động:</em>
+      <em>Bảng tiêu chí chuẩn hóa từ Kế hoạch bài dạy. Giáo viên hoặc Học sinh có thể nhấp chuột vào từng ô mức độ để đối chiếu và tính điểm:</em>
     </p>
 
     <table class="rubric-table">
@@ -443,7 +450,7 @@
             <strong>1. Cấu trúc Prompt</strong><br>
             <small style="color: var(--text-muted);">Trọng tâm nhất (5đ)</small>
           </td>
-          <td class="rubric-cell selected" onclick="selectRubric(1, 1, 5)">
+          <td class="rubric-cell" onclick="selectRubric(1, 1, 5)">
             <strong>(5 điểm)</strong>
             Câu lệnh thể hiện <strong>đầy đủ 3 yếu tố</strong>: 1. Đóng vai; 2. Nhiệm vụ; 3. Bối cảnh/Điều kiện.
           </td>
@@ -463,7 +470,7 @@
             <strong>2. Nội dung & Ngôn từ</strong><br>
             <small style="color: var(--text-muted);">(3 điểm)</small>
           </td>
-          <td class="rubric-cell selected" onclick="selectRubric(2, 1, 3)">
+          <td class="rubric-cell" onclick="selectRubric(2, 1, 3)">
             <strong>(3 điểm)</strong>
             Đúng chủ đề học tập. Ngôn từ lịch sự, gõ <strong>tiếng Việt có dấu đầy đủ</strong>.
           </td>
@@ -483,7 +490,7 @@
             <strong>3. Hình thức minh chứng</strong><br>
             <small style="color: var(--text-muted);">(2 điểm)</small>
           </td>
-          <td class="rubric-cell selected" onclick="selectRubric(3, 1, 2)">
+          <td class="rubric-cell" onclick="selectRubric(3, 1, 2)">
             <strong>(2 điểm)</strong>
             Ảnh chụp màn hình sắc nét, thấy rõ <strong>cả câu hỏi của HS và câu trả lời của AI</strong>.
           </td>
@@ -500,18 +507,18 @@
     </table>
 
     <!-- Grading Summary -->
-    <div class="grading-summary">
+    <div class="grading-summary" id="gradingSummaryBox">
       <div>
-        <div style="font-weight: 800; font-size: 1rem; color: #15803d; margin-bottom: 4px;">
-          Kết quả chấm theo Rubric:
+        <div style="font-weight: 800; font-size: 1rem; color: #1e293b; margin-bottom: 4px;" id="summaryTitle">
+          Kết quả đánh giá theo Rubric:
         </div>
         <div class="grading-feedback" id="rubricFeedback">
-          Xuất sắc! Câu lệnh của em đáp ứng chuẩn cả 3 thành phần [Đóng vai] + [Nhiệm vụ] + [Bối cảnh], ảnh chụp minh chứng rõ ràng và nội dung mang tính giáo dục cao.
+          <em>(Chưa chọn tiêu chí. Hãy nhấp vào các ô mức độ ở bảng trên để đánh giá sản phẩm).</em>
         </div>
       </div>
       <div style="text-align: right; margin-left: 20px;">
-        <div style="font-size: 0.8rem; font-weight: 700; color: #166534; text-transform: uppercase;">Tổng điểm</div>
-        <div class="grading-score" id="totalScore">10 / 10</div>
+        <div style="font-size: 0.8rem; font-weight: 700; color: #64748b; text-transform: uppercase;">Tổng điểm</div>
+        <div class="grading-score" id="totalScore">-- / 10</div>
       </div>
     </div>
   </section>
@@ -523,7 +530,9 @@
 </div>
 
 <script>
-  // Web Audio Context for Sound Effects
+  let selectedFile = null;
+  let scores = { c1: null, c2: null, c3: null };
+
   const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
   function playBeep(isSuccess) {
     if (!audioCtx) return;
@@ -540,6 +549,12 @@
         gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.4);
         osc.start();
         osc.stop(audioCtx.currentTime + 0.4);
+      } else {
+        osc.frequency.setValueAtTime(300, audioCtx.currentTime);
+        gain.gain.setValueAtTime(0.1, audioCtx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.2);
+        osc.start();
+        osc.stop(audioCtx.currentTime + 0.2);
       }
     } catch(e) {}
   }
@@ -551,6 +566,7 @@
   function handleFileSelect(e) {
     const file = e.target.files[0];
     if (file) {
+      selectedFile = file;
       const reader = new FileReader();
       reader.onload = function(event) {
         showPreview(event.target.result);
@@ -566,37 +582,18 @@
   }
 
   function resetUpload() {
+    selectedFile = null;
     document.getElementById('fileInput').value = '';
     document.getElementById('uploadArea').style.display = 'block';
     document.getElementById('previewContainer').style.display = 'none';
   }
 
-  function loadSampleImage() {
-    // Generate an SVG Data URL simulating a chat screenshot
-    const svg = `
-      <svg xmlns="http://www.w3.org/2000/svg" width="600" height="340" viewBox="0 0 600 340">
-        <rect width="600" height="340" fill="#f8fafc" rx="12"/>
-        <rect x="0" y="0" width="600" height="50" fill="#0284c7" rx="12"/>
-        <text x="20" y="32" fill="white" font-family="sans-serif" font-weight="bold" font-size="16">EduChat AI - Minh chứng thực hành Lớp 6</text>
-        <!-- User Bubble -->
-        <rect x="120" y="70" width="450" height="80" rx="10" fill="#0284c7"/>
-        <text x="135" y="95" fill="white" font-family="sans-serif" font-weight="bold" font-size="13">Học sinh (Prompt chuẩn 3 thành phần):</text>
-        <text x="135" y="120" fill="white" font-family="sans-serif" font-size="12">"Đóng vai cô giáo Lịch sử, hãy giải thích ý nghĩa chiến thắng Bạch Đằng"</text>
-        <text x="135" y="140" fill="white" font-family="sans-serif" font-size="12">"năm 938 cho học sinh lớp 6 nghe trong khoảng 4 câu ngắn gọn, dễ hiểu nhé!"</text>
-        <!-- Bot Bubble -->
-        <rect x="30" y="170" width="540" height="130" rx="10" fill="white" stroke="#cbd5e1" stroke-width="1.5"/>
-        <text x="50" y="195" fill="#0369a1" font-family="sans-serif" font-weight="bold" font-size="13">🤖 Trợ lý AI trả lời:</text>
-        <text x="50" y="220" fill="#334155" font-family="sans-serif" font-size="12">1. Chiến thắng Bạch Đằng năm 938 do Ngô Quyền lãnh đạo là chiến công hiển hách.</text>
-        <text x="50" y="240" fill="#334155" font-family="sans-serif" font-size="12">2. Quân ta cắm cọc gỗ nhọn dưới lòng sông, dựa vào thủy triều đánh chìm thuyền địch.</text>
-        <text x="50" y="260" fill="#334155" font-family="sans-serif" font-size="12">3. Trận đánh tiêu diệt tướng Hoằng Tháo và đập tan âm mưu xâm lược của giặc.</text>
-        <text x="50" y="280" fill="#334155" font-family="sans-serif" font-size="12">4. Ý nghĩa lớn nhất là chấm dứt hơn 1.000 năm Bắc thuộc, mở ra kỷ nguyên độc lập!</text>
-      </svg>
-    `;
-    const dataUrl = "data:image/svg+xml;charset=utf-8," + encodeURIComponent(svg);
-    showPreview(dataUrl);
-  }
-
   function submitWork() {
+    if (!selectedFile) {
+      alert("Em hãy chọn tệp ảnh chụp màn hình trước khi nộp nhé!");
+      return;
+    }
+
     playBeep(true);
     const badge = document.getElementById('subStatus');
     badge.className = "submission-status done";
@@ -608,9 +605,6 @@
     
     alert("🎉 Em đã nộp bài tập thành công lên hệ thống LMS! Thầy cô sẽ căn cứ vào Rubric để đánh giá sản phẩm của em.");
   }
-
-  // Rubric Scoring State
-  let scores = { c1: 5, c2: 3, c3: 2 };
 
   function selectRubric(criterionIndex, levelIndex, points) {
     const table = document.querySelector('.rubric-table');
@@ -628,20 +622,29 @@
   }
 
   function calculateTotal() {
+    if (scores.c1 === null || scores.c2 === null || scores.c3 === null) {
+      const currentSum = (scores.c1 || 0) + (scores.c2 || 0) + (scores.c3 || 0);
+      document.getElementById('totalScore').innerText = `${currentSum} / 10`;
+      document.getElementById('rubricFeedback').innerText = "Đang chọn tiêu chí đánh giá...";
+      return;
+    }
+
     const total = scores.c1 + scores.c2 + scores.c3;
     document.getElementById('totalScore').innerText = `${total} / 10`;
     
+    const box = document.getElementById('gradingSummaryBox');
+    box.classList.add('evaluated');
+
     const fb = document.getElementById('rubricFeedback');
     if (total === 10) {
-      fb.innerText = "Xuất sắc! Câu lệnh của em đáp ứng chuẩn cả 3 thành phần [Đóng vai] + [Nhiệm vụ] + [Bối cảnh], ảnh chụp minh chứng rõ ràng và nội dung mang tính giáo dục cao.";
+      fb.innerText = "Xuất sắc! Câu lệnh đáp ứng chuẩn cả 3 thành phần [Đóng vai] + [Nhiệm vụ] + [Bối cảnh], ảnh chụp minh chứng rõ ràng và nội dung mang tính giáo dục cao.";
     } else if (total >= 7) {
-      fb.innerText = "Bài làm Đạt yêu cầu! Em đã biết cách sử dụng AI phục vụ học tập, tuy nhiên hãy lưu ý kiểm tra lại thành phần [Đóng vai] hoặc độ rõ nét của ảnh chụp nhé.";
+      fb.innerText = "Bài làm Đạt yêu cầu! Đã biết cách sử dụng AI phục vụ học tập, tuy nhiên hãy lưu ý kiểm tra lại thành phần [Đóng vai] hoặc độ rõ nét của ảnh chụp.";
     } else {
-      fb.innerText = "Cần cố gắng thêm: Câu prompt của em còn cộc lốc hoặc ảnh chụp chưa rõ ràng cả 2 chiều hỏi - đáp. Em hãy xem lại công thức ở Hoạt động 2 để hoàn thiện hơn nhé!";
+      fb.innerText = "Cần cố gắng thêm: Câu prompt còn cộc lốc hoặc ảnh chụp chưa rõ ràng cả 2 chiều hỏi - đáp. Hãy hoàn thiện lại theo công thức ở Hoạt động 2.";
     }
   }
 </script>
 
 </body>
 </html>
-

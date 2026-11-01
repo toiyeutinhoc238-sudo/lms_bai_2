@@ -454,14 +454,11 @@
         <span>←</span> Cổng Học Liệu
       </a>
       <a href="https://drive.google.com/drive/folders/1o0Y7hb1UQcuXPTsVk3z-EUYB_Ed6e0vp?usp=sharing" target="_blank" class="btn-back" style="color: #059669; border-color: #34d399; background: #ecfdf5; font-weight: 800;">
-        <span>☁️</span> Google Drive Nhật Ký Chính Thức
-      </a>
-      <a href="kho_luu_tru_nhat_ky_hoc_lieu_5.html" target="_blank" class="btn-back" style="color: #475569; border-color: #cbd5e1; background: white;">
-        <span>📚</span> Kho Drive LMS
+        <span>☁️</span> Nộp bài qua Google Drive
       </a>
     </div>
     <div class="badge-status" id="blogStatus">
-      <span>⏳</span> Chưa đăng bài tóm tắt
+      <span>☁️</span> Nộp bài trực tiếp vào Google Drive
     </div>
   </div>
 
@@ -472,34 +469,20 @@
     <p>Chuyên đề Trí tuệ Nhân tạo - Môn Tin học 6 | Tự tóm tắt kiến thức từ AI bằng chính văn phong của em</p>
   </header>
 
-  <!-- Phần 1: Soạn thảo bài báo nhí -->
+  <!-- Phần 1: Soạn thảo bài báo nhí & Nộp qua Google Drive -->
   <section class="section-card">
-    <!-- Official Google Drive Submission Banner -->
-    <div style="background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%); border: 2px solid #059669; border-radius: 12px; padding: 16px 20px; margin-bottom: 20px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px; box-shadow: 0 4px 12px rgba(5, 150, 105, 0.12);">
-      <div style="display: flex; align-items: center; gap: 12px;">
-        <span style="font-size: 2.2rem;">☁️</span>
-        <div>
-          <div style="font-size: 1.05rem; font-weight: 800; color: #065f46;">Nơi nộp bài chính thức của lớp: Google Drive Thầy Cô</div>
-          <div style="font-size: 0.88rem; color: #334155;">Học sinh nộp bài viết nhật ký/tóm tắt vào thư mục dùng chung để Thầy Cô lưu trữ và đánh giá.</div>
-        </div>
-      </div>
-      <a href="https://drive.google.com/drive/folders/1o0Y7hb1UQcuXPTsVk3z-EUYB_Ed6e0vp?usp=sharing" target="_blank" style="background: #059669; color: white; padding: 10px 18px; border-radius: 10px; font-weight: 800; font-size: 0.92rem; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 4px 10px rgba(5, 150, 105, 0.35);">
-        <span>🚀</span> Mở Thư Mục Google Drive Nhật Ký ↗
-      </a>
-    </div>
-
     <div class="section-title">
       <span class="icon">✍️</span>
-      <h2>1. Tòa soạn Nhà báo nhí: Viết bài tóm tắt kiến thức</h2>
+      <h2>1. Tòa soạn Nhà báo nhí: Viết bài tóm tắt & Nộp bài</h2>
     </div>
     <p style="margin-bottom: 14px;">
       Em vừa phỏng vấn xong Trợ lý AI ở Hoạt động 3. Bây giờ hãy gấp cửa sổ chat lại, tự chắt lọc thông tin và viết một đoạn văn ngắn 
-      <strong>(từ 3 đến 5 câu)</strong> chia sẻ điều em học được cho cả lớp cùng đọc:
+      <strong>(từ 3 đến 5 câu)</strong> chia sẻ điều em học được:
     </p>
 
     <!-- Editor -->
     <div class="editor-box">
-      <form id="articleForm" onsubmit="publishArticle(event)">
+      <form id="articleForm" onsubmit="submitToGoogleDrive(event)">
         <div class="form-group">
           <label for="reporterName">Họ và tên học sinh / Lớp: <span style="color: var(--danger)">*</span></label>
           <input type="text" id="reporterName" class="form-input" placeholder="Ví dụ: Nguyễn Văn An - Lớp 6A" required>
@@ -531,28 +514,23 @@
           </div>
         </div>
 
-        <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 14px;">
-          <button type="submit" class="btn-publish" style="margin-top: 0;">
-            <span>📰</span> Đăng bài lên Nhật ký học tập
-          </button>
-          <a href="https://drive.google.com/drive/folders/1o0Y7hb1UQcuXPTsVk3z-EUYB_Ed6e0vp?usp=sharing" target="_blank" class="btn-publish" style="background: #0284c7; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; margin-top: 0;">
-            <span>☁️</span> Mở Google Drive để nộp bài
-          </a>
+        <div style="background: #f0fdf4; border: 1.5px solid #a7f3d0; border-radius: 10px; padding: 14px 18px; margin: 16px 0;">
+          <div style="font-weight: 800; color: #065f46; font-size: 0.95rem; margin-bottom: 4px;">
+            ☁️ Nơi nộp bài chính thức: Thư mục Google Drive của lớp
+          </div>
+          <div style="font-size: 0.88rem; color: #334155; margin-bottom: 12px;">
+            Sau khi soạn xong bài viết (3–5 câu), em bấm nút bên dưới để <strong>tải tệp bài viết về máy</strong> và <strong>mở thẳng Google Drive để nộp bài</strong> nhé!
+          </div>
+          <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+            <button type="submit" class="btn-publish" style="margin-top: 0; background: linear-gradient(135deg, #059669, #047857);">
+              <span>☁️</span> Tải File & Mở Google Drive Nộp Bài ↗
+            </button>
+            <a href="https://drive.google.com/drive/folders/1o0Y7hb1UQcuXPTsVk3z-EUYB_Ed6e0vp?usp=sharing" target="_blank" class="btn-publish" style="background: #0284c7; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; margin-top: 0;">
+              <span>📁</span> Mở Thư Mục Google Drive Trực Tiếp ↗
+            </a>
+          </div>
         </div>
       </form>
-    </div>
-
-    <!-- Feed Báo tường lớp học (Real submissions only) -->
-    <h3 style="font-size: 1.15rem; color: #064e3b; margin: 24px 0 14px;">
-      📚 Trang nhật ký học tập của lớp (<span id="feedCount">0</span> bài viết)
-    </h3>
-
-    <div class="journal-feed" id="journalFeed">
-      <div class="empty-state" id="emptyJournalBox">
-        <div style="font-size: 2.5rem; margin-bottom: 8px;">📖</div>
-        <div style="font-weight: 700; font-size: 1.05rem; color: #334155; margin-bottom: 4px;">Chưa có bài viết nào</div>
-        <p style="font-size: 0.9rem;">Hãy là nhà báo nhí đầu tiên đăng bài tóm tắt kiến thức của mình lên trang chung của lớp nhé!</p>
-      </div>
     </div>
   </section>
 
@@ -697,75 +675,14 @@
     } catch(e) {}
   }
 
-  // Load articles from localStorage on init
+  // Pre-fill student name if available
   window.addEventListener('load', function() {
-    // Pre-fill student name from forum if already entered
     const savedName = localStorage.getItem('TINHOC6_STUDENT_NAME');
     const savedClass = localStorage.getItem('TINHOC6_STUDENT_CLASS');
     if (savedName && savedClass) {
       document.getElementById('reporterName').value = `${savedName} - Lớp ${savedClass}`;
     }
-    loadArticlesFromStorage();
   });
-
-  function getStoredArticles() {
-    try {
-      const data = localStorage.getItem('TINHOC6_BLOG_ARTICLES');
-      return data ? JSON.parse(data) : [];
-    } catch(e) {
-      return [];
-    }
-  }
-
-  function saveStoredArticles(list) {
-    localStorage.setItem('TINHOC6_BLOG_ARTICLES', JSON.stringify(list));
-  }
-
-  function loadArticlesFromStorage() {
-    const list = getStoredArticles();
-    const feed = document.getElementById('journalFeed');
-    const empty = document.getElementById('emptyJournalBox');
-
-    Array.from(feed.children).forEach(c => {
-      if (c.id !== 'emptyJournalBox') feed.removeChild(c);
-    });
-
-    if (list.length === 0) {
-      if (empty) empty.style.display = 'block';
-      document.getElementById('feedCount').innerText = "0";
-      return;
-    }
-
-    if (empty) empty.style.display = 'none';
-    document.getElementById('feedCount').innerText = list.length.toString();
-
-    list.slice().reverse().forEach(a => {
-      const card = document.createElement('div');
-      card.className = "article-card user-entry";
-      card.innerHTML = `
-        <div class="article-meta">
-          <div class="author-badge">
-            <span style="background: #dcfce7; padding: 4px 8px; border-radius: 6px; font-size: 0.8rem; color: #15803d;">Học sinh</span>
-            <span>${escapeHTML(a.author)}</span>
-          </div>
-          <span style="font-size: 0.8rem; color: #64748b;">${escapeHTML(a.time || 'Vừa xong')}</span>
-        </div>
-        <div class="article-title">${escapeHTML(a.title)}</div>
-        <div class="article-body">${escapeHTML(a.content)}</div>
-        <div class="article-footer">
-          <span style="color: #15803d; font-weight: 700;">✔ Đã nộp lên Nhật ký học tập lớp</span>
-        </div>
-      `;
-      feed.appendChild(card);
-    });
-
-    const hasSubmitted = list.some(a => a.author.includes(document.getElementById('reporterName').value.trim()));
-    if (hasSubmitted) {
-      const statusBadge = document.getElementById('blogStatus');
-      statusBadge.className = "badge-status done";
-      statusBadge.innerHTML = "<span>✅</span> Đã đăng bài thành công";
-    }
-  }
 
   function updateCounters() {
     const text = document.getElementById('articleContent').value.trim();
@@ -794,43 +711,49 @@
     }
   }
 
-  function publishArticle(e) {
-    e.preventDefault();
+  function submitToGoogleDrive(e) {
+    if (e) e.preventDefault();
     const name = document.getElementById('reporterName').value.trim();
     const title = document.getElementById('articleTitle').value.trim();
     const content = document.getElementById('articleContent').value.trim();
 
-    if (!name || !title || !content) return;
+    if (!name || !title || !content) {
+      alert("Em hãy nhập đầy đủ Họ tên, Tiêu đề và Nội dung bài viết trước khi nộp nhé!");
+      return;
+    }
 
     playBeep(true);
 
-    const newArticle = {
-      id: 'art_' + Date.now(),
-      author: name,
-      title: title,
-      content: content,
-      time: 'Vừa xong'
-    };
+    // Create a downloadable text file for student to upload to Google Drive
+    const textData = `BÀI VIẾT TÓM TẮT KIẾN THỨC - NHÀ BÁO NHÍ\n` +
+      `Môn: Tin học 6 - Bài 2\n` +
+      `Học sinh: ${name}\n` +
+      `Tiêu đề: ${title}\n` +
+      `Thời gian: ${new Date().toLocaleString('vi-VN')}\n` +
+      `----------------------------------------\n\n` +
+      `${content}\n`;
 
-    const articles = getStoredArticles();
-    articles.push(newArticle);
-    saveStoredArticles(articles);
+    const blob = new Blob([textData], { type: 'text/plain;charset=utf-8' });
+    const link = document.createElement('a');
+    link.href = URL.createObjectURL(blob);
+    const cleanFileName = name.replace(/[^a-zA-Z0-9\u00C0-\u024F\u1EA0-\u1EF9]/g, '_');
+    link.download = `NhatKy_${cleanFileName}.txt`;
+    link.click();
 
-    loadArticlesFromStorage();
-
-    const status = document.getElementById('blogStatus');
-    status.className = "badge-status done";
-    status.innerHTML = "<span>✅</span> Đã đăng bài thành công";
-
-    document.getElementById('articleContent').value = '';
-    document.getElementById('articleTitle').value = '';
-    updateCounters();
-
-    if (window.parent && window.parent !== window) {
-      window.parent.postMessage({ source: 'LMS_BLOG_ACTIVITY_5', status: 'published', title: title, student: name }, '*');
+    // Copy content to clipboard
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(content).catch(() => {});
     }
 
-    alert("🎉 Chúc mừng em! Bài viết tóm tắt của em đã được ghi nhận trên trang Nhật ký học tập của lớp. Em có thể bấm vào nút \"Mở Google Drive\" để nộp bài vào Thư mục Google Drive chính thức của Thầy Cô nhé!");
+    const statusBadge = document.getElementById('blogStatus');
+    statusBadge.className = "badge-status done";
+    statusBadge.innerHTML = "<span>✅</span> Đã tải tệp & Mở Google Drive";
+
+    // Open Google Drive in new tab
+    const driveUrl = "https://drive.google.com/drive/folders/1o0Y7hb1UQcuXPTsVk3z-EUYB_Ed6e0vp?usp=sharing";
+    window.open(driveUrl, '_blank');
+
+    alert(`🎉 Bài viết của em (${name}) đã được tải về máy thành tệp tin text!\n\nCửa sổ Thư mục Google Drive của lớp đang mở ra. Em hãy kéo thả tệp tin vừa tải về vào Google Drive để hoàn thành việc nộp bài cho Thầy Cô nhé!`);
   }
 
   function selectRubric(criterionIndex, levelIndex, points) {

@@ -393,14 +393,11 @@
         <span>←</span> Cổng Học Liệu
       </a>
       <a href="https://drive.google.com/drive/folders/1N4MIlx9gx_LnO4LPmdAuCpQcMtHokwr3?usp=sharing" target="_blank" class="btn-back" style="color: #0284c7; border-color: #38bdf8; background: #f0f9ff; font-weight: 800;">
-        <span>☁️</span> Google Drive Nộp Bài Chính Thức
-      </a>
-      <a href="kho_luu_tru_bai_nop_hoc_lieu_4.html" target="_blank" class="btn-back" style="color: #475569; border-color: #cbd5e1; background: white;">
-        <span>📁</span> Kho Drive LMS
+        <span>☁️</span> Nộp bài qua Google Drive
       </a>
     </div>
     <div class="submission-status" id="subStatus">
-      <span>⏳</span> Chưa nộp bài
+      <span>☁️</span> Nộp bài trực tiếp vào Google Drive
     </div>
   </div>
 
@@ -411,22 +408,8 @@
     <p>Nhiệm vụ: Thực hành "Hỏi đúng - Trúng đáp án với Trợ lý AI" | Đánh giá minh bạch bằng Rubric 10 điểm</p>
   </header>
 
-  <!-- Phần 1: Hướng dẫn nhiệm vụ -->
+  <!-- Phần 1: Hướng dẫn nhiệm vụ & Nộp bài Google Drive -->
   <section class="section-card">
-    <!-- Official Google Drive Submission Banner -->
-    <div style="background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); border: 2px solid #0284c7; border-radius: 12px; padding: 16px 20px; margin-bottom: 20px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px; box-shadow: 0 4px 12px rgba(2, 132, 199, 0.12);">
-      <div style="display: flex; align-items: center; gap: 12px;">
-        <span style="font-size: 2.2rem;">☁️</span>
-        <div>
-          <div style="font-size: 1.05rem; font-weight: 800; color: #0369a1;">Nơi nộp bài chính thức của lớp: Google Drive Thầy Cô</div>
-          <div style="font-size: 0.88rem; color: #334155;">Học sinh nộp tệp ảnh chụp màn hình vào thư mục dùng chung để Thầy Cô lưu trữ và đánh giá.</div>
-        </div>
-      </div>
-      <a href="https://drive.google.com/drive/folders/1N4MIlx9gx_LnO4LPmdAuCpQcMtHokwr3?usp=sharing" target="_blank" style="background: #0284c7; color: white; padding: 10px 18px; border-radius: 10px; font-weight: 800; font-size: 0.92rem; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 4px 10px rgba(2, 132, 199, 0.35);">
-        <span>🚀</span> Mở Thư Mục Google Drive Nộp Bài ↗
-      </a>
-    </div>
-
     <div class="section-title">
       <span class="icon">📋</span>
       <h2>1. Nhiệm vụ và các bước thực hiện</h2>
@@ -446,43 +429,28 @@
       </div>
       <div class="step-box">
         <div class="step-num">Bước 4</div>
-        <p>Tải file ảnh (<code>.png, .jpg</code>) của chính em lên hệ thống để nộp bài.</p>
+        <p>Bấm nút bên dưới để <strong>tải ảnh lên Thư mục Google Drive</strong> của lớp.</p>
       </div>
     </div>
 
-    <!-- Student Info Input -->
-    <div style="background: #f8fafc; border: 1.5px solid var(--border); border-radius: 12px; padding: 14px 18px; margin: 16px 0;">
-      <div style="font-weight: 800; font-size: 0.92rem; color: #1e293b; margin-bottom: 8px;">
-        👤 Thông tin học sinh nộp bài:
+    <!-- Official Google Drive Submission Card (Sole Method) -->
+    <div style="background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); border: 2px solid #0284c7; border-radius: 14px; padding: 26px 20px; margin: 20px 0; text-align: center; box-shadow: 0 4px 15px rgba(2, 132, 199, 0.15);">
+      <div style="font-size: 2.8rem; margin-bottom: 8px;">☁️</div>
+      <h3 style="font-size: 1.35rem; font-weight: 800; color: #0369a1; margin-bottom: 8px;">
+        CỔNG NỘP BÀI CHÍNH THỨC QUA GOOGLE DRIVE
+      </h3>
+      <p style="font-size: 0.95rem; color: #334155; max-width: 620px; margin: 0 auto 14px auto;">
+        Học sinh nộp trực tiếp ảnh chụp màn hình minh chứng câu lệnh AI vào thư mục Google Drive của Thầy Cô.
+      </p>
+      
+      <div style="background: white; border: 1.5px dashed #38bdf8; border-radius: 10px; padding: 12px 18px; display: inline-block; margin-bottom: 20px; font-size: 0.92rem; color: #0f172a;">
+        📌 <strong>Quy tắc đặt tên file ảnh:</strong> <code>[Họ và tên] - [Lớp] - Prompt.png</code> (Ví dụ: <em>NguyenVanAn_6A_Prompt.png</em>)
       </div>
-      <div style="display: flex; gap: 12px; flex-wrap: wrap;">
-        <input type="text" id="studentNameInput" placeholder="Họ và tên của em (Ví dụ: Nguyễn Văn An)" style="flex: 2; min-width: 200px; padding: 10px 14px; border: 1.5px solid var(--border); border-radius: 8px; font-size: 0.92rem; outline: none;">
-        <input type="text" id="studentClassInput" placeholder="Lớp (Ví dụ: 6A)" style="flex: 1; min-width: 100px; padding: 10px 14px; border: 1.5px solid var(--border); border-radius: 8px; font-size: 0.92rem; outline: none;">
-      </div>
-    </div>
 
-    <!-- Upload Box -->
-    <div class="upload-area" id="uploadArea" onclick="triggerFileInput()">
-      <div class="upload-icon">📤</div>
-      <div class="upload-text">Kéo thả ảnh chụp màn hình vào đây hoặc bấm để chọn tệp từ máy</div>
-      <div class="upload-sub">Định dạng hỗ trợ: PNG, JPG, JPEG (Dung lượng tối đa 5MB)</div>
-      <input type="file" id="fileInput" accept="image/*" style="display: none;" onchange="handleFileSelect(event)">
-    </div>
-
-    <!-- Image Preview -->
-    <div class="preview-container" id="previewContainer">
-      <h4 style="margin-bottom: 10px; color: #1e293b;">Ảnh chụp minh chứng bài làm của em:</h4>
-      <img id="previewImg" class="preview-img" alt="Minh chứng đoạn chat">
-      <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-top: 16px;">
-        <button class="btn-submit-work" style="margin-top: 0;" onclick="submitWork()">
-          🚀 Nộp bài lên Hệ thống LMS
-        </button>
-        <a href="https://drive.google.com/drive/folders/1N4MIlx9gx_LnO4LPmdAuCpQcMtHokwr3?usp=sharing" target="_blank" class="btn-submit-work" style="background: #0284c7; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; margin-top: 0;">
-          <span>☁️</span> Mở Google Drive để nộp tệp ảnh chính thức
+      <div>
+        <a href="https://drive.google.com/drive/folders/1N4MIlx9gx_LnO4LPmdAuCpQcMtHokwr3?usp=sharing" target="_blank" style="background: linear-gradient(135deg, #0284c7, #0369a1); color: white; padding: 14px 34px; border-radius: 12px; font-weight: 800; font-size: 1.12rem; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; box-shadow: 0 6px 20px rgba(2, 132, 199, 0.4); transition: transform 0.2s;">
+          <span>☁️</span> MỞ GOOGLE DRIVE ĐỂ NỘP ẢNH BÀI LÀM ↗
         </a>
-        <button class="btn-submit-work" style="background: #64748b; margin-top: 0;" onclick="resetUpload()">
-          Chọn ảnh khác
-        </button>
       </div>
     </div>
   </section>
@@ -628,80 +596,6 @@
         osc.stop(audioCtx.currentTime + 0.2);
       }
     } catch(e) {}
-  }
-
-  function triggerFileInput() {
-    document.getElementById('fileInput').click();
-  }
-
-  function handleFileSelect(e) {
-    const file = e.target.files[0];
-    if (file) {
-      selectedFile = file;
-      const reader = new FileReader();
-      reader.onload = function(event) {
-        showPreview(event.target.result);
-      };
-      reader.readAsDataURL(file);
-    }
-  }
-
-  function showPreview(src) {
-    document.getElementById('previewImg').src = src;
-    document.getElementById('uploadArea').style.display = 'none';
-    document.getElementById('previewContainer').style.display = 'block';
-  }
-
-  function resetUpload() {
-    selectedFile = null;
-    document.getElementById('fileInput').value = '';
-    document.getElementById('uploadArea').style.display = 'block';
-    document.getElementById('previewContainer').style.display = 'none';
-  }
-
-  function submitWork() {
-    if (!selectedFile) {
-      alert("Em hãy chọn tệp ảnh chụp màn hình trước khi nộp nhé!");
-      return;
-    }
-
-    const sName = document.getElementById('studentNameInput').value.trim() || 'Học sinh lớp 6';
-    const sClass = document.getElementById('studentClassInput').value.trim() || '6A';
-    const previewSrc = document.getElementById('previewImg').src;
-
-    // Save to Drive localStorage
-    try {
-      const STORAGE_KEY = 'TINHOC6_ASSIGNMENT_SUBMISSIONS';
-      const stored = localStorage.getItem(STORAGE_KEY);
-      let list = stored ? JSON.parse(stored) : [];
-      const newSub = {
-        id: 'sub_' + Date.now(),
-        studentName: sName,
-        className: sClass,
-        fileName: selectedFile.name || 'minh_chung_chat_prompt.png',
-        fileSize: (selectedFile.size ? (selectedFile.size / 1024).toFixed(0) : '150') + ' KB',
-        submittedAt: new Date().toLocaleString('vi-VN'),
-        fileData: previewSrc,
-        score: null,
-        c1: null, c2: null, c3: null,
-        feedback: ''
-      };
-      list.unshift(newSub);
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(list));
-    } catch(err) {
-      console.warn("Storage quota or error:", err);
-    }
-
-    playBeep(true);
-    const badge = document.getElementById('subStatus');
-    badge.className = "submission-status done";
-    badge.innerHTML = "<span>✅</span> Đã lưu vào Kho Drive Bài Nộp";
-    
-    if (window.parent && window.parent !== window) {
-      window.parent.postMessage({ source: 'LMS_ASSIGNMENT_ACTIVITY_4', status: 'submitted', timestamp: new Date().toISOString() }, '*');
-    }
-    
-    alert(`🎉 Chúc mừng ${sName}! Bài làm đã được ghi nhận trên hệ thống. Em có thể bấm vào nút "Mở Google Drive" để tải ảnh trực tiếp vào Thư mục Google Drive chính thức của lớp nhé!`);
   }
 
   function selectRubric(criterionIndex, levelIndex, points) {

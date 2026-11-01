@@ -43,8 +43,8 @@
 
 ## 🚀 CỔNG ĐIỀU PHỐI TRUNG TÂM & HỒ SƠ GIÁO VIÊN
 * **Cổng trung tâm:** `index.html` (Trang Portal điều hướng và cung cấp mã nhúng Iframe cho giáo viên).
-* **Kho Drive Bài Nộp (Học liệu 4):** `kho_luu_tru_bai_nop_hoc_lieu_4.html` (Lưu trữ ảnh minh chứng prompt của học sinh, bảng chấm Rubric và xuất CSV).
-* **Kho Drive Nhật Ký Học Tập (Học liệu 5):** `kho_luu_tru_nhat_ky_hoc_lieu_5.html` (Lưu trữ bài viết tóm tắt của học sinh, chấm Rubric Tự chủ và xuất CSV).
+* **Google Drive Cổng Nộp Bài (Học liệu 4):** [Thư mục Google Drive Nộp Ảnh Bài Làm](https://drive.google.com/drive/folders/1N4MIlx9gx_LnO4LPmdAuCpQcMtHokwr3?usp=sharing) (Nơi nộp bài chính thức của học sinh).
+* **Google Drive Nhật Ký Học Tập (Học liệu 5):** [Thư mục Google Drive Nộp Nhật Ký Bài Viết](https://drive.google.com/drive/folders/1o0Y7hb1UQcuXPTsVk3z-EUYB_Ed6e0vp?usp=sharing) (Nơi nộp bài chính thức của học sinh).
 * **Hồ sơ Rubric & In PDF A4:** `phieu_rubric_va_danh_gia.html` (Trọn bộ 3 phiếu: Rubric 1, Rubric 2 và Bảng tổng hợp năng lực số; hỗ trợ in khổ A4 và xuất PDF một chạm).
 * **Gói SCORM 1.2:** `SCORM_KyThuatVietPrompt_TinHoc6.zip` (Sẵn sàng tải lên Moodle / Canvas / K12Online).
 * **Tài liệu học liệu chi tiết:** `Bo_Hoc_Lieu_LMS_TinHoc6_Bai2.md` & `Bo_Hoc_Lieu_LMS_TinHoc6_Bai2.html`.

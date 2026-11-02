@@ -52,30 +52,9 @@
     /* Top Nav */
     .top-bar {
       display: flex;
-      justify-content: space-between;
+      justify-content: flex-end;
       align-items: center;
       margin-bottom: 20px;
-    }
-
-    .btn-back {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: white;
-      color: var(--primary);
-      text-decoration: none;
-      padding: 8px 16px;
-      border-radius: 20px;
-      font-size: 0.9rem;
-      font-weight: 700;
-      box-shadow: var(--shadow);
-      border: 1px solid var(--border);
-      transition: all 0.2s;
-    }
-
-    .btn-back:hover {
-      background: var(--primary-light);
-      transform: translateX(-3px);
     }
 
     .badge-status {
@@ -278,9 +257,6 @@
 <div class="container">
   <!-- Top Bar -->
   <div class="top-bar">
-    <a href="index.html" class="btn-back">
-      <span>←</span> Cổng Học Liệu
-    </a>
     <div class="badge-status" id="blogStatus">
       <span>☁️</span> Nộp bài qua Google Drive
     </div>

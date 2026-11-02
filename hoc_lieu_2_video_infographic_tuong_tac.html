@@ -51,31 +51,10 @@
     /* Top Nav */
     .top-bar {
       display: flex;
-      justify-content: space-between;
+      justify-content: flex-end;
       align-items: center;
       margin-bottom: 16px;
       width: 100%;
-    }
-
-    .btn-back {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: rgba(255, 255, 255, 0.1);
-      color: #93c5fd;
-      text-decoration: none;
-      padding: 8px 16px;
-      border-radius: 20px;
-      font-size: 0.9rem;
-      font-weight: 700;
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      transition: all 0.2s;
-    }
-
-    .btn-back:hover {
-      background: rgba(255, 255, 255, 0.2);
-      color: white;
-      transform: translateX(-3px);
     }
 
     .scorm-badge {
@@ -479,9 +458,6 @@
 <div class="container">
   <!-- Top Bar -->
   <div class="top-bar">
-    <a href="index.html" class="btn-back">
-      <span>←</span> Về Cổng Trọn Bộ Học Liệu
-    </a>
     <div class="scorm-badge" id="scormBadge">
       SCORM 1.2: ĐANG HỌC
     </div>

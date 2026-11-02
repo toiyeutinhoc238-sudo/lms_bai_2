@@ -193,74 +193,6 @@
       color: #334155;
     }
 
-    /* Upload Area */
-    .upload-area {
-      border: 2.5px dashed #cbd5e1;
-      border-radius: 14px;
-      padding: 30px;
-      text-align: center;
-      background: #f8fafc;
-      cursor: pointer;
-      transition: all 0.2s;
-      position: relative;
-    }
-
-    .upload-area:hover, .upload-area.dragover {
-      border-color: var(--primary);
-      background: #f5f3ff;
-    }
-
-    .upload-icon {
-      font-size: 3rem;
-      color: var(--primary);
-      margin-bottom: 10px;
-    }
-
-    .upload-text {
-      font-weight: 700;
-      font-size: 1.05rem;
-      color: #1e293b;
-      margin-bottom: 6px;
-    }
-
-    .upload-sub {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-    }
-
-    .preview-container {
-      display: none;
-      margin-top: 20px;
-      text-align: center;
-    }
-
-    .preview-img {
-      max-width: 100%;
-      max-height: 360px;
-      border-radius: 10px;
-      border: 1.5px solid var(--border);
-      box-shadow: var(--shadow);
-    }
-
-    .btn-submit-work {
-      background: linear-gradient(135deg, #4f46e5, #6366f1);
-      color: white;
-      border: none;
-      padding: 12px 28px;
-      border-radius: 10px;
-      font-weight: 700;
-      font-size: 1rem;
-      cursor: pointer;
-      margin-top: 16px;
-      box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
-      transition: all 0.2s;
-    }
-
-    .btn-submit-work:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 16px rgba(79, 70, 229, 0.4);
-    }
-
     /* Rubric Table */
     .rubric-table {
       width: 100%;
@@ -564,7 +496,6 @@
 </div>
 
 <script>
-  let selectedFile = null;
   let scores = { c1: null, c2: null, c3: null };
 
   const audioCtx = new (window.AudioContext || window.webkitAudioContext)();

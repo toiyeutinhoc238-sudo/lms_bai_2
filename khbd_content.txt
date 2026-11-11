@@ -21,8 +21,24 @@ quyết định và kết quả học tập của mình, không đổ lỗi cho 
 hỗ trợ.
 
 2. Thiết bị dạy học và học liệu
-2.1. Giáo viên
-2.2. Học sinh
+2.1. Giáo viên:
+- Thiết bị: Máy tính cá nhân kết nối Internet tốc độ cao, tài khoản Quản trị viên/Giáo viên trên hệ thống LMS (Moodle / Canvas / Cohota).
+- Nền tảng: Không gian lớp học ảo SchoolAI (chế độ bảo mật an toàn K-12, Zero-PII), hệ thống lưu trữ Google Drive phân quyền nộp bài cho học sinh.
+- BẢNG DANH MỤC HỌC LIỆU SỐ TRIỂN KHAI (Dành cho Ban giám hiệu/Thanh tra/Giảng viên kiểm tra hạ tầng công nghệ của bài học kết hợp Blended Learning):
+
+| STT | Tên học liệu số | Nền tảng / Định dạng | Vị trí sử dụng | Mô tả chức năng & Đường dẫn |
+| :---: | :--- | :--- | :--- | :--- |
+| **1** | **Khảo sát đầu giờ & Diễn đàn khởi động** | LMS Discussion Forum / HTML5 Widget | Tiết 1 (HĐ 1 - 5 phút) | Thu thập ý kiến ban đầu; kích hoạt nhu cầu sử dụng AI; khảo sát khó khăn khi làm bài tập & mong muốn trợ lý ảo; cam kết Netiquette an toàn thông tin.<br>👉 *Đường dẫn:* `hoc_lieu_1_dien_dan_khoi_dong.html` |
+| **2** | **Gói Video tương tác & Infographic tóm tắt** | Chuẩn SCORM 1.2 / H5P Interactive Video (06:27) & Infographic Web | Tiết 1 (HĐ 2 - 15 phút) | Khóa tua nhanh (tua tiến); tự động dừng tại 3 mốc neo Checkpoint Quiz (03:10, 04:40, 05:40) để kiểm tra nhận thức; tự động đồng bộ kết quả (thang 100đ) vào Sổ điểm Gradebook LMS.<br>👉 *Tệp nguồn:* `SCORM_KyThuatVietPrompt_TinHoc6.zip`<br>👉 *Đường dẫn:* `hoc_lieu_2_video_infographic_tuong_tac.html` |
+| **3** | **Trạm trải nghiệm GenAI an toàn K-12 & Poster Cẩm nang 4 KHÔNG** | Web App (SchoolAI Space) + Poster HTML5/PNG | Tiết 1 (HĐ 3 - 15 phút) | Trạm GenAI đạt chuẩn bảo vệ quyền riêng tư quốc tế COPPA/FERPA duy nhất cho lứa tuổi 11; bảo mật Zero-PII (tham gia bằng Room Code, không cần tài khoản cá nhân); GV giám sát và can thiệp sư phạm thời gian thực (Live Dashboard).<br>👉 *Đường dẫn:* `hoc_lieu_3_cong_cu_genai_an_toan.html` / `https://schoolai.com` |
+| **4** | **Cổng nộp bài Assignment & Bảng Rubric tương tác 10 điểm** | LMS Assignment / Google Drive Folder + Web Rubric điện tử & PDF A4 | Tiết 1 (HĐ 3 - 15 phút) | Thu nhận ảnh chụp màn hình minh chứng câu lệnh AI; GV chấm bài 1 chạm theo Rubric 3 tiêu chí (Cấu trúc 5đ, Ngôn từ 3đ, Ảnh minh chứng 2đ); phản hồi tự động.<br>👉 *Đường dẫn Web:* `hoc_lieu_4_nop_bai_assignment_rubric.html`<br>👉 *Thư mục Drive nộp bài:* [Google Drive Submission](https://drive.google.com/drive/folders/1N4MIlx9gx_LnO4LPmdAuCpQcMtHokwr3?usp=sharing) |
+| **5** | **Công cụ Blog / Nhật ký học tập & Bảng Rubric đánh giá tự chủ** | LMS Blog/Glossary / Google Drive Folder + Web Rubric điện tử & PDF A4 | Tiết 1 (HĐ 4 - 10 phút) | Nơi học sinh tóm tắt 3-5 câu bằng văn phong cá nhân; rèn luyện tính tự chủ và tinh thần trách nhiệm (không sao chép/copy-paste); chấm theo Rubric 10 điểm (Tính tự chủ 5đ, Dung lượng 3đ, Trình bày 2đ).<br>👉 *Đường dẫn Web:* `hoc_lieu_5_blog_nhat_ky_glossary_rubric.html`<br>👉 *Thư mục Drive Nhật ký:* [Google Drive Journal](https://drive.google.com/drive/folders/1o0Y7hb1UQcuXPTsVk3z-EUYB_Ed6e0vp?usp=sharing) |
+| **6** | **Hồ sơ khảo thí: Bộ phiếu Rubric chuẩn A4 & File cấu hình LMS** | Printable HTML A4 / PDF Vector / Cấu hình JSON `Rubric_LMS_TinHoc6.json` | Hồ sơ bài dạy & Chấm thi thực hành | Bản in chuẩn A4 dùng cho GV chấm chéo / chấm phòng máy và file nạp cấu hình tiêu chí tự động vào Moodle / Canvas / K12Online.<br>👉 *Đường dẫn:* `phieu_rubric_va_danh_gia.html` |
+
+2.2. Học sinh:
+- Thiết bị học tập: Máy tính để bàn, laptop hoặc máy tính bảng/điện thoại thông minh có kết nối Internet ổn định, có trình duyệt web và chức năng chụp ảnh màn hình (screenshot).
+- Tài nguyên: Tài khoản học sinh trên hệ thống LMS của trường, mã phòng học (Room Code) do giáo viên cấp trên SchoolAI.
+- Học liệu kèm theo: Sách chuyên đề Tin học 6 (hoặc Vở ghi chép cá nhân).
 3. Tiến trình dạy học
 3.1. Tiến trình dạy học
 Hoạt động học
@@ -307,83 +323,187 @@ bằng văn phong của
 mình.
 
 3.2. Các hoạt động học
-Hoạt động 1. Khởi động (Trực tuyến không đồng bộ - 5 phút)
-a. Mục tiêu: (2).
-b. Nội dung: Khơi gợi nhu cầu sử dụng AI thông qua Diễn đàn (Forum) trên LMS.
-GV đặt câu hỏi: "Khi gặp một bài tập khó ở nhà, em thường làm gì? Nếu có một 'trợ
-lý ảo AI', em sẽ muốn hỏi nó điều gì nhất?"
-c. Sản phẩm: Ít nhất 1 bình luận trả lời của mỗi học sinh trên Diễn đàn.
-d. Tổ chức thực hiện:
-●​ Bước 1: Chuyển giao nhiệm vụ: GV đăng câu hỏi chủ đề trên Forum của
-LMS và thiết lập thời hạn hoàn thành. Yêu cầu học sinh vào đọc và phản hồi.
-●​ Bước 2: Thực hiện nhiệm vụ: HS chủ động đăng nhập LMS bằng thiết bị cá
-nhân, suy nghĩ, liên hệ thực tiễn và gõ câu trả lời lên Diễn đàn.
-●​ Bước 3: Báo cáo, thảo luận: Hệ thống LMS hiển thị công khai các bình luận.
-HS có thể đọc và tương tác với câu trả lời của các bạn trong lớp.
-●​ Bước 4: Kết luận, nhận định: Hệ thống tự động ghi nhận lượt tham gia (LMS
-log) để đánh giá chuyên cần. GV duyệt qua các câu trả lời để tạo sự kết nối,
-dẫn dắt vào bài học mới.
-Hoạt động 2. Hình thành kiến thức mới - "Bí kíp giao tiếp với AI" (Trực tuyến 15 phút)
-a. Mục tiêu: (6.A3.2), (1), (3).
-b. Nội dung: Học sinh xem Video/Infographic tương tác hướng dẫn kỹ thuật viết
-Prompt. Nắm được lợi ích của AI khi dùng đúng cách, cách AI phản hồi theo ngữ
-cảnh và công thức viết Prompt: Đóng vai + Nhiệm vụ + Bối cảnh.
-c. Sản phẩm: Kết quả bài tập trắc nghiệm ngắn (pop-up quiz) tích hợp trong video
-(VD: Chọn đáp án đúng cho một cấu trúc prompt chuẩn).
 
-d. Tổ chức thực hiện:
-●​ Bước 1: Chuyển giao nhiệm vụ: GV nhúng Gói SCORM Video/Infographic
-tương tác (dùng H5P hoặc Edpuzzle) lên LMS. Yêu cầu HS xem tài liệu và trả
-lời các câu hỏi xuất hiện giữa chừng.
-●​ Bước 2: Thực hiện nhiệm vụ: HS tự truy cập và xem bài giảng. Khi video
-dừng lại, HS vận dụng kiến thức vừa nghe để trả lời câu hỏi trắc nghiệm
-(pop-up) mới có thể xem tiếp.
-●​ Bước 3: Báo cáo, thảo luận: Tiến độ hoàn thành video và điểm số trắc nghiệm
-của từng cá nhân được đồng bộ thẳng vào sổ điểm điện tử của LMS.
-●​ Bước 4: Kết luận, nhận định: GV kiểm tra báo cáo tự động trên hệ thống,
-đánh giá mức độ hiểu bài của HS thông qua kết quả trắc nghiệm và có phương
-án hỗ trợ kịp thời cho HS điểm thấp.
-Hoạt động 3. Luyện tập - Thực hành "Hỏi đúng - Trúng đáp án" (Trực tuyến 15 phút)
-a. Mục tiêu: (6.A3.2), (2), (3).
-b. Nội dung: HS truy cập công cụ GenAI an toàn (như EduChat) để thực hành viết 1
-câu lệnh (prompt) hỏi về một chủ đề môn học (Lịch sử/KHTN) áp dụng đúng công
-thức: Đóng vai + Nhiệm vụ + Bối cảnh.
-c. Sản phẩm: 01 file ảnh chụp màn hình (screenshot) thể hiện rõ câu lệnh của HS và
-câu trả lời của AI, tải lên mục Assignment trên LMS.
+1. HOẠT ĐỘNG 1: KHỞI ĐỘNG (Trực tuyến không đồng bộ trên LMS) - 5 phút
+a. Mục tiêu: (2), (3) Khơi gợi nhu cầu học hỏi, kích hoạt kiến thức nền từ Bài 1 (AI do con người tạo ra để hỗ trợ con người), hình thành ý thức chủ động và an toàn thông tin khi tiếp cận công cụ AI.
+b. Nội dung: HS truy cập Diễn đàn (Forum) trên LMS, đọc tình huống khơi gợi và trả lời 2 câu hỏi khảo sát ngắn:
+(1) Khi gặp một bài tập khó ở nhà mà chưa có người hướng dẫn, em thường làm gì để tìm sự trợ giúp?
+(2) Nếu có một "Trợ lý ảo AI" thông minh bên cạnh 24/7, câu hỏi đầu tiên em muốn nhờ bạn ấy giải đáp là gì?
+c. Sản phẩm: Ý tưởng trả lời được nháp ngắn gọn trong Sách chuyên đề và ít nhất 01 bình luận (comment) phản hồi của mỗi học sinh trên Diễn đàn LMS.
 d. Tổ chức thực hiện:
-●​ Bước 1: Chuyển giao nhiệm vụ: GV cung cấp link công cụ GenAI và công cụ
-Nộp bài (Assignment) trên LMS. Yêu cầu HS đặt câu hỏi cho AI theo công
-thức đã học, chụp màn hình minh chứng và nộp lên hệ thống.
-●​ Bước 2: Thực hiện nhiệm vụ: HS truy cập công cụ AI, soạn câu lệnh kĩ lưỡng
-(VD: "Đóng vai một nhà khoa học, hãy giải thích hiện tượng nhật thực..."),
-nhấn gửi và nhận kết quả.
+Bước 1: GV chuyển giao nhiệm vụ học tập
+   ➤ Nhiệm vụ 1: Chia sẻ thực tế và mong muốn về "Trợ lý ảo AI"
+   - GV thiết lập chủ đề thảo luận trên Diễn đàn của hệ thống LMS và thông báo qua nhóm lớp yêu cầu học sinh hoàn thành trước khi bắt đầu bài học.
+   - GV yêu cầu HS đọc và trả lời 2 câu hỏi trên Diễn đàn:
+     “Chào các em học sinh lớp 6 thân mến! Đã bao giờ các em ngồi vào bàn học lúc tối muộn và gặp phải một bài tập khó, hay một câu hỏi tò mò về thế giới mà lúc đó chưa biết hỏi ai chưa? Hãy tưởng tượng ngay lúc này bên cạnh em có một 'Trợ lý ảo AI' thông minh luôn sẵn sàng lắng nghe và trò chuyện cùng em 24/7. Em hãy bấm nút 'Phản hồi/Trả lời' (Reply) bên dưới và chia sẻ với Thầy/Cô cùng cả lớp 2 câu hỏi sau nhé:
+     Câu 1: Khi gặp một bài tập khó ở nhà, em thường làm gì để tìm sự trợ giúp?
+     Câu 2: Nếu được tặng một 'Trợ lý ảo AI', câu hỏi đầu tiên mà em muốn nhờ bạn ấy giải đáp là gì?”
+   - GV lưu ý quy tắc giao tiếp: Viết tiếng Việt có dấu, dùng từ ngữ văn minh, lịch sự; tuyệt đối KHÔNG nhập thông tin cá nhân (họ tên đầy đủ, ngày sinh, SĐT, địa chỉ nhà, mật khẩu).
+   ✔ Dự kiến câu trả lời:
+   - Nháp ý tưởng trong Sách học sinh: HS gạch đầu dòng nhanh 1-2 ý chính (Hỏi bố mẹ, tra Google / toán đố, khủng long).
+   - Phản hồi chính thức trên Diễn đàn LMS:
+     + Câu 1: Học sinh chia sẻ theo thói quen thực tế:
+       * "Khi gặp bài tập khó, em thường hỏi bố mẹ hoặc anh chị lớn trong nhà."
+       * "Em nhắn tin qua Zalo hỏi bạn cùng bàn hoặc xem lại ví dụ trong sách giáo khoa."
+       * "Em lên mạng gõ tìm kiếm trên Google hoặc xem video bài giảng trên YouTube."
+     + Câu 2: Học sinh nêu câu hỏi theo sở thích và trí tò mò:
+       * "Em muốn hỏi AI cách giải các bài toán đố vui hình học lớp 6."
+       * "Em muốn hỏi AI vì sao loài khủng long lại bị tuyệt chủng và Trái Đất hình thành như thế nào."
+       * "Em muốn hỏi AI cách viết một đoạn văn miêu tả con mèo thật sinh động."
+       * (Tình huống đặc biệt: Một số học sinh trả lời ngây ngô: "Em muốn nhờ AI giải hộ hết bài tập về nhà môn Toán để em được đi chơi sớm" -> Tạo dữ liệu sư phạm đắt giá để GV dẫn dắt vào Hoạt động 2: AI là gia sư đồng hành hướng dẫn phương pháp, không phải công cụ làm bài hộ).
 
-●​ Bước 3: Báo cáo, thảo luận: HS thao tác chụp màn hình đoạn chat và tải file
-ảnh lên mục Assignment của LMS đúng hạn.
-●​ Bước 4: Kết luận, nhận định: GV chấm điểm các bài nộp dựa trên Rubric
-đánh giá được cài đặt sẵn (Tiêu chí: Câu lệnh rõ ràng, đúng cấu trúc). Trả điểm
-và nhận xét (Feedback) cho HS.
-Hoạt động 4. Vận dụng - "Nhà báo nhí tổng hợp tin tức" (Trực tuyến - 10 phút)
-a. Mục tiêu: (6.A3.2), (4).
-b. Nội dung: Học sinh đọc hiểu kết quả mà AI cung cấp ở Hoạt động 3, không
-copy-paste nguyên văn mà tự chắt lọc thông tin và viết lại bằng văn phong của mình
-để rèn luyện tính tự chịu trách nhiệm.
-c. Sản phẩm: 01 đoạn văn ngắn (3-5 câu) tóm tắt kiến thức mới trên Blog hoặc Nhật
-ký (Glossary) của LMS.
+   ➤ Nhiệm vụ 2: Đọc và tương tác với bài viết của bạn bè trên Diễn đàn
+   - GV yêu cầu HS đọc ít nhất 1 bài viết của bạn trong lớp và thả biểu tượng cảm xúc (like, tim) hoặc viết bình luận phản hồi tích cực.
+   ✔ Dự kiến câu trả lời:
+   - "Câu hỏi về khủng long của bạn thú vị quá, mình cũng tò mò giống bạn nè!"
+   - "Ý kiến của bạn rất hay, chúng mình cùng nhờ AI hướng dẫn học tốt nhé!"
+Bước 2: Thực hiện nhiệm vụ:
+HS sử dụng thiết bị cá nhân (máy tính hoặc điện thoại), đăng nhập tài khoản LMS.
+HS mở sách chuyên đề để nháp nhanh ý tưởng vào khung trống trước khi gõ câu trả lời chính thức lên Diễn đàn.
+Bước 3: Báo cáo, thảo luận:
+Hệ thống LMS hiển thị công khai bài đăng của các học sinh.
+HS đọc câu trả lời của các bạn trong lớp, tương tác thả tim hoặc bình luận trao đổi.
+Bước 4: Kết luận, nhận định:
+Hệ thống tự động ghi nhận lượt tham gia (LMS log) để đánh giá chuyên cần.
+GV duyệt qua các bài đăng, chọn ra 2-3 câu hỏi thú vị nhất của học sinh để tạo sự kết nối, dẫn dắt vào bài mới: "Để AI trở thành người bạn đồng hành đắc lực trả lời đúng ý em nhất, chúng ta cần nắm được bí kíp giao tiếp với AI ở Hoạt động 2!"
+
+2. HOẠT ĐỘNG 2: HÌNH THÀNH KIẾN THỨC MỚI - "BÍ KÍP GIAO TIẾP VỚI AI: KỸ THUẬT VIẾT PROMPT" (Trực tuyến trên LMS - 15 phút)
+a. Mục tiêu: (1), (3) Trình bày được nguyên lý hoạt động của AI (phản hồi theo ngữ cảnh con người cung cấp); phân biệt được câu lệnh Prompt yếu và Prompt chuẩn; nắm vững Công thức Vàng 3 thành phần để ra lệnh cho AI: [Đóng vai] + [Nhiệm vụ] + [Bối cảnh].
+b. Nội dung: HS xem Video tương tác SCORM (thời lượng 06 phút 27 giây). Video giải thích khái niệm Prompt, so sánh ví dụ trực quan "Viết về măng" vs "Viết 3 câu bán măng sạch", hướng dẫn 3 mẹo cốt lõi (Bối cảnh, Vai trò, Yêu cầu) và ví dụ thực hành bác nông dân trồng sâm trên Gemini. HS trả lời 3 câu hỏi trắc nghiệm dừng video (Checkpoints) để mở khóa tiến trình.
+c. Sản phẩm: Tiến trình xem video đạt 100%, điểm số trắc nghiệm SCORM đạt tối thiểu 80/100 điểm và phần ghi chú công thức Prompt điền hoàn thiện vào "Hộp kiến thức" trong sách.
 d. Tổ chức thực hiện:
-●​ Bước 1: Chuyển giao nhiệm vụ: GV tạo mục Blog trên LMS. Giao nhiệm vụ:
-"Hãy viết lại điều em vừa học được từ AI. Yêu cầu tuyệt đối không copy-paste
-nguyên văn để thể hiện trách nhiệm với bài làm cá nhân!".
-●​ Bước 2: Thực hiện nhiệm vụ: HS đọc kỹ kết quả trả về của AI ở Hoạt động 3,
-suy nghĩ, chắt lọc ý chính và tự gõ tóm tắt lên Blog.
-●​ Bước 3: Báo cáo, thảo luận: Bài đăng của học sinh được lưu giữ công khai
-trên hệ thống, tạo thành một cuốn nhật ký học tập chung của lớp.
-●​ Bước 4: Kết luận, nhận định: GV dùng Rubric đánh giá bài đăng của HS
-(Tiêu chí: Diễn đạt bằng ngôn ngữ riêng, tự chịu trách nhiệm kết quả, không
-sao chép). Hệ thống ghi nhận điểm và GV gửi tin nhắn khích lệ lớp hoàn thành
-chuyên đề.
+Bước 1: GV chuyển giao nhiệm vụ học tập
+   ➤ Nhiệm vụ 1: Xem Video tương tác và trả lời 3 câu hỏi trắc nghiệm dừng video (Checkpoints)
+   - GV cấu hình gói SCORM Video tương tác trên hệ thống LMS (thời lượng 06 phút 27 giây).
+   - GV yêu cầu HS xem kỹ video bài giảng, suy nghĩ và trả lời đúng 3 câu hỏi trắc nghiệm xuất hiện tại các điểm dừng (Checkpoints) để mở khóa tiến trình xem tiếp:
+     + Câu hỏi 1 (tại mốc 03:10 - Cuối Phần 2 so sánh câu lệnh bán măng):
+       “Qua ví dụ so sánh ở Phần 2 giữa câu lệnh 'Viết về măng' và 'Viết 3 câu bán măng sạch', vì sao câu lệnh thứ hai lại giúp AI trả lời hữu ích hơn?”
+        A. Vì câu lệnh thứ hai ngắn hơn và dùng dấu chấm than.
+        B. Vì câu lệnh thứ hai giao việc rõ ràng, nêu cụ thể số lượng (3 câu) và mục đích sử dụng (để bán hàng) thay vì yêu cầu chung chung.
+        C. Vì AI tự ý bỏ qua câu lệnh thứ nhất do đường truyền mạng chập chờn.
+     + Câu hỏi 2 (tại mốc 04:40 - Cuối Phần 3 giới thiệu 3 mẹo cốt lõi):
+       “Theo bài giảng trong video, công thức gồm 3 mẹo cốt lõi để viết một câu Prompt chuẩn xác cho AI bao gồm những thành phần nào?”
+        A. Bối cảnh (Context) + Vai trò (Role) + Yêu cầu và định dạng cụ thể (Task).
+        B. Tên dòng điện thoại + Họ tên người dùng + Mật khẩu tài khoản.
+        C. Lời khen AI thông minh + Thời gian chờ đợi + Lời cảm ơn.
+     + Câu hỏi 3 (tại mốc 05:40 - Cuối Phần 4 thực hành ví dụ nông dân trồng sâm trên Gemini):
+       “Trong câu prompt thực hành ở Phần 4: 'Tôi là nông dân mới trồng sâm. Hãy đóng vai một chuyên gia nông nghiệp. Viết 3 gạch đầu dòng những lưu ý quan trọng nhất về tưới nước cho cây sâm 1 năm tuổi', đoạn nào thể hiện yếu tố BỐI CẢNH (Context)?”
+        A. 'Hãy đóng vai một chuyên gia nông nghiệp'
+        B. 'Tôi là nông dân mới trồng sâm'
+        C. 'Viết 3 gạch đầu dòng những lưu ý quan trọng nhất'
+   ✔ Dự kiến câu trả lời:
+   - Câu hỏi 1 (mốc 03:10): Chọn phương án B (Học sinh đạt 35 điểm). Ý nghĩa: AI không tự đoán ý người dùng; giao việc cụ thể về số lượng và mục đích sẽ nhận được câu trả lời đúng đích.
+   - Câu hỏi 2 (mốc 04:40): Chọn phương án A (Học sinh đạt 35 điểm). Ý nghĩa: HS ghi nhớ Công thức Vàng 3 mẹo cốt lõi gồm Bối cảnh + Vai trò + Yêu cầu/Nhiệm vụ cụ thể.
+   - Câu hỏi 3 (mốc 05:40): Chọn phương án B (Học sinh đạt 30 điểm). Ý nghĩa: 'Tôi là nông dân mới trồng sâm' cung cấp ngữ cảnh thực tế, giúp AI tư vấn chính xác, sát sườn.
+
+   ➤ Nhiệm vụ 2: Điền Công thức Vàng viết Prompt vào Sách học sinh
+   - GV yêu cầu HS mở Sách chuyên đề/vở ghi, điền hoàn thiện 3 thành phần của công thức ra lệnh cho AI vào mục "Hộp kiến thức".
+   ✔ Dự kiến câu trả lời:
+   - Nội dung điền vào Hộp kiến thức:
+     Công thức viết Prompt chuẩn = [Đóng vai (Role)] + [Nhiệm vụ (Task)] + [Bối cảnh / Điều kiện (Context)].
+Bước 2: Thực hiện nhiệm vụ:
+HS tự học trên máy tính hoặc điện thoại có kết nối mạng.
+HS theo dõi video, khi video dừng lại tại các mốc, HS suy ngẫm và chọn đáp án chính xác.
+Đồng thời, HS mở sách chuyên đề để điền các thành phần của công thức viết Prompt vào Hộp kiến thức.
+Bước 3: Báo cáo, thảo luận:
+Hệ thống SCORM tự động chấm điểm và đồng bộ kết quả (thang điểm 100) vào Sổ điểm điện tử của LMS.
+Bước 4: Kết luận, nhận định:
+GV kiểm tra báo cáo tự động trên LMS, tuyên dương những em đạt 100 điểm ngay lần xem đầu tiên; nhắc nhở và hỗ trợ kỹ thuật cho các em chưa đạt mốc 80 điểm để chuẩn bị cho phần thực hành viết Prompt ở Hoạt động 3.
+
+3. HOẠT ĐỘNG 3: LUYỆN TẬP - THỰC HÀNH "HỎI ĐÚNG - TRÚNG ĐÁP ÁN" (Trực tuyến trên LMS - 15 phút)
+a. Mục tiêu: (2), (3) Vận dụng Công thức Vàng 3 thành phần để tự viết 1 câu lệnh Prompt hoàn chỉnh trên công cụ GenAI an toàn (SchoolAI); biết bảo vệ dữ liệu cá nhân (Cẩm nang 4 KHÔNG); chụp ảnh màn hình minh chứng và nộp bài lên hệ thống.
+b. Nội dung: HS nhận Room Code của lớp, đăng nhập nền tảng SchoolAI, thực hành viết Prompt hỏi AI về 1 trong 3 chủ đề môn học lớp 6 (Lịch sử, KHTN, Địa lý), chụp ảnh màn hình đoạn chat và tải tệp ảnh lên Thư mục Google Drive của lớp.
+c. Sản phẩm: Bản nháp cấu trúc Prompt (3 yếu tố) trong Sách chuyên đề và 01 tệp ảnh chụp màn hình (.png hoặc .jpg) thể hiện rõ cả câu lệnh của HS và phản hồi của AI, nộp vào Thư mục Google Drive của lớp (được chấm theo Rubric 10 điểm).
+d. Tổ chức thực hiện:
+Bước 1: GV chuyển giao nhiệm vụ học tập
+   ➤ Nhiệm vụ 1: Truy cập Trạm AI an toàn SchoolAI bằng Room Code và tuân thủ Cẩm nang 4 KHÔNG
+   - GV cung cấp Room Code của lớp học trên LMS và đường liên kết truy cập SchoolAI.
+   - GV yêu cầu HS đăng nhập vào phòng học và quán triệt Cẩm nang 4 KHÔNG: “Các em truy cập vào nền tảng SchoolAI bằng mã phòng học do Thầy/Cô cấp. Nhớ kỹ Cẩm nang 4 KHÔNG: Tuyệt đối không nhập thông tin cá nhân (họ tên đầy đủ, ngày sinh, số điện thoại, địa chỉ nhà, trường lớp, mật khẩu) vào ô chat của AI!”
+   ✔ Dự kiến câu trả lời / Sản phẩm:
+   - 100% học sinh đăng nhập thành công vào không gian SchoolAI của lớp bằng Room Code mà không để lộ thông tin định danh cá nhân (Zero-PII).
+
+   ➤ Nhiệm vụ 2: Phác thảo và gửi câu lệnh Prompt theo Công thức Vàng 3 thành phần
+   - GV yêu cầu HS chọn 1 trong 3 chủ đề môn học lớp 6 và soạn câu lệnh gửi cho AI:
+     + Chủ đề 1 (Lịch sử 6): Ý nghĩa của Chiến thắng Bạch Đằng năm 938 do Ngô Quyền lãnh đạo.
+     + Chủ đề 2 (Khoa học tự nhiên 6): Vì sao Mặt Trăng lúc tròn lúc khuyết.
+     + Chủ đề 3 (Địa lí 6): Nguyên nhân xảy ra hiện tượng ngày và đêm luân phiên trên Trái Đất.
+     + Yêu cầu cấu trúc: [Đóng vai] + [Nhiệm vụ] + [Bối cảnh / Điều kiện (cho HS lớp 6, ngắn gọn)].
+   ✔ Dự kiến câu trả lời / Sản phẩm:
+   - Bản nháp cấu trúc trong Sách học sinh:
+     + Ai (Đóng vai): Cô giáo Lịch sử / Nhà khoa học vũ trụ / Hướng dẫn viên Trái Đất.
+     + Làm gì (Nhiệm vụ): Giải thích ý nghĩa chiến thắng Bạch Đằng 938 / Giải thích hiện tượng Mặt Trăng tròn khuyết / Giải thích hiện tượng ngày đêm luân phiên.
+     + Bối cảnh: Dành cho học sinh lớp 6, ngắn gọn dễ hiểu từ 3-4 câu.
+   - Câu Prompt mẫu của học sinh:
+     + Ví dụ 1 (Chủ đề Lịch sử 6): "Đóng vai một cô giáo Lịch sử, hãy giải thích ý nghĩa của chiến thắng Bạch Đằng năm 938 cho học sinh lớp 6 nghe trong khoảng 4 câu ngắn gọn, dễ hiểu nhé!"
+     + Ví dụ 2 (Chủ đề KHTN 6): "Đóng vai một nhà khoa học vũ trụ, hãy giải thích vì sao Mặt Trăng lúc tròn lúc khuyết cho học sinh lớp 6 hiểu trong 3 câu vui nhộn."
+     + Ví dụ 3 (Chủ đề Địa lí 6): "Đóng vai một hướng dẫn viên Trái Đất, hãy giải thích hiện tượng ngày và đêm luân phiên cho học sinh lớp 6 trong 4 câu ngắn gọn."
+   - Phản hồi dự kiến nhận được từ AI (hiển thị trong ảnh chụp màn hình):
+     "Chào em! Cô rất vui được giải thích cho em. Chiến thắng Bạch Đằng năm 938 do Ngô Quyền lãnh đạo là một mốc son chói lọi trong lịch sử dân tộc ta. Nhờ kế sách cắm cọc gỗ nhọn xuống lòng sông và lợi dụng quy luật thủy triều, quân ta đã nhấn chìm toàn bộ chiến thuyền của giặc Nam Hán. Chiến thắng vang dội này đã chấm dứt hơn một nghìn năm Bắc thuộc, mở ra thời kỳ độc lập lâu dài cho non sông đất nước ta!"
+
+   ➤ Nhiệm vụ 3: Chụp ảnh màn hình minh chứng và nộp vào Thư mục Google Drive
+   - GV hướng dẫn: "Sau khi AI trả lời, em hãy chụp ảnh màn hình thấy rõ cả câu hỏi của em và phần trả lời của AI. Đổi tên tệp thành [Họ và tên] - [Lớp] - Prompt.png (Ví dụ: NguyenVanAn_6A_Prompt.png) và bấm nút mở Thư mục Google Drive để nộp bài."
+   ✔ Dự kiến câu trả lời / Sản phẩm:
+   - 01 tệp ảnh chụp màn hình .png hoặc .jpg sắc nét, thấy trọn vẹn cả câu lệnh và câu trả lời, đạt chuẩn Rubric 10 điểm (Cấu trúc 5đ, Ngôn từ 3đ, Ảnh 2đ).
+Bước 2: Thực hiện nhiệm vụ:
+HS sử dụng khung kẻ sẵn trong sách để phác thảo cấu trúc câu lệnh (Ai - Làm gì - Bối cảnh).
+Sau khi nháp xong, HS đăng nhập SchoolAI qua Room Code, gõ lại câu lệnh hoàn chỉnh, bấm gửi và nhận phản hồi từ AI.
+Bước 3: Báo cáo, thảo luận:
+HS chụp màn hình đoạn chat, lưu tệp và tải lên Thư mục Google Drive của lớp đúng hạn quy định.
+Bước 4: Kết luận, nhận định:
+GV chấm điểm bài nộp dựa trên Bảng Rubric 10 điểm (Cấu trúc prompt 5đ, Ngôn từ lịch sự 3đ, Ảnh minh chứng 2đ).
+GV trả điểm và gửi lời nhận xét (Feedback) cá nhân hóa cho học sinh trên hệ thống.
+
+4. HOẠT ĐỘNG 4: VẬN DỤNG - "NHÀ BÁO NHÍ TỔNG HỢP TIN TỨC" (Trực tuyến trên LMS - 10 phút)
+a. Mục tiêu: (4) Rèn luyện năng lực tự chủ và tự học (tự diễn đạt lại kiến thức học được từ AI bằng chính văn phong của mình); hình thành phẩm chất Trách nhiệm (tự chịu trách nhiệm về kết quả, tuyệt đối không sao chép máy móc / copy-paste từ AI).
+b. Nội dung: HS đọc lại thông tin do AI cung cấp ở Hoạt động 3, gấp cửa sổ chat lại, tự chắt lọc thông tin và viết 1 đoạn văn tóm tắt ngắn từ 3 đến 5 câu theo văn phong của chính mình, sau đó nộp vào Thư mục Google Drive Nhật ký học tập của lớp.
+c. Sản phẩm: Đoạn văn tóm tắt được viết tay trực tiếp vào góc "Nhà báo nhí" trong Sách chuyên đề và bài viết nộp lên Thư mục Google Drive Nhật ký học tập của lớp (được chấm theo Rubric 10 điểm).
+d. Tổ chức thực hiện:
+Bước 1: GV chuyển giao nhiệm vụ học tập
+   ➤ Nhiệm vụ 1: Đóng vai Nhà báo nhí, tự tóm tắt kiến thức đã học từ AI bằng lời văn của mình
+   - GV giao nhiệm vụ chi tiết:
+     “Các em vừa hoàn thành buổi phỏng vấn Trợ lý AI ở Hoạt động 3. Bây giờ, em hãy đóng vai một 'Nhà báo nhí' để viết một bản tin học tập chia sẻ điều em đã học thêm được:
+     1. Đọc lại nội dung câu trả lời của AI ở bài trước.
+     2. Gấp màn hình chat lại! Tự suy nghĩ và viết một đoạn văn ngắn từ 3 đến 5 câu tóm tắt lại kiến thức bằng chính văn phong của em.
+     3. 🚨 QUY TẮC TỰ CHỦ VÀ TRÁCH NHIỆM: Tuyệt đối KHÔNG sao chép (copy-paste) nguyên văn câu chữ của AI. Em phải tự diễn đạt bằng lời văn của mình để rèn luyện tính trung thực và tinh thần trách nhiệm!”
+   ✔ Dự kiến câu trả lời:
+   - Đoạn viết tay nháp trong Sách học sinh & bài nộp chính thức:
+     + Ví dụ 1 (Chủ đề Lịch sử 6):
+       Tiêu đề bài viết: "Điều em học được về cọc gỗ Bạch Đằng năm 938"
+       Nội dung bài viết (Vừa vặn 4 câu, giọng văn trong sáng của học sinh lớp 6):
+       "Sau khi trò chuyện với trợ lý AI, em đã hiểu rõ hơn về mưu kế cắm cọc gỗ trên sông Bạch Đằng năm 938 của Ngô Quyền. Nhờ biết tính con nước thủy triều lên xuống, quân ta đã nhử thuyền chiến của giặc Nam Hán vào bãi cọc và giành thắng lợi vang dội. Chiến thắng lịch sử này đã chấm dứt hơn 1.000 năm Bắc thuộc và mở ra thời kỳ độc lập lâu dài cho dân tộc ta. Em rất tự hào về trí tuệ và sự dũng cảm của cha ông mình!"
+     + Ví dụ 2 (Chủ đề KHTN 6):
+       Tiêu đề bài viết: "Bí mật đằng sau ánh trăng tròn khuyết"
+       Nội dung bài viết (Vừa vặn 3 câu, diễn đạt theo cách hiểu cá nhân):
+       "Trợ lý AI đã giúp em hiểu lý do Mặt Trăng lúc tròn lúc khuyết là do góc nhìn từ Trái Đất đối với phần Mặt Trăng được Mặt Trời chiếu sáng thay đổi theo từng ngày trong tháng. Bản thân Mặt Trăng không tự phát ra ánh sáng mà chỉ phản chiếu ánh sáng Mặt Trời như một chiếc gương khổng lồ. Nhờ AI giải thích ngắn gọn, em thấy môn Khoa học tự nhiên kỳ thú hơn rất nhiều!"
+     + Tình huống dự kiến cần uốn nắn: Học sinh copy-paste nguyên văn câu chữ bác học của AI -> GV dựa vào Rubric cho 0 điểm ở tiêu chí Tính tự chủ và gửi nhận xét nhắc nhở học sinh viết lại bằng lời văn của mình.
+
+   ➤ Nhiệm vụ 2: Đặt tên và nộp bài vào Thư mục Google Drive Nhật ký học tập
+   - GV yêu cầu: HS lưu bài viết theo cú pháp [Họ và tên] - [Lớp] - NhatKyHocTap và bấm nút mở Thư mục Google Drive của lớp để nộp bài.
+   ✔ Dự kiến câu trả lời / Sản phẩm:
+   - 01 bài tóm tắt chuẩn dung lượng từ 3-5 câu, không sao chép máy móc, đạt điểm Tối đa theo Bảng Rubric 10 điểm (Tính tự chủ 5đ, Dung lượng 3đ, Trình bày chính tả 2đ).
+Bước 2: Thực hiện nhiệm vụ:
+HS đọc kỹ phản hồi của AI ở Hoạt động 3, suy ngẫm, chắt lọc các ý chính quan trọng.
+HS viết tay đoạn tóm tắt (3-5 câu) vào góc "Nhà báo nhí" trong sách chuyên đề, sau đó quét mã QR hoặc bấm link truy cập để gõ lại bài viết và nộp vào Thư mục Google Drive của lớp.
+Bước 3: Báo cáo, thảo luận:
+Bài viết của học sinh được lưu giữ công khai trong Thư mục Google Drive của lớp, tạo thành một tập san/nhật ký học tập chung để cả lớp cùng đọc và học hỏi lẫn nhau.
+Bước 4: Kết luận, nhận định:
+GV dùng Bảng Rubric 10 điểm để chấm bài đăng của HS (Tiêu chí: Tính tự chủ 5đ, Dung lượng & Chính xác 3đ, Trình bày chính tả 2đ).
+GV gửi thông điệp tổng kết chuyên đề: "Trí tuệ nhân tạo là một công cụ hỗ trợ tuyệt vời, nhưng chính sự tự chủ, tư duy độc lập và tinh thần trách nhiệm của các em mới là điều quyết định giá trị của việc học!"
 
 HỒ SƠ BÀI DẠY
+I. BẢNG DANH MỤC HỌC LIỆU SỐ TRIỂN KHAI
+(Dành cho Ban giám hiệu / Thanh tra / Giảng viên kiểm tra hạ tầng công nghệ của bài học kết hợp Blended Learning)
+
+| STT | Tên học liệu số | Nền tảng / Định dạng | Vị trí sử dụng | Mô tả chức năng & Đường dẫn |
+| :---: | :--- | :--- | :--- | :--- |
+| **1** | **Khảo sát đầu giờ & Diễn đàn khởi động** | LMS Discussion Forum / HTML5 Widget | Tiết 1 (HĐ 1 - 5 phút) | Thu thập ý kiến ban đầu; kích hoạt nhu cầu sử dụng AI; khảo sát khó khăn khi làm bài tập & mong muốn trợ lý ảo; cam kết Netiquette an toàn thông tin.<br>👉 *Đường dẫn:* `hoc_lieu_1_dien_dan_khoi_dong.html` |
+| **2** | **Gói Video tương tác & Infographic tóm tắt** | Chuẩn SCORM 1.2 / H5P Interactive Video (06:27) & Infographic Web | Tiết 1 (HĐ 2 - 15 phút) | Khóa tua nhanh (tua tiến); tự động dừng tại 3 mốc neo Checkpoint Quiz (03:10, 04:40, 05:40) để kiểm tra nhận thức; tự động đồng bộ kết quả (thang 100đ) vào Sổ điểm Gradebook LMS.<br>👉 *Tệp nguồn:* `SCORM_KyThuatVietPrompt_TinHoc6.zip`<br>👉 *Đường dẫn:* `hoc_lieu_2_video_infographic_tuong_tac.html` |
+| **3** | **Trạm trải nghiệm GenAI an toàn K-12 & Poster Cẩm nang 4 KHÔNG** | Web App (SchoolAI Space) + Poster HTML5/PNG | Tiết 1 (HĐ 3 - 15 phút) | Trạm GenAI đạt chuẩn bảo vệ quyền riêng tư quốc tế COPPA/FERPA duy nhất cho lứa tuổi 11; bảo mật Zero-PII (tham gia bằng Room Code, không cần tài khoản cá nhân); GV giám sát và can thiệp sư phạm thời gian thực (Live Dashboard).<br>👉 *Đường dẫn:* `hoc_lieu_3_cong_cu_genai_an_toan.html` / `https://schoolai.com` |
+| **4** | **Cổng nộp bài Assignment & Bảng Rubric tương tác 10 điểm** | LMS Assignment / Google Drive Folder + Web Rubric điện tử & PDF A4 | Tiết 1 (HĐ 3 - 15 phút) | Thu nhận ảnh chụp màn hình minh chứng câu lệnh AI; GV chấm bài 1 chạm theo Rubric 3 tiêu chí (Cấu trúc 5đ, Ngôn từ 3đ, Ảnh minh chứng 2đ); phản hồi tự động.<br>👉 *Đường dẫn Web:* `hoc_lieu_4_nop_bai_assignment_rubric.html`<br>👉 *Thư mục Drive nộp bài:* [Google Drive Submission](https://drive.google.com/drive/folders/1N4MIlx9gx_LnO4LPmdAuCpQcMtHokwr3?usp=sharing) |
+| **5** | **Công cụ Blog / Nhật ký học tập & Bảng Rubric đánh giá tự chủ** | LMS Blog/Glossary / Google Drive Folder + Web Rubric điện tử & PDF A4 | Tiết 1 (HĐ 4 - 10 phút) | Nơi học sinh tóm tắt 3-5 câu bằng văn phong cá nhân; rèn luyện tính tự chủ và tinh thần trách nhiệm (không sao chép/copy-paste); chấm theo Rubric 10 điểm (Tính tự chủ 5đ, Dung lượng 3đ, Trình bày 2đ).<br>👉 *Đường dẫn Web:* `hoc_lieu_5_blog_nhat_ky_glossary_rubric.html`<br>👉 *Thư mục Drive Nhật ký:* [Google Drive Journal](https://drive.google.com/drive/folders/1o0Y7hb1UQcuXPTsVk3z-EUYB_Ed6e0vp?usp=sharing) |
+| **6** | **Hồ sơ khảo thí: Bộ phiếu Rubric chuẩn A4 & File cấu hình LMS** | Printable HTML A4 / PDF Vector / Cấu hình JSON `Rubric_LMS_TinHoc6.json` | Hồ sơ bài dạy & Chấm thi thực hành | Bản in chuẩn A4 dùng cho GV chấm chéo / chấm phòng máy và file nạp cấu hình tiêu chí tự động vào Moodle / Canvas / K12Online.<br>👉 *Đường dẫn:* `phieu_rubric_va_danh_gia.html` |
+
+II. HỆ THỐNG CÔNG CỤ ĐÁNH GIÁ (RUBRICS)
 1. Rubric chấm điểm Hoạt động 3: Thực hành "Hỏi đúng - Trúng đáp án"
 Tiêu chí
 đánh giá

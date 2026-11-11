@@ -5,14 +5,21 @@
 
 ---
 
-## TỔNG QUAN BỘ HỌC LIỆU SỐ
+## TỔNG QUAN BỘ HỌC LIỆU SỐ & DANH MỤC TRIỂN KHAI
 
-Bộ học liệu này được thiết kế đồng bộ cho 1 tiết học trực tuyến (E-learning 45 phút), bao gồm 5 cấu phần tương ứng với tiến trình dạy học:
-1. **Học liệu 1 (Khởi động - 5 phút):** Diễn đàn thảo luận (Forum) trên LMS kích hoạt tư duy và nhu cầu sử dụng AI.
-2. **Học liệu 2 (Hình thành kiến thức mới - 15 phút):** Gói SCORM Video & Infographic tương tác tích hợp Pop-up Quiz (H5P / Edpuzzle) hướng dẫn kỹ thuật viết Prompt (công thức 3 thành phần).
-3. **Học liệu 3 (Luyện tập - 15 phút):** Trạm GenAI an toàn chuẩn mực duy nhất cho học sinh 11 tuổi (**SchoolAI** - chuẩn COPPA/FERPA) kèm cổng vào phòng học bằng Room Code trực tiếp và Cẩm nang 4 "KHÔNG" bảo mật thông tin.
-4. **Học liệu 4 (Luyện tập - Nộp bài):** Cấu hình hoạt động Nộp bài (Assignment) trên LMS kèm **Rubric đánh giá 10 điểm** (chấm ảnh chụp màn hình đoạn chat).
-5. **Học liệu 5 (Vận dụng - 10 phút):** Công cụ Blog / Nhật ký học tập (Glossary) trên LMS kèm **Rubric đánh giá 10 điểm** (đánh giá bài tóm tắt kiến thức, không sao chép).
+Bộ học liệu này được thiết kế đồng bộ cho 1 tiết học trực tuyến (E-learning 45 phút), bao gồm 5 cấu phần cốt lõi và hệ thống hồ sơ khảo thí tương ứng với tiến trình dạy học.
+
+### BẢNG DANH MỤC HỌC LIỆU SỐ TRIỂN KHAI
+*(Dành cho Ban giám hiệu / Thanh tra / Giảng viên kiểm tra hạ tầng công nghệ của bài học kết hợp Blended Learning)*
+
+| STT | Tên học liệu số | Nền tảng / Định dạng | Vị trí sử dụng | Mô tả chức năng & Đường dẫn |
+| :---: | :--- | :--- | :--- | :--- |
+| **1** | **Khảo sát đầu giờ & Diễn đàn khởi động** | LMS Discussion Forum / HTML5 Widget | Tiết 1 (HĐ 1 - 5 phút) | Thu thập ý kiến ban đầu; kích hoạt nhu cầu sử dụng AI; khảo sát khó khăn khi làm bài tập & mong muốn trợ lý ảo; cam kết Netiquette an toàn thông tin.<br>👉 *Đường dẫn:* `hoc_lieu_1_dien_dan_khoi_dong.html` |
+| **2** | **Gói Video tương tác & Infographic tóm tắt** | Chuẩn SCORM 1.2 / H5P Interactive Video (06:27) & Infographic Web | Tiết 1 (HĐ 2 - 15 phút) | Khóa tua nhanh (tua tiến); tự động dừng tại 3 mốc neo Checkpoint Quiz (03:10, 04:40, 05:40) để kiểm tra nhận thức; tự động đồng bộ kết quả (thang 100đ) vào Sổ điểm Gradebook LMS.<br>👉 *Tệp nguồn:* `SCORM_KyThuatVietPrompt_TinHoc6.zip`<br>👉 *Đường dẫn:* `hoc_lieu_2_video_infographic_tuong_tac.html` |
+| **3** | **Trạm trải nghiệm GenAI an toàn K-12 & Poster Cẩm nang 4 KHÔNG** | Web App (SchoolAI Space) + Poster HTML5/PNG | Tiết 1 (HĐ 3 - 15 phút) | Trạm GenAI đạt chuẩn bảo vệ quyền riêng tư quốc tế COPPA/FERPA duy nhất cho lứa tuổi 11; bảo mật Zero-PII (tham gia bằng Room Code, không cần tài khoản cá nhân); GV giám sát và can thiệp sư phạm thời gian thực (Live Dashboard).<br>👉 *Đường dẫn:* `hoc_lieu_3_cong_cu_genai_an_toan.html` / `https://schoolai.com` |
+| **4** | **Cổng nộp bài Assignment & Bảng Rubric tương tác 10 điểm** | LMS Assignment / Google Drive Folder + Web Rubric điện tử & PDF A4 | Tiết 1 (HĐ 3 - 15 phút) | Thu nhận ảnh chụp màn hình minh chứng câu lệnh AI; GV chấm bài 1 chạm theo Rubric 3 tiêu chí (Cấu trúc 5đ, Ngôn từ 3đ, Ảnh minh chứng 2đ); phản hồi tự động.<br>👉 *Đường dẫn Web:* `hoc_lieu_4_nop_bai_assignment_rubric.html`<br>👉 *Thư mục Drive nộp bài:* [Google Drive Submission](https://drive.google.com/drive/folders/1N4MIlx9gx_LnO4LPmdAuCpQcMtHokwr3?usp=sharing) |
+| **5** | **Công cụ Blog / Nhật ký học tập & Bảng Rubric đánh giá tự chủ** | LMS Blog/Glossary / Google Drive Folder + Web Rubric điện tử & PDF A4 | Tiết 1 (HĐ 4 - 10 phút) | Nơi học sinh tóm tắt 3-5 câu bằng văn phong cá nhân; rèn luyện tính tự chủ và tinh thần trách nhiệm (không sao chép/copy-paste); chấm theo Rubric 10 điểm (Tính tự chủ 5đ, Dung lượng 3đ, Trình bày 2đ).<br>👉 *Đường dẫn Web:* `hoc_lieu_5_blog_nhat_ky_glossary_rubric.html`<br>👉 *Thư mục Drive Nhật ký:* [Google Drive Journal](https://drive.google.com/drive/folders/1o0Y7hb1UQcuXPTsVk3z-EUYB_Ed6e0vp?usp=sharing) |
+| **6** | **Hồ sơ khảo thí: Bộ phiếu Rubric chuẩn A4 & File cấu hình LMS** | Printable HTML A4 / PDF Vector / Cấu hình JSON `Rubric_LMS_TinHoc6.json` | Hồ sơ bài dạy & Chấm thi thực hành | Bản in chuẩn A4 dùng cho GV chấm chéo / chấm phòng máy và file nạp cấu hình tiêu chí tự động vào Moodle / Canvas / K12Online.<br>👉 *Đường dẫn:* `phieu_rubric_va_danh_gia.html` |
 
 ---
 
@@ -62,6 +69,22 @@ Giáo viên ghim (Pin) thông báo hướng dẫn học sinh:
   * *Phản hồi của GV:* "Một câu hỏi tuyệt vời của một nhà khoa học tương lai! Lát nữa ở Hoạt động 3, thầy/cô sẽ hướng dẫn em dùng công thức đặc biệt để 'ra lệnh' cho AI kể cho em nghe một câu chuyện hấp dẫn về loài khủng long nhé!"
 * **Tình huống 3: Học sinh viết cộc lốc hoặc không dấu**
   * *Phản hồi của GV:* "Ý tưởng của em rất hay! Em hãy bấm 'Chỉnh sửa' (Edit) để thêm dấu tiếng Việt cho câu văn tròn trịa hơn nhé, một công dân số thông thái luôn tôn trọng sự trong sáng của tiếng Việt!"
+
+---
+
+### 5. Tổ chức thực hiện theo tiến trình Công văn 5512
+
+#### Bước 1: GV chuyển giao nhiệm vụ học tập
+* **➤ Nhiệm vụ 1: Chia sẻ thực tế và mong muốn về "Trợ lý ảo AI"**
+  * GV đăng câu hỏi thảo luận trên Forum LMS và yêu cầu học sinh bấm Reply trả lời 2 câu hỏi:
+    1. Khi gặp một bài tập khó ở nhà, em thường làm gì để tìm sự trợ giúp?
+    2. Nếu được tặng một "Trợ lý ảo AI", câu hỏi đầu tiên mà em muốn nhờ bạn ấy giải đáp là gì?
+* **✔ Dự kiến câu trả lời:**
+  * *Câu hỏi 1:* "Khi gặp bài khó em thường hỏi bố mẹ, anh chị hoặc nhắn tin hỏi bạn thân trong lớp."
+  * *Câu hỏi 2:* "Em muốn hỏi AI cách giải các bài toán đố vui / Em muốn hỏi AI vì sao loài khủng long lại bị tuyệt chủng."
+* **➤ Nhiệm vụ 2: Đọc và tương tác với bạn bè trên Diễn đàn**
+  * GV yêu cầu HS đọc bài của ít nhất 1 bạn và thả tim hoặc viết bình luận phản hồi tích cực.
+* **✔ Dự kiến tương tác:** "Câu hỏi của bạn thú vị quá!", "Ý kiến của bạn giống hệt mình nè!"
 
 ---
 
@@ -171,6 +194,22 @@ TIẾN TRÌNH VIDEO TƯƠNG TÁC (TIMELINE THỰC TẾ):
 
 ---
 
+### 3. Tổ chức thực hiện theo tiến trình Công văn 5512
+
+#### Bước 1: GV chuyển giao nhiệm vụ học tập
+* **➤ Nhiệm vụ 1: Xem Video học tập tương tác SCORM trên LMS**
+  * GV nhúng Gói SCORM Video tương tác (06:27) và yêu cầu HS theo dõi, trả lời các câu hỏi dừng video để hoàn thành bài học.
+* **➤ Nhiệm vụ 2: Vượt qua 3 câu hỏi Checkpoint trong video**
+  * **Checkpoint 1 (03:10):** So sánh câu lệnh 'Viết về măng' và 'Viết 3 câu bán măng sạch'.  
+    *✔ Dự kiến câu trả lời:* Đáp án B (câu lệnh thứ hai giao việc rõ ràng, nêu cụ thể số lượng 3 câu và mục đích bán hàng).
+  * **Checkpoint 2 (04:40):** Công thức 3 mẹo cốt lõi viết Prompt chuẩn.  
+    *✔ Dự kiến câu trả lời:* Đáp án A (Bối cảnh + Vai trò + Yêu cầu cụ thể).
+  * **Checkpoint 3 (05:40):** Xác định yếu tố Bối cảnh trong ví dụ nông dân trồng sâm.  
+    *✔ Dự kiến câu trả lời:* Đáp án B ('Tôi là nông dân mới trồng sâm').
+* **✔ Dự kiến sản phẩm:** Điểm số SCORM đạt từ 80 đến 100 điểm, tự động đồng bộ vào sổ điểm LMS.
+
+---
+
 ## HỌC LIỆU 3: CÔNG CỤ GENAI AN TOÀN DUY NHẤT CHO HỌC SINH 11 TUỔI - SCHOOLAI
 
 Căn cứ vào **Khuyến nghị UNESCO (2023)** về Trí tuệ nhân tạo trong giáo dục, các chính sách bảo vệ dữ liệu trẻ em quốc tế (**COPPA, FERPA**) và **Nghị định 13/2023/NĐ-CP của Việt Nam**, học sinh lớp 6 (11 tuổi) **chỉ được phép sử dụng duy nhất nền tảng SchoolAI (`schoolai.com`)**:
@@ -247,11 +286,27 @@ Giáo viên nhúng nội dung này ngay bên dưới link công cụ trên LMS:
 > 3. **Bước 3:** Chụp ảnh màn hình đoạn chat (bắt buộc nhìn rõ cả **câu hỏi của em** và **câu trả lời của AI**).
 >    * *Mẹo chụp màn hình máy tính:* Nhấn tổ hợp phím `Windows + Shift + S` (hoặc phím `PrtScn`).
 >    * *Mẹo chụp trên điện thoại/máy tính bảng:* Nhấn đồng thời nút *Nguồn + Giảm âm lượng*.
-> 4. **Bước 4:** Bấm nút **"Thêm bài nộp" (Add submission)** bên dưới và tải ảnh lên hệ thống LMS.
+> 4. **Bước 4:** Đổi tên tệp thành `[Họ và tên] - [Lớp] - Prompt.png` (Ví dụ: `NguyenVanAn_6A_Prompt.png`) và bấm nút **"Mở Google Drive để nộp ảnh bài làm"** để tải ảnh lên Thư mục Google Drive của lớp.
 
 ---
 
-### 3. Rubric chấm điểm Hoạt động 3 (Thang điểm 10)
+### 3. Tổ chức thực hiện theo tiến trình Công văn 5512
+
+#### Bước 1: GV chuyển giao nhiệm vụ học tập
+* **➤ Nhiệm vụ 1: Truy cập Trạm AI an toàn SchoolAI bằng Room Code**
+  * GV cấp mã phòng (Room Code) và nhắc nhở Cẩm nang 4 KHÔNG: Tuyệt đối không nhập họ tên đầy đủ, ngày sinh, địa chỉ, mật khẩu vào ô chat của AI.
+* **➤ Nhiệm vụ 2: Soạn câu lệnh Prompt theo Công thức 3 thành phần**
+  * GV yêu cầu HS chọn 1 trong 3 chủ đề học tập lớp 6 (Chiến thắng Bạch Đằng 938, Mặt Trăng lúc tròn lúc khuyết, Hiện tượng ngày và đêm) và soạn câu lệnh đủ 3 thành phần: `[Đóng vai] + [Nhiệm vụ] + [Bối cảnh / Điều kiện]`.
+* **✔ Dự kiến câu trả lời / Sản phẩm của học sinh:**
+  * *Câu Prompt mẫu của HS:* `"Đóng vai một cô giáo Lịch sử, hãy giải thích ý nghĩa của chiến thắng Bạch Đằng năm 938 cho học sinh lớp 6 nghe trong khoảng 4 câu ngắn gọn, dễ hiểu nhé!"`
+  * *Phản hồi dự kiến từ AI:* `"Chào em! Cô rất vui được giải thích cho em. Chiến thắng Bạch Đằng năm 938 do Ngô Quyền lãnh đạo là một mốc son chói lọi trong lịch sử dân tộc ta. Nhờ kế sách cắm cọc gỗ nhọn xuống lòng sông và lợi dụng quy luật thủy triều, quân ta đã nhấn chìm toàn bộ chiến thuyền của giặc Nam Hán. Chiến thắng vang dội này đã chấm dứt hơn một nghìn năm Bắc thuộc, mở ra thời kỳ độc lập lâu dài cho non sông Việt Nam ta!"`
+* **➤ Nhiệm vụ 3: Chụp ảnh màn hình minh chứng và nộp vào Google Drive**
+  * GV hướng dẫn chụp màn hình rõ 2 chiều hỏi - đáp, đổi tên file theo cú pháp và tải lên Thư mục Google Drive của lớp.
+* **✔ Dự kiến sản phẩm:** 01 file ảnh `.png` hoặc `.jpg` rõ nét, đạt điểm Tối đa theo Bảng Rubric 10 điểm (Cấu trúc 5đ, Ngôn từ 3đ, Ảnh 2đ).
+
+---
+
+### 4. Rubric chấm điểm Hoạt động 3 (Thang điểm 10)
 *(Chuẩn hóa theo đúng Hồ sơ bài dạy KHBD Bài 2)*
 
 | Tiêu chí đánh giá | Mức 1: TỐT (Giỏi) | Mức 2: ĐẠT (Khá / TB) | Mức 3: CẦN CỐ GẮNG (Chưa đạt) | Điểm tối đa |
@@ -301,11 +356,28 @@ Giáo viên nhúng nội dung này ngay bên dưới link công cụ trên LMS:
 > 3. 🚨 **QUY TẮC SỐNG CÒN CỦA NHÀ BÁO:**
 >    * **TUYỆT ĐỐI KHÔNG COPY-PASTE NGUYÊN VĂN CỦA AI!**
 >    * Hãy dùng văn phong, cách hiểu và lời kể của chính em. Hành vi sao chép 100% sẽ bị 0 điểm ở tiêu chí Tự chủ.
-> 4. Bấm nút **"Thêm bài viết mới" (Add a new entry)**, đặt tiêu đề bài báo và đăng bài nhé!
+> 4. Bấm nút **"Mở Google Drive để nộp bài viết"**, đặt tên file theo cú pháp `[Họ và tên] - [Lớp] - NhatKyHocTap` và tải lên Thư mục Google Drive của lớp.
 
 ---
 
-### 3. Rubric chấm điểm Hoạt động 4 (Thang điểm 10)
+### 3. Tổ chức thực hiện theo tiến trình Công văn 5512
+
+#### Bước 1: GV chuyển giao nhiệm vụ học tập
+* **➤ Nhiệm vụ 1: Đóng vai Nhà báo nhí, tự tóm tắt kiến thức đã học từ AI**
+  * GV giao nhiệm vụ: Đọc lại câu trả lời của AI ở Hoạt động 3, gấp màn hình chat lại và viết đoạn văn ngắn từ 3 đến 5 câu bằng chính văn phong của mình.
+  * 🚨 **QUY TẮC TỰ CHỦ VÀ TRÁCH NHIỆM:** Tuyệt đối KHÔNG copy-paste nguyên văn câu chữ của AI.
+* **✔ Dự kiến câu trả lời / Sản phẩm của học sinh:**
+  * *Tiêu đề bài viết dự kiến:* "Điều em học được về cọc gỗ Bạch Đằng năm 938"
+  * *Nội dung bài viết dự kiến (Vừa vặn 4 câu, giọng văn học sinh lớp 6):*
+    > *"Sau khi trò chuyện với trợ lý AI, em đã hiểu rõ hơn về mưu kế cắm cọc gỗ trên sông Bạch Đằng năm 938 của Ngô Quyền. Nhờ biết tính con nước thủy triều lên xuống, quân ta đã nhử thuyền chiến của giặc Nam Hán vào bãi cọc và giành thắng lợi vang dội. Chiến thắng lịch sử này đã chấm dứt hơn 1.000 năm Bắc thuộc và mở ra thời kỳ độc lập lâu dài cho dân tộc ta. Em rất tự hào về trí tuệ và sự dũng cảm của cha ông mình!"*
+  * *(Trường hợp dự kiến chưa đạt: HS copy-paste nguyên văn thuật ngữ bác học của AI ➔ GV dựa vào Rubric trừ điểm tiêu chí Tự chủ và hướng dẫn HS viết lại bằng ngôn ngữ riêng).*
+* **➤ Nhiệm vụ 2: Đặt tên và nộp bài vào Thư mục Google Drive Nhật ký học tập**
+  * GV yêu cầu lưu bài theo cú pháp `[Họ và tên] - [Lớp] - NhatKyHocTap` và bấm nút mở Thư mục Google Drive để nộp.
+* **✔ Dự kiến sản phẩm:** 01 bài tóm tắt chuẩn dung lượng từ 3-5 câu, không sao chép máy móc, đạt điểm Tối đa theo Bảng Rubric 10 điểm (Tính tự chủ 5đ, Dung lượng 3đ, Trình bày chính tả 2đ).
+
+---
+
+### 4. Rubric chấm điểm Hoạt động 4 (Thang điểm 10)
 *(Chuẩn hóa theo đúng Hồ sơ bài dạy KHBD Bài 2)*
 
 | Tiêu chí đánh giá | Mức 1: TỐT (Giỏi) | Mức 2: ĐẠT (Khá / TB) | Mức 3: CẦN CỐ GẮNG (Chưa đạt) | Điểm tối đa |

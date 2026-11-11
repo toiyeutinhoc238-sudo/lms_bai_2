@@ -2,175 +2,362 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
-  <title>Rubric 1 - Đánh Giá Thực Hành Câu Lệnh Prompt (Chuẩn A4)</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <title>BẢNG KIỂM RUBRIC ĐÁNH GIÁ HOẠT ĐỘNG 3 (LUYỆN TẬP PROMPT CHO AI - TIN HỌC 6)</title>
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Plus Jakarta Sans', sans-serif; }
-    html, body { background: #fff; color: #0f172a; line-height: 1.35; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-    @page { size: A4 portrait; margin: 0; }
-    .page-container {
-      width: 210mm;
-      height: 296mm;
-      max-height: 296mm;
-      margin: 0 auto;
-      padding: 10mm 15mm 8mm 15mm;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+    @page {
+      size: A4 portrait;
+      margin: 8mm 12mm 8mm 12mm;
     }
-    .header-table { width: 100%; border-collapse: collapse; margin-bottom: 8px; border-bottom: 1.5px solid #0f172a; padding-bottom: 6px; }
-    .header-table td { vertical-align: top; padding-bottom: 4px; }
-    .school-info { font-size: 11px; font-weight: 700; text-transform: uppercase; line-height: 1.35; color: #334155; }
-    .doc-meta { text-align: right; font-size: 11px; font-weight: 700; color: #0369a1; line-height: 1.35; }
-    .sheet-title { text-align: center; margin-bottom: 8px; }
-    .sheet-title h1 { font-size: 15px; font-weight: 900; color: #0f172a; text-transform: uppercase; letter-spacing: 0.3px; margin-bottom: 2px; }
-    .sheet-title p { font-size: 11.5px; color: #64748b; font-style: italic; }
-    .student-box { border: 1px dashed #cbd5e1; border-radius: 6px; padding: 5px 12px; margin-bottom: 8px; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 8px; font-size: 12px; background: #f8fafc; }
-    .student-box span.field { border-bottom: 1px dotted #64748b; display: inline-block; width: 65%; min-height: 14px; }
-    .rubric-table { width: 100%; border-collapse: collapse; margin-bottom: 8px; font-size: 11px; line-height: 1.32; }
-    .rubric-table th, .rubric-table td { border: 1px solid #64748b; padding: 5px 7px; vertical-align: top; }
-    .rubric-table th { background: #f1f5f9; font-weight: 800; text-align: center; color: #0f172a; padding: 6px 7px; }
-    .rubric-table td.col-crit { background: #fafafa; font-weight: 700; }
-    .pts { display: block; font-weight: 800; color: #0284c7; margin-top: 3px; font-size: 10.5px; }
-    .result-footer { border: 1px solid #94a3b8; border-radius: 6px; padding: 8px 12px; display: grid; grid-template-columns: 2.2fr 1fr; gap: 12px; background: #fafafa; }
-    .teacher-comment h5 { font-size: 11px; font-weight: 800; margin-bottom: 4px; }
-    .comment-lines { border-bottom: 1px dotted #94a3b8; height: 18px; margin-bottom: 3px; }
-    .score-summary { text-align: center; display: flex; flex-direction: column; justify-content: space-between; }
-    .score-box { font-size: 14px; font-weight: 900; color: #0369a1; background: #fff; border: 1.5px solid #0284c7; border-radius: 6px; padding: 4px; margin-bottom: 4px; }
-    .sig-area { font-size: 10.5px; color: #475569; line-height: 1.25; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Times New Roman', Times, serif;
+    }
+    body {
+      color: #0f172a;
+      background: #ffffff;
+      font-size: 11pt;
+      line-height: 1.25;
+      padding: 0;
+    }
+    .header-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 6px;
+    }
+    .header-table td {
+      border: none;
+      vertical-align: top;
+      padding: 0;
+    }
+    .text-center {
+      text-align: center;
+    }
+    .header-left {
+      width: 44%;
+      font-size: 10pt;
+    }
+    .header-right {
+      width: 56%;
+      font-size: 10pt;
+    }
+    .line-decor {
+      display: inline-block;
+      width: 100px;
+      height: 1px;
+      background: #000;
+      margin: 2px auto 0 auto;
+    }
+    .doc-title {
+      text-align: center;
+      margin: 4px 0 6px 0;
+    }
+    .doc-title h1 {
+      font-size: 13.5pt;
+      font-weight: bold;
+      color: #0f172a;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 2px;
+    }
+    .doc-title h2 {
+      font-size: 11.5pt;
+      font-weight: bold;
+      color: #1e3a8a;
+      text-transform: uppercase;
+      margin-bottom: 2px;
+    }
+    .doc-title p {
+      font-size: 10pt;
+      font-style: italic;
+      color: #334155;
+    }
+    .student-info-box {
+      border: 1px dashed #64748b;
+      background: #f8fafc;
+      padding: 5px 10px;
+      margin: 4px 0 6px 0;
+      border-radius: 4px;
+      font-size: 10.5pt;
+    }
+    .student-info-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 2px;
+    }
+    .student-info-row:last-child {
+      margin-bottom: 0;
+    }
+    .dots {
+      border-bottom: 1px dotted #475569;
+      display: inline-block;
+      min-width: 150px;
+      height: 15px;
+    }
+    .rubric-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 4px;
+      font-size: 9.5pt;
+      line-height: 1.25;
+    }
+    .rubric-table th, .rubric-table td {
+      border: 1px solid #334155;
+      padding: 4px 5px;
+      vertical-align: top;
+    }
+    .rubric-table th {
+      background-color: #f1f5f9;
+      color: #0f172a;
+      font-weight: bold;
+      text-align: center;
+    }
+    .level-header {
+      font-size: 8.5pt;
+      font-weight: normal;
+    }
+    .criteria-title {
+      font-weight: bold;
+      color: #0f172a;
+      font-size: 9.5pt;
+      display: block;
+      margin-bottom: 2px;
+    }
+    .score-badge {
+      display: inline-block;
+      font-weight: bold;
+      color: #1e3a8a;
+      font-size: 9pt;
+    }
+    .example-box {
+      margin-top: 2px;
+      font-style: italic;
+      color: #334155;
+      font-size: 8.5pt;
+      line-height: 1.2;
+    }
+    .total-row td {
+      font-weight: bold;
+      background-color: #f8fafc;
+      font-size: 10pt;
+    }
+    .note-box {
+      margin-top: 5px;
+      font-size: 9pt;
+      color: #334155;
+      line-height: 1.25;
+    }
+    .feedback-box {
+      border: 1px solid #94a3b8;
+      border-radius: 4px;
+      padding: 4px 8px;
+      margin-top: 6px;
+      font-size: 9.5pt;
+      background: #ffffff;
+    }
+    .signature-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 8px;
+    }
+    .signature-table td {
+      border: none;
+      vertical-align: top;
+      text-align: center;
+      font-size: 10pt;
+      line-height: 1.25;
+    }
     @media print {
       body { margin: 0; padding: 0; }
-      .page-container { width: 210mm !important; height: 296mm !important; max-height: 296mm !important; padding: 10mm 15mm 8mm 15mm !important; }
       .no-print { display: none !important; }
     }
   </style>
 </head>
 <body>
-  <div class="page-container">
-    <div>
-      <table class="header-table">
-        <tr>
-          <td style="width: 60%;">
-            <div class="school-info">
-              TRƯỜNG THCS: ................................................................<br>
-              TỔ: TOÁN - TIN HỌC • NĂM HỌC 2025 - 2026<br>
-              MÔN: TIN HỌC 6 (THEO CHƯƠNG TRÌNH GDPT 2018)
-            </div>
-          </td>
-          <td style="width: 40%;">
-            <div class="doc-meta">
-              PHIẾU ĐÁNH GIÁ SẢN PHẨM THỰC HÀNH<br>
-              BÀI 2 - HOẠT ĐỘNG 3 (LUYỆN TẬP)<br>
-              Thang điểm tối đa: 10.0 điểm
-            </div>
-          </td>
-        </tr>
-      </table>
 
-      <div class="sheet-title">
-        <h1>RUBRIC ĐÁNH GIÁ SẢN PHẨM CÂU LỆNH PROMPT CHO AI</h1>
-        <p>Áp dụng cho Hoạt động 3: Thực hành tương tác an toàn trên SchoolAI (Môn Tin học 6 - Bài 2)</p>
-      </div>
+  <!-- Nút in phiếu nhanh khi xem trực tiếp -->
+  <div class="no-print" style="text-align: right; margin-bottom: 8px; padding: 6px 12px; background: #f1f5f9; border-bottom: 1px solid #cbd5e1;">
+    <button onclick="window.print()" style="padding: 6px 16px; background: #1e40af; color: white; border: none; border-radius: 4px; font-weight: bold; cursor: pointer; font-size: 10pt;">
+      🖨️ In Phiếu Rubric (Ctrl + P / Lưu PDF)
+    </button>
+  </div>
 
-      <div class="student-box">
-        <div><strong>Họ và tên:</strong> <span class="field" contenteditable="true"></span></div>
-        <div><strong>Lớp:</strong> <span class="field" contenteditable="true"></span></div>
-        <div><strong>Ngày nộp:</strong> ...../...../2026</div>
-      </div>
+  <!-- Phần Tiêu ngữ Hành chính -->
+  <table class="header-table">
+    <tr>
+      <td class="header-left text-center">
+        <strong>TRƯỜNG THCS: ........................................</strong><br>
+        <strong>TỔ CHUYÊN MÔN: TIN HỌC</strong><br>
+        <div class="line-decor"></div>
+      </td>
+      <td class="header-right text-center">
+        <strong>CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM</strong><br>
+        <strong>Độc lập – Tự do – Hạnh phúc</strong><br>
+        <div class="line-decor"></div>
+      </td>
+    </tr>
+  </table>
 
-      <table class="rubric-table">
-        <thead>
-          <tr>
-            <th style="width: 25%;">Tiêu chí</th>
-            <th style="width: 27%;">Mức 1: TỐT (Điểm tối đa)</th>
-            <th style="width: 27%;">Mức 2: ĐẠT (Khá / Đạt)</th>
-            <th style="width: 21%;">Mức 3: CẦN CỐ GẮNG</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="col-crit">
-              <strong>1. Cấu trúc câu lệnh (Prompt)</strong><br>
-              <em>(Trọng tâm cốt lõi)</em>
-              <span class="pts">Tối đa: 5.0 điểm</span>
-            </td>
-            <td>
-              Câu lệnh có <strong>đủ 3 thành phần</strong>:<br>
-              1. Đóng vai (Role)<br>
-              2. Nhiệm vụ (Task)<br>
-              3. Bối cảnh / Điều kiện (Context).
-              <span class="pts">Đạt: 5.0 điểm</span>
-            </td>
-            <td>
-              Câu lệnh <strong>thiếu 1 trong 3 thành phần</strong> (thường thiếu Đóng vai hoặc Bối cảnh trình độ lớp 6).
-              <span class="pts">Đạt: 3.0 điểm</span>
-            </td>
-            <td>
-              Câu lệnh cộc lốc, từ khóa rời rạc, không có cấu trúc.
-              <span class="pts">Đạt: 1.0 điểm</span>
-            </td>
-          </tr>
-          <tr>
-            <td class="col-crit">
-              <strong>2. Nội dung & Ngôn từ</strong><br>
-              <em>(Văn hóa & an toàn số)</em>
-              <span class="pts">Tối đa: 3.0 điểm</span>
-            </td>
-            <td>
-              Hỏi đúng kiến thức học tập lớp 6 (Lịch sử, KHTN...). Ngôn từ văn minh, lịch sự, gõ tiếng Việt có dấu chuẩn 100%.
-              <span class="pts">Đạt: 3.0 điểm</span>
-            </td>
-            <td>
-              Hỏi sai chủ đề học tập <strong>hoặc</strong> gõ tiếng Việt không dấu, viết tắt, teencode.
-              <span class="pts">Đạt: 2.0 điểm</span>
-            </td>
-            <td>
-              Dùng từ ngữ khiếm nhã, vi phạm bảo mật thông tin cá nhân.
-              <span class="pts">Đạt: 0.0 điểm</span>
-            </td>
-          </tr>
-          <tr>
-            <td class="col-crit">
-              <strong>3. Minh chứng tương tác</strong><br>
-              <em>(Kỹ năng công nghệ)</em>
-              <span class="pts">Tối đa: 2.0 điểm</span>
-            </td>
-            <td>
-              Ảnh chụp màn hình sắc nét, rõ ràng, <strong>thấy cả câu lệnh của học sinh và phản hồi của SchoolAI</strong>.
-              <span class="pts">Đạt: 2.0 điểm</span>
-            </td>
-            <td>
-              Ảnh mờ hoặc bị cắt xén, chỉ thấy câu trả lời mà không thấy câu lệnh của học sinh.
-              <span class="pts">Đạt: 1.0 điểm</span>
-            </td>
-            <td>
-              Không nộp ảnh minh chứng, nộp sai tệp hoặc ảnh lỗi không mở được.
-              <span class="pts">Đạt: 0.0 điểm</span>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+  <!-- Tiêu đề văn bản -->
+  <div class="doc-title">
+    <h1>BẢNG KIỂM RUBRIC ĐÁNH GIÁ ĐỊNH LƯỢNG SẢN PHẨM HỌC TẬP</h1>
+    <h2>HOẠT ĐỘNG 3: LUYỆN TẬP (THỰC HÀNH CÂU LỆNH PROMPT CHO AI)</h2>
+    <p>Chuyên đề Bài 2: Lợi ích và cách sử dụng công cụ AI phù hợp – Môn Tin học 6</p>
+  </div>
+
+  <!-- Thông tin học sinh -->
+  <div class="student-info-box">
+    <div class="student-info-row">
+      <div><strong>Họ và tên học sinh:</strong> <span class="dots" style="min-width: 250px;"></span></div>
+      <div><strong>Lớp:</strong> <span class="dots" style="min-width: 80px;"></span></div>
+      <div><strong>Ngày nộp:</strong> <span class="dots" style="min-width: 100px;"></span></div>
     </div>
-
-    <div class="result-footer">
-      <div class="teacher-comment">
-        <h5>💬 NHẬN XÉT CỦA GIÁO VIÊN:</h5>
-        <div class="comment-lines" contenteditable="true"></div>
-        <div class="comment-lines" contenteditable="true"></div>
-      </div>
-      <div class="score-summary">
-        <div class="score-box">
-          TỔNG ĐIỂM: ........ / 10
-        </div>
-        <div class="sig-area">
-          <strong>Giáo viên chấm bài</strong><br>
-          <em>(Ký và ghi rõ họ tên)</em>
-        </div>
-      </div>
+    <div class="student-info-row" style="margin-top: 3px;">
+      <div><strong>Chủ đề thực hành:</strong> <em>"Giao tiếp với AI an toàn trên SchoolAI theo Công thức Vàng 3 thành phần"</em></div>
+      <div><strong>Điểm số đạt được:</strong> <strong style="color: #b91c1c; font-size: 11.5pt;">....... / 10.0</strong></div>
     </div>
   </div>
+
+  <!-- Ma trận Rubric 3 tiêu chí -->
+  <table class="rubric-table">
+    <thead>
+      <tr>
+        <th style="width: 25%;">Tiêu chí đánh giá<br><span class="level-header">(Trọng số điểm)</span></th>
+        <th style="width: 28%;">Mức Tốt (Xuất sắc)</th>
+        <th style="width: 25%;">Mức Đạt (Trung bình)</th>
+        <th style="width: 15%;">Mức Cần cố gắng</th>
+        <th style="width: 7%;">Điểm tối đa</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Tiêu chí 1 -->
+      <tr>
+        <td>
+          <span class="criteria-title">1. Cấu trúc câu lệnh (Prompt) theo Công thức Vàng</span>
+          <span class="score-badge">(Trọng số: 5.0 điểm)</span>
+          <div class="example-box">
+            Đầy đủ: [Đóng vai (Role)] + [Nhiệm vụ (Task)] + [Bối cảnh/Điều kiện (Context) phù hợp HS lớp 6].
+          </div>
+        </td>
+        <td>
+          <strong>(4.5 – 5.0 điểm)</strong><br>
+          Câu lệnh thể hiện <strong>đầy đủ và chuẩn xác cả 3 thành phần</strong>: (1) Đóng vai chuyên gia/nhân vật cụ thể; (2) Giao nhiệm vụ rõ ràng; (3) Giới hạn bối cảnh (HS lớp 6) và dung lượng câu trả lời.
+        </td>
+        <td>
+          <strong>(2.5 – 4.0 điểm)</strong><br>
+          Câu lệnh <strong>thiếu 1 trong 3 thành phần</strong> (thường là quên phần <em>Đóng vai</em> hoặc quên giới hạn <em>Bối cảnh</em> cho HS lớp 6); cấu trúc còn sơ sài nhưng vẫn giao được việc cho AI.
+        </td>
+        <td>
+          <strong>(0.0 – 2.0 điểm)</strong><br>
+          Câu lệnh chỉ có vài từ khóa cộc lốc, hỏi chung chung, không có cấu trúc hoặc không thể hiện được mục đích học tập cụ thể.
+        </td>
+        <td class="text-center" style="vertical-align: middle; font-weight: bold; font-size: 10.5pt; color: #1e3a8a;">
+          5.0 đ
+        </td>
+      </tr>
+
+      <!-- Tiêu chí 2 -->
+      <tr>
+        <td>
+          <span class="criteria-title">2. Nội dung học tập &amp; Chuẩn mực ngôn từ, an toàn số</span>
+          <span class="score-badge">(Trọng số: 3.0 điểm)</span>
+          <div class="example-box">
+            Chủ đề thuộc môn học lớp 6 (Lịch sử, KHTN, Địa lí), gõ tiếng Việt có dấu, tuân thủ Cẩm nang 4 KHÔNG.
+          </div>
+        </td>
+        <td>
+          <strong>(2.5 – 3.0 điểm)</strong><br>
+          Hỏi đúng chủ đề học tập lớp 6. Ngôn từ văn minh, lịch sự, tôn trọng; <strong>gõ tiếng Việt có dấu chuẩn 100%</strong>; tuân thủ nghiêm ngặt bảo vệ quyền riêng tư số (không nhập thông tin cá nhân).
+        </td>
+        <td>
+          <strong>(1.5 – 2.0 điểm)</strong><br>
+          Hỏi đúng chủ đề học tập nhưng <strong>gõ tiếng Việt không dấu, viết tắt, teencode nhiều</strong>; hoặc hỏi nội dung ngoài lề môn học nhưng không vi phạm thuần phong mỹ tục.
+        </td>
+        <td>
+          <strong>(0.0 – 1.0 điểm)</strong><br>
+          Dùng từ ngữ thiếu chuẩn mực, vi phạm nguyên tắc an toàn số hoặc <strong>để lộ thông tin định danh cá nhân (PII)</strong> trên ô chat của AI.
+        </td>
+        <td class="text-center" style="vertical-align: middle; font-weight: bold; font-size: 10.5pt; color: #1e3a8a;">
+          3.0 đ
+        </td>
+      </tr>
+
+      <!-- Tiêu chí 3 -->
+      <tr>
+        <td>
+          <span class="criteria-title">3. Tính hoàn thiện của minh chứng ảnh chụp màn hình</span>
+          <span class="score-badge">(Trọng số: 2.0 điểm)</span>
+          <div class="example-box">
+            Ảnh chụp rõ nét, thấy trọn vẹn cả câu hỏi của HS và phản hồi của AI; nộp đúng hạn và đúng định dạng.
+          </div>
+        </td>
+        <td>
+          <strong>(2.0 điểm)</strong><br>
+          - Đặt đúng tên tệp `[Họ tên - Lớp - Prompt.png]`, nộp đúng hạn lên Google Drive/LMS.<br>
+          - Ảnh chụp màn hình sắc nét, rõ ràng, <strong>thấy trọn vẹn cả câu lệnh của HS và câu trả lời của AI</strong>.
+        </td>
+        <td>
+          <strong>(1.0 điểm)</strong><br>
+          - Nộp bài đúng thời hạn.<br>
+          - Ảnh chụp bị mờ hoặc bị cắt xén chỉ thấy câu trả lời mà không thấy câu lệnh của học sinh; hoặc đặt sai quy cách tên file.
+        </td>
+        <td>
+          <strong>(0.0 điểm)</strong><br>
+          - Nộp bài trễ hạn.<br>
+          - Không nộp ảnh minh chứng, nộp sai định dạng tệp, ảnh bị lỗi không mở được hoặc ảnh sao chép từ học sinh khác.
+        </td>
+        <td class="text-center" style="vertical-align: middle; font-weight: bold; font-size: 10.5pt; color: #1e3a8a;">
+          2.0 đ
+        </td>
+      </tr>
+
+      <!-- Hàng tổng cộng -->
+      <tr class="total-row">
+        <td colspan="4" style="text-align: right; padding-right: 12px; text-transform: uppercase;">
+          TỔNG ĐIỂM ĐÁNH GIÁ CHẤT LƯỢNG SẢN PHẨM:
+        </td>
+        <td class="text-center" style="color: #b91c1c; font-size: 11pt;">
+          10.0 đ
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Thang xếp loại học tập -->
+  <div class="note-box">
+    <strong>* Thang xếp loại học tập:</strong>
+    <span>• <strong>Mức Tốt:</strong> Từ 8.5 đến 10.0 điểm</span> &nbsp;|&nbsp; 
+    <span>• <strong>Mức Khá:</strong> Từ 6.5 đến 8.0 điểm</span> &nbsp;|&nbsp; 
+    <span>• <strong>Mức Đạt:</strong> Từ 5.0 đến 6.0 điểm</span> &nbsp;|&nbsp; 
+    <span>• <strong>Cần cố gắng:</strong> Dưới 5.0 điểm</span>.
+  </div>
+
+  <!-- Nhận xét của Giáo viên -->
+  <div class="feedback-box">
+    <strong>Nhận xét, góp ý của Giáo viên bộ môn:</strong>
+    <div style="border-bottom: 1px dotted #94a3b8; height: 16px; margin-top: 2px;"></div>
+    <div style="border-bottom: 1px dotted #94a3b8; height: 16px; margin-top: 2px;"></div>
+  </div>
+
+  <!-- Chữ ký xác nhận -->
+  <table class="signature-table">
+    <tr>
+      <td style="width: 50%;">
+        <strong>HỌC SINH TỰ ĐÁNH GIÁ</strong><br>
+        <span style="font-style: italic; font-size: 9pt;">(Ký và ghi rõ họ tên)</span>
+        <br><br><br>
+        ............................................................
+      </td>
+      <td style="width: 50%;">
+        <em>Ngày ...... tháng ...... năm 2026</em><br>
+        <strong>GIÁO VIÊN BỘ MÔN CHẤM ĐIỂM</strong><br>
+        <span style="font-style: italic; font-size: 9pt;">(Ký và ghi rõ họ tên)</span>
+        <br><br><br>
+        ............................................................
+      </td>
+    </tr>
+  </table>
+
 </body>
 </html>

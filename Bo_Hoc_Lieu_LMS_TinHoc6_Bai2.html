@@ -186,6 +186,41 @@
       color: #15803d;
       margin-bottom: 8px;
     }
+
+    /* 5512 Organization Box */
+    .step-5512-box {
+      background: #f8fafc;
+      border: 1.5px solid #cbd5e1;
+      border-radius: 10px;
+      padding: 18px 20px;
+      margin: 18px 0;
+    }
+    .step-5512-title {
+      font-weight: 800;
+      color: #1e3a8a;
+      font-size: 1.05rem;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .task-item {
+      margin-bottom: 14px;
+    }
+    .task-name {
+      font-weight: 700;
+      color: #0369a1;
+      margin-bottom: 4px;
+    }
+    .expected-answer {
+      background: #f0fdf4;
+      border-left: 3.5px solid #10b981;
+      padding: 10px 14px;
+      border-radius: 0 8px 8px 0;
+      margin-top: 6px;
+      font-size: 0.92rem;
+      color: #064e3b;
+    }
   </style>
 </head>
 <body>
@@ -197,6 +232,97 @@
     <h1>TIN HỌC 6 - BÀI 2: LỢI ÍCH VÀ CÁCH SỬ DỤNG CÔNG CỤ AI PHÙ HỢP</h1>
     <p class="subtitle">Đồng bộ hoàn chỉnh 5 học liệu số: Diễn đàn • Gói SCORM tương tác • GenAI an toàn • Nộp bài & Rubric • Blog & Rubric</p>
   </header>
+
+  <!-- Bảng Danh mục học liệu số triển khai -->
+  <section class="card" style="border: 2px solid #3b82f6; box-shadow: 0 8px 20px -4px rgba(59, 130, 246, 0.15);">
+    <div class="card-header" style="border-bottom: 2px solid #dbeafe;">
+      <h2 style="color: #1e3a8a;">📊 BẢNG DANH MỤC HỌC LIỆU SỐ TRIỂN KHAI</h2>
+      <span class="badge" style="background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe;">Hạ tầng Blended Learning</span>
+    </div>
+    <div class="meta-box" style="background: #f8fafc; border-left-color: #2563eb;">
+      <strong>Đối tượng kiểm tra:</strong> Dành cho Ban giám hiệu / Thanh tra chuyên môn / Giảng viên đánh giá hạ tầng kỹ thuật và công nghệ của bài học kết hợp (Blended Learning).<br>
+      <strong>Môn học:</strong> Tin học 6 • <strong>Chuyên đề:</strong> Trí tuệ nhân tạo (AI) • <strong>Bài 2:</strong> Lợi ích và cách sử dụng công cụ AI phù hợp (1 tiết trực tuyến 45 phút).
+    </div>
+
+    <div style="overflow-x: auto;">
+      <table>
+        <thead>
+          <tr style="background: #1e40af; color: white;">
+            <th style="color: white; text-align: center; width: 50px;">STT</th>
+            <th style="color: white; width: 220px;">Tên học liệu số</th>
+            <th style="color: white; width: 190px;">Nền tảng / Định dạng</th>
+            <th style="color: white; width: 130px;">Vị trí sử dụng</th>
+            <th style="color: white;">Mô tả chức năng & Đường dẫn</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="text-align: center; font-weight: 700;">1</td>
+            <td><strong>Khảo sát đầu giờ & Diễn đàn khởi động</strong></td>
+            <td>LMS Discussion Forum / HTML5 Widget</td>
+            <td><span class="score-badge">Tiết 1 (HĐ 1 - 5p)</span></td>
+            <td>
+              Thu thập ý kiến ban đầu; kích hoạt nhu cầu sử dụng AI; khảo sát khó khăn khi làm bài tập & mong muốn trợ lý ảo; cam kết Netiquette an toàn thông tin.<br>
+              👉 <a href="hoc_lieu_1_dien_dan_khoi_dong.html" style="font-weight: 600; color: #2563eb;">Mở Học liệu 1 (Diễn đàn) ↗</a>
+            </td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-weight: 700;">2</td>
+            <td><strong>Gói Video tương tác & Infographic tóm tắt</strong></td>
+            <td>Chuẩn SCORM 1.2 / H5P Interactive Video (06:27) & Infographic Web</td>
+            <td><span class="score-badge">Tiết 1 (HĐ 2 - 15p)</span></td>
+            <td>
+              Khóa tua nhanh (tua tiến); tự động dừng tại 3 mốc neo Checkpoint Quiz (03:10, 04:40, 05:40) để kiểm tra nhận thức; tự động đồng bộ kết quả (thang 100đ) vào Sổ điểm Gradebook LMS.<br>
+              📁 <em>Tệp nguồn:</em> <code>SCORM_KyThuatVietPrompt_TinHoc6.zip</code><br>
+              👉 <a href="hoc_lieu_2_video_infographic_tuong_tac.html" style="font-weight: 600; color: #2563eb;">Mở Học liệu 2 (Video SCORM) ↗</a>
+            </td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-weight: 700;">3</td>
+            <td><strong>Trạm trải nghiệm GenAI an toàn K-12 & Poster Cẩm nang 4 KHÔNG</strong></td>
+            <td>Web App (SchoolAI Space) + Poster HTML5/PNG</td>
+            <td><span class="score-badge">Tiết 1 (HĐ 3 - 15p)</span></td>
+            <td>
+              Trạm GenAI đạt chuẩn bảo vệ quyền riêng tư quốc tế COPPA/FERPA duy nhất cho lứa tuổi 11; bảo mật Zero-PII (tham gia bằng Room Code, không cần tài khoản cá nhân); GV giám sát và can thiệp sư phạm thời gian thực (Live Dashboard).<br>
+              👉 <a href="hoc_lieu_3_cong_cu_genai_an_toan.html" style="font-weight: 600; color: #2563eb;">Mở Học liệu 3 (Trạm SchoolAI) ↗</a> | <a href="https://schoolai.com" target="_blank" style="color: #0284c7;">schoolai.com ↗</a>
+            </td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-weight: 700;">4</td>
+            <td><strong>Cổng nộp bài Assignment & Bảng Rubric tương tác 10 điểm</strong></td>
+            <td>LMS Assignment / Google Drive Folder + Web Rubric điện tử & PDF A4</td>
+            <td><span class="score-badge">Tiết 1 (HĐ 3 - 15p)</span></td>
+            <td>
+              Thu nhận ảnh chụp màn hình minh chứng câu lệnh AI; GV chấm bài 1 chạm theo Rubric 3 tiêu chí (Cấu trúc 5đ, Ngôn từ 3đ, Ảnh minh chứng 2đ); phản hồi tự động.<br>
+              👉 <a href="hoc_lieu_4_nop_bai_assignment_rubric.html" style="font-weight: 600; color: #2563eb;">Mở Học liệu 4 (Cổng nộp bài) ↗</a><br>
+              📁 <a href="https://drive.google.com/drive/folders/1N4MIlx9gx_LnO4LPmdAuCpQcMtHokwr3?usp=sharing" target="_blank" style="color: #0284c7; font-weight: 600;">Thư mục Drive nộp bài chính thức ↗</a>
+            </td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-weight: 700;">5</td>
+            <td><strong>Công cụ Blog / Nhật ký học tập & Bảng Rubric đánh giá tự chủ</strong></td>
+            <td>LMS Blog/Glossary / Google Drive Folder + Web Rubric điện tử & PDF A4</td>
+            <td><span class="score-badge">Tiết 1 (HĐ 4 - 10p)</span></td>
+            <td>
+              Nơi học sinh tóm tắt 3-5 câu bằng văn phong cá nhân; rèn luyện tính tự chủ và tinh thần trách nhiệm (không sao chép/copy-paste); chấm theo Rubric 10 điểm (Tính tự chủ 5đ, Dung lượng 3đ, Trình bày 2đ).<br>
+              👉 <a href="hoc_lieu_5_blog_nhat_ky_glossary_rubric.html" style="font-weight: 600; color: #2563eb;">Mở Học liệu 5 (Nhật ký học tập) ↗</a><br>
+              📁 <a href="https://drive.google.com/drive/folders/1o0Y7hb1UQcuXPTsVk3z-EUYB_Ed6e0vp?usp=sharing" target="_blank" style="color: #059669; font-weight: 600;">Thư mục Drive Nhật ký học tập ↗</a>
+            </td>
+          </tr>
+          <tr style="background: #fdf4ff;">
+            <td style="text-align: center; font-weight: 700; color: #9333ea;">6</td>
+            <td><strong style="color: #9333ea;">Hồ sơ khảo thí: Bộ phiếu Rubric chuẩn A4 & File cấu hình LMS</strong></td>
+            <td>Printable HTML A4 / PDF Vector / Cấu hình JSON <code>Rubric_LMS_TinHoc6.json</code></td>
+            <td><span class="score-badge" style="background: #fae8ff; color: #86198f;">Hồ sơ bài dạy</span></td>
+            <td>
+              Bản in chuẩn A4 dùng cho GV chấm chéo / chấm phòng máy và file nạp cấu hình tiêu chí tự động vào Moodle / Canvas / K12Online.<br>
+              👉 <a href="phieu_rubric_va_danh_gia.html" style="font-weight: 600; color: #9333ea;">Trọn bộ Hồ sơ Rubric & Khảo thí A4 ↗</a> | <a href="rubric_1_pdf_template.html" target="_blank" style="color: #1e40af; font-weight: 600;">📄 Bản in Rubric 1 (A4) ↗</a> | <a href="rubric_2_pdf_template.html" target="_blank" style="color: #059669; font-weight: 600;">📝 Bản in Rubric 2 (A4) ↗</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
 
   <!-- Học liệu 1 -->
   <section class="card">
@@ -230,6 +356,30 @@
       <li><strong>Học sinh hỏi câu hỏi tò mò khoa học:</strong> GV khích lệ và gợi mở sang Hoạt động 2 để học công thức "ra lệnh" cho AI trả lời đúng ý nhất.</li>
       <li><strong>Học sinh vi phạm chính tả / cộc lốc:</strong> GV nhắc nhở văn minh số, khuyến khích sửa lại câu từ chuẩn mực.</li>
     </ul>
+
+    <!-- Tiến trình tổ chức CV 5512 -->
+    <div class="step-5512-box">
+      <div class="step-5512-title">📋 Tiến trình tổ chức thực hiện chuẩn Công văn 5512:</div>
+      <div style="font-weight: 700; color: #1e293b; margin-bottom: 8px;">Bước 1: GV chuyển giao nhiệm vụ học tập</div>
+      
+      <div class="task-item">
+        <div class="task-name">➤ Nhiệm vụ 1: Chia sẻ thực tế và mong muốn về "Trợ lý ảo AI"</div>
+        <p style="margin: 4px 0 6px 0; font-size: 0.93rem;">- GV yêu cầu HS vào Diễn đàn (Forum) trên LMS, bấm Reply để trả lời 2 câu hỏi: (1) Thói quen khi gặp bài tập khó; (2) Câu hỏi đầu tiên muốn hỏi Trợ lý ảo AI.</p>
+        <div class="expected-answer">
+          <strong>✔ Dự kiến câu trả lời:</strong><br>
+          • <em>Câu 1:</em> "Khi gặp bài khó em thường hỏi bố mẹ hoặc nhắn tin Zalo cho bạn thân."<br>
+          • <em>Câu 2:</em> "Em muốn hỏi AI cách giải các bài toán đố vui / Em muốn hỏi AI vì sao loài khủng long lại tuyệt chủng."
+        </div>
+      </div>
+
+      <div class="task-item" style="margin-bottom: 0;">
+        <div class="task-name">➤ Nhiệm vụ 2: Đọc và tương tác với ý kiến của bạn</div>
+        <p style="margin: 4px 0 6px 0; font-size: 0.93rem;">- GV yêu cầu HS đọc bài của ít nhất 1 bạn trong lớp và phản hồi tích cực.</p>
+        <div class="expected-answer">
+          <strong>✔ Dự kiến tương tác:</strong> "Câu hỏi của bạn thú vị quá!", "Ý kiến của bạn giống hệt mình nè!"
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- Học liệu 2 -->
@@ -307,6 +457,32 @@
         </tr>
       </tbody>
     </table>
+
+    <!-- Tiến trình tổ chức CV 5512 -->
+    <div class="step-5512-box">
+      <div class="step-5512-title">📋 Tiến trình tổ chức thực hiện chuẩn Công văn 5512:</div>
+      <div style="font-weight: 700; color: #1e293b; margin-bottom: 8px;">Bước 1: GV chuyển giao nhiệm vụ học tập</div>
+      
+      <div class="task-item">
+        <div class="task-name">➤ Nhiệm vụ 1: Xem Video học tập tương tác SCORM và vượt qua 3 Checkpoints</div>
+        <p style="margin: 4px 0 6px 0; font-size: 0.93rem;">- GV yêu cầu HS theo dõi video bài giảng (thời lượng 06:27), suy nghĩ và trả lời đúng 3 câu hỏi trắc nghiệm dừng video để mở khóa tiến trình xem tiếp.</p>
+        <div class="expected-answer">
+          <strong>✔ Dự kiến câu trả lời:</strong><br>
+          • <em>Checkpoint 1 (03:10):</em> Chọn phương án <strong>B</strong> (Giao việc rõ ràng, nêu cụ thể 3 câu và mục đích bán hàng).<br>
+          • <em>Checkpoint 2 (04:40):</em> Chọn phương án <strong>A</strong> (Công thức 3 mẹo cốt lõi: Bối cảnh + Vai trò + Yêu cầu cụ thể).<br>
+          • <em>Checkpoint 3 (05:40):</em> Chọn phương án <strong>B</strong> ('Tôi là nông dân mới trồng sâm' thể hiện Bối cảnh).
+        </div>
+      </div>
+
+      <div class="task-item" style="margin-bottom: 0;">
+        <div class="task-name">➤ Nhiệm vụ 2: Điền Công thức Vàng viết Prompt vào Sách học sinh</div>
+        <p style="margin: 4px 0 6px 0; font-size: 0.93rem;">- GV yêu cầu HS mở Sách chuyên đề/vở ghi, điền hoàn thiện 3 thành phần của công thức ra lệnh cho AI vào mục "Hộp kiến thức".</p>
+        <div class="expected-answer">
+          <strong>✔ Dự kiến câu trả lời:</strong><br>
+          • <em>Nội dung điền Hộp kiến thức:</em> <code>Công thức viết Prompt chuẩn = [Đóng vai (Role)] + [Nhiệm vụ (Task)] + [Bối cảnh / Điều kiện (Context)]</code>.
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- Học liệu 3 -->
@@ -414,6 +590,36 @@
       <p><strong>Câu Prompt:</strong> <em>"Đóng vai cô giáo Lịch sử, hãy giải thích ý nghĩa của chiến thắng Bạch Đằng năm 938 cho học sinh lớp 6 nghe trong khoảng 4 câu ngắn gọn, dễ hiểu nhé!"</em></p>
       <p><em>➔ Đầy đủ [Đóng vai cô giáo] + [Nhiệm vụ: giải thích chiến thắng 938] + [Bối cảnh: cho HS lớp 6 trong 4 câu] + Ảnh chụp rõ nét cả hai chiều hỏi/đáp.</em></p>
     </div>
+
+    <!-- Tiến trình tổ chức CV 5512 -->
+    <div class="step-5512-box">
+      <div class="step-5512-title">📋 Tiến trình tổ chức thực hiện chuẩn Công văn 5512:</div>
+      <div style="font-weight: 700; color: #1e293b; margin-bottom: 8px;">Bước 1: GV chuyển giao nhiệm vụ học tập</div>
+      
+      <div class="task-item">
+        <div class="task-name">➤ Nhiệm vụ 1: Truy cập Trạm AI an toàn SchoolAI bằng Room Code</div>
+        <p style="margin: 4px 0 6px 0; font-size: 0.93rem;">- GV cấp Room Code của lớp và nhắc nhở Cẩm nang 4 KHÔNG: Tuyệt đối không nhập họ tên thật, ngày sinh, địa chỉ, mật khẩu vào ô chat AI.</p>
+      </div>
+
+      <div class="task-item">
+        <div class="task-name">➤ Nhiệm vụ 2: Soạn câu lệnh Prompt theo Công thức 3 thành phần</div>
+        <p style="margin: 4px 0 6px 0; font-size: 0.93rem;">- GV yêu cầu HS chọn 1 trong 3 chủ đề học tập lớp 6 và soạn câu lệnh gửi AI đủ: [Đóng vai] + [Nhiệm vụ] + [Bối cảnh].</p>
+        <div class="expected-answer">
+          <strong>✔ Dự kiến câu trả lời (Prompt mẫu của học sinh):</strong><br>
+          <em>"Đóng vai một cô giáo Lịch sử, hãy giải thích ý nghĩa của chiến thắng Bạch Đằng năm 938 cho học sinh lớp 6 nghe trong khoảng 4 câu ngắn gọn, dễ hiểu nhé!"</em><br><br>
+          <strong>✔ Dự kiến phản hồi từ AI (Minh chứng trong đoạn chat):</strong><br>
+          <em>"Chào em! Cô rất vui được giải thích cho em. Chiến thắng Bạch Đằng năm 938 do Ngô Quyền lãnh đạo là một mốc son chói lọi trong lịch sử dân tộc ta. Nhờ kế sách cắm cọc gỗ nhọn xuống lòng sông và lợi dụng quy luật thủy triều, quân ta đã nhấn chìm toàn bộ chiến thuyền của giặc Nam Hán. Chiến thắng vang dội này đã chấm dứt hơn một nghìn năm Bắc thuộc, mở ra thời kỳ độc lập lâu dài cho non sông Việt Nam ta!"</em>
+        </div>
+      </div>
+
+      <div class="task-item" style="margin-bottom: 0;">
+        <div class="task-name">➤ Nhiệm vụ 3: Chụp ảnh màn hình minh chứng và nộp vào Thư mục Google Drive</div>
+        <p style="margin: 4px 0 6px 0; font-size: 0.93rem;">- GV yêu cầu chụp ảnh màn hình thấy rõ cả câu hỏi và phản hồi của AI, đổi tên tệp thành <code>[Họ và tên] - [Lớp] - Prompt.png</code> và tải lên Thư mục Google Drive của lớp.</p>
+        <div class="expected-answer">
+          <strong>✔ Dự kiến sản phẩm:</strong> 01 file ảnh .png/.jpg sắc nét, đạt điểm Tối đa theo Bảng Rubric 10 điểm (Cấu trúc 5đ, Ngôn từ 3đ, Ảnh 2đ).
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- Học liệu 5 -->
@@ -468,6 +674,30 @@
     <div class="example-card">
       <div class="example-title">🌟 Mẫu bài viết đạt 10/10 điểm:</div>
       <p><em>"Sau khi trò chuyện với trợ lý AI, em đã hiểu rõ hơn về mưu kế cắm cọc gỗ trên sông Bạch Đằng năm 938 của Ngô Quyền. Nhờ biết tính con nước thủy triều lên xuống, quân ta đã nhử thuyền chiến của giặc Nam Hán vào bãi cọc và giành thắng lợi vang dội. Chiến thắng lịch sử này đã chấm dứt hơn 1.000 năm Bắc thuộc và mở ra thời kỳ độc lập lâu dài cho dân tộc ta. Em rất tự hào về trí tuệ của cha ông mình!"</em></p>
+    </div>
+
+    <!-- Tiến trình tổ chức CV 5512 -->
+    <div class="step-5512-box">
+      <div class="step-5512-title">📋 Tiến trình tổ chức thực hiện chuẩn Công văn 5512:</div>
+      <div style="font-weight: 700; color: #1e293b; margin-bottom: 8px;">Bước 1: GV chuyển giao nhiệm vụ học tập</div>
+      
+      <div class="task-item">
+        <div class="task-name">➤ Nhiệm vụ 1: Đóng vai Nhà báo nhí, tự tóm tắt kiến thức đã học từ AI</div>
+        <p style="margin: 4px 0 6px 0; font-size: 0.93rem;">- GV yêu cầu HS đọc lại phản hồi của AI ở Hoạt động 3, gấp cửa sổ chat lại, tự viết 1 đoạn văn từ 3-5 câu bằng chính văn phong của mình. Tuyệt đối không copy-paste nguyên văn để đảm bảo tính tự chủ và trách nhiệm.</p>
+        <div class="expected-answer">
+          <strong>✔ Dự kiến sản phẩm / Câu trả lời của học sinh:</strong><br>
+          • <em>Tiêu đề bài viết:</em> "Điều em học được về cọc gỗ Bạch Đằng năm 938"<br>
+          • <em>Nội dung 4 câu chuẩn:</em> "Sau khi trò chuyện với trợ lý AI, em đã hiểu rõ hơn về mưu kế cắm cọc gỗ trên sông Bạch Đằng năm 938 của Ngô Quyền. Nhờ biết tính con nước thủy triều lên xuống, quân ta đã nhử thuyền chiến của giặc Nam Hán vào bãi cọc và giành thắng lợi vang dội. Chiến thắng lịch sử này đã chấm dứt hơn 1.000 năm Bắc thuộc và mở ra thời kỳ độc lập lâu dài cho dân tộc ta. Em rất tự hào về trí tuệ và sự dũng cảm của cha ông mình!"
+        </div>
+      </div>
+
+      <div class="task-item" style="margin-bottom: 0;">
+        <div class="task-name">➤ Nhiệm vụ 2: Đặt tên và nộp bài vào Thư mục Google Drive Nhật ký học tập</div>
+        <p style="margin: 4px 0 6px 0; font-size: 0.93rem;">- GV yêu cầu lưu tệp theo cú pháp <code>[Họ và tên] - [Lớp] - NhatKyHocTap</code> và tải lên Thư mục Google Drive Nhật ký học tập của lớp.</p>
+        <div class="expected-answer">
+          <strong>✔ Dự kiến sản phẩm:</strong> 01 bài tóm tắt chuẩn dung lượng từ 3-5 câu, không sao chép máy móc, đạt điểm Tối đa theo Bảng Rubric 10 điểm (Tính tự chủ 5đ, Dung lượng 3đ, Trình bày chính tả 2đ).
+        </div>
+      </div>
     </div>
   </section>
 </div>
